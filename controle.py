@@ -270,10 +270,10 @@ class Doc(QMainWindow, Doc):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(14)
+        self.tabWid_obra.setColumnCount(17)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 14):
+            for j in range(0, 17):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
         cursor.execute('SELECT * FROM cliente')
@@ -294,6 +294,7 @@ class Doc(QMainWindow, Doc):
     def volta(self):
         menu.show()
         doc.close()
+        doc.hide()
 
     def searchobra(self):
         name = self.txt_searchrua.text().lower()
@@ -559,7 +560,7 @@ class Doc(QMainWindow, Doc):
                             runner = paragraph.add_run('CONTRATADO ')
                             runner.bold = True
                             paragraph.add_run(
-                                'em ' + valorparcobra + ',00 (' + num2words(valorparcobra.replace(",","."), lang='pt-br') + ') vezes mensais, com vencimento '
+                                'em ' + valorparcobra + ',00 (' + num2words(valorparcobra.replace(",","."), lang='pt-br') +') vezes mensais, com vencimento '
                                                                                                    'todo o dia ' + (datacontratoobra[:2]) + ' de cada mês, com início em '
                                 + datacontratoobra + ', constituindo-se nenhuma '
                                                        'tolerância de qualquer recebimento depois do '
@@ -1817,7 +1818,7 @@ class Doc(QMainWindow, Doc):
                     emailcli2 = dados_cli2[0][14]
 
                     Path(
-                        './PROCESSO DE CLIENTES/' + cidadeobra + '/'  + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + ano + '').mkdir(
+                        './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + ano + '/Documentos''').mkdir(
                         parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
@@ -1837,7 +1838,7 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('CONTRATO DE PRESTAÇÃO DE SERVIÇOS TÉCNICOS')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -2106,9 +2107,9 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Contrato ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Contrato ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
-                        if self.cbox_contrato.isChecked() == True:
+                        if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
                             document = Document()
 
@@ -2124,7 +2125,7 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('MEMORIAL DESCRITIVO')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -2287,7 +2288,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
 
                             paragraph = document.add_paragraph(
-                                '' + var_CidadeObra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
+                                '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2301,13 +2302,13 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'Proprietário:' + var_NomeCliente1 + '                                                Proprietário:' + var_NomeCliente2 + '')
+                                'Proprietário:' + nomecli1 + '                                                Proprietário:' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style19', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + var_CPFCliente1 + '                                                                        CPF:' + var_CPFCliente2 + '')
+                                'CPF:' + cpfcli1 + '                                                                        CPF:' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style20', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2337,15 +2338,16 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'ART' + var_ArtObra + '')
+                                'ART' + artobra + '')
                             paragraph.style = document.styles.add_style('style22.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + var_CidadeObra + '/' + ano + '/' + var_TipoObra + '/' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '/Memorial Descritivo ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # RRC sem lei
+                        if self.cbox_reqslei.isChecked() == True:
                             document = Document()
 
                             sections = document.sections
@@ -2360,7 +2362,7 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('EXMO SR. PREFEITO DO MUNICÍPIO DE HORTOLÂNDIA,')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -2375,7 +2377,7 @@ class Doc(QMainWindow, Doc):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
-                            runner = paragraph.add_run(' ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + ' ')
+                            runner = paragraph.add_run(' ' + nomecli1 + ' e ' + nomecli2 + ' ')
                             runner.bold = True
                             paragraph.add_run(
                                 'abaixo assinado vem mui respeitosamente, solicitar a aprovação do projeto para construção residencial familiar, no imóvel abaixo descrito, cuja documentação segue anexa.')
@@ -2388,7 +2390,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                '' + var_CidadeObra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.\n')
+                                '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.\n')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2402,13 +2404,13 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             paragraph = document.add_paragraph(
-                                '' + var_NomeCliente1 + '                                                           ' + var_NomeCliente2 + '')
+                                '' + nomecli1 + '                                                           ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + var_CPFCliente1 + '                                                              CPF: ' + var_CPFCliente2 + '')
+                                'CPF: ' + cpfcli1 + '                                                              CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2424,22 +2426,22 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
                             font.bold = True
 
-                            paragraph = document.add_paragraph('Nome:' + var_NomeCliente1 + '\n'
-                                                                                            'Endereço: ' + var_EndCliente1 + ' N°' + var_NCliente1 + '\n'
-                                                                                                                                                     'Loteamento:' + var_LoteObra + '\n'
-                                                                                                                                                                                    'CEP:' + var_CEPCliente1 + '\n'
-                                                                                                                                                                                                               'Cidade/Estado:' + var_CidadeCliente1 + '-' + var_EstadoCliente1 + '\n'
-                                                                                                                                                                                                                                                                                  'Telefone: ' + var_CelCliente1 + '')
+                            paragraph = document.add_paragraph('Nome:' + nomecli1 + '\n'
+                                                                                            'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
+                                                                                                                                                     'Loteamento:' + bairrocli1 + '\n'
+                                                                                                                                                                                    'CEP:' + cepcli1 + '\n'
+                                                                                                                                                                                                               'Cidade/Estado:' + cidadecli1 + '-' + estadocli1 + '\n'
+                                                                                                                                                                                                                                                                                  'Telefone: ' + celularcli1 + '')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
-                            paragraph = document.add_paragraph('Nome:' + var_NomeCliente2 + '\n'
-                                                                                            'Endereço: ' + var_EndCliente2 + ' N°' + var_NCliente2 + '\n'
-                                                                                                                                                     'Loteamento:' + var_LoteObra + '\n'
-                                                                                                                                                                                    'CEP:' + var_CEPCliente2 + '\n'
-                                                                                                                                                                                                               'Cidade/Estado:' + var_CidadeCliente2 + '-' + var_EstadoCliente2 + '\n'
-                                                                                                                                                                                                                                                                                  'Telefone: ' + var_CelCliente2 + '')
+                            paragraph = document.add_paragraph('Nome:' + nomecli2 + '\n'
+                                                                                            'Endereço: ' + endcli2 + ' N°' + numcli2 + '\n'
+                                                                                                                                                     'Loteamento:' + bairrocli2 + '\n'
+                                                                                                                                                                                    'CEP:' + cepcli2 + '\n'
+                                                                                                                                                                                                               'Cidade/Estado:' + cidadecli2 + '-' + estadocli2 + '\n'
+                                                                                                                                                                                                                                                                                  'Telefone: ' + celularcli2 + '')
                             paragraph.style = document.styles.add_style('style10.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2450,10 +2452,9 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
                             font.bold = True
 
-                            paragraph = document.add_paragraph('Endereço: ' + var_EndObra + ' nº ' + var_NObra +
-                                                               ') – LOTE N° ' + var_NObra + '\n'
-                                                                                            'Loteamento:' + var_LoteObra + '\n'
-                                                                                                                           'Quadra:' + var_QuadraObra + '')
+                            paragraph = document.add_paragraph('Endereço: ' + endobra + ' nº ' + numobra +
+                                                               '\nLOTE N° ' + loteobra + 'Loteamento:' + bairroobra + '\n'
+                                                                                                                           'Quadra:' + quadraobra + '')
                             paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2474,9 +2475,10 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + var_CidadeObra + '/' + ano + '/' + var_TipoObra + '/' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '/Requerimento sem Lei ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # RRC com lei
+                        if self.cbox_reqslei.isChecked() == True:
                             document = Document()
 
                             sections = document.sections
@@ -2491,7 +2493,7 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('EXMO SR. PREFEITO DO MUNICÍPIO DE HORTOLÂNDIA,')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -2513,7 +2515,7 @@ class Doc(QMainWindow, Doc):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
-                            runner = paragraph.add_run(' ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + ' ')
+                            runner = paragraph.add_run(' ' + nomecli1 + ' e ' + nomecli2 + ' ')
                             runner.bold = True
                             paragraph.add_run(
                                 'abaixo assinado vem mui respeitosamente, solicitar a aprovação do projeto para construção residencial familiar, no imóvel abaixo descrito, cuja documentação segue anexa.')
@@ -2526,7 +2528,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                '' + var_CidadeObra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.\n')
+                                '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.\n')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2540,13 +2542,13 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             paragraph = document.add_paragraph(
-                                '' + var_NomeCliente1 + '                                                           ' + var_NomeCliente2 + '')
+                                '' + nomecli1 + '                                                           ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + var_CPFCliente1 + '                                                              CPF: ' + var_CPFCliente2 + '')
+                                'CPF: ' + cpfcli1 + '                                                              CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2562,22 +2564,22 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
                             font.bold = True
 
-                            paragraph = document.add_paragraph('Nome:' + var_NomeCliente1 + '\n'
-                                                                                            'Endereço: ' + var_EndCliente1 + ' N°' + var_NCliente1 + '\n'
-                                                                                                                                                     'Loteamento:' + var_LoteObra + '\n'
-                                                                                                                                                                                    'CEP:' + var_CEPCliente1 + '\n'
-                                                                                                                                                                                                               'Cidade/Estado:' + var_CidadeCliente1 + '-' + var_EstadoCliente1 + '\n'
-                                                                                                                                                                                                                                                                                  'Telefone: ' + var_CelCliente1 + '')
+                            paragraph = document.add_paragraph('Nome:' + nomecli1 + '\n'
+                                                                                            'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
+                                                                                                                                                     'Loteamento:' + bairroobra + '\n'
+                                                                                                                                                                                    'CEP:' + cepcli1 + '\n'
+                                                                                                                                                                                                               'Cidade/Estado:' + cidadecli1 + '-' + estadocli1 + '\n'
+                                                                                                                                                                                                                                                                                  'Telefone: ' + celularcli1 + '')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
-                            paragraph = document.add_paragraph('Nome:' + var_NomeCliente2 + '\n'
-                                                                                            'Endereço: ' + var_EndCliente2 + ' N°' + var_NCliente2 + '\n'
-                                                                                                                                                     'Loteamento:' + var_LoteObra + '\n'
-                                                                                                                                                                                    'CEP:' + var_CEPCliente2 + '\n'
-                                                                                                                                                                                                               'Cidade/Estado:' + var_CidadeCliente2 + '-' + var_EstadoCliente2 + '\n'
-                                                                                                                                                                                                                                                                                  'Telefone: ' + var_CelCliente2 + '')
+                            paragraph = document.add_paragraph('Nome:' + nomecli1 + '\n'
+                                                                                            'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
+                                                                                                                                                     'Loteamento:' + bairroobra + '\n'
+                                                                                                                                                                                    'CEP:' + cepcli1 + '\n'
+                                                                                                                                                                                                               'Cidade/Estado:' + cidadecli1 + '-' + estadocli1 + '\n'
+                                                                                                                                                                                                                                                                                  'Telefone: ' + celularcli1 + '')
                             paragraph.style = document.styles.add_style('style10.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2588,10 +2590,9 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
                             font.bold = True
 
-                            paragraph = document.add_paragraph('Endereço: ' + var_EndObra + ' nº ' + var_NObra +
-                                                               ') – LOTE N° ' + var_NObra + '\n'
-                                                                                            'Loteamento:' + var_LoteObra + '\n'
-                                                                                                                           'Quadra:' + var_QuadraObra + '')
+                            paragraph = document.add_paragraph('Endereço: ' + endobra + ' nº ' + numobra +
+                                                               '\nLOTE N° ' + loteobra + 'Loteamento:' + loteobra + '\n'
+                                                                                                                           'Quadra:' + quadraobra + '')
                             paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2612,9 +2613,10 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + var_CidadeObra + '/' + ano + '/' + var_TipoObra + '/' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '/Requerimento com Lei ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # Procuração
+                        if self.cbox_procuracao.isChecked() == True:
                             document = Document()
 
                             sections = document.sections
@@ -2629,7 +2631,7 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('PROCURAÇÃO ')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -2649,9 +2651,9 @@ class Doc(QMainWindow, Doc):
                             runner = paragraph.add_run('I - OUTORGANTES:')
                             runner.bold = True
 
-                            paragraph.add_run('\nSr.(a) ' + var_NomeCliente1 + ' CPF: ' + var_CPFCliente1 + '')
+                            paragraph.add_run('\nSr.(a) ' + nomecli1 + ' CPF: ' + cpfcli1 + '')
 
-                            paragraph.add_run('\nSr.(a) ' + var_NomeCliente2 + ' CPF: ' + var_CPFCliente2 + '\n\n')
+                            paragraph.add_run('\nSr.(a) ' + nomecli2 + ' CPF: ' + cpfcli2 + '\n\n')
 
                             runner = paragraph.add_run('II – OUTORGADO: ')
                             runner.bold = True
@@ -2663,8 +2665,8 @@ class Doc(QMainWindow, Doc):
                             runner.bold = True
 
                             paragraph.add_run('\nO OUTORGANTE é proprietário e legítimo dono do imóvel, '
-                                              'Lote' + var_LoteObra + 'da Quadra ' + var_QuadraObra + ', localizado no endereço: '
-                                                                                                      '' + var_EndObra + ' nº ' + var_NObra + ' Loteamento: ' + var_BairroObra + '.\n\n')
+                                              'Lote' + loteobra + 'da Quadra ' + quadraobra + ', localizado no endereço: '
+                                                                                                      '' + endobra + ' nº ' + numobra + ' Loteamento: ' + bairroobra + '.\n\n')
 
                             runner = paragraph.add_run('Específicos para a prática de Ato Determinado. ')
                             runner.bold = True
@@ -2673,14 +2675,14 @@ class Doc(QMainWindow, Doc):
                                 '\n(X) Retirar projeto aprovado e Alvará de construção, referente ao imóvel acima. '
                                 '\nPor este instrumento particular de mandato e na melhor forma de direito, o OUTORGANTE acima qualificado, nomeia e constitui o PROCURADOR acima qualificado, a quem confere plenos poderes de representação perante a ')
 
-                            runner = paragraph.add_run('PREFEITURA MUNICIPAL DE ' + var_CidadeObra + ',')
+                            runner = paragraph.add_run('PREFEITURA MUNICIPAL DE ' + cidadeobra + ',')
                             runner.bold = True
 
                             paragraph.add_run(
                                 'especialmente para em seu nome e como se o próprio fosse praticar os atos especificados acima.')
 
                             paragraph = document.add_paragraph(
-                                '\n' + var_CidadeObra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
+                                '\n' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2702,13 +2704,13 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             paragraph = document.add_paragraph(
-                                '' + var_NomeCliente1 + '                                                           ' + var_NomeCliente2 + '')
+                                '' + nomecli1 + '                                                           ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + var_CPFCliente1 + '                                                              CPF: ' + var_CPFCliente2 + '')
+                                'CPF: ' + cpfcli1 + '                                                              CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2741,9 +2743,10 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + var_CidadeObra + '/' + ano + '/' + var_TipoObra + '/' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '/Procuração ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Procuração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # Declaração
+                        if self.cbox_declaracao.isChecked() == True:
                             document = Document()
 
                             sections = document.sections
@@ -2758,17 +2761,17 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo_branco.jpg", width=Cm(3.5), height=Cm(2.65))
+                            logo_run.add_picture("images/logo_branco.jpg", width=Cm(3.5), height=Cm(2.65))
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/Logo_Hortolandia.png", width=Cm(4.9), height=Cm(2.65))
+                            logo_run.add_picture("images/Logo_Hortolandia.png", width=Cm(4.9), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('ANEXO I')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -2790,7 +2793,7 @@ class Doc(QMainWindow, Doc):
                                                                ' que “Dispõe sobre controle ambiental para utilização'
                                                                ' de produtos e subprodutos de madeira de origem nativa'
                                                                ' em obras e serviços de Engenharia Civil no Município'
-                                                               ' de Hortolândia”, nós, ' + var_NomeCliente1 + ', (' + var_ProfissaoCliente1 + ') e ' + var_NomeCliente2 + ', (' + var_ProfissaoCliente2 + '),')
+                                                               ' de Hortolândia”, nós, ' + nomecli1 + ', (' + profissaocli1 + ') e ' + nomecli2 + ', (' + profissaocli2 + '),')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Times New Roman'
@@ -2801,7 +2804,7 @@ class Doc(QMainWindow, Doc):
                             runner.bold = True
 
                             paragraph.add_run(
-                                'localizada à ' + var_EndObra + ', nº ' + var_NObra + ' Lote ' + var_LoteObra + ', Quadra ' + var_QuadraObra + ', Loteamento ' + var_BairroObra + ',' \
+                                'localizada à ' + endobra + ', nº ' + numobra + ' Lote ' + loteobra + ', Quadra ' + quadraobra + ', Loteamento ' + bairroobra + ',' \
                                                                                                                                                                                   'cidade de Hortolândia-SP, DECLARAMOS estar ciente das disposições ' \
                                                                                                                                                                                   'constantes da Instrução Normativa nº 112, de 21 de agosto de 2006, ' \
                                                                                                                                                                                   'do Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais ' \
@@ -2855,7 +2858,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
 
                             paragraph = document.add_paragraph(
-                                '\n' + var_CidadeObra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
+                                '\n' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Times New Roman'
@@ -2870,7 +2873,7 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
-                            paragraph = document.add_paragraph('PROPRIETÁRIO ' + var_NomeCliente1 + '')
+                            paragraph = document.add_paragraph('PROPRIETÁRIO ' + nomecli1 + '')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Times New Roman'
@@ -2888,7 +2891,7 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
-                            paragraph = document.add_paragraph('PROPRIETÁRIO ' + var_NomeCliente2 + '')
+                            paragraph = document.add_paragraph('PROPRIETÁRIO ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style9.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Times New Roman'
@@ -2904,7 +2907,7 @@ class Doc(QMainWindow, Doc):
                                                                ' em obras e serviços de Engenharia Civil no Município '
                                                                'de Hortolândia”, eu, Rogério Rocha Soares, (Engenheiro Civil), '
                                                                'Autor do Projeto da obra localizada à '
-                                                               'Rua ' + var_EndObra + ', nº ' + var_NObra + ' Lote ' + var_LoteObra + ', Quadra ' + var_QuadraObra + ', Loteamento ' + var_BairroObra + ',cidade de Hortolândia-SP,'
+                                                               'Rua ' + endobra + ', nº ' + numobra + ' Lote ' + loteobra + ', Quadra ' + quadraobra + ', Loteamento ' + bairroobra + ',cidade de Hortolândia-SP,'
                                                                                                                                                                                                         ' DECLARO estar ciente das disposições constantes da Instrução Normativa'
                                                                                                                                                                                                         ' nº 112, de 21 de agosto de 2006, do Instituto Brasileiro '
                                                                                                                                                                                                         'do Meio Ambiente e dos Recursos Naturais Renováveis - IBAMA, e ')
@@ -2922,7 +2925,7 @@ class Doc(QMainWindow, Doc):
                                 'decorrentes de desmatamento autorizado ou de manejo florestal aprovado por órgão ambiental competente, integrante do Sistema Nacional do Meio Ambiente – SISNAMA, com autorização de transporte reconhecida pelo órgão ambiental competente, exigindo no ato da compra que as empresas que comercializem madeiras, forneçam o DOF (Documento de Origem Florestal), acompanhado de nota fiscal.')
 
                             paragraph = document.add_paragraph(
-                                '\n' + var_CidadeObra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
+                                '\n' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Times New Roman'
@@ -2949,9 +2952,10 @@ class Doc(QMainWindow, Doc):
                             # runner_word.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + var_CidadeObra + '/' + ano + '/' + var_TipoObra + '/' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '/Declaração ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Declaração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
+                        if self.cbox_memorialcontrucao.isChecked() == True:
                             document = Document()
 
                             sections = document.sections
@@ -2966,7 +2970,7 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('MEMORIAL DESCRITIVO PARA CONSTRUÇÃO')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -2991,32 +2995,32 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(9)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
 
-                            paragraph = document.add_paragraph('Local: ' + var_EndObra + '- N° ' + var_NObra + '')
+                            paragraph = document.add_paragraph('Local: ' + endobra + '- N° ' + numobra + '')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(9)
 
-                            paragraph = document.add_paragraph('Lote: ' + var_LoteObra + ' Quadra: ' + var_QuadraObra + '')
+                            paragraph = document.add_paragraph('Lote: ' + loteobra + ' Quadra: ' + quadraobra + '')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(9)
 
-                            paragraph = document.add_paragraph('Loteamento: ' + var_LoteObra + '')
+                            paragraph = document.add_paragraph('Loteamento: ' + bairroobra + '')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(9)
 
-                            paragraph = document.add_paragraph('Município: ' + var_CidadeObra + '/SP')
+                            paragraph = document.add_paragraph('Município: ' + cidadeobra + '/SP')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(9)
 
                             paragraph = document.add_paragraph(
-                                'Proprietário(s): ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '')
+                                'Proprietário(s): ' + nomecli1 + ' e ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -3164,7 +3168,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
 
                             paragraph = document.add_paragraph(
-                                '' + var_CidadeObra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
+                                '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
                             paragraph.style = document.styles.add_style('style27', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -3178,13 +3182,13 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'Proprietário: ' + var_NomeCliente1 + '                               Proprietário: ' + var_NomeCliente2 + '')
+                                'Proprietário: ' + nomecli1 + '                               Proprietário: ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style29', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + var_CPFCliente1 + '                                                        CPF:' + var_CPFCliente2 + '')
+                                'CPF:' + cpfcli1 + '                                                        CPF:' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style30', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -3220,9 +3224,10 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + var_CidadeObra + '/' + ano + '/' + var_TipoObra + '/' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '/Memorial Descritivo Para Construção ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
+                        if self.cbox_recibo.isChecked() == True:
                             document = Document()
 
                             sections = document.sections
@@ -3237,7 +3242,7 @@ class Doc(QMainWindow, Doc):
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("image/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
                             paragraph = document.add_paragraph('RECIBO')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
@@ -3248,11 +3253,11 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
                             paragraph = document.add_paragraph('Eu ROGÉRIO ROCHA SOARES engenheiro civil CREA: '
-                                                               '5070374192, recebi de ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + ', '
+                                                               '5070374192, recebi de ' + nomecli1 + ' e ' + nomecli2 + ', '
                                                                                                                                         'parte do pagamento para aprovação de projeto '
-                                                                                                                                        'arquitetônico a quantia de R$ ' + var_ValorParcelaContrato + ',00 (' + var_ValorParcelaContratoextenso +
+                                                                                                                                        'arquitetônico a quantia de R$ ' + valorparcobra + ',00 (' + num2words(valorparcobra.replace(",","."), lang='pt-br') +
                                                                '), de um total de '
-                                                               'R$ ' + var_ValorContrato + ',00 (' + var_ValorContratoextenso + ').')
+                                                               'R$ ' + valorobra + ',00 (' + num2words((valorobra).replace(",","."), lang='pt-br')  + ').')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.bold = True
@@ -3260,7 +3265,7 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(12)
 
                             paragraph = document.add_paragraph(
-                                '\n\n' + var_CidadeObra + ', ' + dia + ' / ' + mesescrito + ' / ' + ano + '.')
+                                '\n\n' + cidadeobra + ', ' + dia + ' / ' + mesescrito + ' / ' + ano + '.')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
@@ -3278,7 +3283,7 @@ class Doc(QMainWindow, Doc):
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
                             document.save(
-                                './PROCESSO DE CLIENTES/' + var_CidadeObra + '/' + ano + '/' + var_TipoObra + '/' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '/Recibo ' + var_NomeCliente1 + ' e ' + var_NomeCliente2 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + tipoobra + '/' + nomecli1 + ' e ' + nomecli2 +'/' + ano + '/Documentos/Recibo ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                     self.frame_popup.show()
                     self.lbl_popup.setText("DOCUMENTOS CRIADOS")
