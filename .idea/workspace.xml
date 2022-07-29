@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2164de09-8dd4-4af8-b7b5-56751ef1404e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/REGULARIZAÇÃO/Mauro Basso e Daniel Rodrigues de Castro/2022/Documentos/Contrato Mauro Basso e Daniel Rodrigues de Castro.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/edit_obra.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/edit_obra.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/make_doc.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/make_doc.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bd/banco.db" beforeDir="false" afterPath="$PROJECT_DIR$/bd/banco.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controle.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
