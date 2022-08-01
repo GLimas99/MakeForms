@@ -70,9 +70,9 @@ class Obra(QMainWindow, Obra):
         self.frame_popup.hide()
         self.btn_return.clicked.connect(self.volta)
         self.btn_search.clicked.connect(self.search)
-        self.btn_search_2.clicked.connect(self.load)
-        self.btn_submit_2.clicked.connect(self.add)
+        self.btn_add.clicked.connect(self.add)
         self.pushButton.clicked.connect(self.close)
+        self.btn_copy.clicked.connect(self.copy)
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -80,10 +80,10 @@ class Obra(QMainWindow, Obra):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(14)
+        self.tabWid_obra.setColumnCount(18)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 14):
+            for j in range(0, 18):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -95,20 +95,20 @@ class Obra(QMainWindow, Obra):
         menu.show()
         obra.close()
 
-    def load(self):
+    def copy(self):
+        idobra = self.txt_id.text()
+
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
-        # consulta = 'SELECT * FROM cliente'
-        cursor.execute('SELECT * FROM obra')
-        dados_lidos = cursor.fetchall()
-        self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(14)
+        consulta = 'SELECT * FROM obra  WHERE id LIKE ?'
+        cursor.execute(consulta, (idobra,))
 
-        for i in range(0, len(dados_lidos)):
-            for j in range(0, 14):
-                self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
-        banco.commit()
-        banco.close()
+
+        for linha in self.cursor.fetchall():
+            print(linha)
+
+        #banco.commit()
+        #banco.close()
 
     def add(self):
         obraend = self.txt_obraend.text()
@@ -163,7 +163,6 @@ class Cliente(QMainWindow, Cliente):
         self.frame_popup.hide()
         self.btn_return.clicked.connect(self.volta)
         self.btn_search.clicked.connect(self.search)
-        self.btn_search_2.clicked.connect(self.load)
         self.btn_submit_2.clicked.connect(self.cadcliente)
 
         banco = sqlite3.connect('./bd/banco.db')
@@ -183,21 +182,6 @@ class Cliente(QMainWindow, Cliente):
     def volta(self):
         menu.show()
         cliente.close()
-
-    def load(self):
-        banco = sqlite3.connect('./bd/banco.db')
-        cursor = banco.cursor()
-        # consulta = 'SELECT * FROM cliente'
-        cursor.execute('SELECT * FROM cliente')
-        dados_lidos = cursor.fetchall()
-        self.tabWid_cli.setRowCount(len(dados_lidos))
-        self.tabWid_cli.setColumnCount(15)
-
-        for i in range(0, len(dados_lidos)):
-            for j in range(0, 15):
-                self.tabWid_cli.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
-        banco.commit()
-        banco.close()
 
     def cadcliente(self):
         clinome = self.txt_clinome.text()

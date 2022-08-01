@@ -107,7 +107,7 @@ class Menu(object):
         self.lbl_welcome.setAlignment(QtCore.Qt.AlignCenter)
         self.lbl_welcome.setObjectName("lbl_welcome")
         self.btn_cadobra = QtWidgets.QPushButton(self.menu_area)
-        self.btn_cadobra.setGeometry(QtCore.QRect(80, 180, 280, 50))
+        self.btn_cadobra.setGeometry(QtCore.QRect(80, 240, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -130,7 +130,7 @@ class Menu(object):
 "}")
         self.btn_cadobra.setObjectName("btn_cadobra")
         self.btn_cliente = QtWidgets.QPushButton(self.menu_area)
-        self.btn_cliente.setGeometry(QtCore.QRect(80, 240, 280, 50))
+        self.btn_cliente.setGeometry(QtCore.QRect(80, 180, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -239,3 +239,13 @@ class Menu(object):
         self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
         self.lbl_lima.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 import file_rc_rc
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Menu()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Obra(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1000, 800)
+        MainWindow.resize(1039, 859)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
 "background-color: rgb(10, 10, 10);")
@@ -87,7 +87,7 @@ class Obra(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.editocli_area = QtWidgets.QFrame(self.content)
         self.editocli_area.setMinimumSize(QtCore.QSize(0, 0))
-        self.editocli_area.setMaximumSize(QtCore.QSize(950, 700))
+        self.editocli_area.setMaximumSize(QtCore.QSize(950, 800))
         self.editocli_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
 "border-radius: 10px")
         self.editocli_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -124,7 +124,7 @@ class Obra(object):
 "}")
         self.btn_return.setObjectName("btn_return")
         self.txt_obralote = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obralote.setGeometry(QtCore.QRect(510, 320, 211, 50))
+        self.txt_obralote.setGeometry(QtCore.QRect(510, 330, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -146,7 +146,7 @@ class Obra(object):
         self.txt_obralote.setMaxLength(32)
         self.txt_obralote.setObjectName("txt_obralote")
         self.txt_obraquarteirao = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraquarteirao.setGeometry(QtCore.QRect(510, 380, 211, 50))
+        self.txt_obraquarteirao.setGeometry(QtCore.QRect(510, 390, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -168,7 +168,7 @@ class Obra(object):
         self.txt_obraquarteirao.setMaxLength(32)
         self.txt_obraquarteirao.setObjectName("txt_obraquarteirao")
         self.txt_obranumero = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obranumero.setGeometry(QtCore.QRect(510, 260, 211, 50))
+        self.txt_obranumero.setGeometry(QtCore.QRect(510, 270, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -190,7 +190,7 @@ class Obra(object):
         self.txt_obranumero.setMaxLength(32)
         self.txt_obranumero.setObjectName("txt_obranumero")
         self.txt_id = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_id.setGeometry(QtCore.QRect(510, 80, 431, 50))
+        self.txt_id.setGeometry(QtCore.QRect(510, 90, 361, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -212,7 +212,7 @@ class Obra(object):
         self.txt_id.setMaxLength(64)
         self.txt_id.setObjectName("txt_id")
         self.txt_obrabairro = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obrabairro.setGeometry(QtCore.QRect(510, 200, 431, 50))
+        self.txt_obrabairro.setGeometry(QtCore.QRect(510, 210, 431, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -234,7 +234,7 @@ class Obra(object):
         self.txt_obrabairro.setMaxLength(64)
         self.txt_obrabairro.setObjectName("txt_obrabairro")
         self.txt_obracidade = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obracidade.setGeometry(QtCore.QRect(730, 260, 211, 50))
+        self.txt_obracidade.setGeometry(QtCore.QRect(730, 270, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -256,7 +256,7 @@ class Obra(object):
         self.txt_obracidade.setMaxLength(32)
         self.txt_obracidade.setObjectName("txt_obracidade")
         self.btn_edit = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_edit.setGeometry(QtCore.QRect(330, 630, 280, 50))
+        self.btn_edit.setGeometry(QtCore.QRect(330, 700, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -277,7 +277,7 @@ class Obra(object):
 "}")
         self.btn_edit.setObjectName("btn_edit")
         self.txt_obratipo = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obratipo.setGeometry(QtCore.QRect(730, 380, 211, 50))
+        self.txt_obratipo.setGeometry(QtCore.QRect(730, 390, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -299,7 +299,7 @@ class Obra(object):
         self.txt_obratipo.setMaxLength(32)
         self.txt_obratipo.setObjectName("txt_obratipo")
         self.txt_obraend = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraend.setGeometry(QtCore.QRect(510, 140, 431, 50))
+        self.txt_obraend.setGeometry(QtCore.QRect(510, 150, 431, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -321,7 +321,7 @@ class Obra(object):
         self.txt_obraend.setMaxLength(64)
         self.txt_obraend.setObjectName("txt_obraend")
         self.txt_obraart = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraart.setGeometry(QtCore.QRect(730, 440, 211, 50))
+        self.txt_obraart.setGeometry(QtCore.QRect(730, 450, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -343,7 +343,7 @@ class Obra(object):
         self.txt_obraart.setMaxLength(32)
         self.txt_obraart.setObjectName("txt_obraart")
         self.btn_delete = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_delete.setGeometry(QtCore.QRect(30, 630, 280, 50))
+        self.btn_delete.setGeometry(QtCore.QRect(30, 700, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -364,7 +364,7 @@ class Obra(object):
 "}")
         self.btn_delete.setObjectName("btn_delete")
         self.txt_obraquantparcela = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraquantparcela.setGeometry(QtCore.QRect(730, 500, 211, 50))
+        self.txt_obraquantparcela.setGeometry(QtCore.QRect(730, 510, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -386,7 +386,7 @@ class Obra(object):
         self.txt_obraquantparcela.setMaxLength(32)
         self.txt_obraquantparcela.setObjectName("txt_obraquantparcela")
         self.txt_obraquadra = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraquadra.setGeometry(QtCore.QRect(730, 320, 211, 50))
+        self.txt_obraquadra.setGeometry(QtCore.QRect(730, 330, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -408,7 +408,7 @@ class Obra(object):
         self.txt_obraquadra.setMaxLength(32)
         self.txt_obraquadra.setObjectName("txt_obraquadra")
         self.txt_obravalorparcela = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obravalorparcela.setGeometry(QtCore.QRect(510, 500, 211, 50))
+        self.txt_obravalorparcela.setGeometry(QtCore.QRect(510, 510, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -430,7 +430,7 @@ class Obra(object):
         self.txt_obravalorparcela.setMaxLength(32)
         self.txt_obravalorparcela.setObjectName("txt_obravalorparcela")
         self.tabWid_obra = QtWidgets.QTableWidget(self.editocli_area)
-        self.tabWid_obra.setGeometry(QtCore.QRect(10, 140, 491, 471))
+        self.tabWid_obra.setGeometry(QtCore.QRect(10, 150, 491, 471))
         self.tabWid_obra.setStyleSheet("QTableWidget{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
@@ -470,7 +470,7 @@ class Obra(object):
 "}\n"
 "")
         self.tabWid_obra.setObjectName("tabWid_obra")
-        self.tabWid_obra.setColumnCount(14)
+        self.tabWid_obra.setColumnCount(19)
         self.tabWid_obra.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_obra.setHorizontalHeaderItem(0, item)
@@ -500,8 +500,18 @@ class Obra(object):
         self.tabWid_obra.setHorizontalHeaderItem(12, item)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_obra.setHorizontalHeaderItem(13, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tabWid_obra.setHorizontalHeaderItem(14, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tabWid_obra.setHorizontalHeaderItem(15, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tabWid_obra.setHorizontalHeaderItem(16, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tabWid_obra.setHorizontalHeaderItem(17, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tabWid_obra.setHorizontalHeaderItem(18, item)
         self.txt_obravalorvisita = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obravalorvisita.setGeometry(QtCore.QRect(730, 560, 211, 50))
+        self.txt_obravalorvisita.setGeometry(QtCore.QRect(730, 570, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -523,7 +533,7 @@ class Obra(object):
         self.txt_obravalorvisita.setMaxLength(32)
         self.txt_obravalorvisita.setObjectName("txt_obravalorvisita")
         self.txt_obradatacontrato = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obradatacontrato.setGeometry(QtCore.QRect(510, 560, 211, 50))
+        self.txt_obradatacontrato.setGeometry(QtCore.QRect(510, 570, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -545,7 +555,7 @@ class Obra(object):
         self.txt_obradatacontrato.setMaxLength(32)
         self.txt_obradatacontrato.setObjectName("txt_obradatacontrato")
         self.txt_obraareaterreno = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraareaterreno.setGeometry(QtCore.QRect(510, 440, 211, 50))
+        self.txt_obraareaterreno.setGeometry(QtCore.QRect(510, 450, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -567,7 +577,7 @@ class Obra(object):
         self.txt_obraareaterreno.setMaxLength(32)
         self.txt_obraareaterreno.setObjectName("txt_obraareaterreno")
         self.txt_rua = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_rua.setGeometry(QtCore.QRect(10, 80, 391, 50))
+        self.txt_rua.setGeometry(QtCore.QRect(10, 90, 431, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -588,13 +598,13 @@ class Obra(object):
 "}")
         self.txt_rua.setMaxLength(32)
         self.txt_rua.setObjectName("txt_rua")
-        self.btn_submit_2 = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_submit_2.setGeometry(QtCore.QRect(630, 630, 280, 50))
+        self.btn_add = QtWidgets.QPushButton(self.editocli_area)
+        self.btn_add.setGeometry(QtCore.QRect(630, 700, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.btn_submit_2.setFont(font)
-        self.btn_submit_2.setStyleSheet("QPushButton{\n"
+        self.btn_add.setFont(font)
+        self.btn_add.setStyleSheet("QPushButton{\n"
 "    background-color:rgb(50, 50, 50);\n"
 "    border:2px solid rgb(60, 60, 60);\n"
 "    border-radius:5px;\n"
@@ -608,9 +618,121 @@ class Obra(object):
 "    border: 2px solid rgb(255, 165, 24);\n"
 "    color: rgb(35, 35, 35);\n"
 "}")
-        self.btn_submit_2.setObjectName("btn_submit_2")
+        self.btn_add.setObjectName("btn_add")
+        self.btn_copy = QtWidgets.QPushButton(self.editocli_area)
+        self.btn_copy.setGeometry(QtCore.QRect(880, 90, 61, 50))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_copy.setFont(font)
+        self.btn_copy.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"    font: 18pt ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_copy.setObjectName("btn_copy")
+        self.txt_idcli3 = QtWidgets.QLineEdit(self.editocli_area)
+        self.txt_idcli3.setGeometry(QtCore.QRect(510, 630, 211, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_idcli3.setFont(font)
+        self.txt_idcli3.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_idcli3.setMaxLength(32)
+        self.txt_idcli3.setObjectName("txt_idcli3")
+        self.txt_idcli4 = QtWidgets.QLineEdit(self.editocli_area)
+        self.txt_idcli4.setGeometry(QtCore.QRect(730, 630, 211, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_idcli4.setFont(font)
+        self.txt_idcli4.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_idcli4.setMaxLength(32)
+        self.txt_idcli4.setObjectName("txt_idcli4")
+        self.txt_idcli2 = QtWidgets.QLineEdit(self.editocli_area)
+        self.txt_idcli2.setGeometry(QtCore.QRect(290, 630, 211, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_idcli2.setFont(font)
+        self.txt_idcli2.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_idcli2.setMaxLength(32)
+        self.txt_idcli2.setObjectName("txt_idcli2")
+        self.txt_idcli1 = QtWidgets.QLineEdit(self.editocli_area)
+        self.txt_idcli1.setGeometry(QtCore.QRect(70, 630, 211, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_idcli1.setFont(font)
+        self.txt_idcli1.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_idcli1.setMaxLength(32)
+        self.txt_idcli1.setObjectName("txt_idcli1")
         self.btn_search = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_search.setGeometry(QtCore.QRect(410, 80, 41, 50))
+        self.btn_search.setGeometry(QtCore.QRect(450, 90, 51, 50))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -633,30 +755,6 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_search.setObjectName("btn_search")
-        self.btn_search_2 = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_search_2.setGeometry(QtCore.QRect(460, 80, 41, 50))
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.btn_search_2.setFont(font)
-        self.btn_search_2.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"    font: 18pt ;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_search_2.setObjectName("btn_search_2")
         self.horizontalLayout.addWidget(self.editocli_area)
         self.verticalLayout.addWidget(self.content)
         self.bottom = QtWidgets.QFrame(self.centralwidget)
@@ -710,36 +808,60 @@ class Obra(object):
         item = self.tabWid_obra.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "ENDEREÇO"))
         item = self.tabWid_obra.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "NUMERO"))
+        item.setText(_translate("MainWindow", "BAIRRO"))
         item = self.tabWid_obra.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "CIDADE"))
+        item.setText(_translate("MainWindow", "NUMERO"))
         item = self.tabWid_obra.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "LOTE"))
+        item.setText(_translate("MainWindow", "CIDADE"))
         item = self.tabWid_obra.horizontalHeaderItem(5)
-        item.setText(_translate("MainWindow", "QUADRA"))
+        item.setText(_translate("MainWindow", "LOTE"))
         item = self.tabWid_obra.horizontalHeaderItem(6)
-        item.setText(_translate("MainWindow", "QUARTEIRÃO"))
+        item.setText(_translate("MainWindow", "QUADRA"))
         item = self.tabWid_obra.horizontalHeaderItem(7)
-        item.setText(_translate("MainWindow", "TIPO"))
+        item.setText(_translate("MainWindow", "QUARTEIRÃO"))
         item = self.tabWid_obra.horizontalHeaderItem(8)
-        item.setText(_translate("MainWindow", "AREA"))
+        item.setText(_translate("MainWindow", "TIPO"))
         item = self.tabWid_obra.horizontalHeaderItem(9)
-        item.setText(_translate("MainWindow", "ART"))
+        item.setText(_translate("MainWindow", "AREA"))
         item = self.tabWid_obra.horizontalHeaderItem(10)
-        item.setText(_translate("MainWindow", "VALOR PARCELA"))
+        item.setText(_translate("MainWindow", "ART"))
         item = self.tabWid_obra.horizontalHeaderItem(11)
-        item.setText(_translate("MainWindow", "QUANT PARCELA"))
+        item.setText(_translate("MainWindow", "VALOR PARCELA"))
         item = self.tabWid_obra.horizontalHeaderItem(12)
-        item.setText(_translate("MainWindow", "DATA CONTRATO"))
+        item.setText(_translate("MainWindow", "QUANT PARCELA"))
         item = self.tabWid_obra.horizontalHeaderItem(13)
+        item.setText(_translate("MainWindow", "DATA CONTRATO"))
+        item = self.tabWid_obra.horizontalHeaderItem(14)
         item.setText(_translate("MainWindow", "VALOR VISITA"))
+        item = self.tabWid_obra.horizontalHeaderItem(15)
+        item.setText(_translate("MainWindow", "ID CLIENTE 1"))
+        item = self.tabWid_obra.horizontalHeaderItem(16)
+        item.setText(_translate("MainWindow", "ID CLIENTE 2"))
+        item = self.tabWid_obra.horizontalHeaderItem(17)
+        item.setText(_translate("MainWindow", "ID CLIENTE 3"))
+        item = self.tabWid_obra.horizontalHeaderItem(18)
+        item.setText(_translate("MainWindow", "ID CLIENTE 4"))
         self.txt_obravalorvisita.setPlaceholderText(_translate("MainWindow", "VALOR VISITA TÉC."))
         self.txt_obradatacontrato.setPlaceholderText(_translate("MainWindow", "DATA DO CONTRATO"))
         self.txt_obraareaterreno.setPlaceholderText(_translate("MainWindow", "AREA DO TERRENO"))
         self.txt_rua.setPlaceholderText(_translate("MainWindow", "RUA DO TERRENO"))
-        self.btn_submit_2.setText(_translate("MainWindow", "ADD"))
+        self.btn_add.setText(_translate("MainWindow", "ADD"))
+        self.btn_copy.setText(_translate("MainWindow", "✍"))
+        self.txt_idcli3.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 3"))
+        self.txt_idcli4.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 4"))
+        self.txt_idcli2.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 2"))
+        self.txt_idcli1.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 1"))
         self.btn_search.setText(_translate("MainWindow", "⌕"))
-        self.btn_search_2.setText(_translate("MainWindow", "⟳"))
         self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
         self.lbl_created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 import file_rc_rc
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Obra()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
