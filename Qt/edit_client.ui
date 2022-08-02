@@ -794,7 +794,7 @@ QLineEdit:focus{
            <string>ESTADO</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="txt_obranumero_7">
+         <widget class="QLineEdit" name="txt_clicelular">
           <property name="geometry">
            <rect>
             <x>510</x>
