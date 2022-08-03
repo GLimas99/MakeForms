@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Cadastro Cliente</string>
   </property>
+  <property name="windowOpacity">
+   <double>0.000000000000000</double>
+  </property>
   <property name="styleSheet">
    <string notr="true">color:rgb(200, 200, 255);
 background-color: rgb(10, 10, 10);</string>

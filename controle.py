@@ -4,6 +4,7 @@ from novo.obra import *
 from novo.client import *
 from novo.make_doc import *
 from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5 import QtWidgets
 import sqlite3
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
@@ -52,16 +53,21 @@ class Menu(QMainWindow, Menu):
         self.btn_makedoc.clicked.connect(self.abrirdoc)
 
     def abriobra(self):
-        obra.show()
-        menu.close()
+        obra = Obra()
+        widget.addWidget(obra)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def abricliente(self):
-        cliente.show()
-        menu.close()
+        cliente = Cliente()
+        widget.addWidget(cliente)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+        #cliente.showMaximized()
+        #menu.close()
 
     def abrirdoc(self):
-        doc.show()
-        menu.close()
+        doc = Doc()
+        widget.addWidget(doc)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
 class Obra(QMainWindow, Obra):
     def __init__(self, parent=None):
@@ -94,8 +100,9 @@ class Obra(QMainWindow, Obra):
         self.frame_popup.hide()
 
     def volta(self):
-        menu.show()
-        obra.close()
+        menu = Menu()
+        widget.addWidget(menu)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def copy(self):
         idobra = self.txt_id.text()
@@ -316,8 +323,9 @@ class Cliente(QMainWindow, Cliente):
         banco.close()
 
     def volta(self):
-        menu.show()
-        cliente.close()
+        menu = Menu()
+        widget.addWidget(menu)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def copy(self):
         idcli = self.txt_id.text()
@@ -533,9 +541,9 @@ class Doc(QMainWindow, Doc):
         self.frame_popup.hide()
 
     def volta(self):
-        menu.show()
-        doc.close()
-        doc.hide()
+        menu = Menu()
+        widget.addWidget(menu)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def searchobra(self):
         name = self.txt_searchrua.text().lower()
@@ -3562,9 +3570,13 @@ class Doc(QMainWindow, Doc):
 
 if __name__ == '__main__':
     qt = QApplication(sys.argv)
+    widget = QtWidgets.QStackedWidget()
     menu = Menu()
-    obra = Obra()
-    cliente = Cliente()
-    doc = Doc()
-    menu.show()
+    widget.addWidget(menu)
+    #widget.setFixedHeight(870)
+    #widget.setFixedWidth(1039)
+    widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+    widget.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
+    widget.show()
+    #menu.showMaximized()
     qt.exec_()

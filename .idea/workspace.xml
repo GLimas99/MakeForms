@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2164de09-8dd4-4af8-b7b5-56751ef1404e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento sem Lei_Mauro Basso.docx" beforeDir="false" afterPath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento sem Lei_Mauro Basso.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/~$querimento sem Lei_Mauro Basso.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/cadastro_cliente.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/cadastro_cliente.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Qt/edit_client.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/edit_client.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/edit_obra.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/edit_obra.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/login.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Qt/make_doc.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/make_doc.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bd/banco.db" beforeDir="false" afterPath="$PROJECT_DIR$/bd/banco.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/make_user.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/make_user.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/menu.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/menu.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controle.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ROGER 1/Documents/GitHub/MakeForms&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.controle">
+  <component name="RunManager" selected="Python.teste">
     <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MakeForms" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.teste" />
         <item itemvalue="Python.controle" />
+        <item itemvalue="Python.menu" />
         <item itemvalue="Python.obra" />
         <item itemvalue="Python.client" />
-        <item itemvalue="Python.menu" />
-        <item itemvalue="Python.teste" />
       </list>
     </recent_temporary>
   </component>

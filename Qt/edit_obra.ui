@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1039</width>
-    <height>859</height>
+    <height>888</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -27,7 +27,7 @@ background-color: rgb(10, 10, 10);</string>
    <property name="minimumSize">
     <size>
      <width>1000</width>
-     <height>800</height>
+     <height>870</height>
     </size>
    </property>
    <property name="font">
@@ -186,13 +186,13 @@ QPushButton:pressed{
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>0</height>
+           <height>765</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>950</width>
-           <height>800</height>
+           <height>765</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -208,7 +208,7 @@ border-radius: 10px</string>
          <widget class="QFrame" name="logo">
           <property name="geometry">
            <rect>
-            <x>410</x>
+            <x>360</x>
             <y>0</y>
             <width>211</width>
             <height>90</height>
