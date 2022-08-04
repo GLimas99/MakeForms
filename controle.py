@@ -1,4 +1,5 @@
 import sys
+from novo.login import *
 from novo.menu import *
 from novo.obra import *
 from novo.client import *
@@ -42,6 +43,42 @@ elif mes == '11':
     mesescrito = 'novembro'
 elif mes == '12':
     mesescrito = 'dezembro'
+
+class Login(QMainWindow, Login):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        super().setupUi(self)
+        self.frame_error.hide()
+        self.btn_conect.clicked.connect(self.abrimenu)
+
+    def abrimenu(self):
+        user_login = self.txt_user.text()
+        password_login = self.txt_password.text()
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        try:
+            consulta = 'SELECT password FROM user WHERE username = ?'
+            cursor.execute(consulta, (user_login,))
+            senha_bd = cursor.fetchall()
+            banco.close()
+
+            if password_login == senha_bd[0][0]:
+                menu = Menu()
+                widget.addWidget(menu)
+                widget.setCurrentIndex(widget.currentIndex() + 1)
+            else:
+                self.frame_error.show()
+                self.lbl_error.setText("SENHA INCORRETA")
+                self.frame_error.setStyleSheet("background-color: rgb(255, 11, 15);\n"
+                                               "border-radius:5px;")
+                self.lbl_error.setStyleSheet("color: rgb(200, 200, 255)")
+        except:
+            self.frame_error.show()
+            self.lbl_error.setText("USER INCORRETO")
+            self.frame_error.setStyleSheet("background-color: rgb(255, 11, 15);\n"
+                                           "border-radius:5px;")
+            self.lbl_error.setStyleSheet("color: rgb(200, 200, 255)")
 
 class Menu(QMainWindow, Menu):
     def __init__(self, parent=None):
@@ -1172,124 +1209,161 @@ class Doc(QMainWindow, Doc):
 
                             sections = document.sections
                             for section in sections:
-                                section.top_margin = Cm(-4.5)
-                                section.bottom_margin = Cm(2)
-                                section.left_margin = Cm(2.5)
-                                section.right_margin = Cm(1.75)
+                                section.top_margin = Cm(1)
+                                section.bottom_margin = Cm(1)
+                                section.left_margin = Cm(3)
+                                section.right_margin = Cm(1)
 
                             section = document.sections[0]
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
                             logo_run = logo.add_run()
-                            logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
+                            logo_run.add_picture("images/logo.png", width=Cm(1.48), height=Cm(1.48))
 
-                            paragraph = document.add_paragraph('EXMO SR. PREFEITO DO MUNICÍPIO DE HORTOLÂNDIA,')
+                            paragraph = document.add_paragraph('Ao'
+                                                               '\nExcelentíssimo Senhor Prefeito Municipal,')
                             paragraph.style = document.styles.add_style('style', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
-                            font.bold = True
-                            font.name = 'Arial'
-                            font.size = Pt(16)
-                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-
-                            paragraph = document.add_paragraph('DE ACORDO COM A LEI Nª3.491/2018')
-                            paragraph.style = document.styles.add_style('style1', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-                            font.size = Pt(11)
-                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-
-                            paragraph = document.add_paragraph('\nEu')
-                            paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
+                            font.size = Pt(10)
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
-                            runner = paragraph.add_run(' ' + nomecli1 + ' ')
-                            runner.bold = True
-                            paragraph.add_run(
-                                'abaixo assinado vem mui respeitosamente, solicitar a aprovação do projeto para construção residencial familiar, no imóvel abaixo descrito, cuja documentação segue anexa.')
 
                             paragraph = document.add_paragraph(
-                                '                                                                         Nestes Termos,\n'
-                                '                                                                         Pede Deferimento.')
-                            paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
+                                '                    Venho respeitosamente à presença de Vossa Excelência requerer, por meio do representante legal que em conjunto este subscreve, que se digne em providenciar por meio do órgão competente o que segue:')
                             font = paragraph.style.font
+                            font.size = Pt(10)
                             font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
 
                             paragraph = document.add_paragraph(
-                                '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
-                            paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
+                                '(   ) PRED - Desdobro de lote 	(   ) PRED - Regularização de edificação')
                             font = paragraph.style.font
+                            font.size = Pt(10)
+                            font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+
+                            # add grid table
+
+                            table = document.add_table(rows=3, cols=1, style='Table Grid')
+                            table.left_margin = Cm(30.4)
+                            row = table.rows[0]
+
+                            tabela = 'Dados do requerente (titular do lote ou da edificação)'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+                            tabela_formatada.bold = True
+
+                            tabela = '\nRazão social/nome: '+nomecli1+''\
+                                     '\nCNPJ/CPF nº: '+cpfcli1+'' \
+                                     '\nE-mail*: '+emailcli1+'' \
+                                     '\nTelefone para contato: '+celularcli1+''
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+
+                            tabela = '\n*as notificações sobre este processo serão enviadas por e-mail. Favor atentar-se a isso no momento do preenchimento.'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+                            tabela_formatada.bold = True
+
+                            row = table.rows[1]
+
+                            tabela = 'Dados do imóvel:'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+                            tabela_formatada.bold = True
+
+                            tabela = '\nLote/Gleba/Quinhão nº: '+loteobra+'' \
+                                     '\nQuadra: '+quadraobra+'' \
+                                     '\nLoteamento: '+bairroobra+''\
+                                     '\nInscrição Imobiliária: _______________________________________' \
+                                     '\nEndereço: '+endobra+'' \
+                                     '\nCEP: '+cepcli1+''
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+
+                            row = table.rows[2]
+
+                            tabela = 'Dados do Responsável Técnico pelo projeto'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+                            tabela_formatada.bold = True
+
+                            tabela = '\nNome completo: ___________________________________________' \
+                                     '\nRegistro profissional: _______________ Órgão:__________________' \
+                                     '\nEstá registrado no CPHO¹?  (   ) sim     (   ) não' \
+                                     '\nNº da Inscrição Mobiliária: ___________________________________' \
+                                     '\nE-mail²: __________________________________________________' \
+                                     '\nTelefone para contato: ______________________________________' \
+                                     '\n¹CPHO - Cadastro de Profissionais Habilitados junto aos órgãos da Prefeitura Municipal de Hortolândia.'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+
+                            tabela = '\n²as notificações sobre este processo serão enviadas por e-mail. Favor atentar-se a isso no momento do preenchimento.'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(10)
+                            tabela_formatada.bold = True
+
+                            paragraph = document.add_paragraph(
+                                '\n(  ) Declaro que os documentos, declarações e demais elementos submetidos na instrução deste requerimento são verdadeiros e que tenho ciência de que a falsidade de qualquer informação prestada acarreta automaticamente em crime de falsidade ideológica na forma do art. 299 do Código Penal Brasileiro.')
+                            font = paragraph.style.font
+                            font.size = Pt(10)
+                            font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
+
+                            paragraph = document.add_paragraph(
+                                '(  ) Declaro ter ciência de que, caso meu pedido não seja instruído nos termos que determina a legislação vigente, deverei regularizá-lo no prazo de 30 (trinta) dias corridos, sob pena de arquivamento e indeferimento deste processo.')
+                            font = paragraph.style.font
+                            font.size = Pt(10)
+                            font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
+
+                            paragraph = document.add_paragraph(
+                                '(  ) Declaro ter ciência do prazo de 180 (cento e oitenta) dias corridos, contados da entrega da planta aprovada, para o registro dos desdobros e das edificações junto ao Cartório de Registro de Imóveis competente.')
+                            font = paragraph.style.font
+                            font.size = Pt(10)
+                            font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+
+                            paragraph = document.add_paragraph('        	Nestes termos,')
+                            font = paragraph.style.font
+                            font.size = Pt(10)
+                            font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.space_after = Cm(0)
+
+                            paragraph = document.add_paragraph('        	Peço Deferimento.')
+                            font = paragraph.style.font
+                            font.size = Pt(10)
+                            font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+
+                            paragraph = document.add_paragraph('Hortolândia, '+dia+' de '+mesescrito+' de '+ano+'. ')
+                            font = paragraph.style.font
+                            font.size = Pt(10)
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
-                            paragraph = document.add_paragraph(
-                                '_________________________________')
-                            paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
+                            paragraph = document.add_paragraph('\n\n____________________________________________ '
+                                                               '\nProprietário'
+                                                               '\n\n\n____________________________________________'
+                                                               '\nResponsável técnico')
                             font = paragraph.style.font
+                            font.size = Pt(10)
                             font.name = 'Arial'
-                            font.bold = True
-
-                            paragraph = document.add_paragraph('' + nomecli1 + '')
-                            paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-
-                            paragraph = document.add_paragraph(
-                                'CPF:' + cpfcli1 + '')
-                            paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-
-                            paragraph = document.add_paragraph('Dados Complementares:')
-                            paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-
-                            paragraph = document.add_paragraph('Do Proprietário')
-                            paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-                            font.bold = True
-
-                            paragraph = document.add_paragraph('Nome:' + nomecli1 + '\n'
-                                                                                            'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
-                                                                                                                                                     'Loteamento:' + bairrocli1 + '\n'
-                                                                                                                                                                                    'CEP:' + cepcli1 + '\n'
-                                                                                                                                                                                                               'Cidade/Estado:' + cidadeobra + '-' + estadocli1 + '\n'
-                                                                                                                                                                                                                                                                                  'Telefone: ' + celularcli1 + '')
-                            paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-
-                            paragraph = document.add_paragraph('Da Obra')
-                            paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-                            font.bold = True
-
-                            paragraph = document.add_paragraph('Endereço: ' + endobra + ' nº ' + numobra +
-                                                               'LOTE N° ' + loteobra + '\n'
-                                                                                            'Loteamento:' + bairroobra + '\n'
-                                                                                                                           'Quadra:' + quadraobra + '')
-                            paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-
-                            paragraph = document.add_paragraph('Do Responsável Técnico')
-                            paragraph.style = document.styles.add_style('style13', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
-                            font.bold = True
-
-                            paragraph = document.add_paragraph('Nome: Rogério Rocha Soares\n'
-                                                               'CPF: 183.125.858-77\n'
-                                                               'Celular: (19) 982009858\n'
-                                                               'Inscrição SMPUGE: 1036/18\n'
-                                                               'E-mail: rocha.soares@hotmail.com\n')
-                            paragraph.style = document.styles.add_style('style14', WD_STYLE_TYPE.PARAGRAPH)
-                            font = paragraph.style.font
-                            font.name = 'Arial'
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             document.save(
                                 './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento com Lei_' + nomecli1 + '.docx')
@@ -3571,8 +3645,8 @@ class Doc(QMainWindow, Doc):
 if __name__ == '__main__':
     qt = QApplication(sys.argv)
     widget = QtWidgets.QStackedWidget()
-    menu = Menu()
-    widget.addWidget(menu)
+    login = Login()
+    widget.addWidget(login)
     #widget.setFixedHeight(870)
     #widget.setFixedWidth(1039)
     widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
