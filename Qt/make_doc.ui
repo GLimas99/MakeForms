@@ -795,6 +795,11 @@ QTableWidget QTableCornerButton::section {
           </column>
           <column>
            <property name="text">
+            <string>INSC. IMOB.</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
             <string>ID CLIENTE 1</string>
            </property>
           </column>

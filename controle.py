@@ -52,21 +52,41 @@ class Login(QMainWindow, Login):
         self.btn_conect.clicked.connect(self.abrimenu)
 
     def abrimenu(self):
+        global user_login
         user_login = self.txt_user.text()
         password_login = self.txt_password.text()
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
         try:
-            consulta = 'SELECT password FROM user WHERE username = ?'
+            consulta = 'SELECT * FROM user WHERE username = ?'
             cursor.execute(consulta, (user_login,))
-            senha_bd = cursor.fetchall()
+            user_bd = cursor.fetchall()
+            global username_log
+            username_log = user_bd[0][1]
+            global email_log
+            email_log = user_bd[0][2]
+            global psword_log
+            psword_log = user_bd[0][2]
+            global name_log
+            name_log = user_bd[0][4]
+            global cpf_log
+            cpf_log = user_bd[0][5]
+            global cel_log
+            cel_log = user_bd[0][6]
+            global smpuge_log
+            smpuge_log = user_bd[0][7]
+            global crea_log
+            crea_log = user_bd[0][8]
+            global orgao_log
+            orgao_log = user_bd[0][9]
             banco.close()
 
-            if password_login == senha_bd[0][0]:
+            if password_login == user_bd[0][3]:
                 menu = Menu()
                 widget.addWidget(menu)
                 widget.setCurrentIndex(widget.currentIndex() + 1)
+
             else:
                 self.frame_error.show()
                 self.lbl_error.setText("SENHA INCORRETA")
@@ -88,6 +108,8 @@ class Menu(QMainWindow, Menu):
         self.btn_cadobra.clicked.connect(self.abriobra)
         self.btn_cliente.clicked.connect(self.abricliente)
         self.btn_makedoc.clicked.connect(self.abrirdoc)
+        self.lbl_welcome.setText("Bem vindo "+username_log+"!")
+
 
     def abriobra(self):
         obra = Obra()
@@ -98,8 +120,6 @@ class Menu(QMainWindow, Menu):
         cliente = Cliente()
         widget.addWidget(cliente)
         widget.setCurrentIndex(widget.currentIndex()+1)
-        #cliente.showMaximized()
-        #menu.close()
 
     def abrirdoc(self):
         doc = Doc()
@@ -125,10 +145,10 @@ class Obra(QMainWindow, Obra):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(18)
+        self.tabWid_obra.setColumnCount(19)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 18):
+            for j in range(0, 19):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -165,10 +185,11 @@ class Obra(QMainWindow, Obra):
         self.txt_obraquantparcela.setText(dados_lidos[0][12])
         self.txt_obradatacontrato.setText(dados_lidos[0][13])
         self.txt_obravalorvisita.setText(dados_lidos[0][14])
-        self.txt_idcli1.setText(dados_lidos[0][15])
-        self.txt_idcli2.setText(dados_lidos[0][16])
-        self.txt_idcli3.setText(dados_lidos[0][17])
-        self.txt_idcli4.setText(dados_lidos[0][18])
+        self.txt_obravalorvisita_2.setText(dados_lidos[0][15])
+        self.txt_idcli1.setText(dados_lidos[0][16])
+        self.txt_idcli2.setText(dados_lidos[0][17])
+        self.txt_idcli3.setText(dados_lidos[0][18])
+        self.txt_idcli4.setText(dados_lidos[0][19])
         banco.commit()
         banco.close()
 
@@ -195,6 +216,7 @@ class Obra(QMainWindow, Obra):
         self.txt_obraquantparcela.setText(None)
         self.txt_obradatacontrato.setText(None)
         self.txt_obravalorvisita.setText(None)
+        self.txt_obravalorvisita_2.setText(None)
         self.txt_idcli1.setText(None)
         self.txt_idcli2.setText(None)
         self.txt_idcli3.setText(None)
@@ -203,10 +225,10 @@ class Obra(QMainWindow, Obra):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(18)
+        self.tabWid_obra.setColumnCount(19)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 18):
+            for j in range(0, 19):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -227,6 +249,7 @@ class Obra(QMainWindow, Obra):
         obraquantparc = self.txt_obraquantparcela.text()
         obradatacont = self.txt_obradatacontrato.text()
         obravalorvisit = self.txt_obravalorvisita.text()
+        obrainscmob = self.txt_obravalorvisita_2.text()
         obraidcli1 = self.txt_idcli1.text()
         obraidcli2 = self.txt_idcli2.text()
         obraidcli3 = self.txt_idcli3.text()
@@ -234,8 +257,8 @@ class Obra(QMainWindow, Obra):
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
-        consulta = 'UPDATE OR IGNORE obra SET end=?, bairro=?, num=?, cidade=?, lote=?, quadra=?, quarteirao=?, tipo=?, area=?, art=?, valorparc=?, quantparc=?, datacontrato=?, valorvisita=?, idcli1=?, idcli2=?, idcli3=?, idcli4=? WHERE id=?'
-        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obraidcli1, obraidcli2, obraidcli3, obraidcli4, idobra))
+        consulta = 'UPDATE OR IGNORE obra SET end=?, bairro=?, num=?, cidade=?, lote=?, quadra=?, quarteirao=?, tipo=?, area=?, art=?, valorparc=?, quantparc=?, datacontrato=?, valorvisita=?, inscimob=?, idcli1=?, idcli2=?, idcli3=?, idcli4=? WHERE id=?'
+        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraidcli1, obraidcli2, obraidcli3, obraidcli4, idobra))
 
         self.txt_id.setText(None)
         self.txt_obraend.setText(None)
@@ -252,6 +275,7 @@ class Obra(QMainWindow, Obra):
         self.txt_obraquantparcela.setText(None)
         self.txt_obradatacontrato.setText(None)
         self.txt_obravalorvisita.setText(None)
+        self.txt_obravalorvisita_2.setText(None)
         self.txt_idcli1.setText(None)
         self.txt_idcli2.setText(None)
         self.txt_idcli3.setText(None)
@@ -260,10 +284,10 @@ class Obra(QMainWindow, Obra):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(18)
+        self.tabWid_obra.setColumnCount(19)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 18):
+            for j in range(0, 19):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -284,6 +308,7 @@ class Obra(QMainWindow, Obra):
         obraquantparc = self.txt_obraquantparcela.text()
         obradatacont = self.txt_obradatacontrato.text()
         obravalorvisit = self.txt_obravalorvisita.text()
+        obrainscmob = self.txt_obravalorvisita_2.text()
         obraidcli1 = self.txt_idcli1.text()
         obraidcli2 = self.txt_idcli2.text()
         obraidcli3 = self.txt_idcli3.text()
@@ -291,8 +316,8 @@ class Obra(QMainWindow, Obra):
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
-        consulta = 'INSERT OR IGNORE INTO obra (end, bairro, num, cidade, lote, quadra, quarteirao, tipo, area, art, valorparc, quantparc, datacontrato, valorvisita, idcli1, idcli2, idcli3, idcli4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
-        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obraidcli1, obraidcli2, obraidcli3, obraidcli4))
+        consulta = 'INSERT OR IGNORE INTO obra (end, bairro, num, cidade, lote, quadra, quarteirao, tipo, area, art, valorparc, quantparc, datacontrato, valorvisita, inscimob, idcli1, idcli2, idcli3, idcli4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraidcli1, obraidcli2, obraidcli3, obraidcli4))
 
         self.txt_id.setText(None)
         self.txt_obraend.setText(None)
@@ -309,6 +334,7 @@ class Obra(QMainWindow, Obra):
         self.txt_obraquantparcela.setText(None)
         self.txt_obradatacontrato.setText(None)
         self.txt_obravalorvisita.setText(None)
+        self.txt_obravalorvisita_2.setText(None)
         self.txt_idcli1.setText(None)
         self.txt_idcli2.setText(None)
         self.txt_idcli3.setText(None)
@@ -317,10 +343,10 @@ class Obra(QMainWindow, Obra):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(18)
+        self.tabWid_obra.setColumnCount(19)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 18):
+            for j in range(0, 19):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -340,7 +366,7 @@ class Cliente(QMainWindow, Cliente):
         self.frame_popup.hide()
         self.btn_return.clicked.connect(self.volta)
         self.btn_search.clicked.connect(self.search)
-        self.btn_submit_2.clicked.connect(self.add)
+        self.btn_edit.clicked.connect(self.add)
         self.btn_copy.clicked.connect(self.copy)
         self.btn_edit.clicked.connect(self.edit)
         self.btn_delete.clicked.connect(self.delete)
@@ -386,7 +412,7 @@ class Cliente(QMainWindow, Cliente):
         self.txt_clinacionalidade.setText(dados_lidos[0][10])
         self.txt_cliprofissao.setText(dados_lidos[0][11])
         self.txt_cliestadocivil.setText(dados_lidos[0][12])
-        self.txt_obranumero_7.setText(dados_lidos[0][13])
+        self.txt_clicelular.setText(dados_lidos[0][13])
         self.txt_cliemail.setText(dados_lidos[0][14])
         banco.commit()
         banco.close()
@@ -412,7 +438,7 @@ class Cliente(QMainWindow, Cliente):
         self.txt_clinacionalidade.setText(None)
         self.txt_cliprofissao.setText(None)
         self.txt_cliestadocivil.setText(None)
-        self.txt_obranumero_7.setText(None)
+        self.txt_clicelular.setText(None)
         self.txt_cliemail.setText(None)
 
         cursor.execute('SELECT * FROM cliente')
@@ -440,7 +466,7 @@ class Cliente(QMainWindow, Cliente):
         clinacionalidade = self.txt_clinacionalidade.text()
         cliprofissao = self.txt_cliprofissao.text()
         cliestadocivil = self.txt_cliestadocivil.text()
-        clicelular = self.txt_obranumero_7.text()
+        clicelular = self.txt_clicelular.text()
         cliemail = self.txt_cliemail.text()
 
         banco = sqlite3.connect('./bd/banco.db')
@@ -461,7 +487,7 @@ class Cliente(QMainWindow, Cliente):
         self.txt_clinacionalidade.setText(None)
         self.txt_cliprofissao.setText(None)
         self.txt_cliestadocivil.setText(None)
-        self.txt_obranumero_7.setText(None)
+        self.txt_clicelular.setText(None)
         self.txt_cliemail.setText(None)
 
         cursor.execute('SELECT * FROM cliente')
@@ -488,7 +514,7 @@ class Cliente(QMainWindow, Cliente):
         clinacionalidade = self.txt_clinacionalidade.text()
         cliprofissao = self.txt_cliprofissao.text()
         cliestadocivil = self.txt_cliestadocivil.text()
-        clicelular = self.txt_obranumero_7.text()
+        clicelular = self.txt_clicelular.text()
         cliemail = self.txt_cliemail.text()
 
         banco = sqlite3.connect('./bd/banco.db')
@@ -509,7 +535,7 @@ class Cliente(QMainWindow, Cliente):
         self.txt_clinacionalidade.setText(None)
         self.txt_cliprofissao.setText(None)
         self.txt_cliestadocivil.setText(None)
-        self.txt_obranumero_7.setText(None)
+        self.txt_clicelular.setText(None)
         self.txt_cliemail.setText(None)
 
         cursor.execute('SELECT * FROM cliente')
@@ -665,6 +691,7 @@ class Doc(QMainWindow, Doc):
             datacontratoobra = dados_lidos[0][13]
             valorvisitaobra = dados_lidos[0][14]
             valorobra = str(float(valorparcobra.replace(",",".")) * float(quantparcobra.replace(",","."))).replace(",",".")
+            inscimobobra = dados_lidos[0][15]
 
 
             if self.cbox_1cli.isChecked() == True:
@@ -1280,7 +1307,7 @@ class Doc(QMainWindow, Doc):
                             tabela = '\nLote/Gleba/Quinhão nº: '+loteobra+'' \
                                      '\nQuadra: '+quadraobra+'' \
                                      '\nLoteamento: '+bairroobra+''\
-                                     '\nInscrição Imobiliária: _______________________________________' \
+                                     '\nInscrição Imobiliária: '+inscimobobra+'' \
                                      '\nEndereço: '+endobra+'' \
                                      '\nCEP: '+cepcli1+''
                             tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
@@ -1295,12 +1322,12 @@ class Doc(QMainWindow, Doc):
                             tabela_formatada.font.size = Pt(10)
                             tabela_formatada.bold = True
 
-                            tabela = '\nNome completo: ___________________________________________' \
-                                     '\nRegistro profissional: _______________ Órgão:__________________' \
+                            tabela = '\nNome completo: '+name_log+''\
+                                     '\nRegistro profissional: '+crea_log+' Órgão: '+orgao_log+'' \
                                      '\nEstá registrado no CPHO¹?  (   ) sim     (   ) não' \
-                                     '\nNº da Inscrição Mobiliária: ___________________________________' \
-                                     '\nE-mail²: __________________________________________________' \
-                                     '\nTelefone para contato: ______________________________________' \
+                                     '\nNº da Inscrição Mobiliária: '+smpuge_log+'' \
+                                     '\nE-mail²: '+email_log+'' \
+                                     '\nTelefone para contato: '+cel_log+'' \
                                      '\n¹CPHO - Cadastro de Profissionais Habilitados junto aos órgãos da Prefeitura Municipal de Hortolândia.'
                             tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
                             tabela_formatada.font.name = 'Arial'
@@ -3649,8 +3676,8 @@ if __name__ == '__main__':
     widget.addWidget(login)
     #widget.setFixedHeight(870)
     #widget.setFixedWidth(1039)
-    widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
-    widget.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
+    #widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+    #widget.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
     widget.show()
     #menu.showMaximized()
     qt.exec_()

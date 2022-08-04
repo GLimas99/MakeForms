@@ -14,8 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Login(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(500, 700)
-        MainWindow.setMinimumSize(QtCore.QSize(500, 700))
+        MainWindow.resize(1039, 870)
+        MainWindow.setMinimumSize(QtCore.QSize(1039, 870))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/Icon/Images/logo_preto.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)

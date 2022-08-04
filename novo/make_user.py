@@ -11,10 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
+class MakeUser(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(500, 800)
+        MainWindow.resize(1039, 870)
+        MainWindow.setMinimumSize(QtCore.QSize(1039, 870))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         MainWindow.setFont(font)
@@ -389,7 +390,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = MakeUser()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

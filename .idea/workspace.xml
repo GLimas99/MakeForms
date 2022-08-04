@@ -6,11 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="2164de09-8dd4-4af8-b7b5-56751ef1404e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento com Lei_Mauro Basso.docx" beforeDir="false" afterPath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento com Lei_Mauro Basso.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/edit_obra.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/edit_obra.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/edit_user.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/edit_user.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/make_doc.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/make_doc.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/make_user.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/make_user.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bd/banco.db" beforeDir="false" afterPath="$PROJECT_DIR$/bd/banco.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controle.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novo/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novo/edit_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/edit_user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/novo/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novo/make_doc.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/make_doc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novo/make_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/make_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novo/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novo/obra.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/obra.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +93,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="make_user" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MakeForms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/novo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/novo/make_user.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MakeForms" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,34 +156,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="teste" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MakeForms" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teste.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.controle" />
         <item itemvalue="Python.login" />
-        <item itemvalue="Python.teste" />
-        <item itemvalue="Python.menu" />
         <item itemvalue="Python.obra" />
+        <item itemvalue="Python.menu" />
+        <item itemvalue="Python.make_user" />
       </list>
     </recent_temporary>
   </component>

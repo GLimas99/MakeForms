@@ -14,12 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Cliente(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1000, 800)
+        MainWindow.resize(1000, 870)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
 "background-color: rgb(10, 10, 10);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setMinimumSize(QtCore.QSize(1000, 800))
+        self.centralwidget.setMinimumSize(QtCore.QSize(1000, 870))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         self.centralwidget.setFont(font)
@@ -87,14 +87,14 @@ class Cliente(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.editocli_area = QtWidgets.QFrame(self.content)
         self.editocli_area.setMinimumSize(QtCore.QSize(0, 0))
-        self.editocli_area.setMaximumSize(QtCore.QSize(950, 700))
+        self.editocli_area.setMaximumSize(QtCore.QSize(950, 765))
         self.editocli_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
 "border-radius: 10px")
         self.editocli_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.editocli_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.editocli_area.setObjectName("editocli_area")
         self.logo = QtWidgets.QFrame(self.editocli_area)
-        self.logo.setGeometry(QtCore.QRect(410, 0, 211, 90))
+        self.logo.setGeometry(QtCore.QRect(360, 0, 211, 90))
         self.logo.setStyleSheet("background-image: url(:/Logo_yellow/Images/logorocha_360x90.png);\n"
 "background-repeat: no-repeat;\n"
 "background-position: center;\n"
@@ -192,7 +192,7 @@ class Cliente(object):
         self.txt_nome.setMaxLength(32)
         self.txt_nome.setObjectName("txt_nome")
         self.txt_clinacionalidade = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clinacionalidade.setGeometry(QtCore.QRect(730, 450, 211, 50))
+        self.txt_clinacionalidade.setGeometry(QtCore.QRect(510, 510, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -214,7 +214,7 @@ class Cliente(object):
         self.txt_clinacionalidade.setMaxLength(32)
         self.txt_clinacionalidade.setObjectName("txt_clinacionalidade")
         self.txt_cliestadocivil = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliestadocivil.setGeometry(QtCore.QRect(730, 510, 211, 50))
+        self.txt_cliestadocivil.setGeometry(QtCore.QRect(730, 580, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -236,7 +236,7 @@ class Cliente(object):
         self.txt_cliestadocivil.setMaxLength(32)
         self.txt_cliestadocivil.setObjectName("txt_cliestadocivil")
         self.txt_clibairro = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clibairro.setGeometry(QtCore.QRect(510, 330, 211, 50))
+        self.txt_clibairro.setGeometry(QtCore.QRect(510, 330, 431, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -258,7 +258,7 @@ class Cliente(object):
         self.txt_clibairro.setMaxLength(64)
         self.txt_clibairro.setObjectName("txt_clibairro")
         self.txt_clinumero = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clinumero.setGeometry(QtCore.QRect(730, 330, 211, 50))
+        self.txt_clinumero.setGeometry(QtCore.QRect(510, 390, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -280,7 +280,7 @@ class Cliente(object):
         self.txt_clinumero.setMaxLength(32)
         self.txt_clinumero.setObjectName("txt_clinumero")
         self.txt_clicidade = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clicidade.setGeometry(QtCore.QRect(510, 390, 211, 50))
+        self.txt_clicidade.setGeometry(QtCore.QRect(730, 390, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -346,7 +346,7 @@ class Cliente(object):
         self.txt_clinome.setMaxLength(64)
         self.txt_clinome.setObjectName("txt_clinome")
         self.txt_clicep = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clicep.setGeometry(QtCore.QRect(510, 450, 211, 50))
+        self.txt_clicep.setGeometry(QtCore.QRect(730, 450, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -368,7 +368,7 @@ class Cliente(object):
         self.txt_clicep.setMaxLength(32)
         self.txt_clicep.setObjectName("txt_clicep")
         self.txt_cliemail = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliemail.setGeometry(QtCore.QRect(730, 570, 211, 50))
+        self.txt_cliemail.setGeometry(QtCore.QRect(510, 640, 431, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -412,7 +412,7 @@ class Cliente(object):
         self.txt_clirg.setMaxLength(32)
         self.txt_clirg.setObjectName("txt_clirg")
         self.txt_cliestado = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliestado.setGeometry(QtCore.QRect(730, 390, 211, 50))
+        self.txt_cliestado.setGeometry(QtCore.QRect(510, 450, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -433,13 +433,13 @@ class Cliente(object):
 "}")
         self.txt_cliestado.setMaxLength(32)
         self.txt_cliestado.setObjectName("txt_cliestado")
-        self.txt_obranumero_7 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obranumero_7.setGeometry(QtCore.QRect(510, 570, 211, 50))
+        self.txt_clicelular = QtWidgets.QLineEdit(self.editocli_area)
+        self.txt_clicelular.setGeometry(QtCore.QRect(510, 580, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_obranumero_7.setFont(font)
-        self.txt_obranumero_7.setStyleSheet("QLineEdit{\n"
+        self.txt_clicelular.setFont(font)
+        self.txt_clicelular.setStyleSheet("QLineEdit{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
 "    padding: 15px;\n"
@@ -453,8 +453,8 @@ class Cliente(object):
 "    border: 2px solid rgb(255, 207, 0);\n"
 "    color: rgb(200, 200, 200);\n"
 "}")
-        self.txt_obranumero_7.setMaxLength(32)
-        self.txt_obranumero_7.setObjectName("txt_obranumero_7")
+        self.txt_clicelular.setMaxLength(32)
+        self.txt_clicelular.setObjectName("txt_clicelular")
         self.txt_clicpf = QtWidgets.QLineEdit(self.editocli_area)
         self.txt_clicpf.setGeometry(QtCore.QRect(510, 210, 211, 50))
         font = QtGui.QFont()
@@ -478,7 +478,7 @@ class Cliente(object):
         self.txt_clicpf.setMaxLength(32)
         self.txt_clicpf.setObjectName("txt_clicpf")
         self.txt_cliprofissao = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliprofissao.setGeometry(QtCore.QRect(510, 510, 211, 50))
+        self.txt_cliprofissao.setGeometry(QtCore.QRect(730, 510, 211, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -500,7 +500,7 @@ class Cliente(object):
         self.txt_cliprofissao.setMaxLength(32)
         self.txt_cliprofissao.setObjectName("txt_cliprofissao")
         self.tabWid_cli = QtWidgets.QTableWidget(self.editocli_area)
-        self.tabWid_cli.setGeometry(QtCore.QRect(10, 150, 491, 471))
+        self.tabWid_cli.setGeometry(QtCore.QRect(10, 150, 491, 541))
         self.tabWid_cli.setStyleSheet("QTableWidget{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
@@ -572,13 +572,13 @@ class Cliente(object):
         self.tabWid_cli.setHorizontalHeaderItem(13, item)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_cli.setHorizontalHeaderItem(14, item)
-        self.btn_submit_2 = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_submit_2.setGeometry(QtCore.QRect(640, 640, 280, 50))
+        self.btn_add = QtWidgets.QPushButton(self.editocli_area)
+        self.btn_add.setGeometry(QtCore.QRect(640, 700, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.btn_submit_2.setFont(font)
-        self.btn_submit_2.setStyleSheet("QPushButton{\n"
+        self.btn_add.setFont(font)
+        self.btn_add.setStyleSheet("QPushButton{\n"
 "    background-color:rgb(50, 50, 50);\n"
 "    border:2px solid rgb(60, 60, 60);\n"
 "    border-radius:5px;\n"
@@ -592,9 +592,9 @@ class Cliente(object):
 "    border: 2px solid rgb(255, 165, 24);\n"
 "    color: rgb(35, 35, 35);\n"
 "}")
-        self.btn_submit_2.setObjectName("btn_submit_2")
+        self.btn_add.setObjectName("btn_add")
         self.btn_delete = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_delete.setGeometry(QtCore.QRect(40, 640, 280, 50))
+        self.btn_delete.setGeometry(QtCore.QRect(40, 700, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -615,7 +615,7 @@ class Cliente(object):
 "}")
         self.btn_delete.setObjectName("btn_delete")
         self.btn_edit = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_edit.setGeometry(QtCore.QRect(340, 640, 280, 50))
+        self.btn_edit.setGeometry(QtCore.QRect(340, 700, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -707,7 +707,7 @@ class Cliente(object):
         self.txt_cliemail.setPlaceholderText(_translate("MainWindow", "EMAIL"))
         self.txt_clirg.setPlaceholderText(_translate("MainWindow", "RG"))
         self.txt_cliestado.setPlaceholderText(_translate("MainWindow", "ESTADO"))
-        self.txt_obranumero_7.setPlaceholderText(_translate("MainWindow", "CELULAR"))
+        self.txt_clicelular.setPlaceholderText(_translate("MainWindow", "CELULAR"))
         self.txt_clicpf.setPlaceholderText(_translate("MainWindow", "CPF"))
         self.txt_cliprofissao.setPlaceholderText(_translate("MainWindow", "PROFISSÃO"))
         item = self.tabWid_cli.horizontalHeaderItem(0)
@@ -740,7 +740,7 @@ class Cliente(object):
         item.setText(_translate("MainWindow", "CELULAR"))
         item = self.tabWid_cli.horizontalHeaderItem(14)
         item.setText(_translate("MainWindow", "EMAIL"))
-        self.btn_submit_2.setText(_translate("MainWindow", "ADD"))
+        self.btn_add.setText(_translate("MainWindow", "ADD"))
         self.btn_delete.setText(_translate("MainWindow", "DELETE"))
         self.btn_edit.setText(_translate("MainWindow", "EDIT"))
         self.btn_copy.setText(_translate("MainWindow", "✍"))

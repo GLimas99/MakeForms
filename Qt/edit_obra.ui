@@ -914,6 +914,11 @@ QTableWidget QTableCornerButton::section {
           </column>
           <column>
            <property name="text">
+            <string>INSC. IMOB.</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
             <string>ID CLIENTE 1</string>
            </property>
           </column>
@@ -1161,9 +1166,9 @@ QPushButton:pressed{
          <widget class="QLineEdit" name="txt_idcli3">
           <property name="geometry">
            <rect>
-            <x>510</x>
+            <x>390</x>
             <y>630</y>
-            <width>211</width>
+            <width>141</width>
             <height>50</height>
            </rect>
           </property>
@@ -1199,9 +1204,9 @@ QLineEdit:focus{
          <widget class="QLineEdit" name="txt_idcli4">
           <property name="geometry">
            <rect>
-            <x>730</x>
+            <x>580</x>
             <y>630</y>
-            <width>211</width>
+            <width>141</width>
             <height>50</height>
            </rect>
           </property>
@@ -1237,9 +1242,9 @@ QLineEdit:focus{
          <widget class="QLineEdit" name="txt_idcli2">
           <property name="geometry">
            <rect>
-            <x>290</x>
+            <x>200</x>
             <y>630</y>
-            <width>211</width>
+            <width>141</width>
             <height>50</height>
            </rect>
           </property>
@@ -1275,9 +1280,9 @@ QLineEdit:focus{
          <widget class="QLineEdit" name="txt_idcli1">
           <property name="geometry">
            <rect>
-            <x>70</x>
+            <x>10</x>
             <y>630</y>
-            <width>211</width>
+            <width>141</width>
             <height>50</height>
            </rect>
           </property>
@@ -1346,6 +1351,44 @@ QPushButton:pressed{
           </property>
           <property name="text">
            <string>⌕</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_obravalorvisita_2">
+          <property name="geometry">
+           <rect>
+            <x>730</x>
+            <y>630</y>
+            <width>211</width>
+            <height>50</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Quicksand</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit{
+	border: 2px solid rgb(45, 45, 45);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(30, 30, 30);
+	color: rgb(100, 100, 100);
+}
+QLineEdit:hover{
+	border: 2px solid rgb(55, 55, 55);
+}
+QLineEdit:focus{
+	border: 2px solid rgb(255, 207, 0);
+	color: rgb(200, 200, 200);
+}</string>
+          </property>
+          <property name="maxLength">
+           <number>32</number>
+          </property>
+          <property name="placeholderText">
+           <string>INSC. IMOBILIÁRIA</string>
           </property>
          </widget>
         </widget>

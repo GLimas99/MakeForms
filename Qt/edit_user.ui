@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>800</height>
+    <width>1039</width>
+    <height>870</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1039</width>
+    <height>870</height>
+   </size>
   </property>
   <property name="font">
    <font>
@@ -293,7 +299,7 @@ QLineEdit:focus{
            <rect>
             <x>85</x>
             <y>210</y>
-            <width>280</width>
+            <width>281</width>
             <height>50</height>
            </rect>
           </property>
@@ -331,7 +337,7 @@ QLineEdit:focus{
            <rect>
             <x>85</x>
             <y>270</y>
-            <width>280</width>
+            <width>281</width>
             <height>50</height>
            </rect>
           </property>
@@ -368,7 +374,7 @@ QLineEdit:focus{
           <property name="geometry">
            <rect>
             <x>85</x>
-            <y>640</y>
+            <y>690</y>
             <width>280</width>
             <height>50</height>
            </rect>
@@ -622,6 +628,44 @@ QLineEdit:focus{
           </property>
           <property name="placeholderText">
            <string>SMPUGE</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="txt_crea_2">
+          <property name="geometry">
+           <rect>
+            <x>85</x>
+            <y>630</y>
+            <width>280</width>
+            <height>50</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Quicksand</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit{
+	border: 2px solid rgb(45, 45, 45);
+	border-radius: 5px;
+	padding: 15px;
+	background-color: rgb(30, 30, 30);
+	color: rgb(100, 100, 100);
+}
+QLineEdit:hover{
+	border: 2px solid rgb(55, 55, 55);
+}
+QLineEdit:focus{
+	border: 2px solid rgb(255, 207, 0);
+	color: rgb(200, 200, 200);
+}</string>
+          </property>
+          <property name="maxLength">
+           <number>32</number>
+          </property>
+          <property name="placeholderText">
+           <string>ORGÃO</string>
           </property>
          </widget>
         </widget>

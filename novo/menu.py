@@ -14,11 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Menu(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(500, 700)
-        MainWindow.setMinimumSize(QtCore.QSize(500, 700))
+        MainWindow.resize(1039, 870)
+        MainWindow.setMinimumSize(QtCore.QSize(1039, 870))
         MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
 "background-color: rgb(10, 10, 10);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -76,6 +77,7 @@ class Menu(object):
         self.horizontalLayout_2.addWidget(self.frame_popup)
         self.verticalLayout.addWidget(self.top_bar)
         self.content = QtWidgets.QFrame(self.centralwidget)
+        self.content.setMinimumSize(QtCore.QSize(0, 0))
         self.content.setStyleSheet("")
         self.content.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.content.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -83,6 +85,7 @@ class Menu(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.content)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.menu_area = QtWidgets.QFrame(self.content)
+        self.menu_area.setMinimumSize(QtCore.QSize(450, 550))
         self.menu_area.setMaximumSize(QtCore.QSize(450, 550))
         self.menu_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
 "border-radius: 10px")
@@ -198,6 +201,52 @@ class Menu(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_edituser.setObjectName("btn_edituser")
+        self.btn_edituser_2 = QtWidgets.QPushButton(self.menu_area)
+        self.btn_edituser_2.setGeometry(QtCore.QRect(80, 480, 280, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.btn_edituser_2.setFont(font)
+        self.btn_edituser_2.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_edituser_2.setObjectName("btn_edituser_2")
+        self.btn_edituser_3 = QtWidgets.QPushButton(self.menu_area)
+        self.btn_edituser_3.setGeometry(QtCore.QRect(80, 420, 280, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.btn_edituser_3.setFont(font)
+        self.btn_edituser_3.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_edituser_3.setObjectName("btn_edituser_3")
         self.horizontalLayout.addWidget(self.menu_area)
         self.verticalLayout.addWidget(self.content)
         self.bottom = QtWidgets.QFrame(self.centralwidget)
@@ -236,6 +285,8 @@ class Menu(object):
         self.btn_cliente.setText(_translate("MainWindow", "CLIENTES"))
         self.btn_makedoc.setText(_translate("MainWindow", "CRIAR DOCUMENTOS"))
         self.btn_edituser.setText(_translate("MainWindow", "EDITAR USUÁRIO"))
+        self.btn_edituser_2.setText(_translate("MainWindow", "SAIR"))
+        self.btn_edituser_3.setText(_translate("MainWindow", "TROCAR USUÁRIO"))
         self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
         self.lbl_lima.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 import file_rc_rc

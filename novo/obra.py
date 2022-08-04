@@ -14,12 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Obra(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1039, 859)
+        MainWindow.resize(1039, 888)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
 "background-color: rgb(10, 10, 10);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setMinimumSize(QtCore.QSize(1000, 800))
+        self.centralwidget.setMinimumSize(QtCore.QSize(1000, 870))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         self.centralwidget.setFont(font)
@@ -86,15 +86,15 @@ class Obra(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.content)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.editocli_area = QtWidgets.QFrame(self.content)
-        self.editocli_area.setMinimumSize(QtCore.QSize(0, 0))
-        self.editocli_area.setMaximumSize(QtCore.QSize(950, 800))
+        self.editocli_area.setMinimumSize(QtCore.QSize(0, 765))
+        self.editocli_area.setMaximumSize(QtCore.QSize(950, 765))
         self.editocli_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
 "border-radius: 10px")
         self.editocli_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.editocli_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.editocli_area.setObjectName("editocli_area")
         self.logo = QtWidgets.QFrame(self.editocli_area)
-        self.logo.setGeometry(QtCore.QRect(410, 0, 211, 90))
+        self.logo.setGeometry(QtCore.QRect(360, 0, 211, 90))
         self.logo.setStyleSheet("background-image: url(:/Logo_yellow/Images/logorocha_360x90.png);\n"
 "background-repeat: no-repeat;\n"
 "background-position: center;\n"
@@ -470,7 +470,7 @@ class Obra(object):
 "}\n"
 "")
         self.tabWid_obra.setObjectName("tabWid_obra")
-        self.tabWid_obra.setColumnCount(19)
+        self.tabWid_obra.setColumnCount(20)
         self.tabWid_obra.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_obra.setHorizontalHeaderItem(0, item)
@@ -510,6 +510,8 @@ class Obra(object):
         self.tabWid_obra.setHorizontalHeaderItem(17, item)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_obra.setHorizontalHeaderItem(18, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tabWid_obra.setHorizontalHeaderItem(19, item)
         self.txt_obravalorvisita = QtWidgets.QLineEdit(self.editocli_area)
         self.txt_obravalorvisita.setGeometry(QtCore.QRect(730, 570, 211, 50))
         font = QtGui.QFont()
@@ -644,7 +646,7 @@ class Obra(object):
 "}")
         self.btn_copy.setObjectName("btn_copy")
         self.txt_idcli3 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli3.setGeometry(QtCore.QRect(510, 630, 211, 50))
+        self.txt_idcli3.setGeometry(QtCore.QRect(390, 630, 141, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -666,7 +668,7 @@ class Obra(object):
         self.txt_idcli3.setMaxLength(32)
         self.txt_idcli3.setObjectName("txt_idcli3")
         self.txt_idcli4 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli4.setGeometry(QtCore.QRect(730, 630, 211, 50))
+        self.txt_idcli4.setGeometry(QtCore.QRect(580, 630, 141, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -688,7 +690,7 @@ class Obra(object):
         self.txt_idcli4.setMaxLength(32)
         self.txt_idcli4.setObjectName("txt_idcli4")
         self.txt_idcli2 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli2.setGeometry(QtCore.QRect(290, 630, 211, 50))
+        self.txt_idcli2.setGeometry(QtCore.QRect(200, 630, 141, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -710,7 +712,7 @@ class Obra(object):
         self.txt_idcli2.setMaxLength(32)
         self.txt_idcli2.setObjectName("txt_idcli2")
         self.txt_idcli1 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli1.setGeometry(QtCore.QRect(70, 630, 211, 50))
+        self.txt_idcli1.setGeometry(QtCore.QRect(10, 630, 141, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -755,6 +757,28 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_search.setObjectName("btn_search")
+        self.txt_obravalorvisita_2 = QtWidgets.QLineEdit(self.editocli_area)
+        self.txt_obravalorvisita_2.setGeometry(QtCore.QRect(730, 630, 211, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obravalorvisita_2.setFont(font)
+        self.txt_obravalorvisita_2.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obravalorvisita_2.setMaxLength(32)
+        self.txt_obravalorvisita_2.setObjectName("txt_obravalorvisita_2")
         self.horizontalLayout.addWidget(self.editocli_area)
         self.verticalLayout.addWidget(self.content)
         self.bottom = QtWidgets.QFrame(self.centralwidget)
@@ -834,12 +858,14 @@ class Obra(object):
         item = self.tabWid_obra.horizontalHeaderItem(14)
         item.setText(_translate("MainWindow", "VALOR VISITA"))
         item = self.tabWid_obra.horizontalHeaderItem(15)
-        item.setText(_translate("MainWindow", "ID CLIENTE 1"))
+        item.setText(_translate("MainWindow", "INSC. IMOB."))
         item = self.tabWid_obra.horizontalHeaderItem(16)
-        item.setText(_translate("MainWindow", "ID CLIENTE 2"))
+        item.setText(_translate("MainWindow", "ID CLIENTE 1"))
         item = self.tabWid_obra.horizontalHeaderItem(17)
-        item.setText(_translate("MainWindow", "ID CLIENTE 3"))
+        item.setText(_translate("MainWindow", "ID CLIENTE 2"))
         item = self.tabWid_obra.horizontalHeaderItem(18)
+        item.setText(_translate("MainWindow", "ID CLIENTE 3"))
+        item = self.tabWid_obra.horizontalHeaderItem(19)
         item.setText(_translate("MainWindow", "ID CLIENTE 4"))
         self.txt_obravalorvisita.setPlaceholderText(_translate("MainWindow", "VALOR VISITA TÉC."))
         self.txt_obradatacontrato.setPlaceholderText(_translate("MainWindow", "DATA DO CONTRATO"))
@@ -852,6 +878,7 @@ class Obra(object):
         self.txt_idcli2.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 2"))
         self.txt_idcli1.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 1"))
         self.btn_search.setText(_translate("MainWindow", "⌕"))
+        self.txt_obravalorvisita_2.setPlaceholderText(_translate("MainWindow", "INSC. IMOBILIÁRIA"))
         self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
         self.lbl_created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 import file_rc_rc
