@@ -1,20 +1,4 @@
 <RCC>
-  <qresource prefix="Close_Image">
-    <file>Images/cil-x.png</file>
-  </qresource>
-  <qresource prefix="Arrow">
-    <file>Images/arrow30x30g2.png</file>
-    <file>Images/arrow30x30.png</file>
-    <file>Images/arrow30x30g.png</file>
-    <file>Images/arrow30x30yA.png</file>
-    <file>Images/arrow30x30y.png</file>
-  </qresource>
-  <qresource prefix="Icon">
-    <file>Images/logo_preto.ico</file>
-  </qresource>
-  <qresource prefix="Avatar">
-    <file>Images/logo-crop.svg</file>
-  </qresource>
   <qresource prefix="Logo_yellow">
     <file>Images/logorocha_360x90.png</file>
   </qresource>
