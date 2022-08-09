@@ -4642,6 +4642,16 @@ class Doc(QMainWindow, Doc):
                             font = paragraph.style.font
                             font.name = 'Arial'
 
+                            paragraph = document.add_paragraph('Nome:' + nomecli3 + '\n'
+                                                                                    'Endereço: ' + endcli3 + ' N°' + numcli3 + '\n'
+                                                                                                                               'Loteamento:' + bairrocli3 + '\n'
+                                                                                                                                                            'CEP:' + cepcli3 + '\n'
+                                                                                                                                                                               'Cidade/Estado:' + cidadecli3 + '-' + estadocli3 + '\n'
+                                                                                                                                                                                                                                  'Telefone: ' + celularcli3 + '')
+                            paragraph.style = document.styles.add_style('style10.3', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Arial'
+
                             paragraph = document.add_paragraph('Da Obra')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
@@ -4776,7 +4786,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n\n_________________________________                            _________________________________')
+                                '\n\n\n\n\n_________________________________')
                             paragraph.style = document.styles.add_style('style4.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -5300,19 +5310,19 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n\n\n\n_________________________________                    _____________________________________')
+                                '\n\n\n\n\n\n\n_________________________________')
                             paragraph.style = document.styles.add_style('style28.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'Proprietário: ' + nomecli2 + '')
+                                'Proprietário: ' + nomecli3 + '')
                             paragraph.style = document.styles.add_style('style29.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + cpfcli2 + '')
+                                'CPF:' + cpfcli3 + '')
                             paragraph.style = document.styles.add_style('style30.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -5491,6 +5501,8 @@ class Doc(QMainWindow, Doc):
                     celularcli3 = dados_cli3[0][13]
                     emailcli3 = dados_cli3[0][14]
 
+                    idcli4 = self.txt_idcli4.text()
+                    cursor.execute(consultacli, (idcli4,))
                     dados_cli4 = cursor.fetchall()
 
                     nomecli4 = dados_cli4[0][1]
@@ -5509,7 +5521,7 @@ class Doc(QMainWindow, Doc):
                     emailcli4 = dados_cli4[0][14]
 
                     Path(
-                        './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ' e '+ nomecli3 +'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
+                        './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ', '+ nomecli3+ ' e '+nomecli4+'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
                         parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
@@ -5601,6 +5613,18 @@ class Doc(QMainWindow, Doc):
                                                                                                          'portador(a) do RG n° ' + rgcli3 + ' SSP/SP, inscrito(a) no CPF n° ' + cpfcli3 + ''
                                                                                                                                                                                           ', residente e domiciliado(a) na ' + endcli3 + ', '
                                                                                                                                                                                                                                          'n° ' + numcli3 + ', ' + bairrocli3 + ' na cidade de ' + cidadecli3 + '/' + estadocli3 + '. ').bold = False
+
+                            paragraph = document.add_paragraph('    CONTRATANTE: ')
+                            paragraph.style = document.styles.add_style('style2.23', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Book Antiqua'
+                            font.bold = True
+                            paragraph.add_run('' + nomecli4 + ', ').underline = True
+                            paragraph.add_run(
+                                '' + nacionalidadecli4 + ', ' + estadocivilcli4 + ', ' + profissaocli4 + ', '
+                                                                                                         'portador(a) do RG n° ' + rgcli4 + ' SSP/SP, inscrito(a) no CPF n° ' + cpfcli4 + ''
+                                                                                                                                                                                          ', residente e domiciliado(a) na ' + endcli4 + ', '
+                                                                                                                                                                                                                                         'n° ' + numcli4 + ', ' + bairrocli4 + ' na cidade de ' + cidadecli4 + '/' + estadocli4 + '. ').bold = False
 
                             enter = document.add_paragraph('')
                             enter = document.add_paragraph('')
@@ -5814,8 +5838,32 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Book Antiqua'
                             font.bold = True
 
+                            enter = document.add_paragraph('')
+                            enter = document.add_paragraph('')
+
+                            paragraph = document.add_paragraph(
+                                '_________________________________')
+                            paragraph.style = document.styles.add_style('style17.3', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Book Antiqua'
+                            font.italic = True
+                            font.bold = True
+
+                            paragraph = document.add_paragraph(
+                                'CONTRATANTE:')
+                            paragraph.style = document.styles.add_style('style18.3', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Book Antiqua'
+                            font.bold = True
+
+                            paragraph = document.add_paragraph('' + nomecli4 + '')
+                            paragraph.style = document.styles.add_style('style19.3', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Book Antiqua'
+                            font.bold = True
+
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -5862,6 +5910,18 @@ class Doc(QMainWindow, Doc):
                             runner.bold = True
                             paragraph.add_run('                     CPF:')
                             runner = paragraph.add_run('' + cpfcli2 + ' \n')
+                            runner.bold = True
+
+                            runner = paragraph.add_run('                     ' + nomecli3 + ' \n')
+                            runner.bold = True
+                            paragraph.add_run('                     CPF:')
+                            runner = paragraph.add_run('' + cpfcli3 + ' \n')
+                            runner.bold = True
+
+                            runner = paragraph.add_run('                     ' + nomecli4 + ' \n')
+                            runner.bold = True
+                            paragraph.add_run('                     CPF:')
+                            runner = paragraph.add_run('' + cpfcli4 + ' \n')
                             runner.bold = True
 
 
@@ -6025,36 +6085,54 @@ class Doc(QMainWindow, Doc):
 
                             paragraph = document.add_paragraph(
                                 '\n\n\n\n_________________________________                                    _____________________________________')
-                            paragraph.style = document.styles.add_style('style17.2', WD_STYLE_TYPE.PARAGRAPH)
+                            paragraph.style = document.styles.add_style('style17.3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'Proprietário:' + nomecli3 + '                                                 ROGÉRIO ROCHA SOARES')
-                            paragraph.style = document.styles.add_style('style19.2', WD_STYLE_TYPE.PARAGRAPH)
+                                'Proprietário:' + nomecli3 + '                                                 ' + nomecli4 + '')
+                            paragraph.style = document.styles.add_style('style19.3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + cpfcli3 + '                                                                         Engenheiro Civil')
-                            paragraph.style = document.styles.add_style('style20.2', WD_STYLE_TYPE.PARAGRAPH)
+                                'CPF:' + cpfcli3 + '                                                                         ' + cpfcli4 + '')
+                            paragraph.style = document.styles.add_style('style20.3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                '                                                                     CREA: 5070347192-SP')
-                            paragraph.style = document.styles.add_style('style21.2', WD_STYLE_TYPE.PARAGRAPH)
+                                '\n\n\n\n_____________________________________''')
+                            paragraph.style = document.styles.add_style('style17.4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                '                                                                     ART' + artobra + '')
-                            paragraph.style = document.styles.add_style('style22.2', WD_STYLE_TYPE.PARAGRAPH)
+                                'Proprietário: ROGÉRIO ROCHA SOARES')
+                            paragraph.style = document.styles.add_style('style19.4', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Arial'
+
+                            paragraph = document.add_paragraph(
+                                'CPF: Engenheiro Civil')
+                            paragraph.style = document.styles.add_style('style20.4', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Arial'
+
+                            paragraph = document.add_paragraph(
+                                'CREA: 5070347192-SP')
+                            paragraph.style = document.styles.add_style('style21.4', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Arial'
+
+                            paragraph = document.add_paragraph(
+                                'ART' + artobra + '')
+                            paragraph.style = document.styles.add_style('style22.4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -6142,6 +6220,27 @@ class Doc(QMainWindow, Doc):
                                                                           '\nCNPJ/CPF nº: ' + cpfcli3 + '' \
                                                                                                         '\nE-mail*: ' + emailcli3 + '' \
                                                                                                                                     '\nTelefone para contato: ' + celularcli3 + ''
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(9)
+
+                            tabela = '\n*as notificações sobre este processo serão enviadas por e-mail. Favor atentar-se a isso no momento do preenchimento.'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(9)
+                            tabela_formatada.bold = True
+
+                            tabela = '\naaaaaaaaaaaaaaaaaa'
+                            tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
+                            tabela_formatada.font.name = 'Arial'
+                            tabela_formatada.font.size = Pt(3)
+                            font = tabela_formatada.font
+                            font.color.rgb = RGBColor(255, 255, 255)
+
+                            tabela = '\nRazão social/nome: ' + nomecli4 + '' \
+                                                                          '\nCNPJ/CPF nº: ' + cpfcli4 + '' \
+                                                                                                        '\nE-mail*: ' + emailcli4 + '' \
+                                                                                                                                    '\nTelefone para contato: ' + celularcli4 + ''
                             tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
                             tabela_formatada.font.name = 'Arial'
                             tabela_formatada.font.size = Pt(9)
@@ -6251,7 +6350,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -6291,7 +6390,7 @@ class Doc(QMainWindow, Doc):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
-                            runner = paragraph.add_run(' ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + ' ')
+                            runner = paragraph.add_run(' ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + ' ')
                             runner.bold = True
                             paragraph.add_run(
                                 'abaixo assinado vem mui respeitosamente, solicitar a aprovação do projeto para construção residencial familiar, no imóvel abaixo descrito, cuja documentação segue anexa.')
@@ -6330,21 +6429,21 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n_________________________________ ')
-                            paragraph.style = document.styles.add_style('style5.3', WD_STYLE_TYPE.PARAGRAPH)
+                                '\n\n\n_________________________________                            _________________________________')
+                            paragraph.style = document.styles.add_style('style5.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
 
                             paragraph = document.add_paragraph(
-                                '' + nomecli3 + '')
-                            paragraph.style = document.styles.add_style('style6.3', WD_STYLE_TYPE.PARAGRAPH)
+                                '' + nomecli3 + '                                                           ' + nomecli4 + '')
+                            paragraph.style = document.styles.add_style('style6.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + cpfcli3 + '')
-                            paragraph.style = document.styles.add_style('style7.3', WD_STYLE_TYPE.PARAGRAPH)
+                                'CPF: ' + cpfcli3 + '                                                              CPF: ' + cpfcli4 + '')
+                            paragraph.style = document.styles.add_style('style7.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
@@ -6379,6 +6478,26 @@ class Doc(QMainWindow, Doc):
                             font = paragraph.style.font
                             font.name = 'Arial'
 
+                            paragraph = document.add_paragraph('Nome:' + nomecli3 + '\n'
+                                                                                    'Endereço: ' + endcli3 + ' N°' + numcli3 + '\n'
+                                                                                                                               'Loteamento:' + bairrocli3 + '\n'
+                                                                                                                                                            'CEP:' + cepcli3 + '\n'
+                                                                                                                                                                               'Cidade/Estado:' + cidadecli3 + '-' + estadocli3 + '\n'
+                                                                                                                                                                                                                                  'Telefone: ' + celularcli3 + '')
+                            paragraph.style = document.styles.add_style('style10.3', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Arial'
+
+                            paragraph = document.add_paragraph('Nome:' + nomecli4 + '\n'
+                                                                                    'Endereço: ' + endcli4 + ' N°' + numcli4 + '\n'
+                                                                                                                               'Loteamento:' + bairrocli4 + '\n'
+                                                                                                                                                            'CEP:' + cepcli4 + '\n'
+                                                                                                                                                                               'Cidade/Estado:' + cidadecli4 + '-' + estadocli4 + '\n'
+                                                                                                                                                                                                                                  'Telefone: ' + celularcli4 + '')
+                            paragraph.style = document.styles.add_style('style10.4', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Arial'
+
                             paragraph = document.add_paragraph('Da Obra')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
@@ -6408,7 +6527,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -6451,6 +6570,8 @@ class Doc(QMainWindow, Doc):
                             paragraph.add_run('\nSr.(a) ' + nomecli2 + ' CPF: ' + cpfcli2 + '\n\n')
 
                             paragraph.add_run('\nSr.(a) ' + nomecli3 + ' CPF: ' + cpfcli3 + '\n\n')
+
+                            paragraph.add_run('\nSr.(a) ' + nomecli4 + ' CPF: ' + cpfcli4 + '\n\n')
 
                             runner = paragraph.add_run('II – OUTORGADO: ')
                             runner.bold = True
@@ -6520,7 +6641,7 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             paragraph = document.add_paragraph(
-                                'OUTORGANTE:')
+                                'OUTORGANTE:                                                                                                OUTORGANTE:')
                             paragraph.style = document.styles.add_style('style5.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Times New Roman'
@@ -6528,13 +6649,13 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             paragraph = document.add_paragraph(
-                                '' + nomecli3 + '')
+                                '' + nomecli3 + '                                                           ' + nomecli4 + '')
                             paragraph.style = document.styles.add_style('style6.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + cpfcli3 + '')
+                                'CPF: ' + cpfcli3 + '                                                              CPF: ' + cpfcli4 + '')
                             paragraph.style = document.styles.add_style('style7.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -6567,7 +6688,7 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -6617,7 +6738,7 @@ class Doc(QMainWindow, Doc):
                                                                ' que “Dispõe sobre controle ambiental para utilização'
                                                                ' de produtos e subprodutos de madeira de origem nativa'
                                                                ' em obras e serviços de Engenharia Civil no Município'
-                                                               ' de Hortolândia”, nós, ' + nomecli1 + ', (' + profissaocli1 + '),' + nomecli2 + ', (' + profissaocli2 + ') e ' + nomecli3 + ', (' + profissaocli3 + '),')
+                                                               ' de Hortolândia”, nós, ' + nomecli1 + ', (' + profissaocli1 + '),' + nomecli2 + ', (' + profissaocli2 + ') , ' + nomecli3 + ', (' + profissaocli3 + ') e ' + nomecli4 + ', (' + profissaocli4 + '),')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Times New Roman'
@@ -6743,6 +6864,24 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             paragraph = document.add_paragraph(
+                                '\n\n\n\n_____________________________________')
+                            paragraph.style = document.styles.add_style('style8.4', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Times New Roman'
+                            font.size = Pt(10)
+                            font.bold = True
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+
+                            paragraph = document.add_paragraph('PROPRIETÁRIO ' + nomecli4 + '')
+                            paragraph.style = document.styles.add_style('style9.4', WD_STYLE_TYPE.PARAGRAPH)
+                            font = paragraph.style.font
+                            font.name = 'Times New Roman'
+                            font.bold = True
+                            font.size = Pt(10)
+                            font.bold = True
+                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+
+                            paragraph = document.add_paragraph(
                                 '\n\n\n\n\n\n\n\nEm conformidade com o disposto no artigo 4º da '
                                 'Lei Municipal nº 2.529, de 04 de abril de 2011, '
                                 'que “Dispõe sobre controle ambiental para utilização'
@@ -6795,7 +6934,7 @@ class Doc(QMainWindow, Doc):
                             # runner_word.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'.docx')
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -6863,7 +7002,7 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(9)
 
                             paragraph = document.add_paragraph(
-                                'Proprietário(s): ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '')
+                                'Proprietário(s): ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -7043,13 +7182,13 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'Proprietário: ' + nomecli2 + '')
+                                'Proprietário: ' + nomecli3 + '                               Proprietário: ' + nomecli4 + '')
                             paragraph.style = document.styles.add_style('style29.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + cpfcli2 + '')
+                                'CPF:' + cpfcli3 + '                                                        CPF:' + cpfcli4 + '')
                             paragraph.style = document.styles.add_style('style30.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -7085,7 +7224,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -7114,7 +7253,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
                             paragraph = document.add_paragraph('Eu ROGÉRIO ROCHA SOARES engenheiro civil CREA: '
-                                                               '5070374192, recebi de ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + ', '
+                                                               '5070374192, recebi de ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +', '
                                                                                                                         'parte do pagamento para aprovação de projeto '
                                                                                                                         'arquitetônico a quantia de R$ ' + valorparcobra + ',00 (' + num2words(
                                 valorparcobra.replace(",", "."), lang='pt-br') +
@@ -7146,7 +7285,7 @@ class Doc(QMainWindow, Doc):
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
 
                     self.frame_popup.show()
                     self.lbl_popup.setText("DOCUMENTOS CRIADOS")
