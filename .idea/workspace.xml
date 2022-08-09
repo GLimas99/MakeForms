@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2164de09-8dd4-4af8-b7b5-56751ef1404e" name="Changes" comment="Cliente 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qt/edit_obra.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/edit_obra.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bd/banco.db" beforeDir="false" afterPath="$PROJECT_DIR$/bd/banco.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controle.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +24,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file:////ROGER2/Users/ROCHA/Documents/Gu/Formulario22/controle.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/controle.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
