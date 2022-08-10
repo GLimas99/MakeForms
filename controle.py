@@ -138,6 +138,10 @@ class Obra(QMainWindow, Obra):
         self.btn_copy.clicked.connect(self.copy)
         self.btn_delete.clicked.connect(self.delete)
         self.btn_edit.clicked.connect(self.edit)
+        self.btn_copycli1.clicked.connect(self.copycli1)
+        self.btn_copycli2.clicked.connect(self.copycli2)
+        self.btn_copycli3.clicked.connect(self.copycli3)
+        self.btn_copycli4.clicked.connect(self.copycli4)
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -190,6 +194,74 @@ class Obra(QMainWindow, Obra):
         self.txt_idcli2.setText(dados_lidos[0][17])
         self.txt_idcli3.setText(dados_lidos[0][18])
         self.txt_idcli4.setText(dados_lidos[0][19])
+        banco.commit()
+        banco.close()
+
+    def copycli1(self):
+        idocli = self.txt_idcli1.text()
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+        cursor.execute(consulta, (idocli,))
+
+        dados_lidos = cursor.fetchall()
+
+        self.txt_obraend.setText(dados_lidos[0][4])
+        self.txt_obrabairro.setText(dados_lidos[0][5])
+        self.txt_obranumero.setText(dados_lidos[0][6])
+        self.txt_obracidade.setText(dados_lidos[0][7])
+        banco.commit()
+        banco.close()
+    
+    def copycli2(self):
+        idocli = self.txt_idcli2.text()
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+        cursor.execute(consulta, (idocli,))
+
+        dados_lidos = cursor.fetchall()
+
+        self.txt_obraend.setText(dados_lidos[0][4])
+        self.txt_obrabairro.setText(dados_lidos[0][5])
+        self.txt_obranumero.setText(dados_lidos[0][6])
+        self.txt_obracidade.setText(dados_lidos[0][7])
+        banco.commit()
+        banco.close()
+
+    def copycli3(self):
+        idocli = self.txt_idcli3.text()
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+        cursor.execute(consulta, (idocli,))
+
+        dados_lidos = cursor.fetchall()
+
+        self.txt_obraend.setText(dados_lidos[0][4])
+        self.txt_obrabairro.setText(dados_lidos[0][5])
+        self.txt_obranumero.setText(dados_lidos[0][6])
+        self.txt_obracidade.setText(dados_lidos[0][7])
+        banco.commit()
+        banco.close()
+        
+    def copycli4(self):
+        idocli = self.txt_idcli4.text()
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+        cursor.execute(consulta, (idocli,))
+
+        dados_lidos = cursor.fetchall()
+
+        self.txt_obraend.setText(dados_lidos[0][4])
+        self.txt_obrabairro.setText(dados_lidos[0][5])
+        self.txt_obranumero.setText(dados_lidos[0][6])
+        self.txt_obracidade.setText(dados_lidos[0][7])
         banco.commit()
         banco.close()
 

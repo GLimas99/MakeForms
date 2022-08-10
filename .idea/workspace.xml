@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2164de09-8dd4-4af8-b7b5-56751ef1404e" name="Changes" comment="Cliente 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Memorial Descritivo Mauro Basso.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento com Lei_Mauro Basso.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento sem Lei_Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Qt/edit_obra.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/edit_obra.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bd/banco.db" beforeDir="false" afterPath="$PROJECT_DIR$/bd/banco.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controle.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novo/obra.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/obra.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,8 +155,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.controle" />
-        <item itemvalue="Python.login" />
         <item itemvalue="Python.obra" />
+        <item itemvalue="Python.login" />
         <item itemvalue="Python.menu" />
         <item itemvalue="Python.make_user" />
       </list>

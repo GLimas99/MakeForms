@@ -74,7 +74,6 @@ class Obra(object):
 "    background-color: rgb(35, 35, 35);\n"
 "    color: rgb(255, 255, 127);\n"
 "}")
-        self.pushButton.setText("")
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout_3.addWidget(self.pushButton)
         self.horizontalLayout_2.addWidget(self.frame_popup)
@@ -646,7 +645,7 @@ class Obra(object):
 "}")
         self.btn_copy.setObjectName("btn_copy")
         self.txt_idcli3 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli3.setGeometry(QtCore.QRect(390, 630, 141, 50))
+        self.txt_idcli3.setGeometry(QtCore.QRect(370, 630, 141, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -668,7 +667,7 @@ class Obra(object):
         self.txt_idcli3.setMaxLength(32)
         self.txt_idcli3.setObjectName("txt_idcli3")
         self.txt_idcli4 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli4.setGeometry(QtCore.QRect(580, 630, 141, 50))
+        self.txt_idcli4.setGeometry(QtCore.QRect(550, 630, 141, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -690,7 +689,7 @@ class Obra(object):
         self.txt_idcli4.setMaxLength(32)
         self.txt_idcli4.setObjectName("txt_idcli4")
         self.txt_idcli2 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli2.setGeometry(QtCore.QRect(200, 630, 141, 50))
+        self.txt_idcli2.setGeometry(QtCore.QRect(190, 630, 141, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -779,6 +778,102 @@ class Obra(object):
 "}")
         self.txt_obravalorvisita_2.setMaxLength(32)
         self.txt_obravalorvisita_2.setObjectName("txt_obravalorvisita_2")
+        self.btn_copycli1 = QtWidgets.QPushButton(self.editocli_area)
+        self.btn_copycli1.setGeometry(QtCore.QRect(150, 630, 31, 50))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_copycli1.setFont(font)
+        self.btn_copycli1.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"    font: 18pt ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_copycli1.setObjectName("btn_copycli1")
+        self.btn_copycli2 = QtWidgets.QPushButton(self.editocli_area)
+        self.btn_copycli2.setGeometry(QtCore.QRect(330, 630, 31, 50))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_copycli2.setFont(font)
+        self.btn_copycli2.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"    font: 18pt ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_copycli2.setObjectName("btn_copycli2")
+        self.btn_copycli3 = QtWidgets.QPushButton(self.editocli_area)
+        self.btn_copycli3.setGeometry(QtCore.QRect(510, 630, 31, 50))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_copycli3.setFont(font)
+        self.btn_copycli3.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"    font: 18pt ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_copycli3.setObjectName("btn_copycli3")
+        self.btn_copycli4 = QtWidgets.QPushButton(self.editocli_area)
+        self.btn_copycli4.setGeometry(QtCore.QRect(690, 630, 31, 50))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_copycli4.setFont(font)
+        self.btn_copycli4.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"    font: 18pt ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_copycli4.setObjectName("btn_copycli4")
         self.horizontalLayout.addWidget(self.editocli_area)
         self.verticalLayout.addWidget(self.content)
         self.bottom = QtWidgets.QFrame(self.centralwidget)
@@ -812,6 +907,7 @@ class Obra(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Edit Client"))
         self.label.setText(_translate("MainWindow", "EDITADO"))
+        self.pushButton.setText(_translate("MainWindow", "X"))
         self.btn_return.setText(_translate("MainWindow", "↩"))
         self.txt_obralote.setPlaceholderText(_translate("MainWindow", "LOTE"))
         self.txt_obraquarteirao.setPlaceholderText(_translate("MainWindow", "QUARTEIRÃO"))
@@ -879,6 +975,10 @@ class Obra(object):
         self.txt_idcli1.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 1"))
         self.btn_search.setText(_translate("MainWindow", "⌕"))
         self.txt_obravalorvisita_2.setPlaceholderText(_translate("MainWindow", "INSC. IMOBILIÁRIA"))
+        self.btn_copycli1.setText(_translate("MainWindow", "✍"))
+        self.btn_copycli2.setText(_translate("MainWindow", "✍"))
+        self.btn_copycli3.setText(_translate("MainWindow", "✍"))
+        self.btn_copycli4.setText(_translate("MainWindow", "✍"))
         self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
         self.lbl_created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 import file_rc_rc
@@ -892,3 +992,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
