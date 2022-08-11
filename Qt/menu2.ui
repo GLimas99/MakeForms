@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>580</width>
-    <height>615</height>
+    <width>581</width>
+    <height>682</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -161,6 +161,18 @@ font: 16pt &quot;Masiku&quot;;</string>
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="spacing">
+              <number>5</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QPushButton" name="minwin">
                <property name="minimumSize">
@@ -171,8 +183,8 @@ font: 16pt &quot;Masiku&quot;;</string>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>20</width>
-                 <height>20</height>
+                 <width>16777215</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -206,8 +218,8 @@ QPushButton:pressed{
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>20</width>
-                 <height>20</height>
+                 <width>16777215</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -241,8 +253,8 @@ QPushButton:pressed{
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>20</width>
-                 <height>20</height>
+                 <width>16777215</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -290,19 +302,19 @@ color:rgb(200, 200, 255);</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <property name="spacing">
-           <number>10</number>
+           <number>15</number>
           </property>
           <property name="leftMargin">
-           <number>150</number>
+           <number>30</number>
           </property>
           <property name="topMargin">
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>150</number>
+           <number>30</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>30</number>
           </property>
           <item>
            <widget class="QLabel" name="lbl_welcome">
@@ -328,6 +340,12 @@ color:rgb(200, 200, 255);</string>
           </item>
           <item>
            <widget class="QPushButton" name="btn_cliente">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>280</width>
@@ -371,6 +389,12 @@ QPushButton:pressed{
           </item>
           <item>
            <widget class="QPushButton" name="btn_cadobra">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>280</width>
@@ -408,6 +432,12 @@ QPushButton:pressed{
           </item>
           <item>
            <widget class="QPushButton" name="btn_makedoc">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>280</width>
@@ -448,21 +478,69 @@ QPushButton:pressed{
        </item>
        <item>
         <widget class="QFrame" name="bot">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>50</height>
+           <height>30</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(40, 40, 40);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="version">
+            <property name="font">
+             <font>
+              <family>Quicksand</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>V 1.2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="created">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:super;&quot;&gt;Created by Gustavo Lima&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>

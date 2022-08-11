@@ -1056,7 +1056,7 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Contrato ' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Contrato ' + nomecli1 + '.docx')
             # ---------------------Procuração---------------------------------------------------------------------------------------------
                         if self.cbox_procuracao.isChecked() == True:
                             document = Document()
@@ -1180,7 +1180,7 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Procuração ' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Procuração ' + nomecli1 + '.docx')
             # ---------------------RRC com lei---------------------------------------------------------------------------------------------
                         if self.cbox_reqclei.isChecked() == True:
                             document = Document()
@@ -1307,7 +1307,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento sem Lei_' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento sem Lei_' + nomecli1 + '.docx')
 
                         # ---------------------RRC sem lei---------------------------------------------------------------------------------------------
                         if self.cbox_reqslei.isChecked() == True:
@@ -1472,7 +1472,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento com Lei_' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento com Lei_' + nomecli1 + '.docx')
 
             # ---------------------Declaração---------------------------------------------------------------------------------------------
                         if self.cbox_declaracao.isChecked() == True:
@@ -1663,7 +1663,7 @@ class Doc(QMainWindow, Doc):
                             # runner_word.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Declaração ' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Declaração ' + nomecli1 + '.docx')
 
             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -1915,7 +1915,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + '.docx')
 # ---------------------MEMORIAL DESCRITIVO---------------------------------------------------------------------------------------------
                         if self.cbox_memorial.isChecked() == True:
                             document = Document()
@@ -2127,7 +2127,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Memorial Descritivo ' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Memorial Descritivo ' + nomecli1 + '.docx')
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -2186,7 +2186,7 @@ class Doc(QMainWindow, Doc):
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Recibo ' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Recibo ' + nomecli1 + '.docx')
 
                         self.frame_popup.show()
                         self.lbl_popup.setText("DOCUMENTOS CRIADOS")
@@ -2247,7 +2247,7 @@ class Doc(QMainWindow, Doc):
                     emailcli2 = dados_cli2[0][14]
 
                     Path(
-                        './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos''').mkdir(
+                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos''').mkdir(
                         parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
@@ -2536,7 +2536,7 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Contrato ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Contrato ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -2773,7 +2773,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Memorial Descritivo' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Memorial Descritivo' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -2954,7 +2954,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -3092,7 +3092,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -3222,7 +3222,7 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Procuração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Procuração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -3431,7 +3431,7 @@ class Doc(QMainWindow, Doc):
                             # runner_word.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Declaração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Declaração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -3703,7 +3703,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -3762,7 +3762,7 @@ class Doc(QMainWindow, Doc):
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Recibo ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Recibo ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
                     self.frame_popup.show()
                     self.lbl_popup.setText("DOCUMENTOS CRIADOS")
@@ -3844,7 +3844,7 @@ class Doc(QMainWindow, Doc):
                     emailcli3 = dados_cli3[0][14]
 
                     Path(
-                        './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ' e '+ nomecli3 +'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
+                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ' e '+ nomecli3 +'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
                         parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
@@ -4150,7 +4150,7 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -4389,7 +4389,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -4586,7 +4586,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -4753,7 +4753,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -4912,7 +4912,7 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -5140,7 +5140,7 @@ class Doc(QMainWindow, Doc):
                             # runner_word.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -5430,7 +5430,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -5491,7 +5491,7 @@ class Doc(QMainWindow, Doc):
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
                     self.frame_popup.show()
                     self.lbl_popup.setText("DOCUMENTOS CRIADOS")
@@ -5593,7 +5593,7 @@ class Doc(QMainWindow, Doc):
                     emailcli4 = dados_cli4[0][14]
 
                     Path(
-                        './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ', '+ nomecli3+ ' e '+nomecli4+'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
+                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ', '+ nomecli3+ ' e '+nomecli4+'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
                         parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
@@ -5935,7 +5935,7 @@ class Doc(QMainWindow, Doc):
                             font.bold = True
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -6204,7 +6204,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -6422,7 +6422,7 @@ class Doc(QMainWindow, Doc):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -6599,7 +6599,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -6760,7 +6760,7 @@ class Doc(QMainWindow, Doc):
                             font.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -7006,7 +7006,7 @@ class Doc(QMainWindow, Doc):
                             # runner_word.size = Pt(10)
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'.docx')
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -7296,7 +7296,7 @@ class Doc(QMainWindow, Doc):
                             font.name = 'Arial'
 
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -7357,7 +7357,7 @@ class Doc(QMainWindow, Doc):
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
                             document.save(
-                                './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
 
                     self.frame_popup.show()
                     self.lbl_popup.setText("DOCUMENTOS CRIADOS")
