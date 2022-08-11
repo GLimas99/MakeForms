@@ -797,7 +797,7 @@ class Doc(QMainWindow, Doc):
                     emailcli1 = dados_cli1[0][14]
 
                     Path(
-                        './PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos').mkdir(
+                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos').mkdir(
                         parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False\
