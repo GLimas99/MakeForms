@@ -14,103 +14,179 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Menu(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1039, 870)
-        MainWindow.setMinimumSize(QtCore.QSize(1039, 870))
-        MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
-"background-color: rgb(10, 10, 10);")
+        MainWindow.resize(581, 682)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.top_bar = QtWidgets.QFrame(self.centralwidget)
-        self.top_bar.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.top_bar.setStyleSheet("")
-        self.top_bar.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.top_bar.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.top_bar.setObjectName("top_bar")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.top_bar)
-        self.horizontalLayout_2.setContentsMargins(0, 5, 0, 0)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setMinimumSize(QtCore.QSize(0, 0))
+        self.frame.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.top = QtWidgets.QFrame(self.frame)
+        self.top.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.top.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.top.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.top.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.top.setObjectName("top")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.top)
+        self.horizontalLayout.setContentsMargins(100, 0, 0, 0)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.left = QtWidgets.QFrame(self.top)
+        self.left.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.left.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.left.setObjectName("left")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.left)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.frame_popup = QtWidgets.QFrame(self.top_bar)
-        self.frame_popup.setMaximumSize(QtCore.QSize(450, 16777215))
-        self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-"border-radius:5px;")
-        self.frame_popup.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_popup.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_popup.setObjectName("frame_popup")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_popup)
-        self.horizontalLayout_3.setContentsMargins(0, 0, 5, 0)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label = QtWidgets.QLabel(self.frame_popup)
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(35, 35, 35);")
+        self.label = QtWidgets.QLabel(self.left)
+        self.label.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"color:rgb(250, 230, 0);\n"
+"font: 16pt \"Masiku\";")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.horizontalLayout_3.addWidget(self.label)
-        self.pushButton = QtWidgets.QPushButton(self.frame_popup)
-        self.pushButton.setMaximumSize(QtCore.QSize(20, 20))
-        self.pushButton.setStyleSheet("QPushButton{\n"
-"    border-radius: 5px;\n"
-"    background-image: url(:/Close_Image/Images/cil-x.png);\n"
-"    background-position:center;\n"
-"    \n"
-"    background-color: rgb(60, 60, 60);\n"
+        self.horizontalLayout_2.addWidget(self.label)
+        self.horizontalLayout.addWidget(self.left)
+        self.winbar = QtWidgets.QFrame(self.top)
+        self.winbar.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.winbar.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.winbar.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.winbar.setObjectName("winbar")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.winbar)
+        self.horizontalLayout_4.setContentsMargins(0, 0, -1, 0)
+        self.horizontalLayout_4.setSpacing(5)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.minwin = QtWidgets.QPushButton(self.winbar)
+        self.minwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.minwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.minwin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
 "}\n"
 "QPushButton:hover{\n"
-"    background-color: rgb(50, 50, 50);\n"
-"    color: rgb(255, 255, 127);\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
 "}\n"
 "QPushButton:pressed{\n"
-"    background-color: rgb(35, 35, 35);\n"
-"    color: rgb(255, 255, 127);\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
 "}")
-        self.pushButton.setText("")
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
-        self.horizontalLayout_2.addWidget(self.frame_popup)
-        self.verticalLayout.addWidget(self.top_bar)
-        self.content = QtWidgets.QFrame(self.centralwidget)
-        self.content.setMinimumSize(QtCore.QSize(0, 0))
-        self.content.setStyleSheet("")
-        self.content.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.content.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.content.setObjectName("content")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.content)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.menu_area = QtWidgets.QFrame(self.content)
-        self.menu_area.setMinimumSize(QtCore.QSize(450, 550))
-        self.menu_area.setMaximumSize(QtCore.QSize(450, 550))
-        self.menu_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
-"border-radius: 10px")
-        self.menu_area.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.menu_area.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.menu_area.setObjectName("menu_area")
-        self.logo = QtWidgets.QFrame(self.menu_area)
-        self.logo.setGeometry(QtCore.QRect(119, 0, 211, 90))
-        self.logo.setStyleSheet("background-image: url(:/Logo_yellow/Images/logorocha_360x90.png);\n"
-"background-repeat: no-repeat;\n"
-"background-position: center;\n"
-"")
-        self.logo.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.logo.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.logo.setObjectName("logo")
-        self.lbl_welcome = QtWidgets.QLabel(self.menu_area)
-        self.lbl_welcome.setGeometry(QtCore.QRect(85, 120, 281, 31))
+        self.minwin.setObjectName("minwin")
+        self.horizontalLayout_4.addWidget(self.minwin)
+        self.maxwin = QtWidgets.QPushButton(self.winbar)
+        self.maxwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.maxwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.maxwin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.maxwin.setObjectName("maxwin")
+        self.horizontalLayout_4.addWidget(self.maxwin)
+        self.closewin = QtWidgets.QPushButton(self.winbar)
+        self.closewin.setMinimumSize(QtCore.QSize(20, 20))
+        self.closewin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.closewin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.closewin.setObjectName("closewin")
+        self.horizontalLayout_4.addWidget(self.closewin)
+        self.horizontalLayout.addWidget(self.winbar)
+        self.verticalLayout_4.addWidget(self.top)
+        self.mid = QtWidgets.QFrame(self.frame)
+        self.mid.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.mid.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.mid.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.mid.setLineWidth(1)
+        self.mid.setObjectName("mid")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.mid)
+        self.verticalLayout_5.setContentsMargins(30, 0, 30, 30)
+        self.verticalLayout_5.setSpacing(15)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.lbl_welcome = QtWidgets.QLabel(self.mid)
+        self.lbl_welcome.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(14)
         self.lbl_welcome.setFont(font)
         self.lbl_welcome.setAlignment(QtCore.Qt.AlignCenter)
         self.lbl_welcome.setObjectName("lbl_welcome")
-        self.btn_cadobra = QtWidgets.QPushButton(self.menu_area)
-        self.btn_cadobra.setGeometry(QtCore.QRect(80, 240, 280, 50))
+        self.verticalLayout_5.addWidget(self.lbl_welcome)
+        self.btn_cliente = QtWidgets.QPushButton(self.mid)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_cliente.sizePolicy().hasHeightForWidth())
+        self.btn_cliente.setSizePolicy(sizePolicy)
+        self.btn_cliente.setMinimumSize(QtCore.QSize(280, 50))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.btn_cliente.setFont(font)
+        self.btn_cliente.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_cliente.setAutoDefault(False)
+        self.btn_cliente.setFlat(False)
+        self.btn_cliente.setObjectName("btn_cliente")
+        self.verticalLayout_5.addWidget(self.btn_cliente)
+        self.btn_cadobra = QtWidgets.QPushButton(self.mid)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_cadobra.sizePolicy().hasHeightForWidth())
+        self.btn_cadobra.setSizePolicy(sizePolicy)
+        self.btn_cadobra.setMinimumSize(QtCore.QSize(280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -132,31 +208,14 @@ class Menu(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_cadobra.setObjectName("btn_cadobra")
-        self.btn_cliente = QtWidgets.QPushButton(self.menu_area)
-        self.btn_cliente.setGeometry(QtCore.QRect(80, 180, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.btn_cliente.setFont(font)
-        self.btn_cliente.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_cliente.setObjectName("btn_cliente")
-        self.btn_makedoc = QtWidgets.QPushButton(self.menu_area)
-        self.btn_makedoc.setGeometry(QtCore.QRect(80, 300, 280, 50))
+        self.verticalLayout_5.addWidget(self.btn_cadobra)
+        self.btn_makedoc = QtWidgets.QPushButton(self.mid)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_makedoc.sizePolicy().hasHeightForWidth())
+        self.btn_makedoc.setSizePolicy(sizePolicy)
+        self.btn_makedoc.setMinimumSize(QtCore.QSize(280, 50))
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -178,99 +237,32 @@ class Menu(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_makedoc.setObjectName("btn_makedoc")
-        self.btn_edituser = QtWidgets.QPushButton(self.menu_area)
-        self.btn_edituser.setGeometry(QtCore.QRect(80, 360, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.btn_edituser.setFont(font)
-        self.btn_edituser.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_edituser.setObjectName("btn_edituser")
-        self.btn_edituser_2 = QtWidgets.QPushButton(self.menu_area)
-        self.btn_edituser_2.setGeometry(QtCore.QRect(80, 480, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.btn_edituser_2.setFont(font)
-        self.btn_edituser_2.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_edituser_2.setObjectName("btn_edituser_2")
-        self.btn_edituser_3 = QtWidgets.QPushButton(self.menu_area)
-        self.btn_edituser_3.setGeometry(QtCore.QRect(80, 420, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.btn_edituser_3.setFont(font)
-        self.btn_edituser_3.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_edituser_3.setObjectName("btn_edituser_3")
-        self.horizontalLayout.addWidget(self.menu_area)
-        self.verticalLayout.addWidget(self.content)
-        self.bottom = QtWidgets.QFrame(self.centralwidget)
-        self.bottom.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.bottom.setStyleSheet("background-color: rgb(15, 15, 15);")
-        self.bottom.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.bottom.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.bottom.setObjectName("bottom")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.bottom)
-        self.verticalLayout_2.setContentsMargins(0, 6, 4, 1)
+        self.verticalLayout_5.addWidget(self.btn_makedoc)
+        self.verticalLayout_4.addWidget(self.mid)
+        self.bot = QtWidgets.QFrame(self.frame)
+        self.bot.setMinimumSize(QtCore.QSize(0, 0))
+        self.bot.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.bot.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.bot.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.bot.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.bot.setObjectName("bot")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.bot)
+        self.verticalLayout_2.setContentsMargins(0, 5, 10, 5)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.lbl_version = QtWidgets.QLabel(self.bottom)
+        self.version = QtWidgets.QLabel(self.bot)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
-        self.lbl_version.setFont(font)
-        self.lbl_version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lbl_version.setObjectName("lbl_version")
-        self.verticalLayout_2.addWidget(self.lbl_version)
-        self.lbl_lima = QtWidgets.QLabel(self.bottom)
-        self.lbl_lima.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lbl_lima.setObjectName("lbl_lima")
-        self.verticalLayout_2.addWidget(self.lbl_lima)
-        self.verticalLayout.addWidget(self.bottom)
+        self.version.setFont(font)
+        self.version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.version.setObjectName("version")
+        self.verticalLayout_2.addWidget(self.version)
+        self.created = QtWidgets.QLabel(self.bot)
+        self.created.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.created.setObjectName("created")
+        self.verticalLayout_2.addWidget(self.created)
+        self.verticalLayout_4.addWidget(self.bot)
+        self.verticalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -278,18 +270,17 @@ class Menu(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Menu"))
-        self.label.setText(_translate("MainWindow", "NOTA DE ATUALIZAÇÃO"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "ROGÉRIO ROCHA ENGENHARIA"))
+        self.minwin.setText(_translate("MainWindow", "―"))
+        self.maxwin.setText(_translate("MainWindow", "☐"))
+        self.closewin.setText(_translate("MainWindow", "X"))
         self.lbl_welcome.setText(_translate("MainWindow", "Bem vindo Rogério"))
-        self.btn_cadobra.setText(_translate("MainWindow", "OBRAS E PROJETOS"))
         self.btn_cliente.setText(_translate("MainWindow", "CLIENTES"))
+        self.btn_cadobra.setText(_translate("MainWindow", "OBRAS E PROJETOS"))
         self.btn_makedoc.setText(_translate("MainWindow", "CRIAR DOCUMENTOS"))
-        self.btn_edituser.setText(_translate("MainWindow", "EDITAR USUÁRIO"))
-        self.btn_edituser_2.setText(_translate("MainWindow", "SAIR"))
-        self.btn_edituser_3.setText(_translate("MainWindow", "TROCAR USUÁRIO"))
-        self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
-        self.lbl_lima.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
-import file_rc_rc
+        self.version.setText(_translate("MainWindow", "V 1.2"))
+        self.created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 
 
 if __name__ == "__main__":

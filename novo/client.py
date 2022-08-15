@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'edit_client.ui'
+# Form implementation generated from reading ui file 'cliente.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,96 +14,46 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Cliente(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1000, 870)
-        MainWindow.setMinimumSize(QtCore.QSize(0, 0))
-        MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
-"background-color: rgb(10, 10, 10);")
+        MainWindow.resize(1063, 740)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setMinimumSize(QtCore.QSize(1000, 870))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        self.centralwidget.setFont(font)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.top_bar = QtWidgets.QFrame(self.centralwidget)
-        self.top_bar.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.top_bar.setStyleSheet("")
-        self.top_bar.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.top_bar.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.top_bar.setObjectName("top_bar")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.top_bar)
-        self.horizontalLayout_2.setContentsMargins(0, 5, 0, 0)
-        self.horizontalLayout_2.setSpacing(0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.frame_popup = QtWidgets.QFrame(self.top_bar)
-        self.frame_popup.setMaximumSize(QtCore.QSize(450, 16777215))
-        self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-"border-radius:5px;")
-        self.frame_popup.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_popup.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_popup.setObjectName("frame_popup")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_popup)
-        self.horizontalLayout_3.setContentsMargins(0, 0, 5, 0)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label = QtWidgets.QLabel(self.frame_popup)
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(35, 35, 35);")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.horizontalLayout_3.addWidget(self.label)
-        self.pushButton = QtWidgets.QPushButton(self.frame_popup)
-        self.pushButton.setMaximumSize(QtCore.QSize(20, 20))
-        self.pushButton.setStyleSheet("QPushButton{\n"
-"    border-radius: 5px;\n"
-"    background-image: url(:/Close_Image/Images/cil-x.png);\n"
-"    background-position:center;\n"
-"    \n"
-"    background-color: rgb(60, 60, 60);\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(50, 50, 50);\n"
-"    color: rgb(255, 255, 127);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(35, 35, 35);\n"
-"    color: rgb(255, 255, 127);\n"
-"}")
-        self.pushButton.setText("")
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
-        self.horizontalLayout_2.addWidget(self.frame_popup)
-        self.verticalLayout.addWidget(self.top_bar)
-        self.content = QtWidgets.QFrame(self.centralwidget)
-        self.content.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.content.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.content.setObjectName("content")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.content)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setMinimumSize(QtCore.QSize(0, 0))
+        self.frame.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.top = QtWidgets.QFrame(self.frame)
+        self.top.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.top.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.top.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.top.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.top.setObjectName("top")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.top)
+        self.horizontalLayout.setContentsMargins(40, 0, 0, 0)
+        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.editocli_area = QtWidgets.QFrame(self.content)
-        self.editocli_area.setMinimumSize(QtCore.QSize(0, 0))
-        self.editocli_area.setMaximumSize(QtCore.QSize(950, 765))
-        self.editocli_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
-"border-radius: 10px")
-        self.editocli_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.editocli_area.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.editocli_area.setObjectName("editocli_area")
-        self.logo = QtWidgets.QFrame(self.editocli_area)
-        self.logo.setGeometry(QtCore.QRect(360, 0, 211, 90))
-        self.logo.setStyleSheet("background-image: url(:/Logo_yellow/Images/logorocha_360x90.png);\n"
-"background-repeat: no-repeat;\n"
-"background-position: center;\n"
-"")
-        self.logo.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.logo.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.logo.setObjectName("logo")
-        self.btn_return = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_return.setGeometry(QtCore.QRect(30, 20, 41, 50))
+        self.returnbar = QtWidgets.QFrame(self.top)
+        self.returnbar.setMaximumSize(QtCore.QSize(41, 16777215))
+        self.returnbar.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.returnbar.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.returnbar.setObjectName("returnbar")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.returnbar)
+        self.verticalLayout_10.setContentsMargins(0, 5, 0, 5)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.btn_return = QtWidgets.QPushButton(self.returnbar)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(18)
@@ -123,13 +73,148 @@ class Cliente(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_return.setObjectName("btn_return")
-        self.txt_id = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_id.setGeometry(QtCore.QRect(510, 90, 361, 50))
+        self.verticalLayout_10.addWidget(self.btn_return)
+        self.horizontalLayout.addWidget(self.returnbar)
+        self.logoloc = QtWidgets.QFrame(self.top)
+        self.logoloc.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.logoloc.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.logoloc.setObjectName("logoloc")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.logoloc)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.logo_2 = QtWidgets.QLabel(self.logoloc)
+        self.logo_2.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"color:rgb(250, 230, 0);\n"
+"font: 16pt \"Masiku\";")
+        self.logo_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.logo_2.setObjectName("logo_2")
+        self.horizontalLayout_2.addWidget(self.logo_2)
+        self.horizontalLayout.addWidget(self.logoloc)
+        self.titlebar = QtWidgets.QFrame(self.top)
+        self.titlebar.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.titlebar.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.titlebar.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.titlebar.setObjectName("titlebar")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.titlebar)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 5, 0)
+        self.horizontalLayout_4.setSpacing(5)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.minwin = QtWidgets.QPushButton(self.titlebar)
+        self.minwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.minwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.minwin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.minwin.setObjectName("minwin")
+        self.horizontalLayout_4.addWidget(self.minwin)
+        self.maxwin = QtWidgets.QPushButton(self.titlebar)
+        self.maxwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.maxwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.maxwin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.maxwin.setObjectName("maxwin")
+        self.horizontalLayout_4.addWidget(self.maxwin)
+        self.closewin = QtWidgets.QPushButton(self.titlebar)
+        self.closewin.setMinimumSize(QtCore.QSize(20, 20))
+        self.closewin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.closewin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.closewin.setObjectName("closewin")
+        self.horizontalLayout_4.addWidget(self.closewin)
+        self.horizontalLayout.addWidget(self.titlebar)
+        self.verticalLayout_4.addWidget(self.top)
+        self.mid = QtWidgets.QFrame(self.frame)
+        self.mid.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.mid.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.mid.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.mid.setLineWidth(1)
+        self.mid.setObjectName("mid")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.mid)
+        self.verticalLayout_5.setContentsMargins(15, 0, 15, 0)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.meio = QtWidgets.QFrame(self.mid)
+        self.meio.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.meio.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.meio.setObjectName("meio")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.meio)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.meioesq = QtWidgets.QFrame(self.meio)
+        self.meioesq.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.meioesq.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.meioesq.setObjectName("meioesq")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.meioesq)
+        self.verticalLayout_3.setContentsMargins(0, 0, 2, 0)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.pesquisa = QtWidgets.QFrame(self.meioesq)
+        self.pesquisa.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.pesquisa.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.pesquisa.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.pesquisa.setObjectName("pesquisa")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.pesquisa)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setSpacing(5)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.npme = QtWidgets.QFrame(self.pesquisa)
+        self.npme.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.npme.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.npme.setObjectName("npme")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.npme)
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.txt_nome = QtWidgets.QLineEdit(self.npme)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_nome.sizePolicy().hasHeightForWidth())
+        self.txt_nome.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_id.setFont(font)
-        self.txt_id.setStyleSheet("QLineEdit{\n"
+        self.txt_nome.setFont(font)
+        self.txt_nome.setStyleSheet("QLineEdit{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
 "    padding: 15px;\n"
@@ -143,10 +228,26 @@ class Cliente(object):
 "    border: 2px solid rgb(255, 207, 0);\n"
 "    color: rgb(200, 200, 200);\n"
 "}")
-        self.txt_id.setMaxLength(64)
-        self.txt_id.setObjectName("txt_id")
-        self.btn_search = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_search.setGeometry(QtCore.QRect(450, 90, 51, 50))
+        self.txt_nome.setMaxLength(32)
+        self.txt_nome.setObjectName("txt_nome")
+        self.verticalLayout_8.addWidget(self.txt_nome)
+        self.horizontalLayout_7.addWidget(self.npme)
+        self.search = QtWidgets.QFrame(self.pesquisa)
+        self.search.setMinimumSize(QtCore.QSize(0, 0))
+        self.search.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.search.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.search.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.search.setObjectName("search")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.search)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.btn_search = QtWidgets.QPushButton(self.search)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_search.sizePolicy().hasHeightForWidth())
+        self.btn_search.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -169,338 +270,18 @@ class Cliente(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_search.setObjectName("btn_search")
-        self.txt_nome = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_nome.setGeometry(QtCore.QRect(10, 90, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_nome.setFont(font)
-        self.txt_nome.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_nome.setMaxLength(32)
-        self.txt_nome.setObjectName("txt_nome")
-        self.txt_clinacionalidade = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clinacionalidade.setGeometry(QtCore.QRect(510, 510, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clinacionalidade.setFont(font)
-        self.txt_clinacionalidade.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clinacionalidade.setMaxLength(32)
-        self.txt_clinacionalidade.setObjectName("txt_clinacionalidade")
-        self.txt_cliestadocivil = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliestadocivil.setGeometry(QtCore.QRect(730, 580, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_cliestadocivil.setFont(font)
-        self.txt_cliestadocivil.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_cliestadocivil.setMaxLength(32)
-        self.txt_cliestadocivil.setObjectName("txt_cliestadocivil")
-        self.txt_clibairro = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clibairro.setGeometry(QtCore.QRect(510, 330, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clibairro.setFont(font)
-        self.txt_clibairro.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clibairro.setMaxLength(64)
-        self.txt_clibairro.setObjectName("txt_clibairro")
-        self.txt_clinumero = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clinumero.setGeometry(QtCore.QRect(510, 390, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clinumero.setFont(font)
-        self.txt_clinumero.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clinumero.setMaxLength(32)
-        self.txt_clinumero.setObjectName("txt_clinumero")
-        self.txt_clicidade = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clicidade.setGeometry(QtCore.QRect(730, 390, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clicidade.setFont(font)
-        self.txt_clicidade.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clicidade.setMaxLength(32)
-        self.txt_clicidade.setObjectName("txt_clicidade")
-        self.txt_cliend = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliend.setGeometry(QtCore.QRect(510, 270, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_cliend.setFont(font)
-        self.txt_cliend.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_cliend.setMaxLength(64)
-        self.txt_cliend.setObjectName("txt_cliend")
-        self.txt_clinome = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clinome.setGeometry(QtCore.QRect(510, 150, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clinome.setFont(font)
-        self.txt_clinome.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clinome.setMaxLength(64)
-        self.txt_clinome.setObjectName("txt_clinome")
-        self.txt_clicep = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clicep.setGeometry(QtCore.QRect(730, 450, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clicep.setFont(font)
-        self.txt_clicep.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clicep.setMaxLength(32)
-        self.txt_clicep.setObjectName("txt_clicep")
-        self.txt_cliemail = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliemail.setGeometry(QtCore.QRect(510, 640, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_cliemail.setFont(font)
-        self.txt_cliemail.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_cliemail.setMaxLength(32)
-        self.txt_cliemail.setObjectName("txt_cliemail")
-        self.txt_clirg = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clirg.setGeometry(QtCore.QRect(730, 210, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clirg.setFont(font)
-        self.txt_clirg.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clirg.setMaxLength(32)
-        self.txt_clirg.setObjectName("txt_clirg")
-        self.txt_cliestado = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliestado.setGeometry(QtCore.QRect(510, 450, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_cliestado.setFont(font)
-        self.txt_cliestado.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_cliestado.setMaxLength(32)
-        self.txt_cliestado.setObjectName("txt_cliestado")
-        self.txt_clicelular = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clicelular.setGeometry(QtCore.QRect(510, 580, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clicelular.setFont(font)
-        self.txt_clicelular.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clicelular.setMaxLength(32)
-        self.txt_clicelular.setObjectName("txt_clicelular")
-        self.txt_clicpf = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_clicpf.setGeometry(QtCore.QRect(510, 210, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_clicpf.setFont(font)
-        self.txt_clicpf.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_clicpf.setMaxLength(32)
-        self.txt_clicpf.setObjectName("txt_clicpf")
-        self.txt_cliprofissao = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_cliprofissao.setGeometry(QtCore.QRect(730, 510, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_cliprofissao.setFont(font)
-        self.txt_cliprofissao.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_cliprofissao.setMaxLength(32)
-        self.txt_cliprofissao.setObjectName("txt_cliprofissao")
-        self.tabWid_cli = QtWidgets.QTableWidget(self.editocli_area)
-        self.tabWid_cli.setGeometry(QtCore.QRect(10, 150, 491, 541))
+        self.verticalLayout_9.addWidget(self.btn_search)
+        self.horizontalLayout_7.addWidget(self.search)
+        self.verticalLayout_3.addWidget(self.pesquisa)
+        self.dados = QtWidgets.QFrame(self.meioesq)
+        self.dados.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.dados.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.dados.setObjectName("dados")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.dados)
+        self.horizontalLayout_8.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_8.setSpacing(0)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.tabWid_cli = QtWidgets.QTableWidget(self.dados)
         self.tabWid_cli.setStyleSheet("QTableWidget{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
@@ -572,71 +353,80 @@ class Cliente(object):
         self.tabWid_cli.setHorizontalHeaderItem(13, item)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_cli.setHorizontalHeaderItem(14, item)
-        self.btn_add = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_add.setGeometry(QtCore.QRect(640, 700, 280, 50))
+        self.horizontalLayout_8.addWidget(self.tabWid_cli)
+        self.verticalLayout_3.addWidget(self.dados)
+        self.horizontalLayout_3.addWidget(self.meioesq)
+        self.meiodir = QtWidgets.QFrame(self.meio)
+        self.meiodir.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.meiodir.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.meiodir.setObjectName("meiodir")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.meiodir)
+        self.verticalLayout_6.setContentsMargins(2, 0, 0, 0)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.frame_16 = QtWidgets.QFrame(self.meiodir)
+        self.frame_16.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.frame_16.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_16.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_16.setObjectName("frame_16")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_16)
+        self.horizontalLayout_9.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_9.setSpacing(5)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.frame_21 = QtWidgets.QFrame(self.frame_16)
+        self.frame_21.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_21.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_21.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_21.setObjectName("frame_21")
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.frame_21)
+        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_18.setSpacing(0)
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.txt_id = QtWidgets.QLineEdit(self.frame_21)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_id.sizePolicy().hasHeightForWidth())
+        self.txt_id.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.btn_add.setFont(font)
-        self.btn_add.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
+        self.txt_id.setFont(font)
+        self.txt_id.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
 "}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
 "}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
 "}")
-        self.btn_add.setObjectName("btn_add")
-        self.btn_delete = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_delete.setGeometry(QtCore.QRect(40, 700, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.btn_delete.setFont(font)
-        self.btn_delete.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_delete.setObjectName("btn_delete")
-        self.btn_edit = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_edit.setGeometry(QtCore.QRect(340, 700, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.btn_edit.setFont(font)
-        self.btn_edit.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_edit.setObjectName("btn_edit")
-        self.btn_copy = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_copy.setGeometry(QtCore.QRect(880, 90, 61, 50))
+        self.txt_id.setMaxLength(64)
+        self.txt_id.setObjectName("txt_id")
+        self.horizontalLayout_18.addWidget(self.txt_id)
+        self.horizontalLayout_9.addWidget(self.frame_21)
+        self.frame_22 = QtWidgets.QFrame(self.frame_16)
+        self.frame_22.setMinimumSize(QtCore.QSize(0, 0))
+        self.frame_22.setMaximumSize(QtCore.QSize(70, 16777215))
+        self.frame_22.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_22.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_22.setObjectName("frame_22")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_22)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.btn_copy = QtWidgets.QPushButton(self.frame_22)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_copy.sizePolicy().hasHeightForWidth())
+        self.btn_copy.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -659,30 +449,732 @@ class Cliente(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_copy.setObjectName("btn_copy")
-        self.horizontalLayout.addWidget(self.editocli_area)
-        self.verticalLayout.addWidget(self.content)
-        self.bottom = QtWidgets.QFrame(self.centralwidget)
-        self.bottom.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.bottom.setStyleSheet("background-color: rgb(15, 15, 15);")
-        self.bottom.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.bottom.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.bottom.setObjectName("bottom")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.bottom)
-        self.verticalLayout_2.setContentsMargins(0, 0, 6, 1)
-        self.verticalLayout_2.setSpacing(0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.lbl_version = QtWidgets.QLabel(self.bottom)
-        self.lbl_version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lbl_version.setObjectName("lbl_version")
-        self.verticalLayout_2.addWidget(self.lbl_version)
-        self.lbl_created = QtWidgets.QLabel(self.bottom)
+        self.horizontalLayout_19.addWidget(self.btn_copy)
+        self.horizontalLayout_9.addWidget(self.frame_22)
+        self.verticalLayout_6.addWidget(self.frame_16)
+        self.frame_11 = QtWidgets.QFrame(self.meiodir)
+        self.frame_11.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.frame_11.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_11.setObjectName("frame_11")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_11)
+        self.verticalLayout_7.setContentsMargins(0, 5, 0, 0)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.frame_23 = QtWidgets.QFrame(self.frame_11)
+        self.frame_23.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_23.setObjectName("frame_23")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_23)
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.txt_clinome = QtWidgets.QLineEdit(self.frame_23)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clinome.sizePolicy().hasHeightForWidth())
+        self.txt_clinome.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
-        self.lbl_created.setFont(font)
-        self.lbl_created.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lbl_created.setObjectName("lbl_created")
-        self.verticalLayout_2.addWidget(self.lbl_created)
-        self.verticalLayout.addWidget(self.bottom)
+        font.setPointSize(10)
+        self.txt_clinome.setFont(font)
+        self.txt_clinome.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clinome.setMaxLength(64)
+        self.txt_clinome.setObjectName("txt_clinome")
+        self.verticalLayout_11.addWidget(self.txt_clinome)
+        self.verticalLayout_7.addWidget(self.frame_23)
+        self.verticalLayout_6.addWidget(self.frame_11)
+        self.frame_17 = QtWidgets.QFrame(self.meiodir)
+        self.frame_17.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.frame_17.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_17.setObjectName("frame_17")
+        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.frame_17)
+        self.horizontalLayout_10.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_10.setSpacing(5)
+        self.horizontalLayout_10.setObjectName("horizontalLayout_10")
+        self.cpf = QtWidgets.QFrame(self.frame_17)
+        self.cpf.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.cpf.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.cpf.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.cpf.setObjectName("cpf")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.cpf)
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.txt_clicpf = QtWidgets.QLineEdit(self.cpf)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clicpf.sizePolicy().hasHeightForWidth())
+        self.txt_clicpf.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clicpf.setFont(font)
+        self.txt_clicpf.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clicpf.setMaxLength(32)
+        self.txt_clicpf.setObjectName("txt_clicpf")
+        self.verticalLayout_12.addWidget(self.txt_clicpf)
+        self.horizontalLayout_10.addWidget(self.cpf)
+        self.rg = QtWidgets.QFrame(self.frame_17)
+        self.rg.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.rg.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.rg.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.rg.setObjectName("rg")
+        self.horizontalLayout_31 = QtWidgets.QHBoxLayout(self.rg)
+        self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_31.setSpacing(0)
+        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
+        self.txt_clirg = QtWidgets.QLineEdit(self.rg)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clirg.sizePolicy().hasHeightForWidth())
+        self.txt_clirg.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clirg.setFont(font)
+        self.txt_clirg.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clirg.setMaxLength(32)
+        self.txt_clirg.setObjectName("txt_clirg")
+        self.horizontalLayout_31.addWidget(self.txt_clirg)
+        self.horizontalLayout_10.addWidget(self.rg)
+        self.verticalLayout_6.addWidget(self.frame_17)
+        self.frame_12 = QtWidgets.QFrame(self.meiodir)
+        self.frame_12.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_12.setObjectName("frame_12")
+        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_12)
+        self.horizontalLayout_11.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_11.setSpacing(5)
+        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
+        self.frame_26 = QtWidgets.QFrame(self.frame_12)
+        self.frame_26.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_26.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_26.setObjectName("frame_26")
+        self.horizontalLayout_30 = QtWidgets.QHBoxLayout(self.frame_26)
+        self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_30.setSpacing(0)
+        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
+        self.txt_cliend = QtWidgets.QLineEdit(self.frame_26)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_cliend.sizePolicy().hasHeightForWidth())
+        self.txt_cliend.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_cliend.setFont(font)
+        self.txt_cliend.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_cliend.setMaxLength(64)
+        self.txt_cliend.setObjectName("txt_cliend")
+        self.horizontalLayout_30.addWidget(self.txt_cliend)
+        self.horizontalLayout_11.addWidget(self.frame_26)
+        self.verticalLayout_6.addWidget(self.frame_12)
+        self.frame_13 = QtWidgets.QFrame(self.meiodir)
+        self.frame_13.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.frame_13.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_13.setObjectName("frame_13")
+        self.horizontalLayout_15 = QtWidgets.QHBoxLayout(self.frame_13)
+        self.horizontalLayout_15.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_15.setSpacing(0)
+        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
+        self.frame_27 = QtWidgets.QFrame(self.frame_13)
+        self.frame_27.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_27.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_27.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_27.setObjectName("frame_27")
+        self.horizontalLayout_29 = QtWidgets.QHBoxLayout(self.frame_27)
+        self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_29.setSpacing(0)
+        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
+        self.txt_clibairro = QtWidgets.QLineEdit(self.frame_27)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clibairro.sizePolicy().hasHeightForWidth())
+        self.txt_clibairro.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clibairro.setFont(font)
+        self.txt_clibairro.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clibairro.setMaxLength(64)
+        self.txt_clibairro.setObjectName("txt_clibairro")
+        self.horizontalLayout_29.addWidget(self.txt_clibairro)
+        self.horizontalLayout_15.addWidget(self.frame_27)
+        self.verticalLayout_6.addWidget(self.frame_13)
+        self.sextotxt = QtWidgets.QFrame(self.meiodir)
+        self.sextotxt.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.sextotxt.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.sextotxt.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.sextotxt.setObjectName("sextotxt")
+        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.sextotxt)
+        self.horizontalLayout_16.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_16.setSpacing(5)
+        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
+        self.numero = QtWidgets.QFrame(self.sextotxt)
+        self.numero.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.numero.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.numero.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.numero.setObjectName("numero")
+        self.horizontalLayout_27 = QtWidgets.QHBoxLayout(self.numero)
+        self.horizontalLayout_27.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_27.setSpacing(0)
+        self.horizontalLayout_27.setObjectName("horizontalLayout_27")
+        self.txt_clinumero = QtWidgets.QLineEdit(self.numero)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clinumero.sizePolicy().hasHeightForWidth())
+        self.txt_clinumero.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clinumero.setFont(font)
+        self.txt_clinumero.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clinumero.setMaxLength(32)
+        self.txt_clinumero.setObjectName("txt_clinumero")
+        self.horizontalLayout_27.addWidget(self.txt_clinumero)
+        self.horizontalLayout_16.addWidget(self.numero)
+        self.cidade = QtWidgets.QFrame(self.sextotxt)
+        self.cidade.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.cidade.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.cidade.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.cidade.setObjectName("cidade")
+        self.horizontalLayout_28 = QtWidgets.QHBoxLayout(self.cidade)
+        self.horizontalLayout_28.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_28.setSpacing(0)
+        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
+        self.txt_clicidade = QtWidgets.QLineEdit(self.cidade)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clicidade.sizePolicy().hasHeightForWidth())
+        self.txt_clicidade.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clicidade.setFont(font)
+        self.txt_clicidade.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clicidade.setMaxLength(32)
+        self.txt_clicidade.setObjectName("txt_clicidade")
+        self.horizontalLayout_28.addWidget(self.txt_clicidade)
+        self.horizontalLayout_16.addWidget(self.cidade)
+        self.verticalLayout_6.addWidget(self.sextotxt)
+        self.frame_14 = QtWidgets.QFrame(self.meiodir)
+        self.frame_14.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.frame_14.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_14.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_14.setObjectName("frame_14")
+        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.frame_14)
+        self.horizontalLayout_17.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_17.setSpacing(5)
+        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.frame_30 = QtWidgets.QFrame(self.frame_14)
+        self.frame_30.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_30.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_30.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_30.setObjectName("frame_30")
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout(self.frame_30)
+        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_25.setSpacing(0)
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        self.txt_cliestado = QtWidgets.QLineEdit(self.frame_30)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_cliestado.sizePolicy().hasHeightForWidth())
+        self.txt_cliestado.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_cliestado.setFont(font)
+        self.txt_cliestado.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_cliestado.setMaxLength(32)
+        self.txt_cliestado.setObjectName("txt_cliestado")
+        self.horizontalLayout_25.addWidget(self.txt_cliestado)
+        self.horizontalLayout_17.addWidget(self.frame_30)
+        self.frame_31 = QtWidgets.QFrame(self.frame_14)
+        self.frame_31.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_31.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_31.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_31.setObjectName("frame_31")
+        self.horizontalLayout_26 = QtWidgets.QHBoxLayout(self.frame_31)
+        self.horizontalLayout_26.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_26.setSpacing(0)
+        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
+        self.txt_clicep = QtWidgets.QLineEdit(self.frame_31)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clicep.sizePolicy().hasHeightForWidth())
+        self.txt_clicep.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clicep.setFont(font)
+        self.txt_clicep.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clicep.setMaxLength(32)
+        self.txt_clicep.setObjectName("txt_clicep")
+        self.horizontalLayout_26.addWidget(self.txt_clicep)
+        self.horizontalLayout_17.addWidget(self.frame_31)
+        self.verticalLayout_6.addWidget(self.frame_14)
+        self.oitavotxt = QtWidgets.QFrame(self.meiodir)
+        self.oitavotxt.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.oitavotxt.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.oitavotxt.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.oitavotxt.setObjectName("oitavotxt")
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.oitavotxt)
+        self.horizontalLayout_14.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_14.setSpacing(5)
+        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
+        self.nacio = QtWidgets.QFrame(self.oitavotxt)
+        self.nacio.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.nacio.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.nacio.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.nacio.setObjectName("nacio")
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.nacio)
+        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_23.setSpacing(0)
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.txt_clinacionalidade = QtWidgets.QLineEdit(self.nacio)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clinacionalidade.sizePolicy().hasHeightForWidth())
+        self.txt_clinacionalidade.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clinacionalidade.setFont(font)
+        self.txt_clinacionalidade.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clinacionalidade.setMaxLength(32)
+        self.txt_clinacionalidade.setObjectName("txt_clinacionalidade")
+        self.horizontalLayout_23.addWidget(self.txt_clinacionalidade)
+        self.horizontalLayout_14.addWidget(self.nacio)
+        self.prof = QtWidgets.QFrame(self.oitavotxt)
+        self.prof.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.prof.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.prof.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.prof.setObjectName("prof")
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout(self.prof)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.txt_cliprofissao = QtWidgets.QLineEdit(self.prof)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_cliprofissao.sizePolicy().hasHeightForWidth())
+        self.txt_cliprofissao.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_cliprofissao.setFont(font)
+        self.txt_cliprofissao.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_cliprofissao.setMaxLength(32)
+        self.txt_cliprofissao.setObjectName("txt_cliprofissao")
+        self.horizontalLayout_24.addWidget(self.txt_cliprofissao)
+        self.horizontalLayout_14.addWidget(self.prof)
+        self.verticalLayout_6.addWidget(self.oitavotxt)
+        self.frame_15 = QtWidgets.QFrame(self.meiodir)
+        self.frame_15.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.frame_15.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_15.setObjectName("frame_15")
+        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.frame_15)
+        self.horizontalLayout_13.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_13.setSpacing(5)
+        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
+        self.frame_34 = QtWidgets.QFrame(self.frame_15)
+        self.frame_34.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_34.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_34.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_34.setObjectName("frame_34")
+        self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.frame_34)
+        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
+        self.txt_clicelular = QtWidgets.QLineEdit(self.frame_34)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_clicelular.sizePolicy().hasHeightForWidth())
+        self.txt_clicelular.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_clicelular.setFont(font)
+        self.txt_clicelular.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_clicelular.setMaxLength(32)
+        self.txt_clicelular.setObjectName("txt_clicelular")
+        self.horizontalLayout_21.addWidget(self.txt_clicelular)
+        self.horizontalLayout_13.addWidget(self.frame_34)
+        self.frame_35 = QtWidgets.QFrame(self.frame_15)
+        self.frame_35.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.frame_35.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_35.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_35.setObjectName("frame_35")
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.frame_35)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_22.setSpacing(0)
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.txt_cliestadocivil = QtWidgets.QLineEdit(self.frame_35)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_cliestadocivil.sizePolicy().hasHeightForWidth())
+        self.txt_cliestadocivil.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_cliestadocivil.setFont(font)
+        self.txt_cliestadocivil.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_cliestadocivil.setMaxLength(32)
+        self.txt_cliestadocivil.setObjectName("txt_cliestadocivil")
+        self.horizontalLayout_22.addWidget(self.txt_cliestadocivil)
+        self.horizontalLayout_13.addWidget(self.frame_35)
+        self.verticalLayout_6.addWidget(self.frame_15)
+        self.emailall = QtWidgets.QFrame(self.meiodir)
+        self.emailall.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.emailall.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.emailall.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.emailall.setObjectName("emailall")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.emailall)
+        self.horizontalLayout_12.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_12.setSpacing(5)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.email = QtWidgets.QFrame(self.emailall)
+        self.email.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.email.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.email.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.email.setObjectName("email")
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout(self.email)
+        self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_20.setSpacing(0)
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        self.txt_cliemail = QtWidgets.QLineEdit(self.email)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_cliemail.sizePolicy().hasHeightForWidth())
+        self.txt_cliemail.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_cliemail.setFont(font)
+        self.txt_cliemail.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_cliemail.setMaxLength(32)
+        self.txt_cliemail.setObjectName("txt_cliemail")
+        self.horizontalLayout_20.addWidget(self.txt_cliemail)
+        self.horizontalLayout_12.addWidget(self.email)
+        self.verticalLayout_6.addWidget(self.emailall)
+        self.horizontalLayout_3.addWidget(self.meiodir)
+        self.verticalLayout_5.addWidget(self.meio)
+        self.btnbar = QtWidgets.QFrame(self.mid)
+        self.btnbar.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.btnbar.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.btnbar.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.btnbar.setObjectName("btnbar")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.btnbar)
+        self.horizontalLayout_6.setContentsMargins(5, 5, 5, 0)
+        self.horizontalLayout_6.setSpacing(5)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.btn_delete = QtWidgets.QPushButton(self.btnbar)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
+        self.btn_delete.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.btn_delete.setFont(font)
+        self.btn_delete.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_delete.setObjectName("btn_delete")
+        self.horizontalLayout_6.addWidget(self.btn_delete)
+        self.btn_edit = QtWidgets.QPushButton(self.btnbar)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_edit.sizePolicy().hasHeightForWidth())
+        self.btn_edit.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.btn_edit.setFont(font)
+        self.btn_edit.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_edit.setObjectName("btn_edit")
+        self.horizontalLayout_6.addWidget(self.btn_edit)
+        self.btn_add = QtWidgets.QPushButton(self.btnbar)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_add.sizePolicy().hasHeightForWidth())
+        self.btn_add.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.btn_add.setFont(font)
+        self.btn_add.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_add.setObjectName("btn_add")
+        self.horizontalLayout_6.addWidget(self.btn_add)
+        self.verticalLayout_5.addWidget(self.btnbar)
+        self.verticalLayout_4.addWidget(self.mid)
+        self.bot = QtWidgets.QFrame(self.frame)
+        self.bot.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.bot.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.bot.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.bot.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.bot.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.bot.setObjectName("bot")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.bot)
+        self.verticalLayout_2.setContentsMargins(0, 5, 10, 5)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.version = QtWidgets.QLabel(self.bot)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        self.version.setFont(font)
+        self.version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.version.setObjectName("version")
+        self.verticalLayout_2.addWidget(self.version)
+        self.created = QtWidgets.QLabel(self.bot)
+        self.created.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.created.setObjectName("created")
+        self.verticalLayout_2.addWidget(self.created)
+        self.verticalLayout_4.addWidget(self.bot)
+        self.verticalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -690,26 +1182,14 @@ class Cliente(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Edit Client"))
-        self.label.setText(_translate("MainWindow", "EDITADO"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btn_return.setText(_translate("MainWindow", "↩"))
-        self.txt_id.setPlaceholderText(_translate("MainWindow", "DIGITE O ID"))
-        self.btn_search.setText(_translate("MainWindow", "⌕"))
+        self.logo_2.setText(_translate("MainWindow", "ROGÉRIO ROCHA ENGENHARIA"))
+        self.minwin.setText(_translate("MainWindow", "―"))
+        self.maxwin.setText(_translate("MainWindow", "☐"))
+        self.closewin.setText(_translate("MainWindow", "X"))
         self.txt_nome.setPlaceholderText(_translate("MainWindow", "NOME DO CLIENTE"))
-        self.txt_clinacionalidade.setPlaceholderText(_translate("MainWindow", "NACIONALIDADE"))
-        self.txt_cliestadocivil.setPlaceholderText(_translate("MainWindow", "ESTADO CIVIL"))
-        self.txt_clibairro.setPlaceholderText(_translate("MainWindow", "BAIRRO"))
-        self.txt_clinumero.setPlaceholderText(_translate("MainWindow", "NUMERO"))
-        self.txt_clicidade.setPlaceholderText(_translate("MainWindow", "CIDADE"))
-        self.txt_cliend.setPlaceholderText(_translate("MainWindow", "ENDEREÇO"))
-        self.txt_clinome.setPlaceholderText(_translate("MainWindow", "NOME"))
-        self.txt_clicep.setPlaceholderText(_translate("MainWindow", "CEP"))
-        self.txt_cliemail.setPlaceholderText(_translate("MainWindow", "EMAIL"))
-        self.txt_clirg.setPlaceholderText(_translate("MainWindow", "RG"))
-        self.txt_cliestado.setPlaceholderText(_translate("MainWindow", "ESTADO"))
-        self.txt_clicelular.setPlaceholderText(_translate("MainWindow", "CELULAR"))
-        self.txt_clicpf.setPlaceholderText(_translate("MainWindow", "CPF"))
-        self.txt_cliprofissao.setPlaceholderText(_translate("MainWindow", "PROFISSÃO"))
+        self.btn_search.setText(_translate("MainWindow", "⌕"))
         item = self.tabWid_cli.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID"))
         item = self.tabWid_cli.horizontalHeaderItem(1)
@@ -740,13 +1220,27 @@ class Cliente(object):
         item.setText(_translate("MainWindow", "CELULAR"))
         item = self.tabWid_cli.horizontalHeaderItem(14)
         item.setText(_translate("MainWindow", "EMAIL"))
-        self.btn_add.setText(_translate("MainWindow", "ADD"))
+        self.txt_id.setPlaceholderText(_translate("MainWindow", "DIGITE O ID"))
+        self.btn_copy.setText(_translate("MainWindow", "✍"))
+        self.txt_clinome.setPlaceholderText(_translate("MainWindow", "NOME"))
+        self.txt_clicpf.setPlaceholderText(_translate("MainWindow", "CPF"))
+        self.txt_clirg.setPlaceholderText(_translate("MainWindow", "RG"))
+        self.txt_cliend.setPlaceholderText(_translate("MainWindow", "ENDEREÇO"))
+        self.txt_clibairro.setPlaceholderText(_translate("MainWindow", "BAIRRO"))
+        self.txt_clinumero.setPlaceholderText(_translate("MainWindow", "NUMERO"))
+        self.txt_clicidade.setPlaceholderText(_translate("MainWindow", "CIDADE"))
+        self.txt_cliestado.setPlaceholderText(_translate("MainWindow", "ESTADO"))
+        self.txt_clicep.setPlaceholderText(_translate("MainWindow", "CEP"))
+        self.txt_clinacionalidade.setPlaceholderText(_translate("MainWindow", "NACIONALIDADE"))
+        self.txt_cliprofissao.setPlaceholderText(_translate("MainWindow", "PROFISSÃO"))
+        self.txt_clicelular.setPlaceholderText(_translate("MainWindow", "CELULAR"))
+        self.txt_cliestadocivil.setPlaceholderText(_translate("MainWindow", "ESTADO CIVIL"))
+        self.txt_cliemail.setPlaceholderText(_translate("MainWindow", "EMAIL"))
         self.btn_delete.setText(_translate("MainWindow", "DELETE"))
         self.btn_edit.setText(_translate("MainWindow", "EDIT"))
-        self.btn_copy.setText(_translate("MainWindow", "✍"))
-        self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
-        self.lbl_created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
-import file_rc_rc
+        self.btn_add.setText(_translate("MainWindow", "ADD"))
+        self.version.setText(_translate("MainWindow", "V 1.2"))
+        self.created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 
 
 if __name__ == "__main__":

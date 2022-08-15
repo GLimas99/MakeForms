@@ -4,6 +4,7 @@ from novo.menu import *
 from novo.obra import *
 from novo.client import *
 from novo.make_doc import *
+from novo.pop_up import *
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5 import QtWidgets
 import sqlite3
@@ -44,74 +45,17 @@ elif mes == '11':
 elif mes == '12':
     mesescrito = 'dezembro'
 
-class Login(QMainWindow, Login):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        super().setupUi(self)
-        self.frame_error.hide()
-        self.btn_conect.clicked.connect(self.abrimenu)
-
-    def abrimenu(self):
-        global user_login
-        user_login = self.txt_user.text()
-        password_login = self.txt_password.text()
-
-        banco = sqlite3.connect('./bd/banco.db')
-        cursor = banco.cursor()
-        try:
-            consulta = 'SELECT * FROM user WHERE username = ?'
-            cursor.execute(consulta, (user_login,))
-            user_bd = cursor.fetchall()
-            global username_log
-            username_log = user_bd[0][1]
-            global email_log
-            email_log = user_bd[0][2]
-            global psword_log
-            psword_log = user_bd[0][2]
-            global name_log
-            name_log = user_bd[0][4]
-            global cpf_log
-            cpf_log = user_bd[0][5]
-            global cel_log
-            cel_log = user_bd[0][6]
-            global smpuge_log
-            smpuge_log = user_bd[0][7]
-            global crea_log
-            crea_log = user_bd[0][8]
-            global orgao_log
-            orgao_log = user_bd[0][9]
-            banco.close()
-
-            if password_login == user_bd[0][3]:
-                menu = Menu()
-                widget.addWidget(menu)
-                widget.setCurrentIndex(widget.currentIndex() + 1)
-
-            else:
-                self.frame_error.show()
-                self.lbl_error.setText("SENHA INCORRETA")
-                self.frame_error.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                               "border-radius:5px;")
-                self.lbl_error.setStyleSheet("color: rgb(200, 200, 255)")
-        except:
-            self.frame_error.show()
-            self.lbl_error.setText("USER INCORRETO")
-            self.frame_error.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                           "border-radius:5px;")
-            self.lbl_error.setStyleSheet("color: rgb(200, 200, 255)")
-
 class Menu(QMainWindow, Menu):
     def __init__(self, parent=None):
         super().__init__(parent)
         super().setupUi(self)
-        self.frame_popup.hide()
         self.btn_cadobra.clicked.connect(self.abriobra)
         self.btn_cliente.clicked.connect(self.abricliente)
         self.btn_makedoc.clicked.connect(self.abrirdoc)
         #self.lbl_welcome.setText("Bem vindo "+username_log+"!")
 
-
     def abriobra(self):
+        widget.resize(870, 1000)
         obra = Obra()
         widget.addWidget(obra)
         widget.setCurrentIndex(widget.currentIndex() + 1)
@@ -164,6 +108,7 @@ class Obra(QMainWindow, Obra):
         menu = Menu()
         widget.addWidget(menu)
         widget.setCurrentIndex(widget.currentIndex() + 1)
+        widget.setMinimumSize(QtCore.QSize(556, 316))
 
     def copy(self):
         idobra = self.txt_id.text()
@@ -213,7 +158,7 @@ class Obra(QMainWindow, Obra):
         self.txt_obracidade.setText(dados_lidos[0][7])
         banco.commit()
         banco.close()
-    
+
     def copycli2(self):
         idocli = self.txt_idcli2.text()
 
@@ -247,7 +192,7 @@ class Obra(QMainWindow, Obra):
         self.txt_obracidade.setText(dados_lidos[0][7])
         banco.commit()
         banco.close()
-        
+
     def copycli4(self):
         idocli = self.txt_idcli4.text()
 
@@ -435,7 +380,6 @@ class Cliente(QMainWindow, Cliente):
     def __init__(self, parent=None):
         super().__init__(parent)
         super().setupUi(self)
-        self.frame_popup.hide()
         self.btn_return.clicked.connect(self.volta)
         self.btn_search.clicked.connect(self.search)
         self.btn_add.clicked.connect(self.add)
@@ -7400,6 +7344,7 @@ if __name__ == '__main__':
     #widget.setFixedWidth(1039)
     #widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
     #widget.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
+
     widget.show()
-    #menu.showMaximized()
+    #widget.showMaximized()
     qt.exec_()

@@ -191,7 +191,7 @@ QPushButton:pressed{
               <number>0</number>
              </property>
              <item>
-              <widget class="QLabel" name="logo">
+              <widget class="QLabel" name="logo_2">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(40, 40, 40);
 color:rgb(250, 230, 0);
@@ -912,7 +912,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QPushButton" name="btn_copy">
+                       <widget class="QPushButton" name="btn_copy_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1010,7 +1010,7 @@ QPushButton:pressed{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clinome">
+                       <widget class="QLineEdit" name="txt_clinome_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1108,7 +1108,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clicpf">
+                       <widget class="QLineEdit" name="txt_clicpf_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1176,7 +1176,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clirg">
+                       <widget class="QLineEdit" name="txt_clirg_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1274,7 +1274,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_cliend">
+                       <widget class="QLineEdit" name="txt_cliend_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1372,7 +1372,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clibairro">
+                       <widget class="QLineEdit" name="txt_clibairro_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1470,7 +1470,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clinumero">
+                       <widget class="QLineEdit" name="txt_clinumero_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1538,7 +1538,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clicidade">
+                       <widget class="QLineEdit" name="txt_clicidade_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1636,7 +1636,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_cliestado">
+                       <widget class="QLineEdit" name="txt_cliestado_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1704,7 +1704,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clicep">
+                       <widget class="QLineEdit" name="txt_clicep_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1802,7 +1802,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clinacionalidade">
+                       <widget class="QLineEdit" name="txt_clinacionalidade_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1870,7 +1870,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_cliprofissao">
+                       <widget class="QLineEdit" name="txt_cliprofissao_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -1968,7 +1968,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_clicelular">
+                       <widget class="QLineEdit" name="txt_clicelular_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -2036,7 +2036,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_cliestadocivil">
+                       <widget class="QLineEdit" name="txt_cliestadocivil_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
@@ -2134,7 +2134,7 @@ QLineEdit:focus{
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_cliemail">
+                       <widget class="QLineEdit" name="txt_cliemail_2">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>
