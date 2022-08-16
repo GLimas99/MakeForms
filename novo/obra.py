@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'edit_obra.ui'
+# Form implementation generated from reading ui file 'obran.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,95 +14,43 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Obra(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1039, 888)
-        MainWindow.setMinimumSize(QtCore.QSize(0, 0))
-        MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
-"background-color: rgb(10, 10, 10);")
+        MainWindow.resize(664, 748)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setMinimumSize(QtCore.QSize(1000, 870))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        self.centralwidget.setFont(font)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.frame)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.top_bar = QtWidgets.QFrame(self.centralwidget)
-        self.top_bar.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.top_bar.setStyleSheet("")
-        self.top_bar.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.top_bar.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.top_bar.setObjectName("top_bar")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.top_bar)
-        self.horizontalLayout_2.setContentsMargins(0, 5, 0, 0)
+        self.frame_2 = QtWidgets.QFrame(self.frame)
+        self.frame_2.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_2)
+        self.horizontalLayout_2.setContentsMargins(40, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.frame_popup = QtWidgets.QFrame(self.top_bar)
-        self.frame_popup.setMaximumSize(QtCore.QSize(450, 16777215))
-        self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-"border-radius:5px;")
-        self.frame_popup.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_popup.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_popup.setObjectName("frame_popup")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_popup)
-        self.horizontalLayout_3.setContentsMargins(0, 0, 5, 0)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label = QtWidgets.QLabel(self.frame_popup)
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(35, 35, 35);")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.horizontalLayout_3.addWidget(self.label)
-        self.pushButton = QtWidgets.QPushButton(self.frame_popup)
-        self.pushButton.setMaximumSize(QtCore.QSize(20, 20))
-        self.pushButton.setStyleSheet("QPushButton{\n"
-"    border-radius: 5px;\n"
-"    background-image: url(:/Close_Image/Images/cil-x.png);\n"
-"    background-position:center;\n"
-"    \n"
-"    background-color: rgb(60, 60, 60);\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(50, 50, 50);\n"
-"    color: rgb(255, 255, 127);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(35, 35, 35);\n"
-"    color: rgb(255, 255, 127);\n"
-"}")
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
-        self.horizontalLayout_2.addWidget(self.frame_popup)
-        self.verticalLayout.addWidget(self.top_bar)
-        self.content = QtWidgets.QFrame(self.centralwidget)
-        self.content.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.content.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.content.setObjectName("content")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.content)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.editocli_area = QtWidgets.QFrame(self.content)
-        self.editocli_area.setMinimumSize(QtCore.QSize(0, 765))
-        self.editocli_area.setMaximumSize(QtCore.QSize(950, 765))
-        self.editocli_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
-"border-radius: 10px")
-        self.editocli_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.editocli_area.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.editocli_area.setObjectName("editocli_area")
-        self.logo = QtWidgets.QFrame(self.editocli_area)
-        self.logo.setGeometry(QtCore.QRect(360, 0, 211, 90))
-        self.logo.setStyleSheet("background-image: url(:/Logo_yellow/Images/logorocha_360x90.png);\n"
-"background-repeat: no-repeat;\n"
-"background-position: center;\n"
-"")
-        self.logo.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.logo.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.logo.setObjectName("logo")
-        self.btn_return = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_return.setGeometry(QtCore.QRect(30, 20, 41, 50))
+        self.frame_7 = QtWidgets.QFrame(self.frame_2)
+        self.frame_7.setMaximumSize(QtCore.QSize(41, 16777215))
+        self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_7.setObjectName("frame_7")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_7)
+        self.horizontalLayout_6.setContentsMargins(0, 5, 5, 5)
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.btn_return = QtWidgets.QPushButton(self.frame_7)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(18)
@@ -122,145 +70,37 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_return.setObjectName("btn_return")
-        self.txt_obralote = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obralote.setGeometry(QtCore.QRect(510, 330, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obralote.setFont(font)
-        self.txt_obralote.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obralote.setMaxLength(32)
-        self.txt_obralote.setObjectName("txt_obralote")
-        self.txt_obraquarteirao = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraquarteirao.setGeometry(QtCore.QRect(510, 390, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obraquarteirao.setFont(font)
-        self.txt_obraquarteirao.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obraquarteirao.setMaxLength(32)
-        self.txt_obraquarteirao.setObjectName("txt_obraquarteirao")
-        self.txt_obranumero = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obranumero.setGeometry(QtCore.QRect(510, 270, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obranumero.setFont(font)
-        self.txt_obranumero.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obranumero.setMaxLength(32)
-        self.txt_obranumero.setObjectName("txt_obranumero")
-        self.txt_id = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_id.setGeometry(QtCore.QRect(510, 90, 361, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_id.setFont(font)
-        self.txt_id.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_id.setMaxLength(64)
-        self.txt_id.setObjectName("txt_id")
-        self.txt_obrabairro = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obrabairro.setGeometry(QtCore.QRect(510, 210, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obrabairro.setFont(font)
-        self.txt_obrabairro.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obrabairro.setMaxLength(64)
-        self.txt_obrabairro.setObjectName("txt_obrabairro")
-        self.txt_obracidade = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obracidade.setGeometry(QtCore.QRect(730, 270, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obracidade.setFont(font)
-        self.txt_obracidade.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obracidade.setMaxLength(32)
-        self.txt_obracidade.setObjectName("txt_obracidade")
-        self.btn_edit = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_edit.setGeometry(QtCore.QRect(330, 700, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.btn_edit.setFont(font)
-        self.btn_edit.setStyleSheet("QPushButton{\n"
+        self.horizontalLayout_6.addWidget(self.btn_return)
+        self.horizontalLayout_2.addWidget(self.frame_7)
+        self.frame_8 = QtWidgets.QFrame(self.frame_2)
+        self.frame_8.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_8.setObjectName("frame_8")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.frame_8)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setSpacing(0)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.logo = QtWidgets.QLabel(self.frame_8)
+        self.logo.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"color:rgb(250, 230, 0);\n"
+"font: 16pt \"Masiku\";")
+        self.logo.setAlignment(QtCore.Qt.AlignCenter)
+        self.logo.setObjectName("logo")
+        self.horizontalLayout_7.addWidget(self.logo)
+        self.horizontalLayout_2.addWidget(self.frame_8)
+        self.frame_9 = QtWidgets.QFrame(self.frame_2)
+        self.frame_9.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.frame_9.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_9.setObjectName("frame_9")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_9)
+        self.horizontalLayout_8.setContentsMargins(0, 0, 5, 0)
+        self.horizontalLayout_8.setSpacing(5)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.minwin = QtWidgets.QPushButton(self.frame_9)
+        self.minwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.minwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.minwin.setStyleSheet("QPushButton{\n"
 "    background-color:rgb(50, 50, 50);\n"
 "    border:2px solid rgb(60, 60, 60);\n"
 "    border-radius:5px;\n"
@@ -274,80 +114,12 @@ class Obra(object):
 "    border: 2px solid rgb(255, 165, 24);\n"
 "    color: rgb(35, 35, 35);\n"
 "}")
-        self.btn_edit.setObjectName("btn_edit")
-        self.txt_obratipo = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obratipo.setGeometry(QtCore.QRect(730, 390, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obratipo.setFont(font)
-        self.txt_obratipo.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obratipo.setMaxLength(32)
-        self.txt_obratipo.setObjectName("txt_obratipo")
-        self.txt_obraend = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraend.setGeometry(QtCore.QRect(510, 150, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obraend.setFont(font)
-        self.txt_obraend.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obraend.setMaxLength(64)
-        self.txt_obraend.setObjectName("txt_obraend")
-        self.txt_obraart = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraart.setGeometry(QtCore.QRect(730, 450, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obraart.setFont(font)
-        self.txt_obraart.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obraart.setMaxLength(32)
-        self.txt_obraart.setObjectName("txt_obraart")
-        self.btn_delete = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_delete.setGeometry(QtCore.QRect(30, 700, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.btn_delete.setFont(font)
-        self.btn_delete.setStyleSheet("QPushButton{\n"
+        self.minwin.setObjectName("minwin")
+        self.horizontalLayout_8.addWidget(self.minwin)
+        self.maxwin = QtWidgets.QPushButton(self.frame_9)
+        self.maxwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.maxwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.maxwin.setStyleSheet("QPushButton{\n"
 "    background-color:rgb(50, 50, 50);\n"
 "    border:2px solid rgb(60, 60, 60);\n"
 "    border-radius:5px;\n"
@@ -361,14 +133,74 @@ class Obra(object):
 "    border: 2px solid rgb(255, 165, 24);\n"
 "    color: rgb(35, 35, 35);\n"
 "}")
-        self.btn_delete.setObjectName("btn_delete")
-        self.txt_obraquantparcela = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraquantparcela.setGeometry(QtCore.QRect(730, 510, 211, 50))
+        self.maxwin.setObjectName("maxwin")
+        self.horizontalLayout_8.addWidget(self.maxwin)
+        self.closewin = QtWidgets.QPushButton(self.frame_9)
+        self.closewin.setMinimumSize(QtCore.QSize(20, 20))
+        self.closewin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.closewin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.closewin.setObjectName("closewin")
+        self.horizontalLayout_8.addWidget(self.closewin)
+        self.horizontalLayout_2.addWidget(self.frame_9)
+        self.verticalLayout.addWidget(self.frame_2)
+        self.frame_3 = QtWidgets.QFrame(self.frame)
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_3)
+        self.horizontalLayout_5.setContentsMargins(15, 0, 15, 0)
+        self.horizontalLayout_5.setSpacing(7)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.frame_20 = QtWidgets.QFrame(self.frame_3)
+        self.frame_20.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.frame_20.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_20.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_20.setObjectName("frame_20")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_20)
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.frame_22 = QtWidgets.QFrame(self.frame_20)
+        self.frame_22.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_22.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_22.setObjectName("frame_22")
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.frame_22)
+        self.horizontalLayout_18.setContentsMargins(0, 5, 0, 5)
+        self.horizontalLayout_18.setSpacing(5)
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.frame_25 = QtWidgets.QFrame(self.frame_22)
+        self.frame_25.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_25.setObjectName("frame_25")
+        self.horizontalLayout_28 = QtWidgets.QHBoxLayout(self.frame_25)
+        self.horizontalLayout_28.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_28.setSpacing(0)
+        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
+        self.txt_rua = QtWidgets.QLineEdit(self.frame_25)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_rua.sizePolicy().hasHeightForWidth())
+        self.txt_rua.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_obraquantparcela.setFont(font)
-        self.txt_obraquantparcela.setStyleSheet("QLineEdit{\n"
+        self.txt_rua.setFont(font)
+        self.txt_rua.setStyleSheet("QLineEdit{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
 "    padding: 15px;\n"
@@ -382,54 +214,68 @@ class Obra(object):
 "    border: 2px solid rgb(255, 207, 0);\n"
 "    color: rgb(200, 200, 200);\n"
 "}")
-        self.txt_obraquantparcela.setMaxLength(32)
-        self.txt_obraquantparcela.setObjectName("txt_obraquantparcela")
-        self.txt_obraquadra = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraquadra.setGeometry(QtCore.QRect(730, 330, 211, 50))
+        self.txt_rua.setMaxLength(32)
+        self.txt_rua.setObjectName("txt_rua")
+        self.horizontalLayout_28.addWidget(self.txt_rua)
+        self.horizontalLayout_18.addWidget(self.frame_25)
+        self.frame_26 = QtWidgets.QFrame(self.frame_22)
+        self.frame_26.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.frame_26.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_26.setObjectName("frame_26")
+        self.horizontalLayout_29 = QtWidgets.QHBoxLayout(self.frame_26)
+        self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_29.setSpacing(0)
+        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
+        self.btn_search = QtWidgets.QPushButton(self.frame_26)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_search.sizePolicy().hasHeightForWidth())
+        self.btn_search.setSizePolicy(sizePolicy)
+        self.btn_search.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obraquadra.setFont(font)
-        self.txt_obraquadra.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_search.setFont(font)
+        self.btn_search.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"    font: 18pt ;\n"
 "}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
 "}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
 "}")
-        self.txt_obraquadra.setMaxLength(32)
-        self.txt_obraquadra.setObjectName("txt_obraquadra")
-        self.txt_obravalorparcela = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obravalorparcela.setGeometry(QtCore.QRect(510, 510, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obravalorparcela.setFont(font)
-        self.txt_obravalorparcela.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obravalorparcela.setMaxLength(32)
-        self.txt_obravalorparcela.setObjectName("txt_obravalorparcela")
-        self.tabWid_obra = QtWidgets.QTableWidget(self.editocli_area)
-        self.tabWid_obra.setGeometry(QtCore.QRect(10, 150, 491, 471))
+        self.btn_search.setObjectName("btn_search")
+        self.horizontalLayout_29.addWidget(self.btn_search)
+        self.horizontalLayout_18.addWidget(self.frame_26)
+        self.verticalLayout_3.addWidget(self.frame_22)
+        self.frame_23 = QtWidgets.QFrame(self.frame_20)
+        self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_23.setObjectName("frame_23")
+        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.frame_23)
+        self.horizontalLayout_17.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_17.setSpacing(0)
+        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.frame_24 = QtWidgets.QFrame(self.frame_23)
+        self.frame_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_24.setObjectName("frame_24")
+        self.horizontalLayout_32 = QtWidgets.QHBoxLayout(self.frame_24)
+        self.horizontalLayout_32.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_32.setSpacing(0)
+        self.horizontalLayout_32.setObjectName("horizontalLayout_32")
+        self.tabWid_obra = QtWidgets.QTableWidget(self.frame_24)
         self.tabWid_obra.setStyleSheet("QTableWidget{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
@@ -511,13 +357,46 @@ class Obra(object):
         self.tabWid_obra.setHorizontalHeaderItem(18, item)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_obra.setHorizontalHeaderItem(19, item)
-        self.txt_obravalorvisita = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obravalorvisita.setGeometry(QtCore.QRect(730, 570, 211, 50))
+        self.horizontalLayout_32.addWidget(self.tabWid_obra)
+        self.horizontalLayout_17.addWidget(self.frame_24)
+        self.verticalLayout_3.addWidget(self.frame_23)
+        self.horizontalLayout_5.addWidget(self.frame_20)
+        self.frame_21 = QtWidgets.QFrame(self.frame_3)
+        self.frame_21.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_21.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_21.setObjectName("frame_21")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_21)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.frame_27 = QtWidgets.QFrame(self.frame_21)
+        self.frame_27.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.frame_27.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_27.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_27.setObjectName("frame_27")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_27)
+        self.horizontalLayout_19.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_19.setSpacing(5)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.frame_36 = QtWidgets.QFrame(self.frame_27)
+        self.frame_36.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_36.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_36.setObjectName("frame_36")
+        self.horizontalLayout_30 = QtWidgets.QHBoxLayout(self.frame_36)
+        self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_30.setSpacing(5)
+        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
+        self.txt_id = QtWidgets.QLineEdit(self.frame_36)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_id.sizePolicy().hasHeightForWidth())
+        self.txt_id.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_obravalorvisita.setFont(font)
-        self.txt_obravalorvisita.setStyleSheet("QLineEdit{\n"
+        self.txt_id.setFont(font)
+        self.txt_id.setStyleSheet("QLineEdit{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
 "    padding: 15px;\n"
@@ -531,97 +410,26 @@ class Obra(object):
 "    border: 2px solid rgb(255, 207, 0);\n"
 "    color: rgb(200, 200, 200);\n"
 "}")
-        self.txt_obravalorvisita.setMaxLength(32)
-        self.txt_obravalorvisita.setObjectName("txt_obravalorvisita")
-        self.txt_obradatacontrato = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obradatacontrato.setGeometry(QtCore.QRect(510, 570, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obradatacontrato.setFont(font)
-        self.txt_obradatacontrato.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obradatacontrato.setMaxLength(32)
-        self.txt_obradatacontrato.setObjectName("txt_obradatacontrato")
-        self.txt_obraareaterreno = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obraareaterreno.setGeometry(QtCore.QRect(510, 450, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obraareaterreno.setFont(font)
-        self.txt_obraareaterreno.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obraareaterreno.setMaxLength(32)
-        self.txt_obraareaterreno.setObjectName("txt_obraareaterreno")
-        self.txt_rua = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_rua.setGeometry(QtCore.QRect(10, 90, 431, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_rua.setFont(font)
-        self.txt_rua.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_rua.setMaxLength(32)
-        self.txt_rua.setObjectName("txt_rua")
-        self.btn_add = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_add.setGeometry(QtCore.QRect(630, 700, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.btn_add.setFont(font)
-        self.btn_add.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_add.setObjectName("btn_add")
-        self.btn_copy = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_copy.setGeometry(QtCore.QRect(880, 90, 61, 50))
+        self.txt_id.setMaxLength(64)
+        self.txt_id.setObjectName("txt_id")
+        self.horizontalLayout_30.addWidget(self.txt_id)
+        self.horizontalLayout_19.addWidget(self.frame_36)
+        self.frame_37 = QtWidgets.QFrame(self.frame_27)
+        self.frame_37.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.frame_37.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_37.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_37.setObjectName("frame_37")
+        self.horizontalLayout_31 = QtWidgets.QHBoxLayout(self.frame_37)
+        self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_31.setSpacing(0)
+        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
+        self.btn_copy = QtWidgets.QPushButton(self.frame_37)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_copy.sizePolicy().hasHeightForWidth())
+        self.btn_copy.setSizePolicy(sizePolicy)
+        self.btn_copy.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -644,13 +452,36 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_copy.setObjectName("btn_copy")
-        self.txt_idcli3 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli3.setGeometry(QtCore.QRect(370, 630, 141, 50))
+        self.horizontalLayout_31.addWidget(self.btn_copy)
+        self.horizontalLayout_19.addWidget(self.frame_37)
+        self.verticalLayout_4.addWidget(self.frame_27)
+        self.frame_34 = QtWidgets.QFrame(self.frame_21)
+        self.frame_34.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_34.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_34.setObjectName("frame_34")
+        self.horizontalLayout_26 = QtWidgets.QHBoxLayout(self.frame_34)
+        self.horizontalLayout_26.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_26.setSpacing(5)
+        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
+        self.frame_38 = QtWidgets.QFrame(self.frame_34)
+        self.frame_38.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_38.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_38.setObjectName("frame_38")
+        self.horizontalLayout_33 = QtWidgets.QHBoxLayout(self.frame_38)
+        self.horizontalLayout_33.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_33.setSpacing(0)
+        self.horizontalLayout_33.setObjectName("horizontalLayout_33")
+        self.txt_obraend = QtWidgets.QLineEdit(self.frame_38)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obraend.sizePolicy().hasHeightForWidth())
+        self.txt_obraend.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_idcli3.setFont(font)
-        self.txt_idcli3.setStyleSheet("QLineEdit{\n"
+        self.txt_obraend.setFont(font)
+        self.txt_obraend.setStyleSheet("QLineEdit{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
 "    padding: 15px;\n"
@@ -664,15 +495,38 @@ class Obra(object):
 "    border: 2px solid rgb(255, 207, 0);\n"
 "    color: rgb(200, 200, 200);\n"
 "}")
-        self.txt_idcli3.setMaxLength(32)
-        self.txt_idcli3.setObjectName("txt_idcli3")
-        self.txt_idcli4 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli4.setGeometry(QtCore.QRect(550, 630, 141, 50))
+        self.txt_obraend.setMaxLength(64)
+        self.txt_obraend.setObjectName("txt_obraend")
+        self.horizontalLayout_33.addWidget(self.txt_obraend)
+        self.horizontalLayout_26.addWidget(self.frame_38)
+        self.verticalLayout_4.addWidget(self.frame_34)
+        self.frame_28 = QtWidgets.QFrame(self.frame_21)
+        self.frame_28.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_28.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_28.setObjectName("frame_28")
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout(self.frame_28)
+        self.horizontalLayout_20.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_20.setSpacing(5)
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        self.frame_39 = QtWidgets.QFrame(self.frame_28)
+        self.frame_39.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_39.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_39.setObjectName("frame_39")
+        self.horizontalLayout_36 = QtWidgets.QHBoxLayout(self.frame_39)
+        self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_36.setSpacing(0)
+        self.horizontalLayout_36.setObjectName("horizontalLayout_36")
+        self.txt_obrabairro = QtWidgets.QLineEdit(self.frame_39)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obrabairro.sizePolicy().hasHeightForWidth())
+        self.txt_obrabairro.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_idcli4.setFont(font)
-        self.txt_idcli4.setStyleSheet("QLineEdit{\n"
+        self.txt_obrabairro.setFont(font)
+        self.txt_obrabairro.setStyleSheet("QLineEdit{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
 "    padding: 15px;\n"
@@ -686,15 +540,38 @@ class Obra(object):
 "    border: 2px solid rgb(255, 207, 0);\n"
 "    color: rgb(200, 200, 200);\n"
 "}")
-        self.txt_idcli4.setMaxLength(32)
-        self.txt_idcli4.setObjectName("txt_idcli4")
-        self.txt_idcli2 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli2.setGeometry(QtCore.QRect(190, 630, 141, 50))
+        self.txt_obrabairro.setMaxLength(64)
+        self.txt_obrabairro.setObjectName("txt_obrabairro")
+        self.horizontalLayout_36.addWidget(self.txt_obrabairro)
+        self.horizontalLayout_20.addWidget(self.frame_39)
+        self.verticalLayout_4.addWidget(self.frame_28)
+        self.frame_29 = QtWidgets.QFrame(self.frame_21)
+        self.frame_29.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_29.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_29.setObjectName("frame_29")
+        self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.frame_29)
+        self.horizontalLayout_21.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_21.setSpacing(5)
+        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
+        self.frame_40 = QtWidgets.QFrame(self.frame_29)
+        self.frame_40.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_40.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_40.setObjectName("frame_40")
+        self.horizontalLayout_37 = QtWidgets.QHBoxLayout(self.frame_40)
+        self.horizontalLayout_37.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_37.setSpacing(0)
+        self.horizontalLayout_37.setObjectName("horizontalLayout_37")
+        self.txt_obranumero = QtWidgets.QLineEdit(self.frame_40)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obranumero.sizePolicy().hasHeightForWidth())
+        self.txt_obranumero.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_idcli2.setFont(font)
-        self.txt_idcli2.setStyleSheet("QLineEdit{\n"
+        self.txt_obranumero.setFont(font)
+        self.txt_obranumero.setStyleSheet("QLineEdit{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
 "    padding: 15px;\n"
@@ -708,10 +585,477 @@ class Obra(object):
 "    border: 2px solid rgb(255, 207, 0);\n"
 "    color: rgb(200, 200, 200);\n"
 "}")
-        self.txt_idcli2.setMaxLength(32)
-        self.txt_idcli2.setObjectName("txt_idcli2")
-        self.txt_idcli1 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_idcli1.setGeometry(QtCore.QRect(10, 630, 141, 50))
+        self.txt_obranumero.setMaxLength(32)
+        self.txt_obranumero.setObjectName("txt_obranumero")
+        self.horizontalLayout_37.addWidget(self.txt_obranumero)
+        self.horizontalLayout_21.addWidget(self.frame_40)
+        self.frame_41 = QtWidgets.QFrame(self.frame_29)
+        self.frame_41.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_41.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_41.setObjectName("frame_41")
+        self.horizontalLayout_38 = QtWidgets.QHBoxLayout(self.frame_41)
+        self.horizontalLayout_38.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_38.setSpacing(0)
+        self.horizontalLayout_38.setObjectName("horizontalLayout_38")
+        self.txt_obracidade = QtWidgets.QLineEdit(self.frame_41)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obracidade.sizePolicy().hasHeightForWidth())
+        self.txt_obracidade.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obracidade.setFont(font)
+        self.txt_obracidade.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obracidade.setMaxLength(32)
+        self.txt_obracidade.setObjectName("txt_obracidade")
+        self.horizontalLayout_38.addWidget(self.txt_obracidade)
+        self.horizontalLayout_21.addWidget(self.frame_41)
+        self.verticalLayout_4.addWidget(self.frame_29)
+        self.frame_35 = QtWidgets.QFrame(self.frame_21)
+        self.frame_35.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_35.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_35.setObjectName("frame_35")
+        self.horizontalLayout_27 = QtWidgets.QHBoxLayout(self.frame_35)
+        self.horizontalLayout_27.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_27.setSpacing(5)
+        self.horizontalLayout_27.setObjectName("horizontalLayout_27")
+        self.frame_42 = QtWidgets.QFrame(self.frame_35)
+        self.frame_42.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_42.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_42.setObjectName("frame_42")
+        self.horizontalLayout_47 = QtWidgets.QHBoxLayout(self.frame_42)
+        self.horizontalLayout_47.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_47.setSpacing(0)
+        self.horizontalLayout_47.setObjectName("horizontalLayout_47")
+        self.txt_obralote = QtWidgets.QLineEdit(self.frame_42)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obralote.sizePolicy().hasHeightForWidth())
+        self.txt_obralote.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obralote.setFont(font)
+        self.txt_obralote.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obralote.setMaxLength(32)
+        self.txt_obralote.setObjectName("txt_obralote")
+        self.horizontalLayout_47.addWidget(self.txt_obralote)
+        self.horizontalLayout_27.addWidget(self.frame_42)
+        self.frame_43 = QtWidgets.QFrame(self.frame_35)
+        self.frame_43.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_43.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_43.setObjectName("frame_43")
+        self.horizontalLayout_48 = QtWidgets.QHBoxLayout(self.frame_43)
+        self.horizontalLayout_48.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_48.setSpacing(0)
+        self.horizontalLayout_48.setObjectName("horizontalLayout_48")
+        self.txt_obraquadra = QtWidgets.QLineEdit(self.frame_43)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obraquadra.sizePolicy().hasHeightForWidth())
+        self.txt_obraquadra.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obraquadra.setFont(font)
+        self.txt_obraquadra.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obraquadra.setMaxLength(32)
+        self.txt_obraquadra.setObjectName("txt_obraquadra")
+        self.horizontalLayout_48.addWidget(self.txt_obraquadra)
+        self.horizontalLayout_27.addWidget(self.frame_43)
+        self.verticalLayout_4.addWidget(self.frame_35)
+        self.frame_30 = QtWidgets.QFrame(self.frame_21)
+        self.frame_30.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_30.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_30.setObjectName("frame_30")
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.frame_30)
+        self.horizontalLayout_22.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_22.setSpacing(5)
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.frame_44 = QtWidgets.QFrame(self.frame_30)
+        self.frame_44.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_44.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_44.setObjectName("frame_44")
+        self.horizontalLayout_39 = QtWidgets.QHBoxLayout(self.frame_44)
+        self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_39.setSpacing(0)
+        self.horizontalLayout_39.setObjectName("horizontalLayout_39")
+        self.txt_obraquarteirao = QtWidgets.QLineEdit(self.frame_44)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obraquarteirao.sizePolicy().hasHeightForWidth())
+        self.txt_obraquarteirao.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obraquarteirao.setFont(font)
+        self.txt_obraquarteirao.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obraquarteirao.setMaxLength(32)
+        self.txt_obraquarteirao.setObjectName("txt_obraquarteirao")
+        self.horizontalLayout_39.addWidget(self.txt_obraquarteirao)
+        self.horizontalLayout_22.addWidget(self.frame_44)
+        self.frame_45 = QtWidgets.QFrame(self.frame_30)
+        self.frame_45.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_45.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_45.setObjectName("frame_45")
+        self.horizontalLayout_40 = QtWidgets.QHBoxLayout(self.frame_45)
+        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_40.setSpacing(0)
+        self.horizontalLayout_40.setObjectName("horizontalLayout_40")
+        self.txt_obratipo = QtWidgets.QLineEdit(self.frame_45)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obratipo.sizePolicy().hasHeightForWidth())
+        self.txt_obratipo.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obratipo.setFont(font)
+        self.txt_obratipo.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obratipo.setMaxLength(32)
+        self.txt_obratipo.setObjectName("txt_obratipo")
+        self.horizontalLayout_40.addWidget(self.txt_obratipo)
+        self.horizontalLayout_22.addWidget(self.frame_45)
+        self.verticalLayout_4.addWidget(self.frame_30)
+        self.frame_31 = QtWidgets.QFrame(self.frame_21)
+        self.frame_31.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_31.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_31.setObjectName("frame_31")
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.frame_31)
+        self.horizontalLayout_23.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_23.setSpacing(5)
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.frame_46 = QtWidgets.QFrame(self.frame_31)
+        self.frame_46.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_46.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_46.setObjectName("frame_46")
+        self.horizontalLayout_41 = QtWidgets.QHBoxLayout(self.frame_46)
+        self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_41.setSpacing(0)
+        self.horizontalLayout_41.setObjectName("horizontalLayout_41")
+        self.txt_obraareaterreno = QtWidgets.QLineEdit(self.frame_46)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obraareaterreno.sizePolicy().hasHeightForWidth())
+        self.txt_obraareaterreno.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obraareaterreno.setFont(font)
+        self.txt_obraareaterreno.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obraareaterreno.setMaxLength(32)
+        self.txt_obraareaterreno.setObjectName("txt_obraareaterreno")
+        self.horizontalLayout_41.addWidget(self.txt_obraareaterreno)
+        self.horizontalLayout_23.addWidget(self.frame_46)
+        self.frame_47 = QtWidgets.QFrame(self.frame_31)
+        self.frame_47.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_47.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_47.setObjectName("frame_47")
+        self.horizontalLayout_42 = QtWidgets.QHBoxLayout(self.frame_47)
+        self.horizontalLayout_42.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_42.setSpacing(0)
+        self.horizontalLayout_42.setObjectName("horizontalLayout_42")
+        self.txt_obraart = QtWidgets.QLineEdit(self.frame_47)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obraart.sizePolicy().hasHeightForWidth())
+        self.txt_obraart.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obraart.setFont(font)
+        self.txt_obraart.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obraart.setMaxLength(32)
+        self.txt_obraart.setObjectName("txt_obraart")
+        self.horizontalLayout_42.addWidget(self.txt_obraart)
+        self.horizontalLayout_23.addWidget(self.frame_47)
+        self.verticalLayout_4.addWidget(self.frame_31)
+        self.frame_32 = QtWidgets.QFrame(self.frame_21)
+        self.frame_32.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_32.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_32.setObjectName("frame_32")
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout(self.frame_32)
+        self.horizontalLayout_24.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_24.setSpacing(5)
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.frame_48 = QtWidgets.QFrame(self.frame_32)
+        self.frame_48.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_48.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_48.setObjectName("frame_48")
+        self.horizontalLayout_43 = QtWidgets.QHBoxLayout(self.frame_48)
+        self.horizontalLayout_43.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_43.setSpacing(0)
+        self.horizontalLayout_43.setObjectName("horizontalLayout_43")
+        self.txt_obravalorparcela = QtWidgets.QLineEdit(self.frame_48)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obravalorparcela.sizePolicy().hasHeightForWidth())
+        self.txt_obravalorparcela.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obravalorparcela.setFont(font)
+        self.txt_obravalorparcela.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obravalorparcela.setMaxLength(32)
+        self.txt_obravalorparcela.setObjectName("txt_obravalorparcela")
+        self.horizontalLayout_43.addWidget(self.txt_obravalorparcela)
+        self.horizontalLayout_24.addWidget(self.frame_48)
+        self.frame_49 = QtWidgets.QFrame(self.frame_32)
+        self.frame_49.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_49.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_49.setObjectName("frame_49")
+        self.horizontalLayout_44 = QtWidgets.QHBoxLayout(self.frame_49)
+        self.horizontalLayout_44.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_44.setSpacing(0)
+        self.horizontalLayout_44.setObjectName("horizontalLayout_44")
+        self.txt_obraquantparcela = QtWidgets.QLineEdit(self.frame_49)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obraquantparcela.sizePolicy().hasHeightForWidth())
+        self.txt_obraquantparcela.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obraquantparcela.setFont(font)
+        self.txt_obraquantparcela.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obraquantparcela.setMaxLength(32)
+        self.txt_obraquantparcela.setObjectName("txt_obraquantparcela")
+        self.horizontalLayout_44.addWidget(self.txt_obraquantparcela)
+        self.horizontalLayout_24.addWidget(self.frame_49)
+        self.verticalLayout_4.addWidget(self.frame_32)
+        self.frame_33 = QtWidgets.QFrame(self.frame_21)
+        self.frame_33.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_33.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_33.setObjectName("frame_33")
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout(self.frame_33)
+        self.horizontalLayout_25.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_25.setSpacing(5)
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        self.frame_50 = QtWidgets.QFrame(self.frame_33)
+        self.frame_50.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_50.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_50.setObjectName("frame_50")
+        self.horizontalLayout_45 = QtWidgets.QHBoxLayout(self.frame_50)
+        self.horizontalLayout_45.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_45.setSpacing(0)
+        self.horizontalLayout_45.setObjectName("horizontalLayout_45")
+        self.txt_obradatacontrato = QtWidgets.QLineEdit(self.frame_50)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obradatacontrato.sizePolicy().hasHeightForWidth())
+        self.txt_obradatacontrato.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obradatacontrato.setFont(font)
+        self.txt_obradatacontrato.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obradatacontrato.setMaxLength(32)
+        self.txt_obradatacontrato.setObjectName("txt_obradatacontrato")
+        self.horizontalLayout_45.addWidget(self.txt_obradatacontrato)
+        self.horizontalLayout_25.addWidget(self.frame_50)
+        self.frame_51 = QtWidgets.QFrame(self.frame_33)
+        self.frame_51.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_51.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_51.setObjectName("frame_51")
+        self.horizontalLayout_46 = QtWidgets.QHBoxLayout(self.frame_51)
+        self.horizontalLayout_46.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_46.setSpacing(0)
+        self.horizontalLayout_46.setObjectName("horizontalLayout_46")
+        self.txt_obravalorvisita = QtWidgets.QLineEdit(self.frame_51)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obravalorvisita.sizePolicy().hasHeightForWidth())
+        self.txt_obravalorvisita.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_obravalorvisita.setFont(font)
+        self.txt_obravalorvisita.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obravalorvisita.setMaxLength(32)
+        self.txt_obravalorvisita.setObjectName("txt_obravalorvisita")
+        self.horizontalLayout_46.addWidget(self.txt_obravalorvisita)
+        self.horizontalLayout_25.addWidget(self.frame_51)
+        self.verticalLayout_4.addWidget(self.frame_33)
+        self.horizontalLayout_5.addWidget(self.frame_21)
+        self.verticalLayout.addWidget(self.frame_3)
+        self.frame_4 = QtWidgets.QFrame(self.frame)
+        self.frame_4.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_4)
+        self.horizontalLayout_4.setContentsMargins(15, 5, 15, 0)
+        self.horizontalLayout_4.setSpacing(5)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.frame_15 = QtWidgets.QFrame(self.frame_4)
+        self.frame_15.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_15.setObjectName("frame_15")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_15)
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_12.setSpacing(5)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.txt_idcli1 = QtWidgets.QLineEdit(self.frame_15)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli1.sizePolicy().hasHeightForWidth())
+        self.txt_idcli1.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -732,54 +1076,14 @@ class Obra(object):
 "}")
         self.txt_idcli1.setMaxLength(32)
         self.txt_idcli1.setObjectName("txt_idcli1")
-        self.btn_search = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_search.setGeometry(QtCore.QRect(450, 90, 51, 50))
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.btn_search.setFont(font)
-        self.btn_search.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"    font: 18pt ;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_search.setObjectName("btn_search")
-        self.txt_obravalorvisita_2 = QtWidgets.QLineEdit(self.editocli_area)
-        self.txt_obravalorvisita_2.setGeometry(QtCore.QRect(730, 630, 211, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.txt_obravalorvisita_2.setFont(font)
-        self.txt_obravalorvisita_2.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
-"}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
-"}")
-        self.txt_obravalorvisita_2.setMaxLength(32)
-        self.txt_obravalorvisita_2.setObjectName("txt_obravalorvisita_2")
-        self.btn_copycli1 = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_copycli1.setGeometry(QtCore.QRect(150, 630, 31, 50))
+        self.horizontalLayout_12.addWidget(self.txt_idcli1)
+        self.btn_copycli1 = QtWidgets.QPushButton(self.frame_15)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_copycli1.sizePolicy().hasHeightForWidth())
+        self.btn_copycli1.setSizePolicy(sizePolicy)
+        self.btn_copycli1.setMaximumSize(QtCore.QSize(60, 16777215))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -802,8 +1106,50 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_copycli1.setObjectName("btn_copycli1")
-        self.btn_copycli2 = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_copycli2.setGeometry(QtCore.QRect(330, 630, 31, 50))
+        self.horizontalLayout_12.addWidget(self.btn_copycli1)
+        self.horizontalLayout_4.addWidget(self.frame_15)
+        self.frame_16 = QtWidgets.QFrame(self.frame_4)
+        self.frame_16.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_16.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_16.setObjectName("frame_16")
+        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.frame_16)
+        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_13.setSpacing(5)
+        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
+        self.txt_idcli2 = QtWidgets.QLineEdit(self.frame_16)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli2.sizePolicy().hasHeightForWidth())
+        self.txt_idcli2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_idcli2.setFont(font)
+        self.txt_idcli2.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_idcli2.setMaxLength(32)
+        self.txt_idcli2.setObjectName("txt_idcli2")
+        self.horizontalLayout_13.addWidget(self.txt_idcli2)
+        self.btn_copycli2 = QtWidgets.QPushButton(self.frame_16)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_copycli2.sizePolicy().hasHeightForWidth())
+        self.btn_copycli2.setSizePolicy(sizePolicy)
+        self.btn_copycli2.setMaximumSize(QtCore.QSize(60, 16777215))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -826,8 +1172,50 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_copycli2.setObjectName("btn_copycli2")
-        self.btn_copycli3 = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_copycli3.setGeometry(QtCore.QRect(510, 630, 31, 50))
+        self.horizontalLayout_13.addWidget(self.btn_copycli2)
+        self.horizontalLayout_4.addWidget(self.frame_16)
+        self.frame_17 = QtWidgets.QFrame(self.frame_4)
+        self.frame_17.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_17.setObjectName("frame_17")
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.frame_17)
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_14.setSpacing(5)
+        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
+        self.txt_idcli3 = QtWidgets.QLineEdit(self.frame_17)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli3.sizePolicy().hasHeightForWidth())
+        self.txt_idcli3.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_idcli3.setFont(font)
+        self.txt_idcli3.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_idcli3.setMaxLength(32)
+        self.txt_idcli3.setObjectName("txt_idcli3")
+        self.horizontalLayout_14.addWidget(self.txt_idcli3)
+        self.btn_copycli3 = QtWidgets.QPushButton(self.frame_17)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_copycli3.sizePolicy().hasHeightForWidth())
+        self.btn_copycli3.setSizePolicy(sizePolicy)
+        self.btn_copycli3.setMaximumSize(QtCore.QSize(60, 16777215))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -850,8 +1238,50 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_copycli3.setObjectName("btn_copycli3")
-        self.btn_copycli4 = QtWidgets.QPushButton(self.editocli_area)
-        self.btn_copycli4.setGeometry(QtCore.QRect(690, 630, 31, 50))
+        self.horizontalLayout_14.addWidget(self.btn_copycli3)
+        self.horizontalLayout_4.addWidget(self.frame_17)
+        self.frame_18 = QtWidgets.QFrame(self.frame_4)
+        self.frame_18.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_18.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_18.setObjectName("frame_18")
+        self.horizontalLayout_15 = QtWidgets.QHBoxLayout(self.frame_18)
+        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_15.setSpacing(5)
+        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
+        self.txt_idcli4 = QtWidgets.QLineEdit(self.frame_18)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli4.sizePolicy().hasHeightForWidth())
+        self.txt_idcli4.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_idcli4.setFont(font)
+        self.txt_idcli4.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_idcli4.setMaxLength(32)
+        self.txt_idcli4.setObjectName("txt_idcli4")
+        self.horizontalLayout_15.addWidget(self.txt_idcli4)
+        self.btn_copycli4 = QtWidgets.QPushButton(self.frame_18)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_copycli4.sizePolicy().hasHeightForWidth())
+        self.btn_copycli4.setSizePolicy(sizePolicy)
+        self.btn_copycli4.setMaximumSize(QtCore.QSize(60, 16777215))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(False)
@@ -874,30 +1304,201 @@ class Obra(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_copycli4.setObjectName("btn_copycli4")
-        self.horizontalLayout.addWidget(self.editocli_area)
-        self.verticalLayout.addWidget(self.content)
-        self.bottom = QtWidgets.QFrame(self.centralwidget)
-        self.bottom.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.bottom.setStyleSheet("background-color: rgb(15, 15, 15);")
-        self.bottom.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.bottom.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.bottom.setObjectName("bottom")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.bottom)
-        self.verticalLayout_2.setContentsMargins(0, 0, 6, 1)
-        self.verticalLayout_2.setSpacing(0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.lbl_version = QtWidgets.QLabel(self.bottom)
-        self.lbl_version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lbl_version.setObjectName("lbl_version")
-        self.verticalLayout_2.addWidget(self.lbl_version)
-        self.lbl_created = QtWidgets.QLabel(self.bottom)
+        self.horizontalLayout_15.addWidget(self.btn_copycli4)
+        self.horizontalLayout_4.addWidget(self.frame_18)
+        self.frame_19 = QtWidgets.QFrame(self.frame_4)
+        self.frame_19.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_19.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_19.setObjectName("frame_19")
+        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.frame_19)
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_16.setSpacing(0)
+        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
+        self.txt_obravalorvisita_2 = QtWidgets.QLineEdit(self.frame_19)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_obravalorvisita_2.sizePolicy().hasHeightForWidth())
+        self.txt_obravalorvisita_2.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
-        self.lbl_created.setFont(font)
-        self.lbl_created.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lbl_created.setObjectName("lbl_created")
-        self.verticalLayout_2.addWidget(self.lbl_created)
-        self.verticalLayout.addWidget(self.bottom)
+        font.setPointSize(10)
+        self.txt_obravalorvisita_2.setFont(font)
+        self.txt_obravalorvisita_2.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_obravalorvisita_2.setMaxLength(32)
+        self.txt_obravalorvisita_2.setObjectName("txt_obravalorvisita_2")
+        self.horizontalLayout_16.addWidget(self.txt_obravalorvisita_2)
+        self.horizontalLayout_4.addWidget(self.frame_19)
+        self.verticalLayout.addWidget(self.frame_4)
+        self.frame_5 = QtWidgets.QFrame(self.frame)
+        self.frame_5.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_5.setObjectName("frame_5")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_5)
+        self.horizontalLayout_3.setContentsMargins(15, 5, 15, 0)
+        self.horizontalLayout_3.setSpacing(5)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.frame_12 = QtWidgets.QFrame(self.frame_5)
+        self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_12.setObjectName("frame_12")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_12)
+        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_9.setSpacing(0)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.btn_delete = QtWidgets.QPushButton(self.frame_12)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
+        self.btn_delete.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.btn_delete.setFont(font)
+        self.btn_delete.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_delete.setObjectName("btn_delete")
+        self.horizontalLayout_9.addWidget(self.btn_delete)
+        self.horizontalLayout_3.addWidget(self.frame_12)
+        self.frame_13 = QtWidgets.QFrame(self.frame_5)
+        self.frame_13.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_13.setObjectName("frame_13")
+        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.frame_13)
+        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_10.setSpacing(0)
+        self.horizontalLayout_10.setObjectName("horizontalLayout_10")
+        self.btn_edit = QtWidgets.QPushButton(self.frame_13)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_edit.sizePolicy().hasHeightForWidth())
+        self.btn_edit.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.btn_edit.setFont(font)
+        self.btn_edit.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_edit.setObjectName("btn_edit")
+        self.horizontalLayout_10.addWidget(self.btn_edit)
+        self.horizontalLayout_3.addWidget(self.frame_13)
+        self.frame_14 = QtWidgets.QFrame(self.frame_5)
+        self.frame_14.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_14.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_14.setObjectName("frame_14")
+        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_14)
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_11.setSpacing(0)
+        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
+        self.btn_add = QtWidgets.QPushButton(self.frame_14)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_add.sizePolicy().hasHeightForWidth())
+        self.btn_add.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.btn_add.setFont(font)
+        self.btn_add.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_add.setObjectName("btn_add")
+        self.horizontalLayout_11.addWidget(self.btn_add)
+        self.horizontalLayout_3.addWidget(self.frame_14)
+        self.verticalLayout.addWidget(self.frame_5)
+        self.frame_6 = QtWidgets.QFrame(self.frame)
+        self.frame_6.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_6.setObjectName("frame_6")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_6)
+        self.verticalLayout_2.setContentsMargins(0, 5, 10, 5)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.frame_11 = QtWidgets.QFrame(self.frame_6)
+        self.frame_11.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.frame_11.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_11.setObjectName("frame_11")
+        self.horizontalLayout_35 = QtWidgets.QHBoxLayout(self.frame_11)
+        self.horizontalLayout_35.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_35.setSpacing(0)
+        self.horizontalLayout_35.setObjectName("horizontalLayout_35")
+        self.version = QtWidgets.QLabel(self.frame_11)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        self.version.setFont(font)
+        self.version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.version.setObjectName("version")
+        self.horizontalLayout_35.addWidget(self.version)
+        self.verticalLayout_2.addWidget(self.frame_11)
+        self.frame_10 = QtWidgets.QFrame(self.frame_6)
+        self.frame_10.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_10.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_10.setObjectName("frame_10")
+        self.horizontalLayout_34 = QtWidgets.QHBoxLayout(self.frame_10)
+        self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_34.setSpacing(0)
+        self.horizontalLayout_34.setObjectName("horizontalLayout_34")
+        self.created = QtWidgets.QLabel(self.frame_10)
+        self.created.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.created.setObjectName("created")
+        self.horizontalLayout_34.addWidget(self.created)
+        self.verticalLayout_2.addWidget(self.frame_10)
+        self.verticalLayout.addWidget(self.frame_6)
+        self.horizontalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -905,24 +1506,14 @@ class Obra(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Edit Client"))
-        self.label.setText(_translate("MainWindow", "EDITADO"))
-        self.pushButton.setText(_translate("MainWindow", "X"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btn_return.setText(_translate("MainWindow", "↩"))
-        self.txt_obralote.setPlaceholderText(_translate("MainWindow", "LOTE"))
-        self.txt_obraquarteirao.setPlaceholderText(_translate("MainWindow", "QUARTEIRÃO"))
-        self.txt_obranumero.setPlaceholderText(_translate("MainWindow", "NUMERO"))
-        self.txt_id.setPlaceholderText(_translate("MainWindow", "DIGITE O ID"))
-        self.txt_obrabairro.setPlaceholderText(_translate("MainWindow", "BAIRRO"))
-        self.txt_obracidade.setPlaceholderText(_translate("MainWindow", "CIDADE"))
-        self.btn_edit.setText(_translate("MainWindow", "EDIT"))
-        self.txt_obratipo.setPlaceholderText(_translate("MainWindow", "TIPO DE PROJETO"))
-        self.txt_obraend.setPlaceholderText(_translate("MainWindow", "ENDEREÇO"))
-        self.txt_obraart.setPlaceholderText(_translate("MainWindow", "ART DO PROJETO"))
-        self.btn_delete.setText(_translate("MainWindow", "DELETE"))
-        self.txt_obraquantparcela.setPlaceholderText(_translate("MainWindow", "QUANT. PARCELA"))
-        self.txt_obraquadra.setPlaceholderText(_translate("MainWindow", "QUADRA"))
-        self.txt_obravalorparcela.setPlaceholderText(_translate("MainWindow", "VALOR DA PARCELA"))
+        self.logo.setText(_translate("MainWindow", "ROGÉRIO ROCHA ENGENHARIA"))
+        self.minwin.setText(_translate("MainWindow", "―"))
+        self.maxwin.setText(_translate("MainWindow", "☐"))
+        self.closewin.setText(_translate("MainWindow", "X"))
+        self.txt_rua.setPlaceholderText(_translate("MainWindow", "RUA DO TERRENO"))
+        self.btn_search.setText(_translate("MainWindow", "⌕"))
         item = self.tabWid_obra.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID"))
         item = self.tabWid_obra.horizontalHeaderItem(1)
@@ -963,25 +1554,36 @@ class Obra(object):
         item.setText(_translate("MainWindow", "ID CLIENTE 3"))
         item = self.tabWid_obra.horizontalHeaderItem(19)
         item.setText(_translate("MainWindow", "ID CLIENTE 4"))
-        self.txt_obravalorvisita.setPlaceholderText(_translate("MainWindow", "VALOR VISITA TÉC."))
-        self.txt_obradatacontrato.setPlaceholderText(_translate("MainWindow", "DATA DO CONTRATO"))
-        self.txt_obraareaterreno.setPlaceholderText(_translate("MainWindow", "AREA DO TERRENO"))
-        self.txt_rua.setPlaceholderText(_translate("MainWindow", "RUA DO TERRENO"))
-        self.btn_add.setText(_translate("MainWindow", "ADD"))
+        self.txt_id.setPlaceholderText(_translate("MainWindow", "DIGITE O ID"))
         self.btn_copy.setText(_translate("MainWindow", "✍"))
-        self.txt_idcli3.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 3"))
-        self.txt_idcli4.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 4"))
-        self.txt_idcli2.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 2"))
+        self.txt_obraend.setPlaceholderText(_translate("MainWindow", "ENDEREÇO"))
+        self.txt_obrabairro.setPlaceholderText(_translate("MainWindow", "BAIRRO"))
+        self.txt_obranumero.setPlaceholderText(_translate("MainWindow", "NUMERO"))
+        self.txt_obracidade.setPlaceholderText(_translate("MainWindow", "CIDADE"))
+        self.txt_obralote.setPlaceholderText(_translate("MainWindow", "LOTE"))
+        self.txt_obraquadra.setPlaceholderText(_translate("MainWindow", "QUADRA"))
+        self.txt_obraquarteirao.setPlaceholderText(_translate("MainWindow", "QUARTEIRÃO"))
+        self.txt_obratipo.setPlaceholderText(_translate("MainWindow", "TIPO DE PROJETO"))
+        self.txt_obraareaterreno.setPlaceholderText(_translate("MainWindow", "AREA DO TERRENO"))
+        self.txt_obraart.setPlaceholderText(_translate("MainWindow", "ART DO PROJETO"))
+        self.txt_obravalorparcela.setPlaceholderText(_translate("MainWindow", "VALOR DA PARCELA"))
+        self.txt_obraquantparcela.setPlaceholderText(_translate("MainWindow", "QUANT. PARCELA"))
+        self.txt_obradatacontrato.setPlaceholderText(_translate("MainWindow", "DATA DO CONTRATO"))
+        self.txt_obravalorvisita.setPlaceholderText(_translate("MainWindow", "VALOR VISITA TÉC."))
         self.txt_idcli1.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 1"))
-        self.btn_search.setText(_translate("MainWindow", "⌕"))
-        self.txt_obravalorvisita_2.setPlaceholderText(_translate("MainWindow", "INSC. IMOBILIÁRIA"))
         self.btn_copycli1.setText(_translate("MainWindow", "✍"))
+        self.txt_idcli2.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 2"))
         self.btn_copycli2.setText(_translate("MainWindow", "✍"))
+        self.txt_idcli3.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 3"))
         self.btn_copycli3.setText(_translate("MainWindow", "✍"))
+        self.txt_idcli4.setPlaceholderText(_translate("MainWindow", "ID CLIENTE 4"))
         self.btn_copycli4.setText(_translate("MainWindow", "✍"))
-        self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
-        self.lbl_created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
-import file_rc_rc
+        self.txt_obravalorvisita_2.setPlaceholderText(_translate("MainWindow", "INSC. IMOBILIÁRIA"))
+        self.btn_delete.setText(_translate("MainWindow", "DELETE"))
+        self.btn_edit.setText(_translate("MainWindow", "EDIT"))
+        self.btn_add.setText(_translate("MainWindow", "ADD"))
+        self.version.setText(_translate("MainWindow", "V 1.2"))
+        self.created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 
 
 if __name__ == "__main__":
@@ -992,4 +1594,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-

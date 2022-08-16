@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1063</width>
-    <height>740</height>
+    <width>524</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -129,7 +129,7 @@ color:rgb(200, 200, 255);</string>
               <number>5</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>5</number>
              </property>
              <property name="bottomMargin">
               <number>5</number>
@@ -227,7 +227,7 @@ font: 16pt &quot;Masiku&quot;;</string>
               <number>5</number>
              </property>
              <property name="leftMargin">
-              <number>0</number>
+              <number>5</number>
              </property>
              <property name="topMargin">
               <number>0</number>
@@ -490,6 +490,12 @@ color:rgb(200, 200, 255);</string>
                           <horstretch>0</horstretch>
                           <verstretch>0</verstretch>
                          </sizepolicy>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
                         </property>
                         <property name="font">
                          <font>

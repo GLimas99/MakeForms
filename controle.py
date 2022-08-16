@@ -55,13 +55,11 @@ class Menu(QMainWindow, Menu):
         #self.lbl_welcome.setText("Bem vindo "+username_log+"!")
 
     def abriobra(self):
-        widget.resize(870, 1000)
         obra = Obra()
         widget.addWidget(obra)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def abricliente(self):
-        widget.resize(870, 1000)
         cliente = Cliente()
         widget.addWidget(cliente)
         widget.setCurrentIndex(widget.currentIndex()+1)
@@ -78,7 +76,7 @@ class Obra(QMainWindow, Obra):
         self.btn_return.clicked.connect(self.volta)
         self.btn_search.clicked.connect(self.search)
         self.btn_add.clicked.connect(self.add)
-        self.pushButton.clicked.connect(self.close)
+        #self.pushButton.clicked.connect(self.close)
         self.btn_copy.clicked.connect(self.copy)
         self.btn_delete.clicked.connect(self.delete)
         self.btn_edit.clicked.connect(self.edit)
@@ -108,7 +106,6 @@ class Obra(QMainWindow, Obra):
         menu = Menu()
         widget.addWidget(menu)
         widget.setCurrentIndex(widget.currentIndex() + 1)
-        widget.setMinimumSize(QtCore.QSize(556, 316))
 
     def copy(self):
         idobra = self.txt_id.text()
@@ -589,7 +586,7 @@ class Doc(QMainWindow, Doc):
         self.cbox_3cli.clicked.connect(self.checked3)
         self.cbox_4cli.clicked.connect(self.checked4)
         self.btn_make.clicked.connect(self.make)
-        self.pushButton.clicked.connect(self.close)
+        #self.pushButton.clicked.connect(self.close)
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -7350,5 +7347,6 @@ if __name__ == '__main__':
     #widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
     #widget.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
     widget.show()
+    widget.setMinimumSize(QtCore.QSize(586, 716))
     #widget.showMaximized()
     qt.exec_()

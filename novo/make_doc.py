@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'make_doc.ui'
+# Form implementation generated from reading ui file 'doc.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,331 +14,49 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Doc(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1000, 870)
-        MainWindow.setMinimumSize(QtCore.QSize(1000, 870))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        MainWindow.setFont(font)
-        MainWindow.setStyleSheet("color:rgb(200, 200, 255);\n"
-"background-color: rgb(10, 10, 10);")
+        MainWindow.resize(646, 468)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.all = QtWidgets.QFrame(self.centralwidget)
+        self.all.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.all.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.all.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.all.setObjectName("all")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.all)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.top_bar = QtWidgets.QFrame(self.centralwidget)
-        self.top_bar.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.top_bar.setStyleSheet("")
-        self.top_bar.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.top_bar.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.top_bar.setObjectName("top_bar")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.top_bar)
-        self.horizontalLayout_2.setContentsMargins(0, 5, 0, 0)
-        self.horizontalLayout_2.setSpacing(0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.frame_popup = QtWidgets.QFrame(self.top_bar)
-        self.frame_popup.setMaximumSize(QtCore.QSize(450, 16777215))
-        self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-"border-radius:5px;")
-        self.frame_popup.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_popup.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_popup.setObjectName("frame_popup")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_popup)
-        self.horizontalLayout_3.setContentsMargins(0, 0, 5, 0)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.lbl_popup = QtWidgets.QLabel(self.frame_popup)
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        self.lbl_popup.setFont(font)
-        self.lbl_popup.setStyleSheet("color: rgb(35, 35, 35);")
-        self.lbl_popup.setAlignment(QtCore.Qt.AlignCenter)
-        self.lbl_popup.setObjectName("lbl_popup")
-        self.horizontalLayout_3.addWidget(self.lbl_popup)
-        self.pushButton = QtWidgets.QPushButton(self.frame_popup)
-        self.pushButton.setMaximumSize(QtCore.QSize(20, 20))
-        self.pushButton.setStyleSheet("QPushButton{\n"
-"    border-radius: 5px;\n"
-"    background-image: url(:/Close_Image/Images/cil-x.png);\n"
-"    background-position:center;\n"
-"    \n"
-"    background-color: rgb(60, 60, 60);\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(50, 50, 50);\n"
-"    color: rgb(255, 255, 127);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(35, 35, 35);\n"
-"    color: rgb(255, 255, 127);\n"
-"}")
-        self.pushButton.setText("")
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
-        self.horizontalLayout_2.addWidget(self.frame_popup)
-        self.verticalLayout.addWidget(self.top_bar)
-        self.content = QtWidgets.QFrame(self.centralwidget)
-        self.content.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.content.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.content.setObjectName("content")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.content)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.makedoc_area = QtWidgets.QFrame(self.content)
-        self.makedoc_area.setMaximumSize(QtCore.QSize(950, 765))
-        self.makedoc_area.setStyleSheet("background-color: rgb(40, 40, 40);\n"
-"border-radius: 10px")
-        self.makedoc_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.makedoc_area.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.makedoc_area.setObjectName("makedoc_area")
-        self.logo = QtWidgets.QFrame(self.makedoc_area)
-        self.logo.setGeometry(QtCore.QRect(360, 0, 211, 90))
-        self.logo.setStyleSheet("background-image: url(:/Logo_yellow/Images/logorocha_360x90.png);\n"
-"background-repeat: no-repeat;\n"
-"background-position: center;\n"
-"")
-        self.logo.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.logo.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.logo.setObjectName("logo")
-        self.cbox_1cli = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_1cli.setGeometry(QtCore.QRect(520, 430, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_1cli.setFont(font)
-        self.cbox_1cli.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_1cli.setObjectName("cbox_1cli")
-        self.cbox_2cli = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_2cli.setGeometry(QtCore.QRect(520, 460, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_2cli.setFont(font)
-        self.cbox_2cli.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_2cli.setObjectName("cbox_2cli")
-        self.cbox_3cli = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_3cli.setGeometry(QtCore.QRect(740, 430, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_3cli.setFont(font)
-        self.cbox_3cli.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_3cli.setObjectName("cbox_3cli")
-        self.cbox_4cli = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_4cli.setGeometry(QtCore.QRect(740, 460, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_4cli.setFont(font)
-        self.cbox_4cli.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_4cli.setObjectName("cbox_4cli")
-        self.cbox_memorial = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_memorial.setGeometry(QtCore.QRect(520, 240, 231, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_memorial.setFont(font)
-        self.cbox_memorial.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_memorial.setObjectName("cbox_memorial")
-        self.cbox_memorialcontrucao = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_memorialcontrucao.setGeometry(QtCore.QRect(520, 270, 411, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_memorialcontrucao.setFont(font)
-        self.cbox_memorialcontrucao.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_memorialcontrucao.setObjectName("cbox_memorialcontrucao")
-        self.cbox_procuracao = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_procuracao.setGeometry(QtCore.QRect(520, 180, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_procuracao.setFont(font)
-        self.cbox_procuracao.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_procuracao.setObjectName("cbox_procuracao")
-        self.cbox_reqslei = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_reqslei.setGeometry(QtCore.QRect(520, 210, 221, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_reqslei.setFont(font)
-        self.cbox_reqslei.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_reqslei.setObjectName("cbox_reqslei")
-        self.cbox_reqclei = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_reqclei.setGeometry(QtCore.QRect(740, 210, 231, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_reqclei.setFont(font)
-        self.cbox_reqclei.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_reqclei.setObjectName("cbox_reqclei")
-        self.cbox_declaracao = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_declaracao.setGeometry(QtCore.QRect(740, 180, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_declaracao.setFont(font)
-        self.cbox_declaracao.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_declaracao.setObjectName("cbox_declaracao")
-        self.cbox_contrato = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_contrato.setGeometry(QtCore.QRect(520, 150, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_contrato.setFont(font)
-        self.cbox_contrato.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_contrato.setObjectName("cbox_contrato")
-        self.cbox_recibo = QtWidgets.QCheckBox(self.makedoc_area)
-        self.cbox_recibo.setGeometry(QtCore.QRect(740, 150, 211, 22))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.cbox_recibo.setFont(font)
-        self.cbox_recibo.setStyleSheet("QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height:15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(195, 156, 0);\n"
-"    background-color: rgb(255, 255, 127);\n"
-"}")
-        self.cbox_recibo.setObjectName("cbox_recibo")
-        self.btn_make = QtWidgets.QPushButton(self.makedoc_area)
-        self.btn_make.setGeometry(QtCore.QRect(580, 690, 280, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(10)
-        self.btn_make.setFont(font)
-        self.btn_make.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_make.setObjectName("btn_make")
-        self.btn_return = QtWidgets.QPushButton(self.makedoc_area)
-        self.btn_return.setGeometry(QtCore.QRect(30, 20, 41, 50))
+        self.frame = QtWidgets.QFrame(self.all)
+        self.frame.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.horizontalLayout_26 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_26.setContentsMargins(40, 0, 0, 0)
+        self.horizontalLayout_26.setSpacing(0)
+        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
+        self.frame_5 = QtWidgets.QFrame(self.frame)
+        self.frame_5.setMaximumSize(QtCore.QSize(41, 16777215))
+        self.frame_5.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_5.setObjectName("frame_5")
+        self.horizontalLayout_27 = QtWidgets.QHBoxLayout(self.frame_5)
+        self.horizontalLayout_27.setContentsMargins(0, 5, 0, 5)
+        self.horizontalLayout_27.setSpacing(0)
+        self.horizontalLayout_27.setObjectName("horizontalLayout_27")
+        self.btn_return = QtWidgets.QPushButton(self.frame_5)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(18)
@@ -358,8 +76,227 @@ class Doc(object):
 "    color: rgb(35, 35, 35);\n"
 "}")
         self.btn_return.setObjectName("btn_return")
-        self.tabWid_obra = QtWidgets.QTableWidget(self.makedoc_area)
-        self.tabWid_obra.setGeometry(QtCore.QRect(10, 150, 491, 271))
+        self.horizontalLayout_27.addWidget(self.btn_return)
+        self.horizontalLayout_26.addWidget(self.frame_5)
+        self.frame_4 = QtWidgets.QFrame(self.frame)
+        self.frame_4.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.horizontalLayout_28 = QtWidgets.QHBoxLayout(self.frame_4)
+        self.horizontalLayout_28.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_28.setSpacing(0)
+        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
+        self.logo = QtWidgets.QLabel(self.frame_4)
+        self.logo.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"color:rgb(250, 230, 0);\n"
+"font: 16pt \"Masiku\";")
+        self.logo.setAlignment(QtCore.Qt.AlignCenter)
+        self.logo.setObjectName("logo")
+        self.horizontalLayout_28.addWidget(self.logo)
+        self.horizontalLayout_26.addWidget(self.frame_4)
+        self.frame_6 = QtWidgets.QFrame(self.frame)
+        self.frame_6.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.frame_6.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_6.setObjectName("frame_6")
+        self.horizontalLayout_45 = QtWidgets.QHBoxLayout(self.frame_6)
+        self.horizontalLayout_45.setContentsMargins(0, 0, 5, 0)
+        self.horizontalLayout_45.setSpacing(5)
+        self.horizontalLayout_45.setObjectName("horizontalLayout_45")
+        self.minwin = QtWidgets.QPushButton(self.frame_6)
+        self.minwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.minwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.minwin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.minwin.setObjectName("minwin")
+        self.horizontalLayout_45.addWidget(self.minwin)
+        self.maxwin = QtWidgets.QPushButton(self.frame_6)
+        self.maxwin.setMinimumSize(QtCore.QSize(20, 20))
+        self.maxwin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.maxwin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.maxwin.setObjectName("maxwin")
+        self.horizontalLayout_45.addWidget(self.maxwin)
+        self.closewin = QtWidgets.QPushButton(self.frame_6)
+        self.closewin.setMinimumSize(QtCore.QSize(20, 20))
+        self.closewin.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.closewin.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.closewin.setObjectName("closewin")
+        self.horizontalLayout_45.addWidget(self.closewin)
+        self.horizontalLayout_26.addWidget(self.frame_6)
+        self.verticalLayout.addWidget(self.frame)
+        self.frame_2 = QtWidgets.QFrame(self.all)
+        self.frame_2.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_2)
+        self.horizontalLayout_2.setContentsMargins(15, 0, 15, 0)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.frame_10 = QtWidgets.QFrame(self.frame_2)
+        self.frame_10.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_10.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_10.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_10.setObjectName("frame_10")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_10)
+        self.verticalLayout_3.setContentsMargins(0, 0, 2, 0)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.frame_11 = QtWidgets.QFrame(self.frame_10)
+        self.frame_11.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.frame_11.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_11.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_11.setObjectName("frame_11")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_11)
+        self.horizontalLayout_3.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_3.setSpacing(5)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.frame_15 = QtWidgets.QFrame(self.frame_11)
+        self.frame_15.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.frame_15.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_15.setObjectName("frame_15")
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.frame_15)
+        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_18.setSpacing(0)
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.txt_searchrua = QtWidgets.QLineEdit(self.frame_15)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_searchrua.sizePolicy().hasHeightForWidth())
+        self.txt_searchrua.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_searchrua.setFont(font)
+        self.txt_searchrua.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_searchrua.setMaxLength(32)
+        self.txt_searchrua.setObjectName("txt_searchrua")
+        self.horizontalLayout_18.addWidget(self.txt_searchrua)
+        self.horizontalLayout_3.addWidget(self.frame_15)
+        self.frame_16 = QtWidgets.QFrame(self.frame_11)
+        self.frame_16.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.frame_16.setStyleSheet("background-color: rgb(255, 170, 255);")
+        self.frame_16.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_16.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_16.setObjectName("frame_16")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_16)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.btn_search = QtWidgets.QPushButton(self.frame_16)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_search.sizePolicy().hasHeightForWidth())
+        self.btn_search.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(18)
+        self.btn_search.setFont(font)
+        self.btn_search.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_search.setObjectName("btn_search")
+        self.horizontalLayout_19.addWidget(self.btn_search)
+        self.horizontalLayout_3.addWidget(self.frame_16)
+        self.verticalLayout_3.addWidget(self.frame_11)
+        self.frame_12 = QtWidgets.QFrame(self.frame_10)
+        self.frame_12.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_12.setObjectName("frame_12")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_12)
+        self.horizontalLayout_5.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_5.setSpacing(0)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.frame_36 = QtWidgets.QFrame(self.frame_12)
+        self.frame_36.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_36.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_36.setObjectName("frame_36")
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.frame_36)
+        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_23.setSpacing(0)
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.tabWid_obra = QtWidgets.QTableWidget(self.frame_36)
         self.tabWid_obra.setStyleSheet("QTableWidget{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
@@ -441,8 +378,117 @@ class Doc(object):
         self.tabWid_obra.setHorizontalHeaderItem(18, item)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_obra.setHorizontalHeaderItem(19, item)
-        self.tabWid_cli = QtWidgets.QTableWidget(self.makedoc_area)
-        self.tabWid_cli.setGeometry(QtCore.QRect(10, 490, 491, 271))
+        self.horizontalLayout_23.addWidget(self.tabWid_obra)
+        self.horizontalLayout_5.addWidget(self.frame_36)
+        self.verticalLayout_3.addWidget(self.frame_12)
+        self.frame_13 = QtWidgets.QFrame(self.frame_10)
+        self.frame_13.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.frame_13.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_13.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_13.setObjectName("frame_13")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_13)
+        self.horizontalLayout_4.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_4.setSpacing(5)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.frame_17 = QtWidgets.QFrame(self.frame_13)
+        self.frame_17.setStyleSheet("background-color: rgb(0, 85, 255);")
+        self.frame_17.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_17.setObjectName("frame_17")
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout(self.frame_17)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.txt_searchnome = QtWidgets.QLineEdit(self.frame_17)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_searchnome.sizePolicy().hasHeightForWidth())
+        self.txt_searchnome.setSizePolicy(sizePolicy)
+        self.txt_searchnome.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.txt_searchnome.setFont(font)
+        self.txt_searchnome.setStyleSheet("QLineEdit{\n"
+"    border: 2px solid rgb(45, 45, 45);\n"
+"    border-radius: 5px;\n"
+"    padding: 15px;\n"
+"    background-color: rgb(30, 30, 30);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+"QLineEdit:hover{\n"
+"    border: 2px solid rgb(55, 55, 55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"    border: 2px solid rgb(255, 207, 0);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.txt_searchnome.setMaxLength(32)
+        self.txt_searchnome.setObjectName("txt_searchnome")
+        self.horizontalLayout_24.addWidget(self.txt_searchnome)
+        self.horizontalLayout_4.addWidget(self.frame_17)
+        self.frame_18 = QtWidgets.QFrame(self.frame_13)
+        self.frame_18.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.frame_18.setStyleSheet("background-color: rgb(170, 0, 127);")
+        self.frame_18.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_18.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_18.setObjectName("frame_18")
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout(self.frame_18)
+        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_25.setSpacing(0)
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        self.btn_search_2 = QtWidgets.QPushButton(self.frame_18)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_search_2.sizePolicy().hasHeightForWidth())
+        self.btn_search_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(18)
+        self.btn_search_2.setFont(font)
+        self.btn_search_2.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_search_2.setObjectName("btn_search_2")
+        self.horizontalLayout_25.addWidget(self.btn_search_2)
+        self.horizontalLayout_4.addWidget(self.frame_18)
+        self.verticalLayout_3.addWidget(self.frame_13)
+        self.frame_14 = QtWidgets.QFrame(self.frame_10)
+        self.frame_14.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_14.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_14.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_14.setObjectName("frame_14")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_14)
+        self.horizontalLayout_6.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.frame_37 = QtWidgets.QFrame(self.frame_14)
+        self.frame_37.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_37.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_37.setObjectName("frame_37")
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.frame_37)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_22.setSpacing(0)
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.tabWid_cli = QtWidgets.QTableWidget(self.frame_37)
         self.tabWid_cli.setStyleSheet("QTableWidget{\n"
 "    border: 2px solid rgb(45, 45, 45);\n"
 "    border-radius: 5px;\n"
@@ -514,94 +560,515 @@ class Doc(object):
         self.tabWid_cli.setHorizontalHeaderItem(13, item)
         item = QtWidgets.QTableWidgetItem()
         self.tabWid_cli.setHorizontalHeaderItem(14, item)
-        self.txt_searchrua = QtWidgets.QLineEdit(self.makedoc_area)
-        self.txt_searchrua.setGeometry(QtCore.QRect(10, 90, 431, 50))
+        self.horizontalLayout_22.addWidget(self.tabWid_cli)
+        self.horizontalLayout_6.addWidget(self.frame_37)
+        self.verticalLayout_3.addWidget(self.frame_14)
+        self.horizontalLayout_2.addWidget(self.frame_10)
+        self.frame_9 = QtWidgets.QFrame(self.frame_2)
+        self.frame_9.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_9.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_9.setObjectName("frame_9")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_9)
+        self.verticalLayout_4.setContentsMargins(2, 0, 0, 0)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.frame_25 = QtWidgets.QFrame(self.frame_9)
+        self.frame_25.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_25.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_25.setObjectName("frame_25")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.frame_25)
+        self.horizontalLayout_7.setContentsMargins(5, 5, 0, 0)
+        self.horizontalLayout_7.setSpacing(5)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.frame_30 = QtWidgets.QFrame(self.frame_25)
+        self.frame_30.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_30.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_30.setObjectName("frame_30")
+        self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.frame_30)
+        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
+        self.cbox_contrato = QtWidgets.QCheckBox(self.frame_30)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_contrato.sizePolicy().hasHeightForWidth())
+        self.cbox_contrato.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_searchrua.setFont(font)
-        self.txt_searchrua.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
+        self.cbox_contrato.setFont(font)
+        self.cbox_contrato.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
 "}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
 "}")
-        self.txt_searchrua.setMaxLength(32)
-        self.txt_searchrua.setObjectName("txt_searchrua")
-        self.btn_search = QtWidgets.QPushButton(self.makedoc_area)
-        self.btn_search.setGeometry(QtCore.QRect(450, 90, 51, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(18)
-        self.btn_search.setFont(font)
-        self.btn_search.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_search.setObjectName("btn_search")
-        self.btn_search_2 = QtWidgets.QPushButton(self.makedoc_area)
-        self.btn_search_2.setGeometry(QtCore.QRect(450, 430, 51, 50))
-        font = QtGui.QFont()
-        font.setFamily("Quicksand")
-        font.setPointSize(18)
-        self.btn_search_2.setFont(font)
-        self.btn_search_2.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(50, 50, 50);\n"
-"    border:2px solid rgb(60, 60, 60);\n"
-"    border-radius:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color:rgb(60, 60, 60);\n"
-"    border: 2px solid rgb(70, 70, 70);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(250, 230, 0);\n"
-"    border: 2px solid rgb(255, 165, 24);\n"
-"    color: rgb(35, 35, 35);\n"
-"}")
-        self.btn_search_2.setObjectName("btn_search_2")
-        self.txt_searchnome = QtWidgets.QLineEdit(self.makedoc_area)
-        self.txt_searchnome.setGeometry(QtCore.QRect(10, 430, 431, 50))
+        self.cbox_contrato.setObjectName("cbox_contrato")
+        self.horizontalLayout_21.addWidget(self.cbox_contrato)
+        self.horizontalLayout_7.addWidget(self.frame_30)
+        self.frame_31 = QtWidgets.QFrame(self.frame_25)
+        self.frame_31.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_31.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_31.setObjectName("frame_31")
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout(self.frame_31)
+        self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_20.setSpacing(0)
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        self.cbox_recibo = QtWidgets.QCheckBox(self.frame_31)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_recibo.sizePolicy().hasHeightForWidth())
+        self.cbox_recibo.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
-        self.txt_searchnome.setFont(font)
-        self.txt_searchnome.setStyleSheet("QLineEdit{\n"
-"    border: 2px solid rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
-"    padding: 15px;\n"
-"    background-color: rgb(30, 30, 30);\n"
-"    color: rgb(100, 100, 100);\n"
+        self.cbox_recibo.setFont(font)
+        self.cbox_recibo.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
 "}\n"
-"QLineEdit:hover{\n"
-"    border: 2px solid rgb(55, 55, 55);\n"
-"}\n"
-"QLineEdit:focus{\n"
-"    border: 2px solid rgb(255, 207, 0);\n"
-"    color: rgb(200, 200, 200);\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
 "}")
-        self.txt_searchnome.setMaxLength(32)
-        self.txt_searchnome.setObjectName("txt_searchnome")
-        self.txt_idobra = QtWidgets.QLineEdit(self.makedoc_area)
-        self.txt_idobra.setGeometry(QtCore.QRect(510, 490, 431, 50))
+        self.cbox_recibo.setObjectName("cbox_recibo")
+        self.horizontalLayout_20.addWidget(self.cbox_recibo)
+        self.horizontalLayout_7.addWidget(self.frame_31)
+        self.verticalLayout_4.addWidget(self.frame_25)
+        self.frame_19 = QtWidgets.QFrame(self.frame_9)
+        self.frame_19.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_19.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_19.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_19.setObjectName("frame_19")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_19)
+        self.horizontalLayout_8.setContentsMargins(5, 5, 0, 0)
+        self.horizontalLayout_8.setSpacing(5)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.frame_32 = QtWidgets.QFrame(self.frame_19)
+        self.frame_32.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_32.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_32.setObjectName("frame_32")
+        self.horizontalLayout_30 = QtWidgets.QHBoxLayout(self.frame_32)
+        self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_30.setSpacing(0)
+        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
+        self.cbox_procuracao = QtWidgets.QCheckBox(self.frame_32)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_procuracao.sizePolicy().hasHeightForWidth())
+        self.cbox_procuracao.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_procuracao.setFont(font)
+        self.cbox_procuracao.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_procuracao.setObjectName("cbox_procuracao")
+        self.horizontalLayout_30.addWidget(self.cbox_procuracao)
+        self.horizontalLayout_8.addWidget(self.frame_32)
+        self.frame_33 = QtWidgets.QFrame(self.frame_19)
+        self.frame_33.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_33.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_33.setObjectName("frame_33")
+        self.horizontalLayout_31 = QtWidgets.QHBoxLayout(self.frame_33)
+        self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_31.setSpacing(0)
+        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
+        self.cbox_declaracao = QtWidgets.QCheckBox(self.frame_33)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_declaracao.sizePolicy().hasHeightForWidth())
+        self.cbox_declaracao.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_declaracao.setFont(font)
+        self.cbox_declaracao.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_declaracao.setObjectName("cbox_declaracao")
+        self.horizontalLayout_31.addWidget(self.cbox_declaracao)
+        self.horizontalLayout_8.addWidget(self.frame_33)
+        self.verticalLayout_4.addWidget(self.frame_19)
+        self.frame_20 = QtWidgets.QFrame(self.frame_9)
+        self.frame_20.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_20.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_20.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_20.setObjectName("frame_20")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_20)
+        self.horizontalLayout_9.setContentsMargins(5, 5, 0, 0)
+        self.horizontalLayout_9.setSpacing(5)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.frame_34 = QtWidgets.QFrame(self.frame_20)
+        self.frame_34.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_34.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_34.setObjectName("frame_34")
+        self.horizontalLayout_32 = QtWidgets.QHBoxLayout(self.frame_34)
+        self.horizontalLayout_32.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_32.setSpacing(0)
+        self.horizontalLayout_32.setObjectName("horizontalLayout_32")
+        self.cbox_reqslei = QtWidgets.QCheckBox(self.frame_34)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_reqslei.sizePolicy().hasHeightForWidth())
+        self.cbox_reqslei.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_reqslei.setFont(font)
+        self.cbox_reqslei.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_reqslei.setObjectName("cbox_reqslei")
+        self.horizontalLayout_32.addWidget(self.cbox_reqslei)
+        self.horizontalLayout_9.addWidget(self.frame_34)
+        self.frame_35 = QtWidgets.QFrame(self.frame_20)
+        self.frame_35.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_35.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_35.setObjectName("frame_35")
+        self.horizontalLayout_33 = QtWidgets.QHBoxLayout(self.frame_35)
+        self.horizontalLayout_33.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_33.setSpacing(0)
+        self.horizontalLayout_33.setObjectName("horizontalLayout_33")
+        self.cbox_reqclei = QtWidgets.QCheckBox(self.frame_35)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_reqclei.sizePolicy().hasHeightForWidth())
+        self.cbox_reqclei.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_reqclei.setFont(font)
+        self.cbox_reqclei.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_reqclei.setObjectName("cbox_reqclei")
+        self.horizontalLayout_33.addWidget(self.cbox_reqclei)
+        self.horizontalLayout_9.addWidget(self.frame_35)
+        self.verticalLayout_4.addWidget(self.frame_20)
+        self.frame_26 = QtWidgets.QFrame(self.frame_9)
+        self.frame_26.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_26.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_26.setObjectName("frame_26")
+        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.frame_26)
+        self.horizontalLayout_10.setContentsMargins(5, 5, 0, 0)
+        self.horizontalLayout_10.setSpacing(5)
+        self.horizontalLayout_10.setObjectName("horizontalLayout_10")
+        self.frame_38 = QtWidgets.QFrame(self.frame_26)
+        self.frame_38.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_38.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_38.setObjectName("frame_38")
+        self.horizontalLayout_34 = QtWidgets.QHBoxLayout(self.frame_38)
+        self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_34.setSpacing(0)
+        self.horizontalLayout_34.setObjectName("horizontalLayout_34")
+        self.cbox_memorial = QtWidgets.QCheckBox(self.frame_38)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_memorial.sizePolicy().hasHeightForWidth())
+        self.cbox_memorial.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_memorial.setFont(font)
+        self.cbox_memorial.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_memorial.setObjectName("cbox_memorial")
+        self.horizontalLayout_34.addWidget(self.cbox_memorial)
+        self.horizontalLayout_10.addWidget(self.frame_38)
+        self.verticalLayout_4.addWidget(self.frame_26)
+        self.frame_21 = QtWidgets.QFrame(self.frame_9)
+        self.frame_21.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_21.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_21.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_21.setObjectName("frame_21")
+        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_21)
+        self.horizontalLayout_11.setContentsMargins(5, 5, 0, 0)
+        self.horizontalLayout_11.setSpacing(5)
+        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
+        self.frame_39 = QtWidgets.QFrame(self.frame_21)
+        self.frame_39.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_39.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_39.setObjectName("frame_39")
+        self.horizontalLayout_35 = QtWidgets.QHBoxLayout(self.frame_39)
+        self.horizontalLayout_35.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_35.setSpacing(0)
+        self.horizontalLayout_35.setObjectName("horizontalLayout_35")
+        self.cbox_memorialcontrucao = QtWidgets.QCheckBox(self.frame_39)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_memorialcontrucao.sizePolicy().hasHeightForWidth())
+        self.cbox_memorialcontrucao.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_memorialcontrucao.setFont(font)
+        self.cbox_memorialcontrucao.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_memorialcontrucao.setObjectName("cbox_memorialcontrucao")
+        self.horizontalLayout_35.addWidget(self.cbox_memorialcontrucao)
+        self.horizontalLayout_11.addWidget(self.frame_39)
+        self.verticalLayout_4.addWidget(self.frame_21)
+        self.frame_22 = QtWidgets.QFrame(self.frame_9)
+        self.frame_22.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_22.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_22.setObjectName("frame_22")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_22)
+        self.horizontalLayout_12.setContentsMargins(5, 5, 0, 0)
+        self.horizontalLayout_12.setSpacing(5)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.frame_40 = QtWidgets.QFrame(self.frame_22)
+        self.frame_40.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_40.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_40.setObjectName("frame_40")
+        self.horizontalLayout_36 = QtWidgets.QHBoxLayout(self.frame_40)
+        self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_36.setSpacing(0)
+        self.horizontalLayout_36.setObjectName("horizontalLayout_36")
+        self.cbox_1cli = QtWidgets.QCheckBox(self.frame_40)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_1cli.sizePolicy().hasHeightForWidth())
+        self.cbox_1cli.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_1cli.setFont(font)
+        self.cbox_1cli.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_1cli.setObjectName("cbox_1cli")
+        self.horizontalLayout_36.addWidget(self.cbox_1cli)
+        self.horizontalLayout_12.addWidget(self.frame_40)
+        self.frame_41 = QtWidgets.QFrame(self.frame_22)
+        self.frame_41.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_41.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_41.setObjectName("frame_41")
+        self.horizontalLayout_37 = QtWidgets.QHBoxLayout(self.frame_41)
+        self.horizontalLayout_37.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_37.setSpacing(0)
+        self.horizontalLayout_37.setObjectName("horizontalLayout_37")
+        self.cbox_3cli = QtWidgets.QCheckBox(self.frame_41)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_3cli.sizePolicy().hasHeightForWidth())
+        self.cbox_3cli.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_3cli.setFont(font)
+        self.cbox_3cli.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_3cli.setObjectName("cbox_3cli")
+        self.horizontalLayout_37.addWidget(self.cbox_3cli)
+        self.horizontalLayout_12.addWidget(self.frame_41)
+        self.verticalLayout_4.addWidget(self.frame_22)
+        self.frame_27 = QtWidgets.QFrame(self.frame_9)
+        self.frame_27.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_27.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_27.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_27.setObjectName("frame_27")
+        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.frame_27)
+        self.horizontalLayout_13.setContentsMargins(5, 5, 0, 0)
+        self.horizontalLayout_13.setSpacing(5)
+        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
+        self.frame_42 = QtWidgets.QFrame(self.frame_27)
+        self.frame_42.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_42.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_42.setObjectName("frame_42")
+        self.horizontalLayout_38 = QtWidgets.QHBoxLayout(self.frame_42)
+        self.horizontalLayout_38.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_38.setSpacing(0)
+        self.horizontalLayout_38.setObjectName("horizontalLayout_38")
+        self.cbox_2cli = QtWidgets.QCheckBox(self.frame_42)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_2cli.sizePolicy().hasHeightForWidth())
+        self.cbox_2cli.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_2cli.setFont(font)
+        self.cbox_2cli.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_2cli.setObjectName("cbox_2cli")
+        self.horizontalLayout_38.addWidget(self.cbox_2cli)
+        self.horizontalLayout_13.addWidget(self.frame_42)
+        self.frame_43 = QtWidgets.QFrame(self.frame_27)
+        self.frame_43.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_43.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_43.setObjectName("frame_43")
+        self.horizontalLayout_39 = QtWidgets.QHBoxLayout(self.frame_43)
+        self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_39.setSpacing(0)
+        self.horizontalLayout_39.setObjectName("horizontalLayout_39")
+        self.cbox_4cli = QtWidgets.QCheckBox(self.frame_43)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbox_4cli.sizePolicy().hasHeightForWidth())
+        self.cbox_4cli.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        font.setPointSize(10)
+        self.cbox_4cli.setFont(font)
+        self.cbox_4cli.setStyleSheet("QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height:15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(195, 156, 0);\n"
+"    background-color: rgb(255, 255, 127);\n"
+"}")
+        self.cbox_4cli.setObjectName("cbox_4cli")
+        self.horizontalLayout_39.addWidget(self.cbox_4cli)
+        self.horizontalLayout_13.addWidget(self.frame_43)
+        self.verticalLayout_4.addWidget(self.frame_27)
+        self.frame_23 = QtWidgets.QFrame(self.frame_9)
+        self.frame_23.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.frame_23.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_23.setObjectName("frame_23")
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.frame_23)
+        self.horizontalLayout_14.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_14.setSpacing(5)
+        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
+        self.frame_44 = QtWidgets.QFrame(self.frame_23)
+        self.frame_44.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_44.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_44.setObjectName("frame_44")
+        self.horizontalLayout_40 = QtWidgets.QHBoxLayout(self.frame_44)
+        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_40.setSpacing(0)
+        self.horizontalLayout_40.setObjectName("horizontalLayout_40")
+        self.txt_idobra = QtWidgets.QLineEdit(self.frame_44)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idobra.sizePolicy().hasHeightForWidth())
+        self.txt_idobra.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -622,8 +1089,35 @@ class Doc(object):
 "}")
         self.txt_idobra.setMaxLength(32)
         self.txt_idobra.setObjectName("txt_idobra")
-        self.txt_idcli1 = QtWidgets.QLineEdit(self.makedoc_area)
-        self.txt_idcli1.setGeometry(QtCore.QRect(510, 550, 211, 50))
+        self.horizontalLayout_40.addWidget(self.txt_idobra)
+        self.horizontalLayout_14.addWidget(self.frame_44)
+        self.verticalLayout_4.addWidget(self.frame_23)
+        self.frame_28 = QtWidgets.QFrame(self.frame_9)
+        self.frame_28.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.frame_28.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_28.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_28.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_28.setObjectName("frame_28")
+        self.horizontalLayout_15 = QtWidgets.QHBoxLayout(self.frame_28)
+        self.horizontalLayout_15.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_15.setSpacing(5)
+        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
+        self.frame_45 = QtWidgets.QFrame(self.frame_28)
+        self.frame_45.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_45.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_45.setObjectName("frame_45")
+        self.horizontalLayout_41 = QtWidgets.QHBoxLayout(self.frame_45)
+        self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_41.setSpacing(0)
+        self.horizontalLayout_41.setObjectName("horizontalLayout_41")
+        self.txt_idcli1 = QtWidgets.QLineEdit(self.frame_45)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli1.sizePolicy().hasHeightForWidth())
+        self.txt_idcli1.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -644,8 +1138,22 @@ class Doc(object):
 "}")
         self.txt_idcli1.setMaxLength(32)
         self.txt_idcli1.setObjectName("txt_idcli1")
-        self.txt_idcli2 = QtWidgets.QLineEdit(self.makedoc_area)
-        self.txt_idcli2.setGeometry(QtCore.QRect(730, 550, 211, 50))
+        self.horizontalLayout_41.addWidget(self.txt_idcli1)
+        self.horizontalLayout_15.addWidget(self.frame_45)
+        self.frame_46 = QtWidgets.QFrame(self.frame_28)
+        self.frame_46.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_46.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_46.setObjectName("frame_46")
+        self.horizontalLayout_44 = QtWidgets.QHBoxLayout(self.frame_46)
+        self.horizontalLayout_44.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_44.setSpacing(0)
+        self.horizontalLayout_44.setObjectName("horizontalLayout_44")
+        self.txt_idcli2 = QtWidgets.QLineEdit(self.frame_46)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli2.sizePolicy().hasHeightForWidth())
+        self.txt_idcli2.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -666,8 +1174,35 @@ class Doc(object):
 "}")
         self.txt_idcli2.setMaxLength(32)
         self.txt_idcli2.setObjectName("txt_idcli2")
-        self.txt_idcli3 = QtWidgets.QLineEdit(self.makedoc_area)
-        self.txt_idcli3.setGeometry(QtCore.QRect(510, 610, 211, 50))
+        self.horizontalLayout_44.addWidget(self.txt_idcli2)
+        self.horizontalLayout_15.addWidget(self.frame_46)
+        self.verticalLayout_4.addWidget(self.frame_28)
+        self.frame_24 = QtWidgets.QFrame(self.frame_9)
+        self.frame_24.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.frame_24.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_24.setObjectName("frame_24")
+        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.frame_24)
+        self.horizontalLayout_16.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_16.setSpacing(5)
+        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
+        self.frame_47 = QtWidgets.QFrame(self.frame_24)
+        self.frame_47.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_47.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_47.setObjectName("frame_47")
+        self.horizontalLayout_43 = QtWidgets.QHBoxLayout(self.frame_47)
+        self.horizontalLayout_43.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_43.setSpacing(0)
+        self.horizontalLayout_43.setObjectName("horizontalLayout_43")
+        self.txt_idcli3 = QtWidgets.QLineEdit(self.frame_47)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli3.sizePolicy().hasHeightForWidth())
+        self.txt_idcli3.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -688,8 +1223,22 @@ class Doc(object):
 "}")
         self.txt_idcli3.setMaxLength(32)
         self.txt_idcli3.setObjectName("txt_idcli3")
-        self.txt_idcli4 = QtWidgets.QLineEdit(self.makedoc_area)
-        self.txt_idcli4.setGeometry(QtCore.QRect(730, 610, 211, 50))
+        self.horizontalLayout_43.addWidget(self.txt_idcli3)
+        self.horizontalLayout_16.addWidget(self.frame_47)
+        self.frame_48 = QtWidgets.QFrame(self.frame_24)
+        self.frame_48.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_48.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_48.setObjectName("frame_48")
+        self.horizontalLayout_42 = QtWidgets.QHBoxLayout(self.frame_48)
+        self.horizontalLayout_42.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_42.setSpacing(0)
+        self.horizontalLayout_42.setObjectName("horizontalLayout_42")
+        self.txt_idcli4 = QtWidgets.QLineEdit(self.frame_48)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txt_idcli4.sizePolicy().hasHeightForWidth())
+        self.txt_idcli4.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
         font.setPointSize(10)
@@ -710,30 +1259,107 @@ class Doc(object):
 "}")
         self.txt_idcli4.setMaxLength(32)
         self.txt_idcli4.setObjectName("txt_idcli4")
-        self.horizontalLayout.addWidget(self.makedoc_area)
-        self.verticalLayout.addWidget(self.content)
-        self.bottom = QtWidgets.QFrame(self.centralwidget)
-        self.bottom.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.bottom.setStyleSheet("background-color: rgb(15, 15, 15);")
-        self.bottom.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.bottom.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.bottom.setObjectName("bottom")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.bottom)
-        self.verticalLayout_2.setContentsMargins(0, 0, 6, 1)
-        self.verticalLayout_2.setSpacing(0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.lbl_version = QtWidgets.QLabel(self.bottom)
+        self.horizontalLayout_42.addWidget(self.txt_idcli4)
+        self.horizontalLayout_16.addWidget(self.frame_48)
+        self.verticalLayout_4.addWidget(self.frame_24)
+        self.frame_29 = QtWidgets.QFrame(self.frame_9)
+        self.frame_29.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_29.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_29.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_29.setObjectName("frame_29")
+        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.frame_29)
+        self.horizontalLayout_17.setContentsMargins(0, 5, 0, 0)
+        self.horizontalLayout_17.setSpacing(5)
+        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.frame_49 = QtWidgets.QFrame(self.frame_29)
+        self.frame_49.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_49.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_49.setObjectName("frame_49")
+        self.horizontalLayout_29 = QtWidgets.QHBoxLayout(self.frame_49)
+        self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_29.setSpacing(0)
+        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
+        self.btn_make = QtWidgets.QPushButton(self.frame_49)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_make.sizePolicy().hasHeightForWidth())
+        self.btn_make.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Quicksand")
-        self.lbl_version.setFont(font)
-        self.lbl_version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lbl_version.setObjectName("lbl_version")
-        self.verticalLayout_2.addWidget(self.lbl_version)
-        self.label = QtWidgets.QLabel(self.bottom)
-        self.label.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout_2.addWidget(self.label)
-        self.verticalLayout.addWidget(self.bottom)
+        font.setPointSize(10)
+        self.btn_make.setFont(font)
+        self.btn_make.setStyleSheet("QPushButton{\n"
+"    background-color:rgb(50, 50, 50);\n"
+"    border:2px solid rgb(60, 60, 60);\n"
+"    border-radius:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(60, 60, 60);\n"
+"    border: 2px solid rgb(70, 70, 70);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(250, 230, 0);\n"
+"    border: 2px solid rgb(255, 165, 24);\n"
+"    color: rgb(35, 35, 35);\n"
+"}")
+        self.btn_make.setObjectName("btn_make")
+        self.horizontalLayout_29.addWidget(self.btn_make)
+        self.horizontalLayout_17.addWidget(self.frame_49)
+        self.verticalLayout_4.addWidget(self.frame_29)
+        self.horizontalLayout_2.addWidget(self.frame_9)
+        self.verticalLayout.addWidget(self.frame_2)
+        self.frame_3 = QtWidgets.QFrame(self.all)
+        self.frame_3.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.frame_3.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_3)
+        self.verticalLayout_2.setContentsMargins(0, 5, 10, 5)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.frame_8 = QtWidgets.QFrame(self.frame_3)
+        self.frame_8.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_8.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_8.setObjectName("frame_8")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.frame_8)
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.version = QtWidgets.QLabel(self.frame_8)
+        font = QtGui.QFont()
+        font.setFamily("Quicksand")
+        self.version.setFont(font)
+        self.version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.version.setObjectName("version")
+        self.verticalLayout_6.addWidget(self.version)
+        self.verticalLayout_2.addWidget(self.frame_8)
+        self.frame_7 = QtWidgets.QFrame(self.frame_3)
+        self.frame_7.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+"border-radius: 10px;\n"
+"color:rgb(200, 200, 255);")
+        self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_7.setObjectName("frame_7")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_7)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.created = QtWidgets.QLabel(self.frame_7)
+        self.created.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.created.setObjectName("created")
+        self.verticalLayout_5.addWidget(self.created)
+        self.verticalLayout_2.addWidget(self.frame_7)
+        self.verticalLayout.addWidget(self.frame_3)
+        self.horizontalLayout.addWidget(self.all)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -741,22 +1367,14 @@ class Doc(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Make Doc"))
-        self.lbl_popup.setText(_translate("MainWindow", "FEITO!"))
-        self.cbox_1cli.setText(_translate("MainWindow", "UM CLIENTE"))
-        self.cbox_2cli.setText(_translate("MainWindow", "DOIS CLIENTES"))
-        self.cbox_3cli.setText(_translate("MainWindow", "TRÊS CLIENTES"))
-        self.cbox_4cli.setText(_translate("MainWindow", "QUATRO CLIENTES"))
-        self.cbox_memorial.setText(_translate("MainWindow", "MEMORIAL DESCRITIVO"))
-        self.cbox_memorialcontrucao.setText(_translate("MainWindow", "MEMORIAL P/ CONSTRUÇÃO"))
-        self.cbox_procuracao.setText(_translate("MainWindow", "PROCURAÇÃO"))
-        self.cbox_reqslei.setText(_translate("MainWindow", "REQUERIMENTO S/ LEI"))
-        self.cbox_reqclei.setText(_translate("MainWindow", "REQUERIMENTO C/ LEI"))
-        self.cbox_declaracao.setText(_translate("MainWindow", "DECLARAÇÃO"))
-        self.cbox_contrato.setText(_translate("MainWindow", "CONTRATO"))
-        self.cbox_recibo.setText(_translate("MainWindow", "RECIBO"))
-        self.btn_make.setText(_translate("MainWindow", "MAKE"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btn_return.setText(_translate("MainWindow", "↩"))
+        self.logo.setText(_translate("MainWindow", "ROGÉRIO ROCHA ENGENHARIA"))
+        self.minwin.setText(_translate("MainWindow", "―"))
+        self.maxwin.setText(_translate("MainWindow", "☐"))
+        self.closewin.setText(_translate("MainWindow", "X"))
+        self.txt_searchrua.setPlaceholderText(_translate("MainWindow", "RUA DO TERRENO"))
+        self.btn_search.setText(_translate("MainWindow", "⌕"))
         item = self.tabWid_obra.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID"))
         item = self.tabWid_obra.horizontalHeaderItem(1)
@@ -797,6 +1415,8 @@ class Doc(object):
         item.setText(_translate("MainWindow", "ID CLIENTE 3"))
         item = self.tabWid_obra.horizontalHeaderItem(19)
         item.setText(_translate("MainWindow", "ID CLIENTE 4"))
+        self.txt_searchnome.setPlaceholderText(_translate("MainWindow", "NOME DO CLIENTE"))
+        self.btn_search_2.setText(_translate("MainWindow", "⌕"))
         item = self.tabWid_cli.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID"))
         item = self.tabWid_cli.horizontalHeaderItem(1)
@@ -827,18 +1447,26 @@ class Doc(object):
         item.setText(_translate("MainWindow", "CELULAR"))
         item = self.tabWid_cli.horizontalHeaderItem(14)
         item.setText(_translate("MainWindow", "EMAIL"))
-        self.txt_searchrua.setPlaceholderText(_translate("MainWindow", "RUA DO TERRENO"))
-        self.btn_search.setText(_translate("MainWindow", "⌕"))
-        self.btn_search_2.setText(_translate("MainWindow", "⌕"))
-        self.txt_searchnome.setPlaceholderText(_translate("MainWindow", "NOME DO CLIENTE"))
+        self.cbox_contrato.setText(_translate("MainWindow", "CONTRATO"))
+        self.cbox_recibo.setText(_translate("MainWindow", "RECIBO"))
+        self.cbox_procuracao.setText(_translate("MainWindow", "PROCURAÇÃO"))
+        self.cbox_declaracao.setText(_translate("MainWindow", "DECLARAÇÃO"))
+        self.cbox_reqslei.setText(_translate("MainWindow", "REQUERIMENTO S/ LEI"))
+        self.cbox_reqclei.setText(_translate("MainWindow", "REQUERIMENTO C/ LEI"))
+        self.cbox_memorial.setText(_translate("MainWindow", "MEMORIAL DESCRITIVO"))
+        self.cbox_memorialcontrucao.setText(_translate("MainWindow", "MEMORIAL P/ CONSTRUÇÃO"))
+        self.cbox_1cli.setText(_translate("MainWindow", "UM CLIENTE"))
+        self.cbox_3cli.setText(_translate("MainWindow", "TRÊS CLIENTES"))
+        self.cbox_2cli.setText(_translate("MainWindow", "DOIS CLIENTES"))
+        self.cbox_4cli.setText(_translate("MainWindow", "QUATRO CLIENTES"))
         self.txt_idobra.setPlaceholderText(_translate("MainWindow", "ID DA OBRA"))
         self.txt_idcli1.setPlaceholderText(_translate("MainWindow", "ID DO CLIENTE 1"))
         self.txt_idcli2.setPlaceholderText(_translate("MainWindow", "ID DO CLIENTE 2"))
         self.txt_idcli3.setPlaceholderText(_translate("MainWindow", "ID DO CLIENTE 3"))
         self.txt_idcli4.setPlaceholderText(_translate("MainWindow", "ID DO CLIENTE 4"))
-        self.lbl_version.setText(_translate("MainWindow", "V 1.1"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
-import file_rc_rc
+        self.btn_make.setText(_translate("MainWindow", "MAKE"))
+        self.version.setText(_translate("MainWindow", "V 1.2"))
+        self.created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
 
 
 if __name__ == "__main__":
