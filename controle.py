@@ -16,6 +16,8 @@ from datetime import date
 from num2words import num2words
 from pathlib import Path
 
+multi = 0
+
 today = date.today().strftime('%d-%m-%Y')
 dia = date.today().strftime('%d')
 mes = date.today().strftime('%m')
@@ -52,7 +54,9 @@ class Menu(QMainWindow, Menu):
         self.btn_cadobra.clicked.connect(self.abriobra)
         self.btn_cliente.clicked.connect(self.abricliente)
         self.btn_makedoc.clicked.connect(self.abrirdoc)
-        #self.lbl_welcome.setText("Bem vindo "+username_log+"!")
+        self.minwin.clicked.connect(self.mini)
+        self.maxwin.clicked.connect(self.max)
+        self.closewin.clicked.connect(self.fecha)
 
     def abriobra(self):
         obra = Obra()
@@ -68,6 +72,29 @@ class Menu(QMainWindow, Menu):
         doc = Doc()
         widget.addWidget(doc)
         widget.setCurrentIndex(widget.currentIndex() + 1)
+
+    def mini(self):
+        widget.showMinimized()
+
+    def max(self):
+        global multi
+        status = multi
+        if status == 0:
+            widget.showMaximized()
+            multi = 1
+        else:
+            widget.showNormal()
+            menu.resize(menu.width()+1, menu.height()+1)
+            multi = 0
+
+    def mouseMoveEvent(self, event):
+        widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos)
+        widget.dragPos = event.globalPosition().tooPoint()
+        event.accept()
+
+
+    def fecha(self):
+        widget.close()
 
 class Obra(QMainWindow, Obra):
     def __init__(self, parent=None):

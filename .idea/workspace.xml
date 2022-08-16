@@ -9,10 +9,8 @@
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Memorial Descritivo Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento com Lei_Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento sem Lei_Mauro Basso.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qt/menu2 - Copia.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/menu2 - Copia.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controle.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/novo/make_doc.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/make_doc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/novo/obra.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/obra.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,9 +153,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.controle" />
+        <item itemvalue="Python.teste" />
         <item itemvalue="Python.make_doc" />
         <item itemvalue="Python.obra" />
-        <item itemvalue="Python.teste" />
         <item itemvalue="Python.client" />
       </list>
     </recent_temporary>
