@@ -525,7 +525,7 @@ QLineEdit:focus{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QFrame" name="search">
+                    <widget class="QFrame" name="searchh">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -832,7 +832,7 @@ QTableWidget QTableCornerButton::section {
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLineEdit" name="txt_id_2">
+                       <widget class="QLineEdit" name="txt_id">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                           <horstretch>0</horstretch>

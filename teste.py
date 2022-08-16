@@ -14,6 +14,11 @@ from datetime import date
 from num2words import num2words
 from pathlib import Path
 
+
+import os
+
 Path(
-                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/Documentos').mkdir(
+                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES').mkdir(
                         parents=True, exist_ok=True)
+
+

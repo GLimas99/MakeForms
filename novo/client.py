@@ -83,13 +83,13 @@ class Cliente(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.logo_2 = QtWidgets.QLabel(self.logoloc)
-        self.logo_2.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+        self.logo = QtWidgets.QLabel(self.logoloc)
+        self.logo.setStyleSheet("background-color: rgb(40, 40, 40);\n"
 "color:rgb(250, 230, 0);\n"
 "font: 16pt \"Masiku\";")
-        self.logo_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.logo_2.setObjectName("logo_2")
-        self.horizontalLayout_2.addWidget(self.logo_2)
+        self.logo.setAlignment(QtCore.Qt.AlignCenter)
+        self.logo.setObjectName("logo")
+        self.horizontalLayout_2.addWidget(self.logo)
         self.horizontalLayout.addWidget(self.logoloc)
         self.titlebar = QtWidgets.QFrame(self.top)
         self.titlebar.setMaximumSize(QtCore.QSize(100, 16777215))
@@ -1184,7 +1184,7 @@ class Cliente(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btn_return.setText(_translate("MainWindow", "↩"))
-        self.logo_2.setText(_translate("MainWindow", "ROGÉRIO ROCHA ENGENHARIA"))
+        self.logo.setText(_translate("MainWindow", "ROGÉRIO ROCHA ENGENHARIA"))
         self.minwin.setText(_translate("MainWindow", "―"))
         self.maxwin.setText(_translate("MainWindow", "☐"))
         self.closewin.setText(_translate("MainWindow", "X"))
@@ -1241,6 +1241,7 @@ class Cliente(object):
         self.btn_add.setText(_translate("MainWindow", "ADD"))
         self.version.setText(_translate("MainWindow", "V 1.2"))
         self.created.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" vertical-align:super;\">Created by Gustavo Lima</span></p></body></html>"))
+import file_rc_rc
 
 
 if __name__ == "__main__":

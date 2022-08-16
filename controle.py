@@ -5,7 +5,7 @@ from novo.obra import *
 from novo.client import *
 from novo.make_doc import *
 from novo.pop_up import *
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 from PyQt5 import QtWidgets
 import sqlite3
 from docx import Document
@@ -61,6 +61,7 @@ class Menu(QMainWindow, Menu):
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def abricliente(self):
+        widget.resize(870, 1000)
         cliente = Cliente()
         widget.addWidget(cliente)
         widget.setCurrentIndex(widget.currentIndex()+1)
@@ -74,7 +75,6 @@ class Obra(QMainWindow, Obra):
     def __init__(self, parent=None):
         super().__init__(parent)
         super().setupUi(self)
-        self.frame_popup.hide()
         self.btn_return.clicked.connect(self.volta)
         self.btn_search.clicked.connect(self.search)
         self.btn_add.clicked.connect(self.add)
@@ -102,7 +102,7 @@ class Obra(QMainWindow, Obra):
         banco.close()
 
     def close(self):
-        self.frame_popup.hide()
+        pass
 
     def volta(self):
         menu = Menu()
@@ -381,7 +381,7 @@ class Cliente(QMainWindow, Cliente):
         super().__init__(parent)
         super().setupUi(self)
         self.btn_return.clicked.connect(self.volta)
-        self.btn_search.clicked.connect(self.search)
+        self.btn_search.clicked.connect(self.searchh)
         self.btn_add.clicked.connect(self.add)
         self.btn_copy.clicked.connect(self.copy)
         self.btn_edit.clicked.connect(self.edit)
@@ -565,7 +565,7 @@ class Cliente(QMainWindow, Cliente):
         banco.commit()
         banco.close()
 
-    def search(self):
+    def searchh(self):
         name = self.txt_nome.text().lower()
         for row in range(self.tabWid_cli.rowCount()):
             item = self.tabWid_cli.item(row, 1)
@@ -576,7 +576,6 @@ class Doc(QMainWindow, Doc):
     def __init__(self, parent=None):
         super().__init__(parent)
         super().setupUi(self)
-        self.frame_popup.hide()
         self.btn_return.clicked.connect(self.volta)
         self.btn_search.clicked.connect(self.searchobra)
         self.btn_search_2.clicked.connect(self.searchcli)
@@ -617,7 +616,7 @@ class Doc(QMainWindow, Doc):
         banco.close()
 
     def close(self):
-        self.frame_popup.hide()
+        pass
 
     def volta(self):
         menu = Menu()
@@ -712,11 +711,12 @@ class Doc(QMainWindow, Doc):
 
             if self.cbox_1cli.isChecked() == True:
                 if self.txt_idcli1.text() == "":
-                    self.frame_popup.show()
-                    self.lbl_popup.setText("DIGITE O ID DO CLIENTE")
-                    self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                   "border-radius:5px;")
-                    self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                    msg = QMessageBox()
+                    msg.setWindowTitle("ERROR")
+                    msg.setText("DIGITE O ID DO CLIENTE")
+                    msg.setIcon(QMessageBox.Critical)
+
+                    x = msg.exec_()
                 elif self.txt_idcli1.text() != "":
                     idcli1 = self.txt_idcli1.text()
 
@@ -748,11 +748,12 @@ class Doc(QMainWindow, Doc):
                             and self.cbox_procuracao.isChecked() == False \
                             and self.cbox_reqslei.isChecked() == False and self.cbox_reqclei.isChecked() == False \
                             and self.cbox_memorial.isChecked() == False and self.cbox_memorialcontrucao.isChecked() == False:
-                        self.frame_popup.show()
-                        self.lbl_popup.setText("ESCOLHA UM TIPO DE DOCUMENTO")
-                        self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                       "border-radius:5px;")
-                        self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                        msg = QMessageBox()
+                        msg.setWindowTitle("ERROR")
+                        msg.setText("ESCOLHA UM TIPO DE DOCUMENTO!")
+                        msg.setIcon(QMessageBox.Critical)
+
+                        x = msg.exec_()
                     else:
     # ---------------------Contrato---------------------------------------------------------------------------------------------
                         if self.cbox_contrato.isChecked() == True:
@@ -2132,21 +2133,23 @@ class Doc(QMainWindow, Doc):
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Recibo ' + nomecli1 + '.docx')
 
-                        self.frame_popup.show()
-                        self.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                        self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                   "border-radius:5px;")
-                        self.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                        msg = QMessageBox()
+                        msg.setWindowTitle("SUCESSO")
+                        msg.setText("DOCUMENTOS CRIADOS!")
+                        msg.setIcon(QMessageBox.Information)
+
+                        x = msg.exec_()
                         self.txt_idobra.setText(None)
                         self.txt_idcli1.setText(None)
 
             elif self.cbox_2cli.isChecked() == True:
                 if self.txt_idcli1.text() == "" or self.txt_idcli2.text() == "":
-                                    self.frame_popup.show()
-                                    self.lbl_popup.setText("DIGITE O ID DO CLIENTE")
-                                    self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                                   "border-radius:5px;")
-                                    self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                    msg = QMessageBox()
+                    msg.setWindowTitle("ERROR")
+                    msg.setText("DIGITE O ID DO CLIENTE")
+                    msg.setIcon(QMessageBox.Critical)
+
+                    x = msg.exec_()
                 else:
                     idcli1 = self.txt_idcli1.text()
 
@@ -2198,11 +2201,12 @@ class Doc(QMainWindow, Doc):
                             and self.cbox_procuracao.isChecked() == False \
                             and self.cbox_reqslei.isChecked() == False and self.cbox_reqclei.isChecked() == False \
                             and self.cbox_memorial.isChecked() == False and self.cbox_memorialcontrucao.isChecked() == False:
-                        self.frame_popup.show()
-                        self.lbl_popup.setText("ESCOLHA UM TIPO DE DOCUMENTO")
-                        self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                       "border-radius:5px;")
-                        self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                        msg = QMessageBox()
+                        msg.setWindowTitle("ERROR")
+                        msg.setText("ESCOLHA UM TIPO DE DOCUMENTO")
+                        msg.setIcon(QMessageBox.Critical)
+
+                        x = msg.exec_()
                     else:
     # ---------------------Contrato---------------------------------------------------------------------------------------------
                         if self.cbox_contrato.isChecked() == True:
@@ -3708,22 +3712,24 @@ class Doc(QMainWindow, Doc):
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Recibo ' + nomecli1 + ' e ' + nomecli2 + '.docx')
 
-                    self.frame_popup.show()
-                    self.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                    self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                   "border-radius:5px;")
-                    self.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                    msg = QMessageBox()
+                    msg.setWindowTitle("SUCESSO")
+                    msg.setText("DOCUMENTOS CRIADOS")
+                    msg.setIcon(QMessageBox.Information)
+
+                    x = msg.exec_()
                     self.txt_idobra.setText(None)
                     self.txt_idcli1.setText(None)
                     self.txt_idcli2.setText(None)
 
             elif self.cbox_3cli.isChecked() == True:
                 if self.txt_idcli1.text() == "" or self.txt_idcli2.text() == "" or self.txt_idcli3.text() == "":
-                    self.frame_popup.show()
-                    self.lbl_popup.setText("DIGITE O ID DO CLIENTE")
-                    self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                   "border-radius:5px;")
-                    self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                    msg = QMessageBox()
+                    msg.setWindowTitle("ERROR")
+                    msg.setText("DIGITE O ID DO CLIENTE")
+                    msg.setIcon(QMessageBox.Critical)
+
+                    x = msg.exec_()
                 else:
                     idcli1 = self.txt_idcli1.text()
 
@@ -3795,11 +3801,12 @@ class Doc(QMainWindow, Doc):
                             and self.cbox_procuracao.isChecked() == False \
                             and self.cbox_reqslei.isChecked() == False and self.cbox_reqclei.isChecked() == False \
                             and self.cbox_memorial.isChecked() == False and self.cbox_memorialcontrucao.isChecked() == False:
-                        self.frame_popup.show()
-                        self.lbl_popup.setText("ESCOLHA UM TIPO DE DOCUMENTO")
-                        self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                       "border-radius:5px;")
-                        self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                        msg = QMessageBox()
+                        msg.setWindowTitle("ERROR")
+                        msg.setText("ESCOLHA UM TIPO DE DOCUMENTO")
+                        msg.setIcon(QMessageBox.Critical)
+
+                        x = msg.exec_()
                     else:
                         # ---------------------Contrato---------------------------------------------------------------------------------------------
                         if self.cbox_contrato.isChecked() == True:
@@ -5437,11 +5444,12 @@ class Doc(QMainWindow, Doc):
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
 
-                    self.frame_popup.show()
-                    self.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                    self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                   "border-radius:5px;")
-                    self.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                    msg = QMessageBox()
+                    msg.setWindowTitle("SUCESSO")
+                    msg.setText("DOCUMENTOS CRIADOS")
+                    msg.setIcon(QMessageBox.Information)
+
+                    x = msg.exec_()
                     self.txt_idobra.setText(None)
                     self.txt_idcli1.setText(None)
                     self.txt_idcli2.setText(None)
@@ -5449,11 +5457,12 @@ class Doc(QMainWindow, Doc):
 
             elif self.cbox_4cli.isChecked() == True:
                 if self.txt_idcli1.text() == "" or self.txt_idcli2.text() == "" or self.txt_idcli3.text() == "" or self.txt_idcli4.text() == "":
-                    self.frame_popup.show()
-                    self.lbl_popup.setText("DIGITE O ID DO CLIENTE")
-                    self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                   "border-radius:5px;")
-                    self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                    msg = QMessageBox()
+                    msg.setWindowTitle("ERROR")
+                    msg.setText("DIGITE O ID DO CLIENTE")
+                    msg.setIcon(QMessageBox.Critical)
+
+                    x = msg.exec_()
                 else:
                     idcli1 = self.txt_idcli1.text()
 
@@ -5544,11 +5553,12 @@ class Doc(QMainWindow, Doc):
                             and self.cbox_procuracao.isChecked() == False \
                             and self.cbox_reqslei.isChecked() == False and self.cbox_reqclei.isChecked() == False \
                             and self.cbox_memorial.isChecked() == False and self.cbox_memorialcontrucao.isChecked() == False:
-                        self.frame_popup.show()
-                        self.lbl_popup.setText("ESCOLHA UM TIPO DE DOCUMENTO")
-                        self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                                       "border-radius:5px;")
-                        self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                        msg = QMessageBox()
+                        msg.setWindowTitle("ERROR")
+                        msg.setText("ESCOLÇHA UM TIPO DE DOCUMENTO")
+                        msg.setIcon(QMessageBox.Critical)
+
+                        x = msg.exec_()
                     else:
                         # ---------------------Contrato---------------------------------------------------------------------------------------------
                         if self.cbox_contrato.isChecked() == True:
@@ -7303,37 +7313,32 @@ class Doc(QMainWindow, Doc):
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
 
-                    self.frame_popup.show()
-                    self.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                    self.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                   "border-radius:5px;")
-                    self.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                    msg = QMessageBox()
+                    msg.setWindowTitle("SUCESSO")
+                    msg.setText("DOCUMENTOS CRIADOS")
+                    msg.setIcon(QMessageBox.Information)
+
+                    x = msg.exec_()
                     self.txt_idobra.setText(None)
                     self.txt_idcli1.setText(None)
                     self.txt_idcli2.setText(None)
                     self.txt_idcli3.setText(None)
 
             else:
-                self.frame_popup.show()
-                self.lbl_popup.setText("ESCOLHA A QUANTIDADE DE CLIENTES")
-                self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                           "border-radius:5px;")
-                self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+                msg = QMessageBox()
+                msg.setWindowTitle("ERROR")
+                msg.setText("ESCOLHA A QUANTIDADE DE CLIENTES")
+                msg.setIcon(QMessageBox.Critical)
+
+                x = msg.exec_()
 
         else:
-            self.frame_popup.show()
-            self.lbl_popup.setText("DIGITE O ID DA OBRA!")
-            self.frame_popup.setStyleSheet("background-color: rgb(255, 11, 15);\n"
-                                           "border-radius:5px;")
-            self.lbl_popup.setStyleSheet("color: rgb(200, 200, 255)")
+            msg = QMessageBox()
+            msg.setWindowTitle("ERROR")
+            msg.setText("DIGITE O ID DA OBRA")
+            msg.setIcon(QMessageBox.Critical)
 
-        
-        
-
-        # banco.commit()
-        #banco.close()
-
-
+            x = msg.exec_()
 
 if __name__ == '__main__':
     qt = QApplication(sys.argv)
@@ -7344,7 +7349,6 @@ if __name__ == '__main__':
     #widget.setFixedWidth(1039)
     #widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
     #widget.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
-
     widget.show()
     #widget.showMaximized()
     qt.exec_()
