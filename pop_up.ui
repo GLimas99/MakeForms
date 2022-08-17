@@ -107,7 +107,7 @@ border-radius:5px;</string>
            <number>0</number>
           </property>
           <item>
-           <widget class="QLabel" name="label_popup">
+           <widget class="QLabel" name="lbl_popup">
             <property name="font">
              <font>
               <family>Quicksand</family>
