@@ -148,6 +148,8 @@ class Obra(QMainWindow):
         self.minwin.clicked.connect(self.mini)
         self.maxwin.clicked.connect(self.max)
         self.closewin.clicked.connect(self.fecha)
+        self.framelogo.mousePressEvent = self.myfunction
+        self.framelogo.mouseMoveEvent = self.myfunc
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -155,22 +157,21 @@ class Obra(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(19)
+        self.tabWid_obra.setColumnCount(20)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 19):
+            for j in range(0, 20):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
 
-    def mousePressEvent(self, event):
+    def myfunction(self, event):
         widget.dragPos = event.globalPosition().toPoint()
 
-
-    def mouseMoveEvent(self, event):
-      widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos )
-      widget.dragPos = event.globalPosition().toPoint()
-      event.accept()
+    def myfunc(self, event):
+        widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos)
+        widget.dragPos = event.globalPosition().toPoint()
+        event.accept()
 
     def mini(self):
         widget.showMinimized()
@@ -180,10 +181,18 @@ class Obra(QMainWindow):
         status = multi
         if status == 0:
             widget.showMaximized()
+            self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+                                     "border-radius: 0px;\n"
+                                     "color:rgb(200, 200, 255);")
+            self.maxwin.setText("❐")
             multi = 1
         else:
             widget.showNormal()
             menu.resize(menu.width() + 1, menu.height() + 1)
+            self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+                                     "border-radius: 10px;\n"
+                                     "color:rgb(200, 200, 255);")
+            self.maxwin.setText("☐")
             multi = 0
 
     def fecha(self):
@@ -329,7 +338,7 @@ class Obra(QMainWindow):
         self.tabWid_obra.setColumnCount(19)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 19):
+            for j in range(0, 20):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -385,10 +394,10 @@ class Obra(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(19)
+        self.tabWid_obra.setColumnCount(20)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 19):
+            for j in range(0, 20):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -447,7 +456,7 @@ class Obra(QMainWindow):
         self.tabWid_obra.setColumnCount(19)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 19):
+            for j in range(0, 20):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -473,6 +482,8 @@ class Cliente(QMainWindow):
         self.minwin.clicked.connect(self.mini)
         self.maxwin.clicked.connect(self.max)
         self.closewin.clicked.connect(self.fecha)
+        self.framelogo.mousePressEvent = self.myfunction
+        self.framelogo.mouseMoveEvent = self.myfunc
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -488,14 +499,13 @@ class Cliente(QMainWindow):
         banco.commit()
         banco.close()
 
-    def mousePressEvent(self, event):
+    def myfunction(self, event):
         widget.dragPos = event.globalPosition().toPoint()
 
-
-    def mouseMoveEvent(self, event):
-      widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos )
-      widget.dragPos = event.globalPosition().toPoint()
-      event.accept()
+    def myfunc(self, event):
+        widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos)
+        widget.dragPos = event.globalPosition().toPoint()
+        event.accept()
 
     def mini(self):
         widget.showMinimized()
@@ -505,10 +515,18 @@ class Cliente(QMainWindow):
         status = multi
         if status == 0:
             widget.showMaximized()
+            self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+                                     "border-radius: 0px;\n"
+                                     "color:rgb(200, 200, 255);")
+            self.maxwin.setText("❐")
             multi = 1
         else:
             widget.showNormal()
             menu.resize(menu.width() + 1, menu.height() + 1)
+            self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+                                     "border-radius: 10px;\n"
+                                     "color:rgb(200, 200, 255);")
+            self.maxwin.setText("☐")
             multi = 0
 
     def fecha(self):
@@ -705,6 +723,8 @@ class Doc(QMainWindow):
         self.minwin.clicked.connect(self.mini)
         self.maxwin.clicked.connect(self.max)
         self.closewin.clicked.connect(self.fecha)
+        self.framelogo.mousePressEvent = self.myfunction
+        self.framelogo.mouseMoveEvent = self.myfunc
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -730,14 +750,13 @@ class Doc(QMainWindow):
         banco.commit()
         banco.close()
 
-    def mousePressEvent(self, event):
+    def myfunction(self, event):
         widget.dragPos = event.globalPosition().toPoint()
 
-
-    def mouseMoveEvent(self, event):
-      widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos )
-      widget.dragPos = event.globalPosition().toPoint()
-      event.accept()
+    def myfunc(self, event):
+        widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos)
+        widget.dragPos = event.globalPosition().toPoint()
+        event.accept()
 
     def mini(self):
         widget.showMinimized()
@@ -747,10 +766,18 @@ class Doc(QMainWindow):
         status = multi
         if status == 0:
             widget.showMaximized()
+            self.all.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+                                     "border-radius: 0px;\n"
+                                     "color:rgb(200, 200, 255);")
+            self.maxwin.setText("❐")
             multi = 1
         else:
             widget.showNormal()
             menu.resize(menu.width() + 1, menu.height() + 1)
+            self.all.setStyleSheet("background-color: rgb(40, 40, 40);\n"
+                                     "border-radius: 10px;\n"
+                                     "color:rgb(200, 200, 255);")
+            self.maxwin.setText("☐")
             multi = 0
 
     def fecha(self):

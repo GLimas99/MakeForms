@@ -9,13 +9,11 @@
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Memorial Descritivo Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento com Lei_Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento sem Lei_Mauro Basso.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qt/doc.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/doc.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qt/menu2.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/menu2.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qt/obran.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/obran.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qt/pop_up.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Qt/pop_up.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bd/banco.db" beforeDir="false" afterPath="$PROJECT_DIR$/bd/banco.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.ui" beforeDir="false" afterPath="$PROJECT_DIR$/client.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controle.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/novo/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/novo/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc.ui" beforeDir="false" afterPath="$PROJECT_DIR$/doc.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obra.ui" beforeDir="false" afterPath="$PROJECT_DIR$/obra.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
