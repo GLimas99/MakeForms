@@ -308,13 +308,13 @@ color:rgb(200, 200, 255);</string>
            <number>30</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>15</number>
           </property>
           <property name="rightMargin">
            <number>30</number>
           </property>
           <property name="bottomMargin">
-           <number>30</number>
+           <number>15</number>
           </property>
           <item>
            <widget class="QLabel" name="lbl_welcome">
