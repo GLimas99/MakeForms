@@ -5,8 +5,8 @@ from novo.obra import *
 from novo.client import *
 from novo.make_doc import *
 from novo.pop_up import *
-from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox
-from PyQt6 import QtWidgets, uic, QtCore
+from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox, QSizeGrip
+from PyQt6 import QtWidgets, uic, QtCore, QtGui
 import sqlite3
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
@@ -60,29 +60,27 @@ class Menu(QMainWindow):
         self.left.mousePressEvent=self.myfunction
         self.left.mouseMoveEvent = self.myfunc
 
-    def myfunction(self, event):
-        widget.dragPos = event.globalPosition().toPoint()
+
+        self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+        self.gripSize = 16
+        self.grips = []
+        for i in range(4):
+            grip = QSizeGrip(self)
+            grip.resize(self.gripSize, self.gripSize)
+            self.grips.append(grip)
 
 
-    def myfunc(self, event):
-        widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos )
-        widget.dragPos = event.globalPosition().toPoint()
-        event.accept()
-
-    def abriobra(self):
-        obra = Obra()
-        widget.addWidget(obra)
-        widget.setCurrentIndex(widget.currentIndex() + 1)
-
-    def abricliente(self):
-        cliente = Cliente()
-        widget.addWidget(cliente)
-        widget.setCurrentIndex(widget.currentIndex()+1)
-
-    def abrirdoc(self):
-        doc = Doc()
-        widget.addWidget(doc)
-        widget.setCurrentIndex(widget.currentIndex() + 1)
+    def resizeEvent(self, event):
+        QMainWindow.resizeEvent(self, event)
+        rect = self.rect()
+        # top left grip doesn't need to be moved...
+        # top right
+        self.grips[1].move(rect.right() - self.gripSize, 0)
+        # bottom right
+        self.grips[2].move(
+        rect.right() - self.gripSize, rect.bottom() - self.gripSize)
+        # bottom left
+        self.grips[3].move(0, rect.bottom() - self.gripSize)
 
     def mini(self):
         widget.showMinimized()
@@ -109,6 +107,31 @@ class Menu(QMainWindow):
 
     def fecha(self):
         widget.close()
+
+
+    def myfunction(self, event):
+        widget.dragPos = event.globalPosition().toPoint()
+
+
+    def myfunc(self, event):
+        widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos )
+        widget.dragPos = event.globalPosition().toPoint()
+        event.accept()
+
+    def abriobra(self):
+        obra = Obra()
+        widget.addWidget(obra)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
+
+    def abricliente(self):
+        cliente = Cliente()
+        widget.addWidget(cliente)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+
+    def abrirdoc(self):
+        doc = Doc()
+        widget.addWidget(doc)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
 class Pop(QMainWindow):
     def __init__(self, parent=None):
@@ -164,6 +187,26 @@ class Obra(QMainWindow):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
+
+        self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+        self.gripSize = 16
+        self.grips = []
+        for i in range(4):
+            grip = QSizeGrip(self)
+            grip.resize(self.gripSize, self.gripSize)
+            self.grips.append(grip)
+
+    def resizeEvent(self, event):
+        QMainWindow.resizeEvent(self, event)
+        rect = self.rect()
+        # top left grip doesn't need to be moved...
+        # top right
+        self.grips[1].move(rect.right() - self.gripSize, 0)
+        # bottom right
+        self.grips[2].move(
+            rect.right() - self.gripSize, rect.bottom() - self.gripSize)
+        # bottom left
+        self.grips[3].move(0, rect.bottom() - self.gripSize)
 
     def myfunction(self, event):
         widget.dragPos = event.globalPosition().toPoint()
@@ -499,6 +542,26 @@ class Cliente(QMainWindow):
         banco.commit()
         banco.close()
 
+        self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+        self.gripSize = 16
+        self.grips = []
+        for i in range(4):
+            grip = QSizeGrip(self)
+            grip.resize(self.gripSize, self.gripSize)
+            self.grips.append(grip)
+
+    def resizeEvent(self, event):
+        QMainWindow.resizeEvent(self, event)
+        rect = self.rect()
+        # top left grip doesn't need to be moved...
+        # top right
+        self.grips[1].move(rect.right() - self.gripSize, 0)
+        # bottom right
+        self.grips[2].move(
+            rect.right() - self.gripSize, rect.bottom() - self.gripSize)
+        # bottom left
+        self.grips[3].move(0, rect.bottom() - self.gripSize)
+
     def myfunction(self, event):
         widget.dragPos = event.globalPosition().toPoint()
 
@@ -749,6 +812,26 @@ class Doc(QMainWindow):
 
         banco.commit()
         banco.close()
+
+        self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+        self.gripSize = 16
+        self.grips = []
+        for i in range(4):
+            grip = QSizeGrip(self)
+            grip.resize(self.gripSize, self.gripSize)
+            self.grips.append(grip)
+
+    def resizeEvent(self, event):
+        QMainWindow.resizeEvent(self, event)
+        rect = self.rect()
+        # top left grip doesn't need to be moved...
+        # top right
+        self.grips[1].move(rect.right() - self.gripSize, 0)
+        # bottom right
+        self.grips[2].move(
+            rect.right() - self.gripSize, rect.bottom() - self.gripSize)
+        # bottom left
+        self.grips[3].move(0, rect.bottom() - self.gripSize)
 
     def myfunction(self, event):
         widget.dragPos = event.globalPosition().toPoint()

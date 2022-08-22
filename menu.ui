@@ -136,7 +136,7 @@ color:rgb(250, 230, 0);
 font: 16pt &quot;Masiku&quot;;</string>
                </property>
                <property name="text">
-                <string>ROGÉRIO ROCHA ENGENHARIA</string>
+                <string>𝕽𝖔𝖌𝖊𝖗𝖎𝖔 𝕽𝖔𝖈𝖍𝖆 𝕰𝖓𝖌𝖊𝖓𝖍𝖆𝖗𝖎𝖆</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -549,8 +549,6 @@ QPushButton:pressed{
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="file_rc.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
