@@ -1,10 +1,4 @@
 import sys
-from novo.login import *
-from novo.menu import *
-from novo.obra import *
-from novo.client import *
-from novo.make_doc import *
-from novo.pop_up import *
 from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox, QSizeGrip
 from PyQt6 import QtWidgets, uic, QtCore, QtGui
 import sqlite3
@@ -159,7 +153,7 @@ class Obra(QMainWindow):
         super().__init__(parent)
         uic.loadUi("obra.ui", self)
         self.btn_return.clicked.connect(self.volta)
-        self.btn_search.clicked.connect(self.search)
+        self.txt_rua.textChanged.connect(self.search)
         self.btn_add.clicked.connect(self.add)
         #self.pushButton.clicked.connect(self.close)
         self.btn_copy.clicked.connect(self.copy)
@@ -174,6 +168,10 @@ class Obra(QMainWindow):
         self.closewin.clicked.connect(self.fecha)
         self.framelogo.mousePressEvent = self.myfunction
         self.framelogo.mouseMoveEvent = self.myfunc
+        self.txt_idcli1.textChanged.connect(self.idcop1)
+        self.txt_idcli2.textChanged.connect(self.idcop2)
+        self.txt_idcli3.textChanged.connect(self.idcop3)
+        self.txt_idcli4.textChanged.connect(self.idcop4)
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -181,10 +179,10 @@ class Obra(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(20)
+        self.tabWid_obra.setColumnCount(21)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 20):
+            for j in range(0, 21):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -196,6 +194,86 @@ class Obra(QMainWindow):
             grip = QSizeGrip(self)
             grip.resize(self.gripSize, self.gripSize)
             self.grips.append(grip)
+
+    def idcop1(self):
+        if self.txt_idcli1.text() != "":
+            idocli1 = self.txt_idcli1.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idocli1,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_cli1.setText(dados_lidos[0][1])
+            else:
+                self.txt_cli1.setText("CLIENTE NÃO EXISTE")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_cli1.setText(None)
+
+    def idcop2(self):
+        if self.txt_idcli2.text() != "":
+            idocli2 = self.txt_idcli2.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idocli2,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_cli2.setText(dados_lidos[0][1])
+            else:
+                self.txt_cli2.setText("CLIENTE NÃO EXISTE")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_cli2.setText(None)
+    
+    def idcop3(self):
+        if self.txt_idcli3.text() != "":
+            idocli3 = self.txt_idcli3.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idocli3,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_cli3.setText(dados_lidos[0][1])
+            else:
+                self.txt_cli3.setText("CLIENTE NÃO EXISTE")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_cli3.setText(None)
+    
+    def idcop4(self):
+        if self.txt_idcli4.text() != "":
+            idocli4 = self.txt_idcli4.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idocli4,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_cli4.setText(dados_lidos[0][1])
+            else:
+                self.txt_cli4.setText("CLIENTE NÃO EXISTE")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_cli4.setText(None)
 
     def resizeEvent(self, event):
         QMainWindow.resizeEvent(self, event)
@@ -271,11 +349,13 @@ class Obra(QMainWindow):
         self.txt_obraquantparcela.setText(dados_lidos[0][12])
         self.txt_obradatacontrato.setText(dados_lidos[0][13])
         self.txt_obravalorvisita.setText(dados_lidos[0][14])
-        self.txt_obravalorvisita_2.setText(dados_lidos[0][15])
-        self.txt_idcli1.setText(dados_lidos[0][16])
-        self.txt_idcli2.setText(dados_lidos[0][17])
-        self.txt_idcli3.setText(dados_lidos[0][18])
-        self.txt_idcli4.setText(dados_lidos[0][19])
+        self.txt_imob.setText(dados_lidos[0][15])
+        self.txt_avcb.setText(dados_lidos[0][16])
+
+        self.txt_idcli1.setText(dados_lidos[0][18])
+        self.txt_idcli2.setText(dados_lidos[0][19])
+        self.txt_idcli3.setText(dados_lidos[0][20])
+        self.txt_idcli4.setText(dados_lidos[0][21])
         banco.commit()
         banco.close()
 
@@ -370,7 +450,8 @@ class Obra(QMainWindow):
         self.txt_obraquantparcela.setText(None)
         self.txt_obradatacontrato.setText(None)
         self.txt_obravalorvisita.setText(None)
-        self.txt_obravalorvisita_2.setText(None)
+        self.txt_imob.setText(None)
+        self.txt_avcb.setText(None)
         self.txt_idcli1.setText(None)
         self.txt_idcli2.setText(None)
         self.txt_idcli3.setText(None)
@@ -403,7 +484,35 @@ class Obra(QMainWindow):
         obraquantparc = self.txt_obraquantparcela.text()
         obradatacont = self.txt_obradatacontrato.text()
         obravalorvisit = self.txt_obravalorvisita.text()
-        obrainscmob = self.txt_obravalorvisita_2.text()
+        obrainscmob = self.txt_imob.text()
+        obraavcb = self.txt_avcb.text()
+
+        avcbdia = obraavcb.split('/')[0]
+        avcbm = str(int(obraavcb.split('/')[1])-1)
+        if avcbm == "1":
+            avcbmes = "01"
+        elif avcbm == "2":
+            avcbmes = "02"
+        elif avcbm == "3":
+            avcbmes = "03"
+        elif avcbm == "4":
+            avcbmes = "04"
+        elif avcbm == "5":
+            avcbmes = "05"
+        elif avcbm == "6":
+            avcbmes = "06"
+        elif avcbm == "7":
+            avcbmes = "07"
+        elif avcbm == "8":
+            avcbmes = "08"
+        elif avcbm == "9":
+            avcbmes = "09"
+        else:
+            avcbmes = avcbm
+
+        avcbano = obraavcb.split('/')[2]
+        obraclock = ""+avcbdia+"/"+avcbmes+"/"+avcbano+""
+
         obraidcli1 = self.txt_idcli1.text()
         obraidcli2 = self.txt_idcli2.text()
         obraidcli3 = self.txt_idcli3.text()
@@ -411,8 +520,8 @@ class Obra(QMainWindow):
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
-        consulta = 'UPDATE OR IGNORE obra SET end=?, bairro=?, num=?, cidade=?, lote=?, quadra=?, quarteirao=?, tipo=?, area=?, art=?, valorparc=?, quantparc=?, datacontrato=?, valorvisita=?, inscimob=?, idcli1=?, idcli2=?, idcli3=?, idcli4=? WHERE id=?'
-        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraidcli1, obraidcli2, obraidcli3, obraidcli4, idobra))
+        consulta = 'UPDATE OR IGNORE obra SET end=?, bairro=?, num=?, cidade=?, lote=?, quadra=?, quarteirao=?, tipo=?, area=?, art=?, valorparc=?, quantparc=?, datacontrato=?, valorvisita=?, inscimob=?, avcb=?, avcbclock=?, idcli1=?, idcli2=?, idcli3=?, idcli4=? WHERE id=?'
+        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraavcb, obraclock, obraidcli1, obraidcli2, obraidcli3, obraidcli4, idobra))
 
         self.txt_id.setText(None)
         self.txt_obraend.setText(None)
@@ -429,7 +538,8 @@ class Obra(QMainWindow):
         self.txt_obraquantparcela.setText(None)
         self.txt_obradatacontrato.setText(None)
         self.txt_obravalorvisita.setText(None)
-        self.txt_obravalorvisita_2.setText(None)
+        self.txt_imob.setText(None)
+        self.txt_avcb.setText(None)
         self.txt_idcli1.setText(None)
         self.txt_idcli2.setText(None)
         self.txt_idcli3.setText(None)
@@ -462,7 +572,36 @@ class Obra(QMainWindow):
         obraquantparc = self.txt_obraquantparcela.text()
         obradatacont = self.txt_obradatacontrato.text()
         obravalorvisit = self.txt_obravalorvisita.text()
-        obrainscmob = self.txt_obravalorvisita_2.text()
+        obrainscmob = self.txt_imob.text()
+        obraavcb = self.txt_avcb.text()
+
+        avcbdia = obraavcb.split('/')[0]
+        avcbm = str(int(obraavcb.split('/')[1]) - 1)
+        if avcbm == "1":
+            avcbmes = "01"
+        elif avcbm == "2":
+            avcbmes = "02"
+        elif avcbm == "3":
+            avcbmes = "03"
+        elif avcbm == "4":
+            avcbmes = "04"
+        elif avcbm == "5":
+            avcbmes = "05"
+        elif avcbm == "6":
+            avcbmes = "06"
+        elif avcbm == "7":
+            avcbmes = "07"
+        elif avcbm == "8":
+            avcbmes = "08"
+        elif avcbm == "9":
+            avcbmes = "09"
+        else:
+            avcbmes = avcbm
+
+        avcbano = obraavcb.split('/')[2]
+        obraclock = "" + avcbdia + "/" + avcbmes + "/" + avcbano + ""
+
+
         obraidcli1 = self.txt_idcli1.text()
         obraidcli2 = self.txt_idcli2.text()
         obraidcli3 = self.txt_idcli3.text()
@@ -470,8 +609,8 @@ class Obra(QMainWindow):
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
-        consulta = 'INSERT OR IGNORE INTO obra (end, bairro, num, cidade, lote, quadra, quarteirao, tipo, area, art, valorparc, quantparc, datacontrato, valorvisita, inscimob, idcli1, idcli2, idcli3, idcli4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
-        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraidcli1, obraidcli2, obraidcli3, obraidcli4))
+        consulta = 'INSERT OR IGNORE INTO obra (end, bairro, num, cidade, lote, quadra, quarteirao, tipo, area, art, valorparc, quantparc, datacontrato, valorvisita, inscimob, avcb, avcbclock idcli1, idcli2, idcli3, idcli4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraavcb, obraclock, obraidcli1, obraidcli2, obraidcli3, obraidcli4))
 
         self.txt_id.setText(None)
         self.txt_obraend.setText(None)
@@ -488,7 +627,8 @@ class Obra(QMainWindow):
         self.txt_obraquantparcela.setText(None)
         self.txt_obradatacontrato.setText(None)
         self.txt_obravalorvisita.setText(None)
-        self.txt_obravalorvisita_2.setText(None)
+        self.txt_imob.setText(None)
+        self.txt_avcb.setText(None)
         self.txt_idcli1.setText(None)
         self.txt_idcli2.setText(None)
         self.txt_idcli3.setText(None)
@@ -518,7 +658,7 @@ class Cliente(QMainWindow):
         super().__init__(parent)
         uic.loadUi("client.ui", self)
         self.btn_return.clicked.connect(self.volta)
-        self.btn_search.clicked.connect(self.pesqui)
+        self.txt_nome.textChanged.connect(self.pesqui)
         self.btn_add.clicked.connect(self.add)
         self.btn_copy.clicked.connect(self.copy)
         self.btn_edit.clicked.connect(self.edit)
@@ -772,13 +912,13 @@ class Doc(QMainWindow):
         super().__init__(parent)
         uic.loadUi("doc.ui", self)
         self.btn_return.clicked.connect(self.volta)
-        self.btn_search.clicked.connect(self.searchobra)
-        self.btn_search_2.clicked.connect(self.searchcli)
+        self.txt_searchrua.textChanged.connect(self.searchobra)
+        self.txt_searchnome.textChanged.connect(self.searchcli)
         self.cbox_1cli.setChecked(True)
-        self.txt_idcli1.show()
-        self.txt_idcli2.hide()
-        self.txt_idcli3.hide()
-        self.txt_idcli4.hide()
+        self.cli1frame.show()
+        self.cli2frame.hide()
+        self.cli3frame.hide()
+        self.cli4frame.hide()
         self.cbox_1cli.clicked.connect(self.checked1)
         self.cbox_2cli.clicked.connect(self.checked2)
         self.cbox_3cli.clicked.connect(self.checked3)
@@ -789,6 +929,11 @@ class Doc(QMainWindow):
         self.closewin.clicked.connect(self.fecha)
         self.framelogo.mousePressEvent = self.myfunction
         self.framelogo.mouseMoveEvent = self.myfunc
+        self.txt_id.textChanged.connect(self.idobra)
+        self.txt_idcli1.textChanged.connect(self.cli1)
+        self.txt_idcli2.textChanged.connect(self.cli2)
+        self.txt_idcli3.textChanged.connect(self.cli3)
+        self.txt_idcli4.textChanged.connect(self.cli4)
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
@@ -796,31 +941,210 @@ class Doc(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(19)
+        self.tabWid_obra.setColumnCount(21)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 19):
+            for j in range(0, 21):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
         cursor.execute('SELECT * FROM cliente')
         dados_lidos = cursor.fetchall()
         self.tabWid_cli.setRowCount(len(dados_lidos))
-        self.tabWid_cli.setColumnCount(15)
+        self.tabWid_cli.setColumnCount(21)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 15):
+            for j in range(0, 14):
                 self.tabWid_cli.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
         banco.commit()
         banco.close()
 
         self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
-        self.gripSize = 16
+        self.gripSize = 21
         self.grips = []
         for i in range(4):
             grip = QSizeGrip(self)
             grip.resize(self.gripSize, self.gripSize)
             self.grips.append(grip)
+
+    def idobra(self):
+        if self.txt_id.text() != "":
+            idobra = self.txt_id.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM obra  WHERE id LIKE ?'
+            cursor.execute(consulta, (idobra,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_end.setText(dados_lidos[0][1])
+                self.txt_idcli1.setText(dados_lidos[0][18])
+
+                self.cbox_1cli.setChecked(True)
+                self.cbox_2cli.setChecked(False)
+                self.cbox_3cli.setChecked(False)
+                self.cbox_4cli.setChecked(False)
+
+                self.cli1frame.show()
+                self.cli2frame.hide()
+                self.cli3frame.hide()
+                self.cli4frame.hide()
+                if dados_lidos[0][19] != "" or dados_lidos[0][19] == "None" or dados_lidos[0][19] == []:
+                    self.cbox_1cli.setChecked(False)
+                    self.cbox_2cli.setChecked(True)
+                    self.cbox_3cli.setChecked(False)
+                    self.cbox_4cli.setChecked(False)
+
+                    self.cli1frame.show()
+                    self.cli2frame.show()
+                    self.cli3frame.hide()
+                    self.cli4frame.hide()
+
+                    self.txt_idcli2.setText(dados_lidos[0][19])
+
+                    if dados_lidos[0][20] != "" or dados_lidos[0][20] == "None" or dados_lidos[0][20] == []:
+                        self.cbox_1cli.setChecked(False)
+                        self.cbox_2cli.setChecked(False)
+                        self.cbox_3cli.setChecked(True)
+                        self.cbox_4cli.setChecked(False)
+
+                        self.cli1frame.show()
+                        self.cli2frame.show()
+                        self.cli3frame.show()
+                        self.cli4frame.hide()
+
+                        self.txt_idcli3.setText(dados_lidos[0][20])
+
+                        if dados_lidos[0][21] != "" or dados_lidos[0][21] == "None" or dados_lidos[0][21] == []:
+                            self.cbox_1cli.setChecked(False)
+                            self.cbox_2cli.setChecked(False)
+                            self.cbox_3cli.setChecked(False)
+                            self.cbox_4cli.setChecked(True)
+
+                            self.cli1frame.show()
+                            self.cli2frame.show()
+                            self.cli3frame.show()
+                            self.cli4frame.show()
+
+                            self.txt_idcli4.setText(dados_lidos[0][21])
+
+            else:
+                self.txt_end.setText("OBRA NÃO CADASTRADA")
+                self.cbox_1cli.setChecked(True)
+                self.cbox_2cli.setChecked(False)
+                self.cbox_3cli.setChecked(False)
+                self.cbox_4cli.setChecked(False)
+
+                self.cli1frame.show()
+                self.cli2frame.hide()
+                self.cli3frame.hide()
+                self.cli4frame.hide()
+
+                self.txt_idcli1.setText(None)
+                self.txt_idcli2.setText(None)
+                self.txt_idcli3.setText(None)
+                self.txt_idcli4.setText(None)
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_end.setText(None)
+
+            self.cbox_1cli.setChecked(True)
+            self.cbox_2cli.setChecked(False)
+            self.cbox_3cli.setChecked(False)
+            self.cbox_4cli.setChecked(False)
+
+            self.cli1frame.show()
+            self.cli2frame.hide()
+            self.cli3frame.hide()
+            self.cli4frame.hide()
+
+            self.txt_idcli1.setText(None)
+            self.txt_idcli2.setText(None)
+            self.txt_idcli3.setText(None)
+            self.txt_idcli4.setText(None)
+
+    def cli1(self):
+        if self.txt_idcli1.text() != "":
+            idcli1 = self.txt_idcli1.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idcli1,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_nome1.setText(dados_lidos[0][1])
+            else:
+                self.txt_nome1.setText("OBRA NÃO CADASTRADA")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_nome1.setText(None)
+
+    def cli2(self):
+        if self.txt_idcli1.text() != "":
+            idcli2 = self.txt_idcli2.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idcli2,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_nome2.setText(dados_lidos[0][1])
+            else:
+                self.txt_nome2.setText("OBRA NÃO EXISTE")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_nome2.setText(None)
+
+    def cli3(self):
+        if self.txt_idcli3.text() != "":
+            idcli3 = self.txt_idcli3.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idcli3,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_nome3.setText(dados_lidos[0][1])
+            else:
+                self.txt_nome3.setText("OBRA NÃO EXISTE")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_nome3.setText(None)
+
+    def cli4(self):
+        if self.txt_idcli4.text() != "":
+            idcli4 = self.txt_idcli4.text()
+
+            banco = sqlite3.connect('./bd/banco.db')
+            cursor = banco.cursor()
+            consulta = 'SELECT * FROM cliente  WHERE id LIKE ?'
+            cursor.execute(consulta, (idcli4,))
+
+            dados_lidos = cursor.fetchall()
+
+            if dados_lidos != []:
+                self.txt_nome4.setText(dados_lidos[0][1])
+            else:
+                self.txt_nome4.setText("OBRA NÃO EXISTE")
+            banco.commit()
+            banco.close()
+        else:
+            self.txt_nome4.setText(None)
 
     def resizeEvent(self, event):
         QMainWindow.resizeEvent(self, event)
@@ -892,10 +1216,10 @@ class Doc(QMainWindow):
             self.cbox_2cli.setChecked(False)
             self.cbox_3cli.setChecked(False)
             self.cbox_4cli.setChecked(False)
-            self.txt_idcli1.show()
-            self.txt_idcli2.hide()
-            self.txt_idcli3.hide()
-            self.txt_idcli4.hide()
+            self.cli1frame.show()
+            self.cli2frame.hide()
+            self.cli3frame.hide()
+            self.cli4frame.hide()
 
     def checked2(self):
         if self.cbox_2cli.isChecked() == True:
@@ -903,10 +1227,10 @@ class Doc(QMainWindow):
             self.cbox_3cli.setChecked(False)
             self.cbox_4cli.setChecked(False)
 
-            self.txt_idcli1.show()
-            self.txt_idcli2.show()
-            self.txt_idcli3.hide()
-            self.txt_idcli4.hide()
+            self.cli1frame.show()
+            self.cli2frame.show()
+            self.cli3frame.hide()
+            self.cli4frame.hide()
 
     def checked3(self):
         if self.cbox_3cli.isChecked() == True:
@@ -914,10 +1238,10 @@ class Doc(QMainWindow):
             self.cbox_2cli.setChecked(False)
             self.cbox_4cli.setChecked(False)
 
-            self.txt_idcli1.show()
-            self.txt_idcli2.show()
-            self.txt_idcli3.show()
-            self.txt_idcli4.hide()
+            self.cli1frame.show()
+            self.cli2frame.show()
+            self.cli3frame.show()
+            self.cli4frame.hide()
 
     def checked4(self):
         if self.cbox_4cli.isChecked() == True:
@@ -925,10 +1249,10 @@ class Doc(QMainWindow):
             self.cbox_2cli.setChecked(False)
             self.cbox_3cli.setChecked(False)
 
-            self.txt_idcli1.show()
-            self.txt_idcli2.show()
-            self.txt_idcli3.show()
-            self.txt_idcli4.show()
+            self.cli1frame.show()
+            self.cli2frame.show()
+            self.cli3frame.show()
+            self.cli4frame.show()
 
     def make(self):
         if self.txt_idobra.text() != "":

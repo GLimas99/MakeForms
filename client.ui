@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>524</width>
+    <width>493</width>
     <height>720</height>
    </rect>
   </property>
@@ -566,44 +566,6 @@ QLineEdit:focus{
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
-                      <item>
-                       <widget class="QPushButton" name="btn_search">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <pointsize>18</pointsize>
-                          <weight>50</weight>
-                          <italic>false</italic>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">QPushButton{
-	background-color:rgb(50, 50, 50);
-	border:2px solid rgb(60, 60, 60);
-	border-radius:5px;
-	font: 18pt ;
-}
-QPushButton:hover{
-	background-color:rgb(60, 60, 60);
-	border: 2px solid rgb(70, 70, 70);
-}
-QPushButton:pressed{
-	background-color:rgb(250, 230, 0);
-	border: 2px solid rgb(255, 165, 24);
-	color: rgb(35, 35, 35);
-}</string>
-                        </property>
-                        <property name="text">
-                         <string>⌕</string>
-                        </property>
-                       </widget>
-                      </item>
                      </layout>
                     </widget>
                    </item>

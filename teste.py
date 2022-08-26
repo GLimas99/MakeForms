@@ -1,32 +1,36 @@
-self.left.mousePressEvent=self.myfunction
-        self.left.mouseMoveEvent = self.myfunc
+import datetime
+import time
+from playsound import playsound
 
+def despertar(dia, mes, ano, hora, minuto, agora):
+    if agora.day == dia and agora.month == mes and agora.year == ano and agora.hour == hora and agora.minute == minuto:
+        return True
+    return False
 
-def myfunction(self, event):
-    widget.dragPos = event.globalPosition().toPoint()
+print("DESPERTADOR")
 
+data = input("Quando vence o AVCB? (dd/mm/aaaa): ")
 
-def myfunc(self, event):
-    widget.move(widget.pos() + event.globalPosition().toPoint() - widget.dragPos)
-    widget.dragPos = event.globalPosition().toPoint()
-    event.accept()
+dora = input("Qual o horário para despertar? (hh:mm): ")
 
+dia = int(data.split('/')[0])
+mes = int(data.split('/')[1])
+ano = int(data.split('/')[2])
 
-def max(self):
-    global multi
-    status = multi
-    if status == 0:
-        widget.showMaximized()
-        self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
-                                 "border-radius: 0px;\n"
-                                 "color:rgb(200, 200, 255);")
-        self.maxwin.setText("❐")
-        multi = 1
-    else:
-        widget.showNormal()
-        menu.resize(menu.width() + 1, menu.height() + 1)
-        self.frame.setStyleSheet("background-color: rgb(40, 40, 40);\n"
-                                 "border-radius: 10px;\n"
-                                 "color:rgb(200, 200, 255);")
-        self.maxwin.setText("☐")
-        multi = 0
+hora = int(dora.split(':')[0])
+minuto = int(dora.split(':')[1])
+
+agora = datetime.datetime.now()
+
+# resultado = despertar(dia, mes, ano, hora, minuto, agora)
+#
+# print("Está na hora? :" + str(resultado))
+
+while True:
+    agora = datetime.datetime.now()
+    print(agora)
+
+    if despertar(dia, mes, ano, hora, minuto, agora):
+        playsound('./videoplayback.mp3')
+
+    time.sleep(60)
