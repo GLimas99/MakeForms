@@ -1663,6 +1663,71 @@ QCheckBox::indicator:checked{
                   </layout>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QFrame" name="frame_4">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_44">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QCheckBox" name="cbox_reg">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Quicksand</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox::indicator{
+	border: 3px solid rgb(100, 100, 100);
+	width: 15px;
+	height:15px;
+	border-radius: 10px;
+	background-color: rgb(135, 135, 135);
+}
+QCheckBox::indicator:checked{
+	border: 3px solid rgb(195, 156, 0);
+	background-color: rgb(255, 255, 127);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>CHECK LIST REG.</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
                </layout>
               </widget>
              </item>
@@ -1748,6 +1813,71 @@ QCheckBox::indicator:checked{
                      </property>
                      <property name="text">
                       <string>MEMORIAL P/ CONSTRUÇÃO</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_9">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_54">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QCheckBox" name="cbox_subreg">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Quicksand</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox::indicator{
+	border: 3px solid rgb(100, 100, 100);
+	width: 15px;
+	height:15px;
+	border-radius: 10px;
+	background-color: rgb(135, 135, 135);
+}
+QCheckBox::indicator:checked{
+	border: 3px solid rgb(195, 156, 0);
+	background-color: rgb(255, 255, 127);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>CHECK LIST SUB/REG.</string>
                      </property>
                     </widget>
                    </item>
@@ -2123,7 +2253,7 @@ color:rgb(200, 200, 255);</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="txt_id">
+                    <widget class="QLineEdit" name="txt_idobra">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                        <horstretch>0</horstretch>
