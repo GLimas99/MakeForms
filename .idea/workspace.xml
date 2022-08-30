@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2164de09-8dd4-4af8-b7b5-56751ef1404e" name="Changes" comment="Cliente 3">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Memorial Descritivo Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento com Lei_Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PROCESSO DE CLIENTES/HORTOLÂNDIA/Mauro Basso/REGULARIZAÇÃO/2022/Documentos/Requerimento sem Lei_Mauro Basso.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RR_ENGENHARIA.py" beforeDir="false" afterPath="$PROJECT_DIR$/RR_ENGENHARIA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bd/banco.db" beforeDir="false" afterPath="$PROJECT_DIR$/bd/banco.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.ui" beforeDir="false" afterPath="$PROJECT_DIR$/client.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc.ui" beforeDir="false" afterPath="$PROJECT_DIR$/doc.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obra.ui" beforeDir="false" afterPath="$PROJECT_DIR$/obra.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +34,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/ROGER 1/Desktop/Alarme"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ROGER 1/Desktop/RR ENGENHARIA&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.RR_ENGENHARIA">
     <configuration name="RR ENGENHARIA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MakeForms" />

@@ -6,7 +6,7 @@ from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.shared import Pt, RGBColor, Cm
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
-from datetime import date
+from datetime import date, timedelta
 from num2words import num2words
 from pathlib import Path
 
@@ -487,31 +487,23 @@ class Obra(QMainWindow):
         obrainscmob = self.txt_imob.text()
         obraavcb = self.txt_avcb.text()
 
-        avcbdia = obraavcb.split('/')[0]
-        avcbm = str(int(obraavcb.split('/')[1])-1)
-        if avcbm == "1":
-            avcbmes = "01"
-        elif avcbm == "2":
-            avcbmes = "02"
-        elif avcbm == "3":
-            avcbmes = "03"
-        elif avcbm == "4":
-            avcbmes = "04"
-        elif avcbm == "5":
-            avcbmes = "05"
-        elif avcbm == "6":
-            avcbmes = "06"
-        elif avcbm == "7":
-            avcbmes = "07"
-        elif avcbm == "8":
-            avcbmes = "08"
-        elif avcbm == "9":
-            avcbmes = "09"
-        else:
-            avcbmes = avcbm
+        if obraavcb != "":
+            mes = timedelta(days=30)
 
-        avcbano = obraavcb.split('/')[2]
-        obraclock = ""+avcbdia+"/"+avcbmes+"/"+avcbano+""
+            avcbdia = int(obraavcb.split('/')[0])
+            avcbmes = int(obraavcb.split('/')[1])
+            avcbano = int(obraavcb.split('/')[2])
+
+            data = date(avcbano, avcbmes, avcbdia)
+            tudo = data - mes
+
+            tudoano = tudo.strftime('%Y')
+            tudomes = tudo.strftime('%m')
+            tudodia = tudo.strftime('%d')
+
+            obraclock = "" + str(tudodia) + "/" + str(tudomes) + "/" + str(tudoano) + ""
+        else:
+            obraclock = ""
 
         obraidcli1 = self.txt_idcli1.text()
         obraidcli2 = self.txt_idcli2.text()
@@ -575,31 +567,23 @@ class Obra(QMainWindow):
         obrainscmob = self.txt_imob.text()
         obraavcb = self.txt_avcb.text()
 
-        avcbdia = obraavcb.split('/')[0]
-        avcbm = str(int(obraavcb.split('/')[1]) - 1)
-        if avcbm == "1":
-            avcbmes = "01"
-        elif avcbm == "2":
-            avcbmes = "02"
-        elif avcbm == "3":
-            avcbmes = "03"
-        elif avcbm == "4":
-            avcbmes = "04"
-        elif avcbm == "5":
-            avcbmes = "05"
-        elif avcbm == "6":
-            avcbmes = "06"
-        elif avcbm == "7":
-            avcbmes = "07"
-        elif avcbm == "8":
-            avcbmes = "08"
-        elif avcbm == "9":
-            avcbmes = "09"
-        else:
-            avcbmes = avcbm
+        if obraavcb != "":
+            mes = timedelta(days=30)
 
-        avcbano = obraavcb.split('/')[2]
-        obraclock = "" + avcbdia + "/" + avcbmes + "/" + avcbano + ""
+            avcbdia = int(obraavcb.split('/')[0])
+            avcbmes = int(obraavcb.split('/')[1])
+            avcbano = int(obraavcb.split('/')[2])
+
+            data = date(avcbano, avcbmes, avcbdia)
+            tudo = data - mes
+
+            tudoano = tudo.strftime('%Y')
+            tudomes = tudo.strftime('%m')
+            tudodia = tudo.strftime('%d')
+
+            obraclock = "" + str(tudodia) + "/" + str(tudomes) + "/" + str(tudoano) + ""
+        else:
+            obraclock = ""
 
 
         obraidcli1 = self.txt_idcli1.text()
@@ -609,7 +593,7 @@ class Obra(QMainWindow):
 
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
-        consulta = 'INSERT OR IGNORE INTO obra (end, bairro, num, cidade, lote, quadra, quarteirao, tipo, area, art, valorparc, quantparc, datacontrato, valorvisita, inscimob, avcb, avcbclock idcli1, idcli2, idcli3, idcli4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        consulta = 'INSERT OR IGNORE INTO obra (end, bairro, num, cidade, lote, quadra, quarteirao, tipo, area, art, valorparc, quantparc, datacontrato, valorvisita, inscimob, avcb, avcbclock, idcli1, idcli2, idcli3, idcli4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraavcb, obraclock, obraidcli1, obraidcli2, obraidcli3, obraidcli4))
 
         self.txt_id.setText(None)
