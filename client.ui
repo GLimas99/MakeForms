@@ -1109,7 +1109,7 @@ QLineEdit:focus{
                          <number>32</number>
                         </property>
                         <property name="placeholderText">
-                         <string>CPF</string>
+                         <string>CPF/CNPJ</string>
                         </property>
                        </widget>
                       </item>
@@ -2362,8 +2362,6 @@ QPushButton:pressed{
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="file_rc.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
