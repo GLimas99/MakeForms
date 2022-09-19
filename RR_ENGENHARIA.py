@@ -1328,34 +1328,38 @@ class Doc(QMainWindow):
                             font.color.rgb = RGBColor(0, 0, 255)
                             font.name = 'Book Antiqua'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'Entre as partes abaixo identificadas e no final assinadas fica contratada os serviços de um imóvel mediante as seguintes clausulas e condições:')
+                                '\nEntre as partes abaixo identificadas e no final assinadas fica contratada os serviços de um imóvel mediante as seguintes clausulas e condições:')
                             paragraph.style = document.styles.add_style('style01', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.bold = True
                             font.name = 'Book Antiqua'
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('1.PARTES')
+                            paragraph = document.add_paragraph('\n\n1.PARTES')
                             paragraph.style = document.styles.add_style('style0', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.bold = True
                             font.name = 'Book Antiqua'
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('1.1 CONTRATADO:')
+                            paragraph = document.add_paragraph('\n1.1 CONTRATADO:')
                             paragraph.style = document.styles.add_style('style1', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
                             paragraph.add_run(' ROGÉRIO ROCHA SOARES, ').underline = True
                             paragraph.add_run(
-                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, residente e domiciliado na Rua Ricardo Mendes Horacy, n° 125, Jardim Nossa Senhora Auxiliadora na cidade de Hortolândia/SP. ').bold = False
-                            enter = document.add_paragraph('')
+                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, com escritório na Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP. ').bold = False
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('1.2 CONTRATANTE: ')
+                            paragraph = document.add_paragraph('\n1.2 CONTRATANTE: ')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
@@ -1366,17 +1370,18 @@ class Doc(QMainWindow):
                                                                                                                               'portador(a) do RG n° ' + rgcli1 + ' SSP/SP, inscrito(a) no CPF n° ' + cpfcli1 + ','
                                                                                                                                                                                                                                ' residente e domiciliado(a) na ' + endcli1 + ', '
                                                                                                                                                                                                                                                                                      'n° ' + numcli1 + ', ' + bairrocli1 + ' na cidade de ' + cidadecli1 + '/' + estadocli1 + '. ').bold = False
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('2.0 OBJETO E FINALIDADES')
+                            paragraph = document.add_paragraph('\n\n2.0 OBJETO E FINALIDADES')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('A confecção de projeto arquitetônico e simplificado '
+                            paragraph = document.add_paragraph('\nA confecção de projeto arquitetônico e simplificado '
                                                                'residencial em “AUTOCAD”, conforme características do imóvel do CONTRATANTE e '
                                                                'legislações pertinentes nos termos de Leis uso e ocupação de solo do município de '
                                                                + cidadeobra + ' e normas dos órgãos competentes e com aproveitamento para a aprovação de '
@@ -1387,55 +1392,62 @@ class Doc(QMainWindow):
                             font.name = 'Book Antiqua'
                             font.bold = True
                             font.italic = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '2.2 Atender e fornecer as informações necessárias para o bom andamento dos serviços;')
+                                '\n2.2 Atender e fornecer as informações necessárias para o bom andamento dos serviços;')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('a)	Documentos necessários;\nb)	Livre acesso ao local.')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('3. VISITAS')
+                            paragraph = document.add_paragraph('\n\n3. VISITAS')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '3.1 Este contrato não prevê acompanhamento da execução da obra. \n\n'
+                                '\n3.1 Este contrato não prevê acompanhamento da execução da obra. \n\n'
                                 '3.2 Este contrato prevê 2 (duas) visitas técnicas no local da obra.\n\n'
                                 '3.3 As visitas devem ser agendadas com antecedência mínima de 2 (dois) dias e seguir a agenda de atividades do responsável técnico.\n\n'
-                                '3.4 Caso houver interesse do CONTRATANTE ')
+                                '3.4 Caso houver interesse do')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-                            paragraph.add_run('CONTRATANTE').bold = True
+                            paragraph.add_run(' CONTRATANTE ').bold = True
                             paragraph.add_run('de mais visitas técnicas na obra, será cobrado a parte.\n'
-                                              'Valor para cada visita técnica é de R$ ' + valorvisitaobra + ',00 ('+num2words(valorvisitaobra.replace(",","."), lang='pt-br')+') hora.')
-                            enter = document.add_paragraph('')
+                                              'Valor para cada visita técnica é de R$ ' + valorvisitaobra + ' ('+num2words(valorvisitaobra.replace(",","."), lang='pt-br')+' reais) hora.')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('4. PRAZO, PREÇO, FORMA DE PAGAMENTO')
+                            paragraph = document.add_paragraph('\n4. PRAZO, PREÇO, FORMA DE PAGAMENTO')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '4.1 O prazo da presente prestação de serviço dá-se início após a assinatura deste contrato e se estendera conforme tramitação legal dos órgãos responsáveis para a liberação dos documentos essenciais com resultado final.\n\n'
-                                '4.2 O valor deste contrato é de ')
+                                '\n4.1 O prazo da presente prestação de serviço dá-se início após a assinatura deste contrato e se estendera conforme tramitação legal dos órgãos responsáveis para a liberação dos documentos essenciais com resultado final.\n\n'
+                                '4.2 O valor deste contrato é de R$ ')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
 
-                            runner = paragraph.add_run("" + (valorobra) + ' (' + num2words((valorobra).replace(",","."), lang='pt-br') + ')')
+                            runner = paragraph.add_run("" + (valorparcobra) + ' (' + num2words((valorparcobra).replace(",","."), lang='pt-br') + ' reais)')
                             runner.bold = True
                             runner.underline = True
 
@@ -1446,8 +1458,8 @@ class Doc(QMainWindow):
                             runner = paragraph.add_run('CONTRATADO ')
                             runner.bold = True
                             paragraph.add_run(
-                                'em ' + valorparcobra + ',00 (' + num2words(valorparcobra.replace(",","."), lang='pt-br') +') vezes mensais, com vencimento '
-                                                                                                   'todo o dia ' + (datacontratoobra[:2]) + ' de cada mês, com início em '
+                                'em ' + quantparcobra + ' (' + num2words((quantparcobra), lang='pt-br')+') vezes mensais, com vencimento '
+                                                                                                   'todo o dia ' + num2words((datacontratoobra[:2]), to='ordinal', lang='pt-br') + ' de cada mês, com início em '
                                 + datacontratoobra + ', constituindo-se nenhuma '
                                                        'tolerância de qualquer recebimento depois do '
                                                        'prazo estipulado.\n\n 4.3 Ao ')
@@ -1458,46 +1470,45 @@ class Doc(QMainWindow):
                             runner.bold = True
                             paragraph.add_run(
                                 ' o pagamento de taxas, emissões de documentos, impressões e plotagens   referente as tramitações do processo bem como a exigências dos órgãos envolvidos.')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('5. MULTAS')
+                            paragraph = document.add_paragraph('\n\n5. MULTAS')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('5.1')
+                            paragraph = document.add_paragraph('\n5.1 ')
                             paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-                            runner = paragraph.add_run('MULTA DE MORA:')
+                            runner = paragraph.add_run('MULTA DE MORA: ')
                             runner.bold = True
                             paragraph.add_run('Fica estipulada a multa de ')
                             runner = paragraph.add_run('10%')
                             runner.bold = True
                             paragraph.add_run(
-                                '% (dez por cento) calculada sobre o valor do contrato devido à qual será devidamente cobrada juntamente com este pelo não pagamento no prazo previsto neste contrato. O')
+                                '(dez por cento) calculada sobre o valor do contrato devido à qual será devidamente cobrada juntamente com este pelo não pagamento no prazo previsto neste contrato. O')
                             runner = paragraph.add_run(' CONTRATANTE ')
                             runner.bold = True
                             paragraph.add_run(
                                 'fica ciente, ainda que a multa se refere simplesmente a mora, não impedindo a cobrança de outras multas devidas pela inflação ou inexecução de quaisquer das mais clausulas deste contrato e a sua cobrança em meses posteriores. Além dessa multa serão devidos juros e correção monetária, ambos calculados pelo máximo e na forma permitidos pela lei vigente, sempre que houver atraso no pagamento do contrato ou dos encargos.')
 
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('6. FORO COMPETENTE, DESAPROPRIAÇÂO E AÇOES.')
+                            paragraph = document.add_paragraph('\n\n\n\n\n\n\n\n\n\n\n\n\n6. FORO COMPETENTE, DESAPROPRIAÇÂO E AÇOES.')
                             paragraph.style = document.styles.add_style('style13', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '6.1 O presente contrato reger-se-á pelo Código Civil Brasileiro e Legislação suplementar, não estabelecendo, em hipóteses alguma, vínculo empregatício entre os contratantes. \n\n'
+                                '\n6.1 O presente contrato reger-se-á pelo Código Civil Brasileiro e Legislação suplementar, não estabelecendo, em hipóteses alguma, vínculo empregatício entre os contratantes. \n\n'
                                 '6.2 Fica eleito o foro')
                             paragraph.style = document.styles.add_style('style14', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
@@ -1510,38 +1521,35 @@ class Doc(QMainWindow):
                             runner.bold = True
                             paragraph.add_run('tenham se mudado ou já residam em outra comarca.\n\n'
                                               '6.3 Nos termos do deciso no processo 85.232/88, da Serasa, com força de Provimento, publicado no diário Oficial de 22/6/1995, Cad. I Parte I, se o poder Judiciário informar a ação á Serasa, as providencias pela baixa do nome nesse órgão ficam por conta do devedor, uma vez que não foi a locadora ou sua representante legal que fez a informação.')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'E assim por estarem justos e contratados assinam o presente em 02 (duas) vias de igual teor e valor.')
+                                '\nE assim por estarem justos e contratados assinam o presente em 02 (duas) vias de igual teor e valor.')
                             paragraph.style = document.styles.add_style('style15', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '' + cidadeobra + '/SP, ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
+                                '\n\n' + cidadeobra + '/SP, ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
                             paragraph.style = document.styles.add_style('style16', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '_________________________________          _____________________________________')
+                                '\n\n\n\n\n\n\n\n\n\n_________________________________          _____________________________________')
                             paragraph.style = document.styles.add_style('style17', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.italic = True
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'CONTRATADO:                                            CONTRATANTE:')
@@ -1549,12 +1557,16 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('ROGÉRIO ROCHA SOARES                      ' + nomecli1 + '')
                             paragraph.style = document.styles.add_style('style19', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Contrato ' + nomecli1 + '.docx')
@@ -1600,7 +1612,7 @@ class Doc(QMainWindow):
                             runner.bold = True
 
                             paragraph.add_run(
-                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Rua Geraldo Denadai, n° 74 1º andar sala 03, Jardim da Paineiras na cidade de Hortolândia/SP.\n\n')
+                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP.\n\n')
 
                             runner = paragraph.add_run('III – EXTENSÃO DOS PODERES: ')
                             runner.bold = True
@@ -1808,7 +1820,7 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
 
                             document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento sem Lei_' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento com Lei_' + nomecli1 + '.docx')
 
                         # ---------------------RRC sem lei---------------------------------------------------------------------------------------------
                         if self.cbox_reqslei.isChecked() == True:
@@ -1973,7 +1985,7 @@ class Doc(QMainWindow):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
                             document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento com Lei_' + nomecli1 + '.docx')
+                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento sem Lei_' + nomecli1 + '.docx')
 
             # ---------------------Declaração---------------------------------------------------------------------------------------------
                         if self.cbox_declaracao.isChecked() == True:
@@ -2718,7 +2730,7 @@ class Doc(QMainWindow):
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                            paragraph = document.add_paragraph('Cód. Cliente: '+idcli1+' \nCód. Obra: '+idobra+'')
+                            paragraph = document.add_paragraph('    Cód. Cliente: '+idcli1+' \n    Cód. Obra: '+idobra+'')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             # font.bold = True
@@ -2735,13 +2747,14 @@ class Doc(QMainWindow):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
                             font.size = Pt(13)
 
-                            paragraph = document.add_paragraph('☐ Certidão negativa de débitos,\n'
-                                                               '☐ Requerimento assinado pelo proprietario, \n'
-                                                               '☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), \n'
-                                                               '☐ 2 Projeto em A2,\n'
-                                                               '☐ Matrícula atualizada (vale por 30 dias),\n'
-                                                               '☐ Duas vias de ART (vale por 10 dias), \n'
-                                                               '☐ Ficha informativa.')
+                            paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
+                                                               '\n    ☐ Matrícula atualizada (vale por 30 dias),'
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias), '
+                                                               '\n    ☐ Ficha informativa,'
+                                                               '\n    ☐ Certidão negativa de débitos,'
+                                                               '\n    ☐ 2 Projeto em A2,'
+                                                               '\n    ☐ Caderno de Fotos.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2766,13 +2779,13 @@ class Doc(QMainWindow):
                             font.size = Pt(13)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                            paragraph = document.add_paragraph('☐CPF\n'
-                                                               '☐RG\n'
-                                                               '☐Profissão\n'
-                                                               '☐Comprovante de endereço\n'
-                                                               '☐Estado Civil\n'
-                                                               '☐Email\n'
-                                                               '☐Celular\n\n')
+                            paragraph = document.add_paragraph('    ☐CPF\n'
+                                                               '    ☐RG\n'
+                                                               '    ☐Profissão\n'
+                                                               '    ☐Comprovante de endereço\n'
+                                                               '    ☐Estado Civil\n'
+                                                               '    ☐Email\n'
+                                                               '    ☐Celular\n\n')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2787,12 +2800,12 @@ class Doc(QMainWindow):
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                            paragraph = document.add_paragraph('☐Matricula / Escritura\n'
-                                                               '☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                               '☐Valor da Parcela________________________________\n'
-                                                               '☐Quantidade de Parcela___________________________\n'
-                                                               '☐ Valor da visita__________________________________\n'
-                                                               '☐Data do contrato_________/__________/_____________\n')
+                            paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
+                                                               '    ☐Espelho do IPTU / Certidão de Área Construída\n'
+                                                               '    ☐Valor da Parcela________________________________\n'
+                                                               '    ☐Quantidade de Parcela___________________________\n'
+                                                               '    ☐ Valor da visita__________________________________\n'
+                                                               '    ☐Data do contrato_________/__________/_____________\n')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -2832,7 +2845,7 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Cód. Cliente: '+idcli1+' \nCód. Obra: '+idobra+'')
+                            paragraph = document.add_paragraph('    Cód. Cliente: '+idcli1+' \n    Cód. Obra: '+idobra+'')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             # font.bold = True
@@ -2874,7 +2887,7 @@ class Doc(QMainWindow):
                                                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
                                                                '    ☐ ART vale por 10 dias para subdivisão\n'
                                                                '    ☐ Certidão negativa de débitos,\n'
-                                                               '    ☐ Foto faixada dos dois lotes (casas) para subdivisão\n'
+                                                               '    ☐ Caderno de Fotos dos dois lotes\n'
                                                                '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
                                                                '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
@@ -2898,7 +2911,7 @@ class Doc(QMainWindow):
                                 '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
                                 '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
                                 '    ☐ ART vale por 10 dias para regularização lote A\n'
-                                '    ☐ Foto faixada do lote A (casa) para regularização\n'
+                                '    ☐ Caderno de Fotos do lote A\n'
                                 '    ☐ Projeto em A2 de regularização para o lote A\n'
                                 '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
@@ -2922,7 +2935,7 @@ class Doc(QMainWindow):
                                 '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
                                 '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
                                 '    ☐ ART vale por 10 dias para regularização lote B\n'
-                                '    ☐ Foto faixada do lote B (casa) para regularização\n'
+                                '    ☐ Caderno de Fotos do lote B\n'
                                 '    ☐ Projeto em A2 de regularização para o lote B\n'
                                 '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
@@ -3089,34 +3102,38 @@ class Doc(QMainWindow):
                             font.color.rgb = RGBColor(0, 0, 255)
                             font.name = 'Book Antiqua'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'Entre as partes abaixo identificadas e no final assinadas fica contratada os serviços de um imóvel mediante as seguintes clausulas e condições:')
+                                '\nEntre as partes abaixo identificadas e no final assinadas fica contratada os serviços de um imóvel mediante as seguintes clausulas e condições:')
                             paragraph.style = document.styles.add_style('style01', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.bold = True
                             font.name = 'Book Antiqua'
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('1.PARTES')
+                            paragraph = document.add_paragraph('\n\n1.PARTES')
                             paragraph.style = document.styles.add_style('style0', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.bold = True
                             font.name = 'Book Antiqua'
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('1.1 CONTRATADO:')
+                            paragraph = document.add_paragraph('\n1.1 CONTRATADO:')
                             paragraph.style = document.styles.add_style('style1', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
                             paragraph.add_run(' ROGÉRIO ROCHA SOARES, ').underline = True
                             paragraph.add_run(
-                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, residente e domiciliado na Rua Ricardo Mendes Horacy, n° 125, Jardim Nossa Senhora Auxiliadora na cidade de Hortolândia/SP. ').bold = False
-                            enter = document.add_paragraph('')
+                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, com escritório na Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP. ').bold = False
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('1.1 CONTRATANTE: ')
+                            paragraph = document.add_paragraph('\n1.2 CONTRATANTE: ')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
@@ -3124,11 +3141,13 @@ class Doc(QMainWindow):
                             paragraph.add_run('' + nomecli1 + ', ').underline = True
                             paragraph.add_run(
                                 '' + nacionalidadecli1 + ', ' + estadocivilcli1 + ', ' + profissaocli1 + ', '
-                                                                                                                              'portador(a) do RG n° ' + rgcli1 + ' SSP/SP, inscrito(a) no CPF n° ' + cpfcli1 + ''
-                                                                                                                                                                                                                               ', residente e domiciliado(a) na ' + endcli1 + ', '
-                                                                                                                                                                                                                                                                                      'n° ' + numcli1 + ', ' + bairrocli1 + ' na cidade de ' + cidadecli1 + '/' + estadocli1 + '. ').bold = False
+                                                                                                         'portador(a) do RG n° ' + rgcli1 + ' SSP/SP, inscrito(a) no CPF n° ' + cpfcli1 + ','
+                                                                                                                                                                                          ' residente e domiciliado(a) na ' + endcli1 + ', '
+                                                                                                                                                                                                                                        'n° ' + numcli1 + ', ' + bairrocli1 + ' na cidade de ' + cidadecli1 + '/' + estadocli1 + '. ').bold = False
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('    CONTRATANTE: ')
+                            paragraph = document.add_paragraph('\n    CONTRATANTE: ')
                             paragraph.style = document.styles.add_style('style2.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
@@ -3136,80 +3155,91 @@ class Doc(QMainWindow):
                             paragraph.add_run('' + nomecli2 + ', ').underline = True
                             paragraph.add_run(
                                 '' + nacionalidadecli2 + ', ' + estadocivilcli2 + ', ' + profissaocli2 + ', '
-                                                                                                                              'portador(a) do RG n° ' + rgcli2 + ' SSP/SP, inscrito(a) no CPF n° ' + cpfcli2 + ''
-                                                                                                                                                                                                                               ', residente e domiciliado(a) na ' + endcli2 + ', '
-                                                                                                                                                                                                                                                                                      'n° ' + numcli2 + ', ' + bairrocli2 + ' na cidade de ' + cidadecli2 + '/' + estadocli2 + '. ').bold = False
+                                                                                                         'portador(a) do RG n° ' + rgcli2 + ' SSP/SP, inscrito(a) no CPF n° ' + cpfcli2 + ','
+                                                                                                                                                                                          ' residente e domiciliado(a) na ' + endcli2 + ', '
+                                                                                                                                                                                                                                        'n° ' + numcli2 + ', ' + bairrocli2 + ' na cidade de ' + cidadecli2 + '/' + estadocli2 + '. ').bold = False
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-
-                            paragraph = document.add_paragraph('2.0 OBJETO E FINALIDADES')
+                            paragraph = document.add_paragraph('\n\n2.0 OBJETO E FINALIDADES')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('A confecção de projeto arquitetônico e simplificado '
-                                                               'residencial em “AUTOCAD”, conforme características do imóvel dos CONTRATANTES e '
+                            paragraph = document.add_paragraph('\nA confecção de projeto arquitetônico e simplificado '
+                                                               'residencial em “AUTOCAD”, conforme características do imóvel do CONTRATANTE e '
                                                                'legislações pertinentes nos termos de Leis uso e ocupação de solo do município de '
                                                                + cidadeobra + ' e normas dos órgãos competentes e com aproveitamento para a aprovação de '
-                                                                                  'projeto até a liberação do Alvará. Para o imóvel: lote ' + loteobra + ', quadra ' + quadraobra + '; do loteamento '
-                                                                                                                                                                                            'denominado “' + bairroobra + '”, no município de ' + cidadeobra + '-SP.')
+                                                                              'projeto até a liberação do Alvará. Para o imóvel: lote ' + loteobra + ', quadra ' + quadraobra + '; do loteamento '
+                                                                                                                                                                                'denominado “' + bairroobra + '”, no município de ' + cidadeobra + '-SP.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
                             font.italic = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '2.2 Atender e fornecer as informações necessárias para o bom andamento dos serviços;')
+                                '\n2.2 Atender e fornecer as informações necessárias para o bom andamento dos serviços;')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('a)	Documentos necessários;\nb)	Livre acesso ao local.')
+                            paragraph = document.add_paragraph(
+                                'a)	Documentos necessários;\nb)	Livre acesso ao local.')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('3. VISITAS')
+                            paragraph = document.add_paragraph('\n\n3. VISITAS')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '3.1 Este contrato não prevê acompanhamento da execução da obra. \n\n'
+                                '\n3.1 Este contrato não prevê acompanhamento da execução da obra. \n\n'
                                 '3.2 Este contrato prevê 2 (duas) visitas técnicas no local da obra.\n\n'
                                 '3.3 As visitas devem ser agendadas com antecedência mínima de 2 (dois) dias e seguir a agenda de atividades do responsável técnico.\n\n'
-                                '3.4 Caso houver interesse dos ')
+                                '3.4 Caso houver interesse do')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-                            paragraph.add_run('CONTRATANTES').bold = True
+                            paragraph.add_run(' CONTRATANTE ').bold = True
                             paragraph.add_run('de mais visitas técnicas na obra, será cobrado a parte.\n'
-                                              'Valor para cada visita técnica é de R$ ' + valorvisitaobra + ',00 (' + num2words(valorvisitaobra.replace(",","."), lang='pt-br') + ') hora.')
-                            enter = document.add_paragraph('')
+                                              'Valor para cada visita técnica é de R$ ' + valorvisitaobra + ' (' + num2words(
+                                valorvisitaobra.replace(",", "."), lang='pt-br') + ' reais) hora.')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('4. PRAZO, PREÇO, FORMA DE PAGAMENTO')
+                            paragraph = document.add_paragraph('\n4. PRAZO, PREÇO, FORMA DE PAGAMENTO')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '4.1 O prazo da presente prestação de serviço dá-se início após a assinatura deste contrato e se estendera conforme tramitação legal dos órgãos responsáveis para a liberação dos documentos essenciais com resultado final.\n\n'
-                                '4.2 O valor deste contrato é de ')
+                                '\n4.1 O prazo da presente prestação de serviço dá-se início após a assinatura deste contrato e se estendera conforme tramitação legal dos órgãos responsáveis para a liberação dos documentos essenciais com resultado final.\n\n'
+                                '4.2 O valor deste contrato é de R$ ')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
 
-                            runner = paragraph.add_run("" + valorobra + ' (' + num2words((valorobra).replace(",","."), lang='pt-br') + ')')
+                            runner = paragraph.add_run(
+                                "" + (valorparcobra) + ' (' + num2words((valorparcobra).replace(",", "."),
+                                                                        lang='pt-br') + ' reais)')
                             runner.bold = True
                             runner.underline = True
 
@@ -3220,30 +3250,32 @@ class Doc(QMainWindow):
                             runner = paragraph.add_run('CONTRATADO ')
                             runner.bold = True
                             paragraph.add_run(
-                                'em ' + valorparcobra + ',00 (' + num2words(valorparcobra.replace(",","."), lang='pt-br') + ') vezes mensais, com vencimento '
-                                                                                                   'todo o dia ' + (datacontratoobra[:2]) + ' de cada mês, com início em '
+                                'em ' + quantparcobra + ' (' + num2words((quantparcobra),
+                                                                         lang='pt-br') + ') vezes mensais, com vencimento '
+                                                                                         'todo o dia ' + num2words(
+                                    (datacontratoobra[:2]), to='ordinal', lang='pt-br') + ' de cada mês, com início em '
                                 + datacontratoobra + ', constituindo-se nenhuma '
-                                                       'tolerância de qualquer recebimento depois do '
-                                                       'prazo estipulado.\n\n 4.3 Ao ')
-                            runner = paragraph.add_run('CONTRATANTES ')
-                            runner.bold = True
+                                                     'tolerância de qualquer recebimento depois do '
+                                                     'prazo estipulado.\n\n 4.3 Ao ')
+                            runner = paragraph.add_run('CONTRATANTE ')
                             paragraph.add_run(
-                                'fica ciente que, o pagamento das ou qualquer outro encargo feito através da emissão de cheque e este, por qualquer motivo que seja recusado pela entidade financeira, será considerado nulo, ficando sem efeito de quitação anterior.\n\n4.4 Fica estipulado aos ')
-                            runner = paragraph.add_run('CONTRATANTES ')
+                                'fica ciente que, o pagamento das ou qualquer outro encargo feito através da emissão de cheque e este, por qualquer motivo que seja recusado pela entidade financeira, será considerado nulo, ficando sem efeito de quitação anterior.\n\n4.4 Fica estipulado ao ')
+                            runner = paragraph.add_run('CONTRATANTE ')
                             runner.bold = True
                             paragraph.add_run(
                                 ' o pagamento de taxas, emissões de documentos, impressões e plotagens   referente as tramitações do processo bem como a exigências dos órgãos envolvidos.')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('5. MULTAS')
+                            paragraph = document.add_paragraph('\n\n5. MULTAS')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('5.1 ')
+                            paragraph = document.add_paragraph('\n5.1 ')
                             paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
@@ -3253,25 +3285,25 @@ class Doc(QMainWindow):
                             runner = paragraph.add_run('10%')
                             runner.bold = True
                             paragraph.add_run(
-                                '% (dez por cento) calculada sobre o valor do contrato devido à qual será devidamente cobrada juntamente com este pelo não pagamento no prazo previsto neste contrato. Os')
-                            runner = paragraph.add_run(' CONTRATANTES ')
+                                '(dez por cento) calculada sobre o valor do contrato devido à qual será devidamente cobrada juntamente com este pelo não pagamento no prazo previsto neste contrato. O')
+                            runner = paragraph.add_run(' CONTRATANTE ')
                             runner.bold = True
                             paragraph.add_run(
                                 'fica ciente, ainda que a multa se refere simplesmente a mora, não impedindo a cobrança de outras multas devidas pela inflação ou inexecução de quaisquer das mais clausulas deste contrato e a sua cobrança em meses posteriores. Além dessa multa serão devidos juros e correção monetária, ambos calculados pelo máximo e na forma permitidos pela lei vigente, sempre que houver atraso no pagamento do contrato ou dos encargos.')
 
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('6. FORO COMPETENTE, DESAPROPRIAÇÂO E AÇOES.')
+                            paragraph = document.add_paragraph(
+                                '\n\n\n\n\n\n\n\n\n\n\n\n\n6. FORO COMPETENTE, DESAPROPRIAÇÂO E AÇOES.')
                             paragraph.style = document.styles.add_style('style13', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
-                            font.bold = True
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '6.1 O presente contrato reger-se-á pelo Código Civil Brasileiro e Legislação suplementar, não estabelecendo, em hipóteses alguma, vínculo empregatício entre os contratantes. \n\n'
+                                '\n6.1 O presente contrato reger-se-á pelo Código Civil Brasileiro e Legislação suplementar, não estabelecendo, em hipóteses alguma, vínculo empregatício entre os contratantes. \n\n'
                                 '6.2 Fica eleito o foro')
                             paragraph.style = document.styles.add_style('style14', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
@@ -3279,36 +3311,40 @@ class Doc(QMainWindow):
                             runner = paragraph.add_run(' HORTOLÂNDIA – SP')
                             runner.bold = True
                             paragraph.add_run(
-                                ', com renúncia de outro por mais privilegio que seja, para quaisquer dúvidas decorrentes deste contrato, sejam quais forem os domicílios dos contratos, mesmo para ações posteriores ao termino deste contrato, inclusive para ações de cobrança, ainda que os ')
-                            runner = paragraph.add_run('CONTRATANTES ')
+                                ', com renúncia de outro por mais privilegio que seja, para quaisquer dúvidas decorrentes deste contrato, sejam quais forem os domicílios dos contratos, mesmo para ações posteriores ao termino deste contrato, inclusive para ações de cobrança, ainda que o ')
+                            runner = paragraph.add_run('CONTRATANTE ')
                             runner.bold = True
                             paragraph.add_run('tenham se mudado ou já residam em outra comarca.\n\n'
                                               '6.3 Nos termos do deciso no processo 85.232/88, da Serasa, com força de Provimento, publicado no diário Oficial de 22/6/1995, Cad. I Parte I, se o poder Judiciário informar a ação á Serasa, as providencias pela baixa do nome nesse órgão ficam por conta do devedor, uma vez que não foi a locadora ou sua representante legal que fez a informação.')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'E assim por estarem justos e contratados assinam o presente em 02 (duas) vias de igual teor e valor.')
+                                '\nE assim por estarem justos e contratados assinam o presente em 02 (duas) vias de igual teor e valor.')
                             paragraph.style = document.styles.add_style('style15', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '' + cidadeobra + ' / SP, ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
+                                '\n' + cidadeobra + '/SP, ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
                             paragraph.style = document.styles.add_style('style16', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-                            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
-
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '_________________________________          _____________________________________')
+                                '\n\n\n\n\n\n\n_________________________________          _____________________________________')
                             paragraph.style = document.styles.add_style('style17', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.italic = True
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'CONTRATADO:                                            CONTRATANTE:')
@@ -3316,6 +3352,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ROGÉRIO ROCHA SOARES                      ' + nomecli1 + '')
@@ -3323,29 +3361,36 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
-
-                            enter = document.add_paragraph('')
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '_________________________________')
+                                '\n\n\n\n\n\n\n_________________________________')
                             paragraph.style = document.styles.add_style('style17.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.italic = True
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('CONTRATANTE:')
+                            paragraph = document.add_paragraph(
+                                'CONTRATANTE:')
                             paragraph.style = document.styles.add_style('style18.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('' + nomecli2 + '')
+                            paragraph = document.add_paragraph(
+                                '' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style19.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Book Antiqua'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Contrato ' + nomecli1 + ' e ' + nomecli2 + '.docx')
@@ -3950,7 +3995,7 @@ class Doc(QMainWindow):
                             runner.bold = True
 
                             paragraph.add_run(
-                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Rua Geraldo Denadai, n° 74 1º andar sala 03, Jardim da Paineiras na cidade de Hortolândia/SP.\n\n')
+                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP.\n\n')
 
                             runner = paragraph.add_run('III – EXTENSÃO DOS PODERES: ')
                             runner.bold = True
@@ -4623,13 +4668,14 @@ class Doc(QMainWindow):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
                             font.size = Pt(13)
 
-                            paragraph = document.add_paragraph('☐ Certidão negativa de débitos,\n'
-                                                               '☐ Requerimento assinado pelo proprietario, \n'
-                                                               '☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), \n'
-                                                               '☐ 2 Projeto em A2,\n'
-                                                               '☐ Matrícula atualizada (vale por 30 dias),\n'
-                                                               '☐ Duas vias de ART (vale por 10 dias), \n'
-                                                               '☐ Ficha informativa.')
+                            paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
+                                                               '\n    ☐ Matrícula atualizada (vale por 30 dias),'
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias), '
+                                                               '\n    ☐ Ficha informativa,'
+                                                               '\n    ☐ Certidão negativa de débitos,'
+                                                               '\n    ☐ 2 Projeto em A2,'
+                                                               '\n    ☐ Caderno de Fotos.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -4654,13 +4700,13 @@ class Doc(QMainWindow):
                             font.size = Pt(13)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                            paragraph = document.add_paragraph('☐CPF\n'
-                                                               '☐RG\n'
-                                                               '☐Profissão\n'
-                                                               '☐Comprovante de endereço\n'
-                                                               '☐Estado Civil\n'
-                                                               '☐Email\n'
-                                                               '☐Celular\n\n')
+                            paragraph = document.add_paragraph('    ☐CPF\n'
+                                                               '    ☐RG\n'
+                                                               '    ☐Profissão\n'
+                                                               '    ☐Comprovante de endereço\n'
+                                                               '    ☐Estado Civil\n'
+                                                               '    ☐Email\n'
+                                                               '    ☐Celular\n\n')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -4675,12 +4721,12 @@ class Doc(QMainWindow):
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                            paragraph = document.add_paragraph('☐Matricula / Escritura\n'
-                                                               '☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                               '☐Valor da Parcela________________________________\n'
-                                                               '☐Quantidade de Parcela___________________________\n'
-                                                               '☐ Valor da visita__________________________________\n'
-                                                               '☐Data do contrato_________/__________/_____________\n')
+                            paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
+                                                               '    ☐Espelho do IPTU / Certidão de Área Construída\n'
+                                                               '    ☐Valor da Parcela________________________________\n'
+                                                               '    ☐Quantidade de Parcela___________________________\n'
+                                                               '    ☐ Valor da visita__________________________________\n'
+                                                               '    ☐Data do contrato_________/__________/_____________\n')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -4764,7 +4810,7 @@ class Doc(QMainWindow):
                                                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
                                                                '    ☐ ART vale por 10 dias para subdivisão\n'
                                                                '    ☐ Certidão negativa de débitos,\n'
-                                                               '    ☐ Foto faixada dos dois lotes (casas) para subdivisão\n'
+                                                               '    ☐ Caderno de Fotos dos dois lotes\n'
                                                                '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
                                                                '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
@@ -4788,7 +4834,7 @@ class Doc(QMainWindow):
                                 '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
                                 '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
                                 '    ☐ ART vale por 10 dias para regularização lote A\n'
-                                '    ☐ Foto faixada do lote A (casa) para regularização\n'
+                                '    ☐ Caderno de Fotos do lote A\n'
                                 '    ☐ Projeto em A2 de regularização para o lote A\n'
                                 '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
@@ -4812,7 +4858,7 @@ class Doc(QMainWindow):
                                 '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
                                 '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
                                 '    ☐ ART vale por 10 dias para regularização lote B\n'
-                                '    ☐ Foto faixada do lote B (casa) para regularização\n'
+                                '    ☐ Caderno de Fotos do lote B\n'
                                 '    ☐ Projeto em A2 de regularização para o lote B\n'
                                 '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
@@ -5025,7 +5071,7 @@ class Doc(QMainWindow):
                             font.bold = True
                             paragraph.add_run(' ROGÉRIO ROCHA SOARES, ').underline = True
                             paragraph.add_run(
-                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, residente e domiciliado na Rua Ricardo Mendes Horacy, n° 125, Jardim Nossa Senhora Auxiliadora na cidade de Hortolândia/SP. ').bold = False
+                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, com escritório na Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP. ').bold = False
                             enter = document.add_paragraph('')
 
                             paragraph = document.add_paragraph('1.1 CONTRATANTE: ')
@@ -5928,7 +5974,7 @@ class Doc(QMainWindow):
                             runner.bold = True
 
                             paragraph.add_run(
-                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Rua Geraldo Denadai, n° 74 1º andar sala 03, Jardim da Paineiras na cidade de Hortolândia/SP.\n\n')
+                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP.\n\n')
 
                             runner = paragraph.add_run('III – EXTENSÃO DOS PODERES: ')
                             runner.bold = True
@@ -6668,13 +6714,14 @@ class Doc(QMainWindow):
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
                             font.size = Pt(13)
 
-                            paragraph = document.add_paragraph('☐ Certidão negativa de débitos,\n'
-                                                               '☐ Requerimento assinado pelo proprietario, \n'
-                                                               '☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), \n'
-                                                               '☐ 2 Projeto em A2,\n'
-                                                               '☐ Matrícula atualizada (vale por 30 dias),\n'
-                                                               '☐ Duas vias de ART (vale por 10 dias), \n'
-                                                               '☐ Ficha informativa.')
+                            paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
+                                                               '\n    ☐ Matrícula atualizada (vale por 30 dias),'
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias), '
+                                                               '\n    ☐ Ficha informativa,'
+                                                               '\n    ☐ Certidão negativa de débitos,'
+                                                               '\n    ☐ 2 Projeto em A2,'
+                                                               '\n    ☐ Caderno de Fotos.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -6699,13 +6746,13 @@ class Doc(QMainWindow):
                             font.size = Pt(13)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                            paragraph = document.add_paragraph('☐CPF\n'
-                                                               '☐RG\n'
-                                                               '☐Profissão\n'
-                                                               '☐Comprovante de endereço\n'
-                                                               '☐Estado Civil\n'
-                                                               '☐Email\n'
-                                                               '☐Celular\n\n')
+                            paragraph = document.add_paragraph('    ☐CPF\n'
+                                                               '    ☐RG\n'
+                                                               '    ☐Profissão\n'
+                                                               '    ☐Comprovante de endereço\n'
+                                                               '    ☐Estado Civil\n'
+                                                               '    ☐Email\n'
+                                                               '    ☐Celular\n\n')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -6720,12 +6767,12 @@ class Doc(QMainWindow):
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                            paragraph = document.add_paragraph('☐Matricula / Escritura\n'
-                                                               '☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                               '☐Valor da Parcela________________________________\n'
-                                                               '☐Quantidade de Parcela___________________________\n'
-                                                               '☐ Valor da visita__________________________________\n'
-                                                               '☐Data do contrato_________/__________/_____________\n')
+                            paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
+                                                               '    ☐Espelho do IPTU / Certidão de Área Construída\n'
+                                                               '    ☐Valor da Parcela________________________________\n'
+                                                               '    ☐Quantidade de Parcela___________________________\n'
+                                                               '    ☐ Valor da visita__________________________________\n'
+                                                               '    ☐Data do contrato_________/__________/_____________\n')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -6811,7 +6858,7 @@ class Doc(QMainWindow):
                                 '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
                                 '    ☐ ART vale por 10 dias para subdivisão\n'
                                 '    ☐ Certidão negativa de débitos,\n'
-                                '    ☐ Foto faixada dos dois lotes (casas) para subdivisão\n'
+                                '    ☐ Caderno de Fotos dos dois lotes\n'
                                 '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
                                 '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
@@ -6835,7 +6882,7 @@ class Doc(QMainWindow):
                                 '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
                                 '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
                                 '    ☐ ART vale por 10 dias para regularização lote A\n'
-                                '    ☐ Foto faixada do lote A (casa) para regularização\n'
+                                '    ☐ Caderno de Fotos lote A\n'
                                 '    ☐ Projeto em A2 de regularização para o lote A\n'
                                 '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
@@ -6859,7 +6906,7 @@ class Doc(QMainWindow):
                                 '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
                                 '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
                                 '    ☐ ART vale por 10 dias para regularização lote B\n'
-                                '    ☐ Foto faixada do lote B (casa) para regularização\n'
+                                '    ☐ Caderno de Fotos lote B\n'
                                 '    ☐ Projeto em A2 de regularização para o lote B\n'
                                 '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
@@ -7092,7 +7139,7 @@ class Doc(QMainWindow):
                             font.bold = True
                             paragraph.add_run(' ROGÉRIO ROCHA SOARES, ').underline = True
                             paragraph.add_run(
-                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, residente e domiciliado na Rua Ricardo Mendes Horacy, n° 125, Jardim Nossa Senhora Auxiliadora na cidade de Hortolândia/SP. ').bold = False
+                                'brasileiro, casado, Engenheiro civil, portador do RG n° 27.274.081-0 SSP/SP, inscrito no CPF n° 183.125.858-77 e CREA: 5070347192, com escritório na Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP. ').bold = False
                             enter = document.add_paragraph('')
 
                             paragraph = document.add_paragraph('1.1 CONTRATANTE: ')
@@ -8094,7 +8141,7 @@ class Doc(QMainWindow):
                             runner.bold = True
 
                             paragraph.add_run(
-                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Rua Geraldo Denadai, n° 74 1º andar sala 03, Jardim da Paineiras na cidade de Hortolândia/SP.\n\n')
+                                '\nSr. Rogério Rocha Soares, portador do CPF nº 183.125.858-77- endereço comercial: Av. Thereza Ana Cecon Breda n 282, 1º andar, sala 5, Jd. Colinas Hortolândia/SP.\n\n')
 
                             runner = paragraph.add_run('III – EXTENSÃO DOS PODERES: ')
                             runner.bold = True
@@ -8852,13 +8899,14 @@ class Doc(QMainWindow):
                         paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
                         font.size = Pt(13)
 
-                        paragraph = document.add_paragraph('☐ Certidão negativa de débitos,\n'
-                                                           '☐ Requerimento assinado pelo proprietario, \n'
-                                                           '☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), \n'
-                                                           '☐ 2 Projeto em A2,\n'
-                                                           '☐ Matrícula atualizada (vale por 30 dias),\n'
-                                                           '☐ Duas vias de ART (vale por 10 dias), \n'
-                                                           '☐ Ficha informativa.')
+                        paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
+                                                               '\n    ☐ Matrícula atualizada (vale por 30 dias),'
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias), '
+                                                               '\n    ☐ Ficha informativa,'
+                                                               '\n    ☐ Certidão negativa de débitos,'
+                                                               '\n    ☐ 2 Projeto em A2,'
+                                                               '\n    ☐ Caderno de Fotos.')
                         paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                         font = paragraph.style.font
                         font.name = 'Arial'
@@ -8883,13 +8931,13 @@ class Doc(QMainWindow):
                         font.size = Pt(13)
                         paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                        paragraph = document.add_paragraph('☐CPF\n'
-                                                           '☐RG\n'
-                                                           '☐Profissão\n'
-                                                           '☐Comprovante de endereço\n'
-                                                           '☐Estado Civil\n'
-                                                           '☐Email\n'
-                                                           '☐Celular\n\n')
+                        paragraph = document.add_paragraph('    ☐CPF\n'
+                                                           '    ☐RG\n'
+                                                           '    ☐Profissão\n'
+                                                           '    ☐Comprovante de endereço\n'
+                                                           '    ☐Estado Civil\n'
+                                                           '    ☐Email\n'
+                                                           '    ☐Celular\n\n')
                         paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                         font = paragraph.style.font
                         font.name = 'Arial'
@@ -8904,12 +8952,12 @@ class Doc(QMainWindow):
                         font.size = Pt(12)
                         paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-                        paragraph = document.add_paragraph('☐Matricula / Escritura\n'
-                                                           '☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                           '☐Valor da Parcela________________________________\n'
-                                                           '☐Quantidade de Parcela___________________________\n'
-                                                           '☐ Valor da visita__________________________________\n'
-                                                           '☐Data do contrato_________/__________/_____________\n')
+                        paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
+                                                           '    ☐Espelho do IPTU / Certidão de Área Construída\n'
+                                                           '    ☐Valor da Parcela________________________________\n'
+                                                           '    ☐Quantidade de Parcela___________________________\n'
+                                                           '    ☐ Valor da visita__________________________________\n'
+                                                           '    ☐Data do contrato_________/__________/_____________\n')
                         paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                         font = paragraph.style.font
                         font.name = 'Arial'
@@ -8995,7 +9043,7 @@ class Doc(QMainWindow):
                             '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
                             '    ☐ ART vale por 10 dias para subdivisão\n'
                             '    ☐ Certidão negativa de débitos,\n'
-                            '    ☐ Foto faixada dos dois lotes (casas) para subdivisão\n'
+                            '    ☐ Caderno de Fotos dos dois lotes\n'
                             '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
                             '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
                         paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
@@ -9019,7 +9067,7 @@ class Doc(QMainWindow):
                             '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
                             '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
                             '    ☐ ART vale por 10 dias para regularização lote A\n'
-                            '    ☐ Foto faixada do lote A (casa) para regularização\n'
+                            '    ☐ Caderno de Fotos do lote A\n'
                             '    ☐ Projeto em A2 de regularização para o lote A\n'
                             '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                         paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
@@ -9043,7 +9091,7 @@ class Doc(QMainWindow):
                             '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
                             '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
                             '    ☐ ART vale por 10 dias para regularização lote B\n'
-                            '    ☐ Foto faixada do lote B (casa) para regularização\n'
+                            '    ☐ Caderno de Fotos do lote B\n'
                             '    ☐ Projeto em A2 de regularização para o lote B\n'
                             '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
                         paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
