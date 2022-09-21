@@ -2557,6 +2557,9 @@ class Doc(QMainWindow):
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
+                            document.sections[0].header_distance = Cm(0.5)
+                            document.sections[0].footer_distance = Cm(0)
+                            logo.header_distance = Cm(10.0)
                             logo_run = logo.add_run()
                             logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
@@ -2567,9 +2570,10 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Obra: Regularização Residencial Unifamiliar (R1)\n'
+                            paragraph = document.add_paragraph('\nObra: Regularização Residencial Unifamiliar (R1)\n'
                                                                'Local: ' + endobra + ', nº ' + numobra + ' Lote: ' + loteobra + ' – Quadra: ' + quadraobra + '\n'
                                                                                                                                                                            'Loteamento: ' + bairroobra + ' -  ' + cidadeobra + ' - SP\n'
                                                                                                                                                                                                                                        'Proprietário: ')
@@ -2579,35 +2583,38 @@ class Doc(QMainWindow):
                             font.size = Pt(12)
                             runner = paragraph.add_run('' + nomecli1 + ' \n')
                             runner.bold = True
-                            paragraph.add_run('                     CPF:')
+                            paragraph.add_run('                     CPF: ')
                             runner = paragraph.add_run('' + cpfcli1 + ' \n')
                             runner.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            enter = document.add_paragraph('')
-
-                            paragraph = document.add_paragraph('ÁREA DO TERRENO – ' + areaobra + ' m² ')
+                            paragraph = document.add_paragraph('\nÁREA DO TERRENO – ' + areaobra + ' m² ')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(12)
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            enter = document.add_paragraph('')
-
-                            paragraph = document.add_paragraph('Descrição')
+                            paragraph = document.add_paragraph('\nDescrição')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.bold = True
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'MOVIMENTO DE TERRA: Será realizada uma limpeza da superfície do terreno, tal como remoção da camada vegetal.')
+                                '\nMOVIMENTO DE TERRA: Será realizada uma limpeza da superfície do terreno, tal como remoção da camada vegetal.')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'TIPO DE FUNDAÇÃO: Serão executadas brocas de concreto armado, posteriormente, sapatas na cabeça das brocas, as quais apoiarão as vigas baldrames, que por sua vez embasam a alvenaria. Todos os componentes da fundação serão executados e concretados “in loco”.')
@@ -2615,6 +2622,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'IMPERMEABILIZAÇÃO: Para evitar os fenômenos de capilaridade e percolação (umidade nas partes inferiores da alvenaria), todas as vigas baldrames e primeiras fiadas da alvenaria receberão tratamento contra a umidade proveniente do solo.')
@@ -2622,6 +2631,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ESTRUTURA: Será utilizadas estrutura convencional de concreto armado: pilares e vigas. As peças serão devidamente moldadas e concretadas “in loco”.')
@@ -2629,6 +2640,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ALVENARIA: Será executada alvenaria com blocos cerâmicos assentados com argamassa mista de cimento cal e areia. Serão executadas também vergas e contravergas nos vãos de janelas e portas.')
@@ -2636,6 +2649,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'FORRO: Será executado em laje pré-fabricada de concreto armado em todas as dependências da edificação, com uso de vigas pré-fabricadas e lajotas cerâmicas.')
@@ -2643,6 +2658,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'COBERTURA: A cobertura será composta por telhas Metálicas com estrutura de aço; o telhado apresentará inclinação média de 11%.')
@@ -2650,6 +2667,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'REVESTIMENTO PAREDES: O revestimento das paredes de dependências consideradas molhadas será executado com revestimento cerâmico até o teto. Nas demais paredes, o revestimento será constituído de chapisco grosso e emboço com argamassa mista de cimento e areia.')
@@ -2657,6 +2676,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PISOS E RODAPÉS: O revestimento do piso será de cerâmica em todas as dependências internas; externamente o piso será revestido de cimentado desempenado.')
@@ -2664,6 +2685,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PORTAS: As portas, tanto internas quanto externas, serão de madeira e alumínio, todas com as devidas ferragens e em bom estado de conservação.')
@@ -2671,6 +2694,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'JANELAS: Todas as janelas serão de alumínio, de correr ou de abrir, estas também, devidamente tratadas e envernizadas.')
@@ -2678,6 +2703,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ÁGUAS PLUVIAIS: Serão coletadas e conduzidas à via pública. A captação será feita pelo telhado que por sua vez conduzirá estas águas até as calhas de onde irão para a via pública, por meio de tubos de PVC, as águas lançadas no quintal irão para via pública.')
@@ -2685,6 +2712,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'INSTALAÇÕES ELÉTRICAS: Serão executadas de acordo com as Normas Técnicas. Serão utilizados fios e cabos de cobre, cujas secções atenderão as necessidades a que serão submetidos. Todas a instalações serão instaladas em perfeitas condições de uso. O medidor de entrada de energia será executado e instalado de acordo com as necessidades e exigências da concessionária fornecedora deste serviço.')
@@ -2692,6 +2721,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'INSTALAÇÕES HIDRO-SANITÁRIAS: Estas instalações serão dimensionadas e executadas de acordo com as Normas Técnicas. Sendo que todos os aparelhos hidrossanitários estarão em funcionamento correto. Serão utilizadas e executadas caixas de inspeção e de gordura nos pontos necessários para boa manutenção e funcionamento destas instalações. Para condução de água (fria) potável, serão utilizados tubos de PVC marrom soldável. O sistema de esgoto e águas servidas tem seu lançamento para rede publica de esgoto.')
@@ -2699,6 +2730,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PINTURA: A pintura será executada em látex em todas as paredes, tanto internas quando externas. As esquadrias e caixilharias em geral, como já descrito, serão devidamente impermeabilizadas e protegidas contra as intempéries.')
@@ -2706,6 +2739,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'LIMPEZA: A obra será totalmente limpa de entulhos. A edificação será apta a ser habitada, obedecendo às condições mínimas de conforto, segurança e habitabilidade.')
@@ -2713,6 +2748,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
@@ -2721,36 +2758,48 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n_________________________________                                    _____________________________________')
+                                '\n\n\n\n\n\n\n\n_________________________________                                    _____________________________________')
                             paragraph.style = document.styles.add_style('style17', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'ROGÉRIO ROCHA SOARES                                                       Proprietário:' + nomecli1 + '')
+                                'ROGÉRIO ROCHA SOARES                                                       Proprietário: ' + nomecli1 + '')
                             paragraph.style = document.styles.add_style('style19', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'Engenheiro Civil                                                                            CPF:' + cpfcli1 + '')
+                                'Engenheiro Civil                                                                            CPF: ' + cpfcli1 + '')
                             paragraph.style = document.styles.add_style('style20', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'CREA: 5070347192-SP')
                             paragraph.style = document.styles.add_style('style21', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'ART' + artobra + '')
+                                'ART: ' + artobra + '')
                             paragraph.style = document.styles.add_style('style22', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Memorial Descritivo ' + nomecli1 + '.docx')
@@ -3517,7 +3566,7 @@ class Doc(QMainWindow):
 
                             sections = document.sections
                             for section in sections:
-                                section.top_margin = Cm(-4.5)
+                                section.top_margin = Cm(0)
                                 section.bottom_margin = Cm(1.27)
                                 section.left_margin = Cm(1.27)
                                 section.right_margin = Cm(1.27)
@@ -3526,6 +3575,9 @@ class Doc(QMainWindow):
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
+                            document.sections[0].header_distance = Cm(0.5)
+                            document.sections[0].footer_distance = Cm(0)
+                            logo.header_distance = Cm(10.0)
                             logo_run = logo.add_run()
                             logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
@@ -3536,9 +3588,10 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Obra: Regularização Residencial Unifamiliar (R1)\n'
+                            paragraph = document.add_paragraph('\nObra: Regularização Residencial Unifamiliar (R1)\n'
                                                                'Local: ' + endobra + ', nº ' + numobra + ' Lote: ' + loteobra + ' – Quadra: ' + quadraobra + '\n'
                                                                                                                                                                            'Loteamento: ' + bairroobra + ' -  ' + cidadeobra + ' - SP\n'
                                                                                                                                                                                                                                        'Proprietário: ')
@@ -3546,43 +3599,46 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(12)
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
                             runner = paragraph.add_run('' + nomecli1 + ' \n')
                             runner.bold = True
-                            paragraph.add_run('                     CPF:')
+                            paragraph.add_run('                     CPF: ')
                             runner = paragraph.add_run('' + cpfcli1 + ' \n')
                             runner.bold = True
 
                             runner = paragraph.add_run('                     ' + nomecli2 + ' \n')
                             runner.bold = True
-                            paragraph.add_run('                     CPF:')
+                            paragraph.add_run('                     CPF: ')
                             runner = paragraph.add_run('' + cpfcli2 + ' \n')
                             runner.bold = True
 
-                            enter = document.add_paragraph('')
-
-                            paragraph = document.add_paragraph('ÁREA DO TERRENO – ' + areaobra + ' m² ')
+                            paragraph = document.add_paragraph('\nÁREA DO TERRENO – ' + areaobra + ' m² ')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(12)
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            enter = document.add_paragraph('')
-
-                            paragraph = document.add_paragraph('Descrição')
+                            paragraph = document.add_paragraph('\nDescrição')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.bold = True
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'MOVIMENTO DE TERRA: Será realizada uma limpeza da superfície do terreno, tal como remoção da camada vegetal.')
+                                '\nMOVIMENTO DE TERRA: Será realizada uma limpeza da superfície do terreno, tal como remoção da camada vegetal.')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'TIPO DE FUNDAÇÃO: Serão executadas brocas de concreto armado, posteriormente, sapatas na cabeça das brocas, as quais apoiarão as vigas baldrames, que por sua vez embasam a alvenaria. Todos os componentes da fundação serão executados e concretados “in loco”.')
@@ -3590,6 +3646,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'IMPERMEABILIZAÇÃO: Para evitar os fenômenos de capilaridade e percolação (umidade nas partes inferiores da alvenaria), todas as vigas baldrames e primeiras fiadas da alvenaria receberão tratamento contra a umidade proveniente do solo.')
@@ -3597,6 +3655,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ESTRUTURA: Será utilizadas estrutura convencional de concreto armado: pilares e vigas. As peças serão devidamente moldadas e concretadas “in loco”.')
@@ -3604,6 +3664,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ALVENARIA: Será executada alvenaria com blocos cerâmicos assentados com argamassa mista de cimento cal e areia. Serão executadas também vergas e contravergas nos vãos de janelas e portas.')
@@ -3611,6 +3673,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'FORRO: Será executado em laje pré-fabricada de concreto armado em todas as dependências da edificação, com uso de vigas pré-fabricadas e lajotas cerâmicas.')
@@ -3618,6 +3682,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'COBERTURA: A cobertura será composta por telhas Metálicas com estrutura de aço; o telhado apresentará inclinação média de 11%.')
@@ -3625,6 +3691,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'REVESTIMENTO PAREDES: O revestimento das paredes de dependências consideradas molhadas será executado com revestimento cerâmico até o teto. Nas demais paredes, o revestimento será constituído de chapisco grosso e emboço com argamassa mista de cimento e areia.')
@@ -3632,6 +3700,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PISOS E RODAPÉS: O revestimento do piso será de cerâmica em todas as dependências internas; externamente o piso será revestido de cimentado desempenado.')
@@ -3639,6 +3709,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PORTAS: As portas, tanto internas quanto externas, serão de madeira e alumínio, todas com as devidas ferragens e em bom estado de conservação.')
@@ -3646,6 +3718,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'JANELAS: Todas as janelas serão de alumínio, de correr ou de abrir, estas também, devidamente tratadas e envernizadas.')
@@ -3653,6 +3727,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ÁGUAS PLUVIAIS: Serão coletadas e conduzidas à via pública. A captação será feita pelo telhado que por sua vez conduzirá estas águas até as calhas de onde irão para a via pública, por meio de tubos de PVC, as águas lançadas no quintal irão para via pública.')
@@ -3660,6 +3736,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'INSTALAÇÕES ELÉTRICAS: Serão executadas de acordo com as Normas Técnicas. Serão utilizados fios e cabos de cobre, cujas secções atenderão as necessidades a que serão submetidos. Todas a instalações serão instaladas em perfeitas condições de uso. O medidor de entrada de energia será executado e instalado de acordo com as necessidades e exigências da concessionária fornecedora deste serviço.')
@@ -3667,6 +3745,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'INSTALAÇÕES HIDRO-SANITÁRIAS: Estas instalações serão dimensionadas e executadas de acordo com as Normas Técnicas. Sendo que todos os aparelhos hidrossanitários estarão em funcionamento correto. Serão utilizadas e executadas caixas de inspeção e de gordura nos pontos necessários para boa manutenção e funcionamento destas instalações. Para condução de água (fria) potável, serão utilizados tubos de PVC marrom soldável. O sistema de esgoto e águas servidas tem seu lançamento para rede publica de esgoto.')
@@ -3674,6 +3754,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PINTURA: A pintura será executada em látex em todas as paredes, tanto internas quando externas. As esquadrias e caixilharias em geral, como já descrito, serão devidamente impermeabilizadas e protegidas contra as intempéries.')
@@ -3681,6 +3763,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'LIMPEZA: A obra será totalmente limpa de entulhos. A edificação será apta a ser habitada, obedecendo às condições mínimas de conforto, segurança e habitabilidade.')
@@ -3688,6 +3772,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
@@ -3696,54 +3782,72 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n_________________________________                                    _____________________________________')
+                                '\n\n\n\n\n\n\n\n_________________________________                                    _____________________________________')
                             paragraph.style = document.styles.add_style('style17', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'Proprietário:' + nomecli1 + '                                                Proprietário:' + nomecli2 + '')
+                                'Proprietário: ' + nomecli1 + '                                                Proprietário: ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style19', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + cpfcli1 + '                                                                        CPF:' + cpfcli2 + '')
+                                'CPF: ' + cpfcli1 + '                                                                    CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style20', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n_________________________________')
+                                '\n\n\n\n\n\n\n\n_________________________________')
                             paragraph.style = document.styles.add_style('style17.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ROGÉRIO ROCHA SOARES')
                             paragraph.style = document.styles.add_style('style19.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'Engenheiro Civil')
                             paragraph.style = document.styles.add_style('style20.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'CREA: 5070347192-SP')
                             paragraph.style = document.styles.add_style('style21.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'ART' + artobra + '')
+                                'ART: ' + artobra + '')
                             paragraph.style = document.styles.add_style('style22.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Memorial Descritivo' + nomecli1 + ' e ' + nomecli2 + '.docx')
@@ -5523,7 +5627,7 @@ class Doc(QMainWindow):
 
                             sections = document.sections
                             for section in sections:
-                                section.top_margin = Cm(-4.5)
+                                section.top_margin = Cm(0)
                                 section.bottom_margin = Cm(1.27)
                                 section.left_margin = Cm(1.27)
                                 section.right_margin = Cm(1.27)
@@ -5532,6 +5636,9 @@ class Doc(QMainWindow):
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
+                            document.sections[0].header_distance = Cm(0.5)
+                            document.sections[0].footer_distance = Cm(0)
+                            logo.header_distance = Cm(10.0)
                             logo_run = logo.add_run()
                             logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
@@ -5542,9 +5649,10 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Obra: Regularização Residencial Unifamiliar (R1)\n'
+                            paragraph = document.add_paragraph('\nObra: Regularização Residencial Unifamiliar (R1)\n'
                                                                'Local: ' + endobra + ', nº ' + numobra + ' Lote: ' + loteobra + ' – Quadra: ' + quadraobra + '\n'
                                                                                                                                                              'Loteamento: ' + bairroobra + ' -  ' + cidadeobra + ' - SP\n'
                                                                                                                                                                                                                  'Proprietário: ')
@@ -5552,29 +5660,27 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(12)
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
                             runner = paragraph.add_run('' + nomecli1 + ' \n')
                             runner.bold = True
-                            paragraph.add_run('                     CPF:')
+                            paragraph.add_run('                     CPF: ')
                             runner = paragraph.add_run('' + cpfcli1 + ' \n')
                             runner.bold = True
 
                             runner = paragraph.add_run('                     ' + nomecli2 + ' \n')
                             runner.bold = True
-                            paragraph.add_run('                     CPF:')
+                            paragraph.add_run('                     CPF: ')
                             runner = paragraph.add_run('' + cpfcli2 + ' \n')
                             runner.bold = True
 
-
-
-                            enter = document.add_paragraph('')
-
-                            paragraph = document.add_paragraph('ÁREA DO TERRENO – ' + areaobra + ' m² ')
+                            paragraph = document.add_paragraph('\nÁREA DO TERRENO – ' + areaobra + ' m² ')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(12)
-
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Descrição')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
@@ -5583,14 +5689,17 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'MOVIMENTO DE TERRA: Será realizada uma limpeza da superfície do terreno, tal como remoção da camada vegetal.')
+                                '\nMOVIMENTO DE TERRA: Será realizada uma limpeza da superfície do terreno, tal como remoção da camada vegetal.')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'TIPO DE FUNDAÇÃO: Serão executadas brocas de concreto armado, posteriormente, sapatas na cabeça das brocas, as quais apoiarão as vigas baldrames, que por sua vez embasam a alvenaria. Todos os componentes da fundação serão executados e concretados “in loco”.')
@@ -5598,6 +5707,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'IMPERMEABILIZAÇÃO: Para evitar os fenômenos de capilaridade e percolação (umidade nas partes inferiores da alvenaria), todas as vigas baldrames e primeiras fiadas da alvenaria receberão tratamento contra a umidade proveniente do solo.')
@@ -5605,6 +5716,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ESTRUTURA: Será utilizadas estrutura convencional de concreto armado: pilares e vigas. As peças serão devidamente moldadas e concretadas “in loco”.')
@@ -5612,6 +5725,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ALVENARIA: Será executada alvenaria com blocos cerâmicos assentados com argamassa mista de cimento cal e areia. Serão executadas também vergas e contravergas nos vãos de janelas e portas.')
@@ -5619,6 +5734,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'FORRO: Será executado em laje pré-fabricada de concreto armado em todas as dependências da edificação, com uso de vigas pré-fabricadas e lajotas cerâmicas.')
@@ -5626,6 +5743,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'COBERTURA: A cobertura será composta por telhas Metálicas com estrutura de aço; o telhado apresentará inclinação média de 11%.')
@@ -5633,6 +5752,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'REVESTIMENTO PAREDES: O revestimento das paredes de dependências consideradas molhadas será executado com revestimento cerâmico até o teto. Nas demais paredes, o revestimento será constituído de chapisco grosso e emboço com argamassa mista de cimento e areia.')
@@ -5640,6 +5761,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PISOS E RODAPÉS: O revestimento do piso será de cerâmica em todas as dependências internas; externamente o piso será revestido de cimentado desempenado.')
@@ -5647,6 +5770,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PORTAS: As portas, tanto internas quanto externas, serão de madeira e alumínio, todas com as devidas ferragens e em bom estado de conservação.')
@@ -5654,6 +5779,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'JANELAS: Todas as janelas serão de alumínio, de correr ou de abrir, estas também, devidamente tratadas e envernizadas.')
@@ -5661,6 +5788,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'ÁGUAS PLUVIAIS: Serão coletadas e conduzidas à via pública. A captação será feita pelo telhado que por sua vez conduzirá estas águas até as calhas de onde irão para a via pública, por meio de tubos de PVC, as águas lançadas no quintal irão para via pública.')
@@ -5668,6 +5797,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'INSTALAÇÕES ELÉTRICAS: Serão executadas de acordo com as Normas Técnicas. Serão utilizados fios e cabos de cobre, cujas secções atenderão as necessidades a que serão submetidos. Todas a instalações serão instaladas em perfeitas condições de uso. O medidor de entrada de energia será executado e instalado de acordo com as necessidades e exigências da concessionária fornecedora deste serviço.')
@@ -5675,6 +5806,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'INSTALAÇÕES HIDRO-SANITÁRIAS: Estas instalações serão dimensionadas e executadas de acordo com as Normas Técnicas. Sendo que todos os aparelhos hidrossanitários estarão em funcionamento correto. Serão utilizadas e executadas caixas de inspeção e de gordura nos pontos necessários para boa manutenção e funcionamento destas instalações. Para condução de água (fria) potável, serão utilizados tubos de PVC marrom soldável. O sistema de esgoto e águas servidas tem seu lançamento para rede publica de esgoto.')
@@ -5682,6 +5815,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'PINTURA: A pintura será executada em látex em todas as paredes, tanto internas quando externas. As esquadrias e caixilharias em geral, como já descrito, serão devidamente impermeabilizadas e protegidas contra as intempéries.')
@@ -5689,6 +5824,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'LIMPEZA: A obra será totalmente limpa de entulhos. A edificação será apta a ser habitada, obedecendo às condições mínimas de conforto, segurança e habitabilidade.')
@@ -5696,6 +5833,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.')
@@ -5704,54 +5843,70 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n_________________________________                                    _____________________________________')
+                                '\n\n\n\n\n\n\n\n_________________________________                                    _____________________________________')
                             paragraph.style = document.styles.add_style('style17', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
 
                             paragraph = document.add_paragraph(
-                                'Proprietário:' + nomecli1 + '                                                Proprietário:' + nomecli2 + '')
+                                'Proprietário: ' + nomecli1 + '                                                Proprietário: ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style19', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + cpfcli1 + '                                                                        CPF:' + cpfcli2 + '')
+                                'CPF: ' + cpfcli1 + '                                                                    CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style20', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n\n_________________________________                                    _____________________________________')
+                                '\n\n\n\n\n\n\n\n_________________________________                                    _____________________________________')
                             paragraph.style = document.styles.add_style('style17.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'Proprietário:' + nomecli3 + '                                                 ROGÉRIO ROCHA SOARES')
+                                'Proprietário: ' + nomecli3 + '                                                 ROGÉRIO ROCHA SOARES')
                             paragraph.style = document.styles.add_style('style19.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'CPF:' + cpfcli3 + '                                                                         Engenheiro Civil')
+                                'CPF: ' + cpfcli3 + '                                                                    Engenheiro Civil')
                             paragraph.style = document.styles.add_style('style20.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '                                                                     CREA: 5070347192-SP')
+                                '                                                                                                      CREA: 5070347192-SP')
                             paragraph.style = document.styles.add_style('style21.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '                                                                     ART' + artobra + '')
+                                '                                                                                                      ART: ' + artobra + '')
                             paragraph.style = document.styles.add_style('style22.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
@@ -7677,7 +7832,7 @@ class Doc(QMainWindow):
 
                             sections = document.sections
                             for section in sections:
-                                section.top_margin = Cm(-4.5)
+                                section.top_margin = Cm(0)
                                 section.bottom_margin = Cm(1.27)
                                 section.left_margin = Cm(1.27)
                                 section.right_margin = Cm(1.27)
@@ -7686,6 +7841,9 @@ class Doc(QMainWindow):
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
+                            document.sections[0].header_distance = Cm(0.5)
+                            document.sections[0].footer_distance = Cm(0)
+                            logo.header_distance = Cm(10.0)
                             logo_run = logo.add_run()
                             logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
@@ -7696,9 +7854,10 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(12)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                            enter = document.add_paragraph('')
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Obra: Regularização Residencial Unifamiliar (R1)\n'
+                            paragraph = document.add_paragraph('\nObra: Regularização Residencial Unifamiliar (R1)\n'
                                                                'Local: ' + endobra + ', nº ' + numobra + ' Lote: ' + loteobra + ' – Quadra: ' + quadraobra + '\n'
                                                                                                                                                              'Loteamento: ' + bairroobra + ' -  ' + cidadeobra + ' - SP\n'
                                                                                                                                                                                                                  'Proprietário: ')
@@ -7711,34 +7870,40 @@ class Doc(QMainWindow):
                             paragraph.add_run('                     CPF:')
                             runner = paragraph.add_run('' + cpfcli1 + ' \n')
                             runner.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             runner = paragraph.add_run('                     ' + nomecli2 + ' \n')
                             runner.bold = True
                             paragraph.add_run('                     CPF:')
                             runner = paragraph.add_run('' + cpfcli2 + ' \n')
                             runner.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             runner = paragraph.add_run('                     ' + nomecli3 + ' \n')
                             runner.bold = True
                             paragraph.add_run('                     CPF:')
                             runner = paragraph.add_run('' + cpfcli3 + ' \n')
                             runner.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             runner = paragraph.add_run('                     ' + nomecli4 + ' \n')
                             runner.bold = True
                             paragraph.add_run('                     CPF:')
                             runner = paragraph.add_run('' + cpfcli4 + ' \n')
                             runner.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-
-
-                            enter = document.add_paragraph('')
-
-                            paragraph = document.add_paragraph('ÁREA DO TERRENO – ' + areaobra + ' m² ')
+                            paragraph = document.add_paragraph('\nÁREA DO TERRENO – ' + areaobra + ' m² ')
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.size = Pt(12)
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             enter = document.add_paragraph('')
 
