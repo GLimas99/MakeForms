@@ -1791,7 +1791,7 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '_________________________________')
+                                '\n\n\n\n\n\n\n\n\n\n_________________________________')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -1821,7 +1821,7 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Do Proprietário')
+                            paragraph = document.add_paragraph('\nDo Proprietário')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -1841,7 +1841,7 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Da Obra')
+                            paragraph = document.add_paragraph('\nDa Obra')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -1858,7 +1858,7 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Do Responsável Técnico')
+                            paragraph = document.add_paragraph('\nDo Responsável Técnico')
                             paragraph.style = document.styles.add_style('style13', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -4132,6 +4132,9 @@ class Doc(QMainWindow):
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
+                            document.sections[0].header_distance = Cm(0.5)
+                            document.sections[0].footer_distance = Cm(0)
+                            logo.header_distance = Cm(10.0)
                             logo_run = logo.add_run()
                             logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
@@ -4142,6 +4145,8 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(16)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('DE ACORDO COM A LEI Nª3.491/2018')
                             paragraph.style = document.styles.add_style('style1', WD_STYLE_TYPE.PARAGRAPH)
@@ -4149,8 +4154,10 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(11)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('\n\nNós,')
+                            paragraph = document.add_paragraph('\nNós,')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -4166,6 +4173,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.\n')
@@ -4173,38 +4182,50 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n_________________________________                            _________________________________')
+                                '\n\n\n\n_________________________________                            _________________________________')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + nomecli1 + '                                                           ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + cpfcli1 + '                                                              CPF: ' + cpfcli2 + '')
+                                'CPF: ' + cpfcli1 + '                                                           CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Dados Complementares:')
+                            paragraph = document.add_paragraph('\nDados Complementares:')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Dos Proprietários')
+                            paragraph = document.add_paragraph('\nDos Proprietários')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Nome:' + nomecli1 + '\n'
+                            paragraph = document.add_paragraph('Nome: ' + nomecli1 + '\n'
                                                                                             'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
                                                                                                                                                      'Loteamento:' + bairrocli1 + '\n'
                                                                                                                                                                                     'CEP:' + cepcli1 + '\n'
@@ -4213,35 +4234,45 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Nome:' + nomecli2 + '\n'
-                                                                                            'Endereço: ' + endcli2 + ' N°' + numcli2 + '\n'
-                                                                                                                                                     'Loteamento:' + bairrocli2 + '\n'
-                                                                                                                                                                                    'CEP:' + cepcli2 + '\n'
-                                                                                                                                                                                                               'Cidade/Estado:' + cidadecli2 + '-' + estadocli2 + '\n'
+                            paragraph = document.add_paragraph('Nome: ' + nomecli2 + '\n'
+                                                                                            'Endereço: ' + endcli2 + ' N°: ' + numcli2 + '\n'
+                                                                                                                                                     'Loteamento: ' + bairrocli2 + '\n'
+                                                                                                                                                                                    'CEP: ' + cepcli2 + '\n'
+                                                                                                                                                                                                               'Cidade/Estado: ' + cidadecli2 + '-' + estadocli2 + '\n'
                                                                                                                                                                                                                                                                                   'Telefone: ' + celularcli2 + '')
                             paragraph.style = document.styles.add_style('style10.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Da Obra')
+                            paragraph = document.add_paragraph('\nDa Obra')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Endereço: ' + endobra + ' nº ' + numobra +
-                                                               '\nLOTE N° ' + loteobra + 'Loteamento:' + bairroobra + '\n'
-                                                                                                                           'Quadra:' + quadraobra + '')
+                                                               '\nLoteamento: ' + bairroobra + '\n'
+                                                               'Quadra: ' + quadraobra + ' Lote: ' + loteobra + '')
                             paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('\n\nDo Responsável Técnico')
+                            paragraph = document.add_paragraph('\nDo Responsável Técnico')
                             paragraph.style = document.styles.add_style('style13', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome: Rogério Rocha Soares\n'
                                                                'CPF: 183.125.858-77\n'
@@ -4251,6 +4282,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style14', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
@@ -6217,8 +6250,8 @@ class Doc(QMainWindow):
 
                             sections = document.sections
                             for section in sections:
-                                section.top_margin = Cm(-4.5)
-                                section.bottom_margin = Cm(2)
+                                section.top_margin = Cm(0.5)
+                                section.bottom_margin = Cm(0.5)
                                 section.left_margin = Cm(2.5)
                                 section.right_margin = Cm(1.75)
 
@@ -6226,6 +6259,9 @@ class Doc(QMainWindow):
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
+                            document.sections[0].header_distance = Cm(0.5)
+                            document.sections[0].footer_distance = Cm(0)
+                            logo.header_distance = Cm(10.0)
                             logo_run = logo.add_run()
                             logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
@@ -6236,6 +6272,8 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(16)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('DE ACORDO COM A LEI Nª3.491/2018')
                             paragraph.style = document.styles.add_style('style1', WD_STYLE_TYPE.PARAGRAPH)
@@ -6243,8 +6281,10 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(11)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('\n\nNós,')
+                            paragraph = document.add_paragraph('Nós,')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -6260,6 +6300,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.\n')
@@ -6267,6 +6309,8 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '\n\n\n_________________________________                            _________________________________')
@@ -6274,18 +6318,24 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + nomecli1 + '                                                           ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + cpfcli1 + '                                                              CPF: ' + cpfcli2 + '')
+                                'CPF: ' + cpfcli1 + '                                                           CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '\n\n\n\n_________________________________ ')
@@ -6293,29 +6343,39 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + nomecli3 + '')
                             paragraph.style = document.styles.add_style('style6.3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 'CPF: ' + cpfcli3 + '')
                             paragraph.style = document.styles.add_style('style7.3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Dados Complementares:')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Dos Proprietários')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome:' + nomecli1 + '\n'
                                                                                     'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
@@ -6326,6 +6386,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome:' + nomecli2 + '\n'
                                                                                     'Endereço: ' + endcli2 + ' N°' + numcli2 + '\n'
@@ -6336,6 +6398,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style10.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome:' + nomecli3 + '\n'
                                                                                     'Endereço: ' + endcli3 + ' N°' + numcli3 + '\n'
@@ -6346,25 +6410,32 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style10.3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Da Obra')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Endereço: ' + endobra + ' nº ' + numobra +
-                                                               '\nLOTE N° ' + loteobra + 'Loteamento:' + bairroobra + '\n'
-                                                                                                                    'Quadra:' + quadraobra + '')
+                                                               '\nLoteamento: ' + bairroobra + 'Lote: ' + loteobra + ' Quadra: ' + quadraobra + '')
                             paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('\n\nDo Responsável Técnico')
+                            paragraph = document.add_paragraph('Do Responsável Técnico')
                             paragraph.style = document.styles.add_style('style13', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome: Rogério Rocha Soares\n'
                                                                'CPF: 183.125.858-77\n'
@@ -6374,6 +6445,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style14', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
@@ -8504,8 +8577,8 @@ class Doc(QMainWindow):
 
                             sections = document.sections
                             for section in sections:
-                                section.top_margin = Cm(-4.5)
-                                section.bottom_margin = Cm(2)
+                                section.top_margin = Cm(0.5)
+                                section.bottom_margin = Cm(0)
                                 section.left_margin = Cm(2.5)
                                 section.right_margin = Cm(1.75)
 
@@ -8513,6 +8586,9 @@ class Doc(QMainWindow):
 
                             header = document.sections[0].header
                             logo = header.paragraphs[0]
+                            document.sections[0].header_distance = Cm(0.5)
+                            document.sections[0].footer_distance = Cm(0)
+                            logo.header_distance = Cm(10.0)
                             logo_run = logo.add_run()
                             logo_run.add_picture("images/logo.png", width=Cm(2.65), height=Cm(2.65))
 
@@ -8523,6 +8599,8 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(16)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('DE ACORDO COM A LEI Nª3.491/2018')
                             paragraph.style = document.styles.add_style('style1', WD_STYLE_TYPE.PARAGRAPH)
@@ -8530,8 +8608,10 @@ class Doc(QMainWindow):
                             font.name = 'Arial'
                             font.size = Pt(11)
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('\n\nNós,')
+                            paragraph = document.add_paragraph('Nós,')
                             paragraph.style = document.styles.add_style('style2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -8547,6 +8627,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + cidadeobra + ', ' + dia + ' de ' + mesescrito + ' de ' + ano + '.\n')
@@ -8554,101 +8636,121 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
                             paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n_________________________________                            _________________________________')
+                                '\n\n\n\n_________________________________                            _________________________________')
                             paragraph.style = document.styles.add_style('style5', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + nomecli1 + '                                                           ' + nomecli2 + '')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + cpfcli1 + '                                                              CPF: ' + cpfcli2 + '')
+                                'CPF: ' + cpfcli1 + '                                                            CPF: ' + cpfcli2 + '')
                             paragraph.style = document.styles.add_style('style7', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '\n\n\n_________________________________                            _________________________________')
+                                '\n\n\n\n_________________________________                            _________________________________')
                             paragraph.style = document.styles.add_style('style5.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
                                 '' + nomecli3 + '                                                           ' + nomecli4 + '')
                             paragraph.style = document.styles.add_style('style6.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                'CPF: ' + cpfcli3 + '                                                              CPF: ' + cpfcli4 + '')
+                                'CPF: ' + cpfcli3 + '                                                            CPF: ' + cpfcli4 + '')
                             paragraph.style = document.styles.add_style('style7.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('Dados Complementares:')
+                            paragraph = document.add_paragraph('\nDados Complementares:')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Dos Proprietários')
                             paragraph.style = document.styles.add_style('style9', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome:' + nomecli1 + '\n'
-                                                                                    'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
-                                                                                                                               'Loteamento:' + bairrocli1 + '\n'
-                                                                                                                                                            'CEP:' + cepcli1 + '\n'
-                                                                                                                                                                               'Cidade/Estado:' + cidadecli1 + '-' + estadocli1 + '\n'
-                                                                                                                                                                                                                                  'Telefone: ' + celularcli1 + '')
+                                                               'Endereço: ' + endcli1 + ' N°' + numcli1 + '\n'
+                                                               'Loteamento:' + bairrocli1 + 'CEP:' + cepcli1 + '\n'
+                                                               'Cidade/Estado:' + cidadecli1 + '-' + estadocli1 + 'Telefone: ' + celularcli1 + '')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome:' + nomecli2 + '\n'
-                                                                                    'Endereço: ' + endcli2 + ' N°' + numcli2 + '\n'
-                                                                                                                               'Loteamento:' + bairrocli2 + '\n'
-                                                                                                                                                            'CEP:' + cepcli2 + '\n'
-                                                                                                                                                                               'Cidade/Estado:' + cidadecli2 + '-' + estadocli2 + '\n'
-                                                                                                                                                                                                                                  'Telefone: ' + celularcli2 + '')
+                                                               'Endereço: ' + endcli2 + ' N°' + numcli2 + '\n'
+                                                               'Loteamento:' + bairrocli2 + 'CEP:' + cepcli2 + '\n'
+                                                               'Cidade/Estado:' + cidadecli2 + '-' + estadocli2 + 'Telefone: ' + celularcli2 + '')
                             paragraph.style = document.styles.add_style('style10.2', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome:' + nomecli3 + '\n'
-                                                                                    'Endereço: ' + endcli3 + ' N°' + numcli3 + '\n'
-                                                                                                                               'Loteamento:' + bairrocli3 + '\n'
-                                                                                                                                                            'CEP:' + cepcli3 + '\n'
-                                                                                                                                                                               'Cidade/Estado:' + cidadecli3 + '-' + estadocli3 + '\n'
-                                                                                                                                                                                                                                  'Telefone: ' + celularcli3 + '')
+                                                               'Endereço: ' + endcli3 + ' N°' + numcli3 + '\n'
+                                                               'Loteamento:' + bairrocli3 + 'CEP:' + cepcli3 + '\n'
+                                                               'Cidade/Estado:' + cidadecli3 + '-' + estadocli3 + 'Telefone: ' + celularcli3 + '')
                             paragraph.style = document.styles.add_style('style10.3', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome:' + nomecli4 + '\n'
-                                                                                    'Endereço: ' + endcli4 + ' N°' + numcli4 + '\n'
-                                                                                                                               'Loteamento:' + bairrocli4 + '\n'
-                                                                                                                                                            'CEP:' + cepcli4 + '\n'
-                                                                                                                                                                               'Cidade/Estado:' + cidadecli4 + '-' + estadocli4 + '\n'
-                                                                                                                                                                                                                                  'Telefone: ' + celularcli4 + '')
+                                                                'Endereço: ' + endcli4 + ' N°' + numcli4 + '\n'
+                                                                'Loteamento:' + bairrocli4 + 'CEP:' + cepcli4 + '\n'
+                                                                'Cidade/Estado:' + cidadecli4 + '-' + estadocli4 + 'Telefone: ' + celularcli4 + '')
                             paragraph.style = document.styles.add_style('style10.4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Da Obra')
                             paragraph.style = document.styles.add_style('style11', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Endereço: ' + endobra + ' nº ' + numobra +
                                                                '\nLOTE N° ' + loteobra + 'Loteamento:' + bairroobra + '\n'
@@ -8656,12 +8758,16 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style12', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('\n\nDo Responsável Técnico')
+                            paragraph = document.add_paragraph('Do Responsável Técnico')
                             paragraph.style = document.styles.add_style('style13', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
                             font.bold = True
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('Nome: Rogério Rocha Soares\n'
                                                                'CPF: 183.125.858-77\n'
@@ -8671,6 +8777,8 @@ class Doc(QMainWindow):
                             paragraph.style = document.styles.add_style('style14', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
+                            paragraph.paragraph_format.line_spacing = Cm(0)
+                            paragraph.paragraph_format.space_after = Cm(0)
 
                             document.save(
                                 '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')

@@ -666,7 +666,7 @@ QTableWidget QTableCornerButton::section {
                      </column>
                      <column>
                       <property name="text">
-                       <string>VALOR PARCELA</string>
+                       <string>VALOR PROJETO</string>
                       </property>
                      </column>
                      <column>
@@ -1823,7 +1823,7 @@ QLineEdit:focus{
                       <number>32</number>
                      </property>
                      <property name="placeholderText">
-                      <string>VALOR DA PARCELA</string>
+                      <string>VALOR PROJETO</string>
                      </property>
                     </widget>
                    </item>
@@ -2208,7 +2208,7 @@ QLineEdit:focus{
                       <number>32</number>
                      </property>
                      <property name="placeholderText">
-                      <string>AVCB</string>
+                      <string>AVCB/CLCB</string>
                      </property>
                     </widget>
                    </item>

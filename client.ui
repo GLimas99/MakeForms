@@ -650,7 +650,7 @@ QTableWidget QTableCornerButton::section {
                      </column>
                      <column>
                       <property name="text">
-                       <string>CPF</string>
+                       <string>CPF/CNPJ</string>
                       </property>
                      </column>
                      <column>

@@ -706,7 +706,7 @@ QTableWidget QTableCornerButton::section {
                      </column>
                      <column>
                       <property name="text">
-                       <string>VALOR PARCELA</string>
+                       <string>VALOR PROJETO</string>
                       </property>
                      </column>
                      <column>
@@ -1022,7 +1022,7 @@ QTableWidget QTableCornerButton::section {
                      </column>
                      <column>
                       <property name="text">
-                       <string>CPF</string>
+                       <string>CPF/CNPJ</string>
                       </property>
                      </column>
                      <column>
