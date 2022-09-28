@@ -1,4 +1,5 @@
-andre = 1
-andre2 = 3
+import os
 
-print(andre + andre2)
+path_dir = r'\\ROGER2\Users\ROCHA\Documents\PROCESSO DE CLIENTES'
+
+os.startfile(path_dir)

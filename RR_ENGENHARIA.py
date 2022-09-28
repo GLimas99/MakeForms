@@ -9,6 +9,7 @@ from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from datetime import date, timedelta
 from num2words import num2words
 from pathlib import Path
+import os
 
 multi = 0
 
@@ -1296,9 +1297,9 @@ class Doc(QMainWindow):
                     celularcli1 = dados_cli1[0][13]
                     emailcli1 = dados_cli1[0][14]
 
-                    Path(
-                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos').mkdir(
-                        parents=True, exist_ok=True)
+                    #Path(
+                   #     '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos').mkdir(
+                    #    parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False\
                             and self.cbox_procuracao.isChecked() == False and self.cbox_declaracao.isChecked() == False \
@@ -1571,9 +1572,13 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Contrato ' + nomecli1 + '.docx')
-            # ---------------------Procuração---------------------------------------------------------------------------------------------
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Contrato ' + nomecli1 + '',"Doc files (*.docx)")[0]
+
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
+
+# ---------------------Procuração---------------------------------------------------------------------------------------------
                         if self.cbox_procuracao.isChecked() == True:
                             document = Document()
 
@@ -1720,9 +1725,13 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Procuração ' + nomecli1 + '.docx')
-            # ---------------------RRC com lei---------------------------------------------------------------------------------------------
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Procuração ' + nomecli1 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
+
+# ---------------------RRC com lei---------------------------------------------------------------------------------------------
                         if self.cbox_reqclei.isChecked() == True:
                             document = Document()
 
@@ -1877,8 +1886,11 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento com Lei_' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Requerimento com Lei ' + nomecli1 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         # ---------------------RRC sem lei---------------------------------------------------------------------------------------------
                         if self.cbox_reqslei.isChecked() == True:
@@ -2060,8 +2072,11 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Requerimento sem Lei_' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Requerimento sem Lei ' + nomecli1 + '',
+                                                                  "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
             # ---------------------Declaração---------------------------------------------------------------------------------------------
                         if self.cbox_declaracao.isChecked() == True:
@@ -2280,10 +2295,13 @@ class Doc(QMainWindow):
 
                             # runner_word.size = Pt(10)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Declaração ' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Declaração ' + nomecli1 + '',
+                                                                  "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
-            # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
+# ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
                             document = Document()
 
@@ -2599,8 +2617,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Memorial Descritivo Para Construção ' + nomecli1 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
+
 # ---------------------MEMORIAL DESCRITIVO---------------------------------------------------------------------------------------------
                         if self.cbox_memorial.isChecked() == True:
                             document = Document()
@@ -2860,10 +2882,14 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Memorial Descritivo ' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Memorial Descritivo ' + nomecli1 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
-                            # ---------------------Recibo---------------------------------------------------------------------------------------------
+# ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
                             document = Document()
 
@@ -2926,8 +2952,10 @@ class Doc(QMainWindow):
                                                "\nROGÉRIO ROCHA SOARES   TEL. : (19) 982009858" \
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra +'/' + ano +   '/Documentos/Recibo ' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Recibo '+nomecli1+'',"Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
@@ -2976,13 +3004,11 @@ class Doc(QMainWindow):
                             font.size = Pt(13)
 
                             paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
+                                                               '\n    ☐ 1 Projeto em A2,'
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias),'
                                                                '\n    ☐ Matrícula atualizada (vale por 30 dias),'
-                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
-                                                               '\n    ☐ Duas vias de ART (vale por 10 dias), '
-                                                               '\n    ☐ Ficha informativa,'
-                                                               '\n    ☐ Certidão negativa de débitos,'
-                                                               '\n    ☐ 2 Projeto em A2,'
-                                                               '\n    ☐ Caderno de Fotos.')
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda,'
+                                                               '\n    ☐ Caderno de Fotos com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -3030,7 +3056,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
                                                                '    ☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                               '    ☐Valor da Parcela________________________________\n'
+                                                               '    ☐Valor do Projeto________________________________\n'
                                                                '    ☐Quantidade de Parcela___________________________\n'
                                                                '    ☐ Valor da visita__________________________________\n'
                                                                '    ☐Data do contrato_________/__________/_____________\n')
@@ -3040,9 +3066,14 @@ class Doc(QMainWindow):
                             # paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
                             font.size = Pt(12)
 
-                            document.save('//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra + '/' + ano + '/Documentos/Check List Regularização ' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Check List Regularização ' + nomecli1 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
-                        # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
+# ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
                             document = Document()
 
@@ -3111,13 +3142,13 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph('    ☐ Requerimento para subdivisão assinado por todos os proprietários,\n'
-                                                               '    ☐ Matrícula atualizada vale por 30 dias para subdivisão (Original)\n'
-                                                               '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
-                                                               '    ☐ ART vale por 10 dias para subdivisão\n'
-                                                               '    ☐ Certidão negativa de débitos,\n'
-                                                               '    ☐ Caderno de Fotos dos dois lotes\n'
-                                                               '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
-                                                               '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
+                                                               '    ☐ Um Projeto Completo\n'
+                                                               '    ☐ Memorial Descritivo para Subdivisão\n'
+                                                               '    ☐ Duas Vias de ART\n'
+                                                               '    ☐ Matrícula atualizada vale por 30 dias para subdivisão\n'
+                                                               '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                                               '    ☐ Caderno de Fotos com Fotografia da Fachada e Faixa de Servidão\n'
+                                                               '    ☐ Certidão negativa de débitos\n')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -3135,13 +3166,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote A assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
-                                '    ☐ ART vale por 10 dias para regularização lote A\n'
-                                '    ☐ Caderno de Fotos do lote A\n'
-                                '    ☐ Projeto em A2 de regularização para o lote A\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote A assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -3159,13 +3189,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote B assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
-                                '    ☐ ART vale por 10 dias para regularização lote B\n'
-                                '    ☐ Caderno de Fotos do lote B\n'
-                                '    ☐ Projeto em A2 de regularização para o lote B\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote B assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -3226,7 +3255,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph(
                                 '    ☐Matricula / Escritura		☐Espelho do IPTU / Certidão de Área Construída\n'
-                                '    ☐Valor da Parcela________________________________\n'
+                                '    ☐Valor do Projeto________________________________\n'
                                 '    ☐Quantidade de Parcela___________________________\n'
                                 '    ☐ Valor da visita__________________________________\n'
                                 '    ☐Data do contrato_________/__________/_____________\n')
@@ -3237,7 +3266,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save('//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + '/' + tipoobra + '/' + ano + '/Documentos/Check List Subdivizão com Regularização ' + nomecli1 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Check List Subdivizão com Regularização ' + nomecli1 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         up.show()
                         pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
@@ -3298,9 +3332,9 @@ class Doc(QMainWindow):
                     celularcli2 = dados_cli2[0][13]
                     emailcli2 = dados_cli2[0][14]
 
-                    Path(
-                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos''').mkdir(
-                        parents=True, exist_ok=True)
+                    #Path(
+                    #    '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos''').mkdir(
+                    #    parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
                             and self.cbox_procuracao.isChecked() == False and self.cbox_declaracao.isChecked() == False \
@@ -3623,8 +3657,13 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Contrato ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Contrato ' + nomecli1 + ' e ' +nomecli2+ '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
+
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -3915,10 +3954,15 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Memorial Descritivo' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Memorial Descritivo ' + nomecli1 + ' e ' +nomecli2+ '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
-                            # RRC sem lei
+
+                            # -RRC sem lei-
                         if self.cbox_reqslei.isChecked() == True:
                             document = Document()
 
@@ -4114,8 +4158,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Requerimento sem Lei ' + nomecli1 + ' e ' +nomecli2+ '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -4285,10 +4333,14 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Requerimento com Lei ' + nomecli1 + ' e ' + nomecli2 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
-                            # Procuração
+                            # -Procuração-
                         if self.cbox_procuracao.isChecked() == True:
                             document = Document()
 
@@ -4441,8 +4493,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Procuração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Procuração ' + nomecli1 + ' e ' + nomecli2 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -4661,8 +4717,12 @@ class Doc(QMainWindow):
 
                             # runner_word.size = Pt(10)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Declaração ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Declaração ' + nomecli1 + ' e ' + nomecli2 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -4933,8 +4993,12 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Memorial Descritivo Para Construção ' + nomecli1 + ' e ' + nomecli2 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -5000,8 +5064,13 @@ class Doc(QMainWindow):
                                                "\nROGÉRIO ROCHA SOARES   TEL. : (19) 982009858" \
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra +  '/' + ano + '/Documentos/Recibo ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Recibo ' + nomecli1 + ' e ' + nomecli2 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
@@ -5051,13 +5120,11 @@ class Doc(QMainWindow):
                             font.size = Pt(13)
 
                             paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
+                                                               '\n    ☐ 1 Projeto em A2,'
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias),'
                                                                '\n    ☐ Matrícula atualizada (vale por 30 dias),'
-                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
-                                                               '\n    ☐ Duas vias de ART (vale por 10 dias), '
-                                                               '\n    ☐ Ficha informativa,'
-                                                               '\n    ☐ Certidão negativa de débitos,'
-                                                               '\n    ☐ 2 Projeto em A2,'
-                                                               '\n    ☐ Caderno de Fotos.')
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda,'
+                                                               '\n    ☐ Caderno de Fotos com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -5105,7 +5172,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
                                                                '    ☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                               '    ☐Valor da Parcela________________________________\n'
+                                                               '    ☐Valor do Projeto________________________________\n'
                                                                '    ☐Quantidade de Parcela___________________________\n'
                                                                '    ☐ Valor da visita__________________________________\n'
                                                                '    ☐Data do contrato_________/__________/_____________\n')
@@ -5115,8 +5182,12 @@ class Doc(QMainWindow):
                             # paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
                             font.size = Pt(12)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra + '/' + ano + '/Documentos/CheckList Reg. ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'CheckList Reg ' + nomecli1 + ' e ' + nomecli2 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
     # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
@@ -5187,14 +5258,15 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            paragraph = document.add_paragraph('    ☐ Requerimento para subdivisão assinado por todos os proprietários,\n'
-                                                               '    ☐ Matrícula atualizada vale por 30 dias para subdivisão (Original)\n'
-                                                               '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
-                                                               '    ☐ ART vale por 10 dias para subdivisão\n'
-                                                               '    ☐ Certidão negativa de débitos,\n'
-                                                               '    ☐ Caderno de Fotos dos dois lotes\n'
-                                                               '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
-                                                               '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
+                            paragraph = document.add_paragraph(
+                                '    ☐ Requerimento para subdivisão assinado por todos os proprietários,\n'
+                                '    ☐ Um Projeto Completo\n'
+                                '    ☐ Memorial Descritivo para Subdivisão\n'
+                                '    ☐ Duas Vias de ART\n'
+                                '    ☐ Matrícula atualizada vale por 30 dias para subdivisão\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos com Fotografia da Fachada e Faixa de Servidão\n'
+                                '    ☐ Certidão negativa de débitos\n')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -5212,13 +5284,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote A assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
-                                '    ☐ ART vale por 10 dias para regularização lote A\n'
-                                '    ☐ Caderno de Fotos do lote A\n'
-                                '    ☐ Projeto em A2 de regularização para o lote A\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote A assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -5236,13 +5307,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote B assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
-                                '    ☐ ART vale por 10 dias para regularização lote B\n'
-                                '    ☐ Caderno de Fotos do lote B\n'
-                                '    ☐ Projeto em A2 de regularização para o lote B\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote B assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -5303,7 +5373,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph(
                                 '    ☐Matricula / Escritura		☐Espelho do IPTU / Certidão de Área Construída\n'
-                                '    ☐Valor da Parcela________________________________\n'
+                                '    ☐Valor do Projeto________________________________\n'
                                 '    ☐Quantidade de Parcela___________________________\n'
                                 '    ☐ Valor da visita__________________________________\n'
                                 '    ☐Data do contrato_________/__________/_____________\n')
@@ -5314,8 +5384,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ' e ' + nomecli2 + '/' + tipoobra + '/' + ano + '/Documentos/Check List Sub-Reg ' + nomecli1 + ' e ' + nomecli2 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Check List Sub-Reg ' + nomecli1 + ' e ' + nomecli2 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         up.show()
                         pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
@@ -5397,9 +5471,9 @@ class Doc(QMainWindow):
                     celularcli3 = dados_cli3[0][13]
                     emailcli3 = dados_cli3[0][14]
 
-                    Path(
-                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ' e '+ nomecli3 +'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
-                        parents=True, exist_ok=True)
+                    #Path(
+                    #    '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ' e '+ nomecli3 +'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
+                    #    parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
                             and self.cbox_procuracao.isChecked() == False and self.cbox_declaracao.isChecked() == False \
@@ -5736,8 +5810,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Contrato ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -6026,8 +6104,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Memorial Descritivo ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -6241,8 +6323,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Requerimento sem Lei ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -6448,8 +6534,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Requerimento com Lei ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -6601,8 +6691,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Procuração ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -6843,8 +6937,12 @@ class Doc(QMainWindow):
 
                             # runner_word.size = Pt(10)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Declaração ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -7133,8 +7231,12 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Memorial Descritivo Para Construção ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -7200,10 +7302,14 @@ class Doc(QMainWindow):
                                                "\nROGÉRIO ROCHA SOARES   TEL. : (19) 982009858" \
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Recibo ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
-                        # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
+# ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
                             document = Document()
 
@@ -7252,13 +7358,11 @@ class Doc(QMainWindow):
                             font.size = Pt(13)
 
                             paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
+                                                               '\n    ☐ 1 Projeto em A2,'
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias),'
                                                                '\n    ☐ Matrícula atualizada (vale por 30 dias),'
-                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
-                                                               '\n    ☐ Duas vias de ART (vale por 10 dias), '
-                                                               '\n    ☐ Ficha informativa,'
-                                                               '\n    ☐ Certidão negativa de débitos,'
-                                                               '\n    ☐ 2 Projeto em A2,'
-                                                               '\n    ☐ Caderno de Fotos.')
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda,'
+                                                               '\n    ☐ Caderno de Fotos com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -7306,7 +7410,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
                                                                '    ☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                               '    ☐Valor da Parcela________________________________\n'
+                                                               '    ☐Valor do Projeto________________________________\n'
                                                                '    ☐Quantidade de Parcela___________________________\n'
                                                                '    ☐ Valor da visita__________________________________\n'
                                                                '    ☐Data do contrato_________/__________/_____________\n')
@@ -7316,8 +7420,12 @@ class Doc(QMainWindow):
                             # paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
                             font.size = Pt(12)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/CheckList Reg ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'CheckList Reg ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
@@ -7391,13 +7499,13 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph(
                                 '    ☐ Requerimento para subdivisão assinado por todos os proprietários,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para subdivisão (Original)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
-                                '    ☐ ART vale por 10 dias para subdivisão\n'
-                                '    ☐ Certidão negativa de débitos,\n'
-                                '    ☐ Caderno de Fotos dos dois lotes\n'
-                                '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
-                                '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
+                                '    ☐ Um Projeto Completo\n'
+                                '    ☐ Memorial Descritivo para Subdivisão\n'
+                                '    ☐ Duas Vias de ART\n'
+                                '    ☐ Matrícula atualizada vale por 30 dias para subdivisão\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos com Fotografia da Fachada e Faixa de Servidão\n'
+                                '    ☐ Certidão negativa de débitos\n')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -7415,13 +7523,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote A assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
-                                '    ☐ ART vale por 10 dias para regularização lote A\n'
-                                '    ☐ Caderno de Fotos lote A\n'
-                                '    ☐ Projeto em A2 de regularização para o lote A\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote A assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -7439,13 +7546,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote B assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
-                                '    ☐ ART vale por 10 dias para regularização lote B\n'
-                                '    ☐ Caderno de Fotos lote B\n'
-                                '    ☐ Projeto em A2 de regularização para o lote B\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote B assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -7506,7 +7612,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph(
                                 '    ☐Matricula / Escritura		☐Espelho do IPTU / Certidão de Área Construída\n'
-                                '    ☐Valor da Parcela________________________________\n'
+                                '    ☐Valor do Projeto________________________________\n'
                                 '    ☐Quantidade de Parcela___________________________\n'
                                 '    ☐ Valor da visita__________________________________\n'
                                 '    ☐Data do contrato_________/__________/_____________\n')
@@ -7517,8 +7623,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '/' + tipoobra + '/' + ano + '/Documentos/CheckList Sub. c Reg. ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'CheckList Sub-Reg ' + nomecli1 + ', ' + nomecli2 + ' e ' + nomecli3 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         up.show()
                         pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
@@ -7620,9 +7730,9 @@ class Doc(QMainWindow):
                     celularcli4 = dados_cli4[0][13]
                     emailcli4 = dados_cli4[0][14]
 
-                    Path(
-                        '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ', '+ nomecli3+ ' e '+nomecli4+'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
-                        parents=True, exist_ok=True)
+                    #Path(
+                    #    '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ', '+ nomecli3+ ' e '+nomecli4+'/' + tipoobra + '/' + ano + '/Documentos''').mkdir(
+                    #    parents=True, exist_ok=True)
 
                     if self.cbox_contrato.isChecked() == False and self.cbox_recibo.isChecked() == False \
                             and self.cbox_procuracao.isChecked() == False and self.cbox_declaracao.isChecked() == False \
@@ -8001,8 +8111,13 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+ nomecli2 +', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Contrato ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Contrato ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -8335,8 +8450,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Memorial Descritivo ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -8568,8 +8687,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento sem Lei ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Requerimento sem Lei ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -8780,8 +8903,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Requerimento com Lei ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Requerimento com Lei ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -8975,8 +9102,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Procuração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Procuração ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -9220,8 +9351,12 @@ class Doc(QMainWindow):
 
                             # runner_word.size = Pt(10)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Declaração ' + nomecli1 + ', '+nomecli2+', '+nomecli3+' e ' + nomecli4 +'.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Declaração ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -9510,8 +9645,12 @@ class Doc(QMainWindow):
                             font = paragraph.style.font
                             font.name = 'Arial'
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/Memorial Descritivo Para Construção ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Memorial Descritivo Para Construção ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -9577,8 +9716,13 @@ class Doc(QMainWindow):
                                                "\nROGÉRIO ROCHA SOARES   TEL. : (19) 982009858" \
                                                "\nCREA: 5070347192" \
                                                "\nE-MAIL: rocha.soares@hotmail.com"
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/Recibo ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
+
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'Recibo ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
@@ -9629,13 +9773,11 @@ class Doc(QMainWindow):
                             font.size = Pt(13)
 
                             paragraph = document.add_paragraph('    ☐ Requerimento assinado pelo proprietario, '
-                                                                   '\n    ☐ Matrícula atualizada (vale por 30 dias),'
-                                                                   '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda, (se caso a escritura não for registrada), '
-                                                                   '\n    ☐ Duas vias de ART (vale por 10 dias), '
-                                                                   '\n    ☐ Ficha informativa,'
-                                                                   '\n    ☐ Certidão negativa de débitos,'
-                                                                   '\n    ☐ 2 Projeto em A2,'
-                                                                   '\n    ☐ Caderno de Fotos.')
+                                                               '\n    ☐ 1 Projeto em A2,'
+                                                               '\n    ☐ Duas vias de ART (vale por 10 dias),'
+                                                               '\n    ☐ Matrícula atualizada (vale por 30 dias),'
+                                                               '\n    ☐ Cópia autenticada da escritura ou contrato de compra e venda,'
+                                                               '\n    ☐ Caderno de Fotos com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão.')
                             paragraph.style = document.styles.add_style('style4', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -9683,7 +9825,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph('    ☐Matricula / Escritura\n'
                                                                '    ☐Espelho do IPTU / Certidão de Área Construída\n'
-                                                               '    ☐Valor da Parcela________________________________\n'
+                                                               '    ☐Valor do Projeto________________________________\n'
                                                                '    ☐Quantidade de Parcela___________________________\n'
                                                                '    ☐ Valor da visita__________________________________\n'
                                                                '    ☐Data do contrato_________/__________/_____________\n')
@@ -9693,8 +9835,12 @@ class Doc(QMainWindow):
                             # paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
                             font.size = Pt(12)
 
-                            document.save(
-                                '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '/' + tipoobra + '/' + ano + '/Documentos/CheckList Reg. ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'CheckList Reg ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
@@ -9768,13 +9914,13 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph(
                                 '    ☐ Requerimento para subdivisão assinado por todos os proprietários,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para subdivisão (Original)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a subdivisão\n'
-                                '    ☐ ART vale por 10 dias para subdivisão\n'
-                                '    ☐ Certidão negativa de débitos,\n'
-                                '    ☐ Caderno de Fotos dos dois lotes\n'
-                                '    ☐ Memorial descritivo para subdivisão assinado por todos os proprietários,\n'
-                                '    ☐ Projeto em A2 só do terreno situação atual e pretendida para subdivisão.\n')
+                                '    ☐ Um Projeto Completo\n'
+                                '    ☐ Memorial Descritivo para Subdivisão\n'
+                                '    ☐ Duas Vias de ART\n'
+                                '    ☐ Matrícula atualizada vale por 30 dias para subdivisão\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos com Fotografia da Fachada e Faixa de Servidão\n'
+                                '    ☐ Certidão negativa de débitos\n')
                             paragraph.style = document.styles.add_style('style6', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -9792,13 +9938,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote A assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote A (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote \n'
-                                '    ☐ ART vale por 10 dias para regularização lote A\n'
-                                '    ☐ Caderno de Fotos do lote A\n'
-                                '    ☐ Projeto em A2 de regularização para o lote A\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote A assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style8', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -9816,13 +9961,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '    ☐ Requerimentos para regularização lote B assinado por todos os proprietários desta parte,\n'
-                                '    ☐ Matrícula atualizada vale por 30 dias para regularização lote B (Cópia)\n'
-                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda para a regularização lote B\n'
-                                '    ☐ ART vale por 10 dias para regularização lote B\n'
-                                '    ☐ Caderno de Fotos do lote B\n'
-                                '    ☐ Projeto em A2 de regularização para o lote B\n'
-                                '    ☐ Ficha informativa, após dar entrada no processo no protocolo.\n')
+                                '    ☐ Requerimento do Lote B assinado pelo proprietário\n'
+                                '    ☐ 1 Projeto em A2\n'
+                                '    ☐ Duas vias de ART (vale por 10 dias)\n'
+                                '    ☐ Matrícula atualizada (vale por 30 dias)\n'
+                                '    ☐ Cópia autenticada da escritura ou contrato de compra e venda\n'
+                                '    ☐ Caderno de Fotos do Lote A com Fotografias da Fachada, Frontal, Lateral, Fundo e Faixa de Servidão\n')
                             paragraph.style = document.styles.add_style('style10', WD_STYLE_TYPE.PARAGRAPH)
                             font = paragraph.style.font
                             font.name = 'Arial'
@@ -9883,7 +10027,7 @@ class Doc(QMainWindow):
 
                             paragraph = document.add_paragraph(
                                 '    ☐Matricula / Escritura		☐Espelho do IPTU / Certidão de Área Construída\n'
-                                '    ☐Valor da Parcela________________________________\n'
+                                '    ☐Valor do Projeto________________________________\n'
                                 '    ☐Quantidade de Parcela___________________________\n'
                                 '    ☐ Valor da visita__________________________________\n'
                                 '    ☐Data do contrato_________/__________/_____________\n')
@@ -9894,8 +10038,12 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.line_spacing = Cm(0)
                             paragraph.paragraph_format.space_after = Cm(0)
 
-                            document.save(
-                                    '//ROGER2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/' + cidadeobra + '/' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'/' + tipoobra + '/' + ano + '/Documentos/CheckList Sub. com Div. ' + nomecli1 + ', '+nomecli2+', ' + nomecli3 + ' e ' + nomecli4 +'.docx')
+                            arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
+                                                                            'CheckList Sub-Reg ' + nomecli1 + ', ' + nomecli2 + ', ' + nomecli3 + ' e ' + nomecli4 + '',
+                                                                            "Doc files (*.docx)")[0]
+                            if arquivo != '':
+                                document.save(arquivo)
+                                os.startfile(arquivo)
 
                         up.show()
                         pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
