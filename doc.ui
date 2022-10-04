@@ -508,7 +508,7 @@ QLineEdit:focus{
                       <number>32</number>
                      </property>
                      <property name="placeholderText">
-                      <string>RUA DO TERRENO</string>
+                      <string>PESQUISAR OBRA</string>
                      </property>
                     </widget>
                    </item>
@@ -686,7 +686,7 @@ QTableWidget QTableCornerButton::section {
                      </column>
                      <column>
                       <property name="text">
-                       <string>QUARTEIRÃO</string>
+                       <string>CEP</string>
                       </property>
                      </column>
                      <column>
@@ -869,7 +869,7 @@ QLineEdit:focus{
                       <number>32</number>
                      </property>
                      <property name="placeholderText">
-                      <string>NOME DO CLIENTE</string>
+                      <string>PESQUISAR CLIENTE</string>
                      </property>
                     </widget>
                    </item>

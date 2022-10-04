@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox, QSizeGrip
+from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox, QSizeGrip, QTableWidget
 from PyQt6 import QtWidgets, uic, QtCore, QtGui
 import sqlite3
 from docx import Document
@@ -10,6 +10,7 @@ from datetime import date, timedelta
 from num2words import num2words
 from pathlib import Path
 import os
+import time
 
 multi = 0
 
@@ -179,10 +180,10 @@ class Obra(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(21)
+        self.tabWid_obra.setColumnCount(22)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 21):
+            for j in range(0, 22):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -341,8 +342,8 @@ class Obra(QMainWindow):
         self.txt_obracidade.setText(dados_lidos[0][4])
         self.txt_obralote.setText(dados_lidos[0][5])
         self.txt_obraquadra.setText(dados_lidos[0][6])
-        self.txt_obraquarteirao.setText(dados_lidos[0][7])
-        self.txt_obratipo.setText(dados_lidos[0][8])
+        self.txt_cep.setText(dados_lidos[0][7])
+        self.txt_tipo.setText(dados_lidos[0][8])
         self.txt_obraareaterreno.setText(dados_lidos[0][9])
         self.txt_obraart.setText(dados_lidos[0][10])
         self.txt_obravalorparcela.setText(dados_lidos[0][11])
@@ -442,8 +443,8 @@ class Obra(QMainWindow):
         self.txt_obracidade.setText(None)
         self.txt_obralote.setText(None)
         self.txt_obraquadra.setText(None)
-        self.txt_obraquarteirao.setText(None)
-        self.txt_obratipo.setText(None)
+        self.txt_cep.setText(None)
+        self.txt_tipo.setText(None)
         self.txt_obraareaterreno.setText(None)
         self.txt_obraart.setText(None)
         self.txt_obravalorparcela.setText(None)
@@ -460,10 +461,10 @@ class Obra(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(19)
+        self.tabWid_obra.setColumnCount(22)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 20):
+            for j in range(0, 22):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -476,8 +477,8 @@ class Obra(QMainWindow):
         obracidade = self.txt_obracidade.text()
         obralote = self.txt_obralote.text()
         obraquadra = self.txt_obraquadra.text()
-        obraquarteirao = self.txt_obraquarteirao.text()
-        obratipo = self.txt_obratipo.text()
+        obracep = self.txt_cep.text()
+        obratipo = self.txt_tipo.text()
         obraarea = self.txt_obraareaterreno.text()
         obraart = self.txt_obraart.text()
         obravalorparc = self.txt_obravalorparcela.text()
@@ -501,7 +502,7 @@ class Obra(QMainWindow):
             tudomes = tudo.strftime('%m')
             tudodia = tudo.strftime('%d')
 
-            obraclock = "" + str(tudodia) + "/" + str(tudomes) + "/" + str(tudoano) + ""
+            obraclock = "" + str(tudomes) + "/" + str(tudoano) + ""
         else:
             obraclock = ""
 
@@ -513,7 +514,7 @@ class Obra(QMainWindow):
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
         consulta = 'UPDATE OR IGNORE obra SET end=?, bairro=?, num=?, cidade=?, lote=?, quadra=?, quarteirao=?, tipo=?, area=?, art=?, valorparc=?, quantparc=?, datacontrato=?, valorvisita=?, inscimob=?, avcb=?, avcbclock=?, idcli1=?, idcli2=?, idcli3=?, idcli4=? WHERE id=?'
-        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraavcb, obraclock, obraidcli1, obraidcli2, obraidcli3, obraidcli4, idobra))
+        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obracep, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraavcb, obraclock, obraidcli1, obraidcli2, obraidcli3, obraidcli4, idobra))
 
         self.txt_id.setText(None)
         self.txt_obraend.setText(None)
@@ -522,8 +523,8 @@ class Obra(QMainWindow):
         self.txt_obracidade.setText(None)
         self.txt_obralote.setText(None)
         self.txt_obraquadra.setText(None)
-        self.txt_obraquarteirao.setText(None)
-        self.txt_obratipo.setText(None)
+        self.txt_cep.setText(None)
+        self.txt_tipo.setText(None)
         self.txt_obraareaterreno.setText(None)
         self.txt_obraart.setText(None)
         self.txt_obravalorparcela.setText(None)
@@ -540,10 +541,10 @@ class Obra(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(20)
+        self.tabWid_obra.setColumnCount(22)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 20):
+            for j in range(0, 22):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
@@ -556,8 +557,8 @@ class Obra(QMainWindow):
         obracidade = self.txt_obracidade.text()
         obralote = self.txt_obralote.text()
         obraquadra = self.txt_obraquadra.text()
-        obraquarteirao = self.txt_obraquarteirao.text()
-        obratipo = self.txt_obratipo.text()
+        obracep = self.txt_cep.text()
+        obratipo = self.txt_tipo.text()
         obraarea = self.txt_obraareaterreno.text()
         obraart = self.txt_obraart.text()
         obravalorparc = self.txt_obravalorparcela.text()
@@ -581,7 +582,7 @@ class Obra(QMainWindow):
             tudomes = tudo.strftime('%m')
             tudodia = tudo.strftime('%d')
 
-            obraclock = "" + str(tudodia) + "/" + str(tudomes) + "/" + str(tudoano) + ""
+            obraclock = "" + str(tudomes) + "/" + str(tudoano) + ""
         else:
             obraclock = ""
 
@@ -594,7 +595,7 @@ class Obra(QMainWindow):
         banco = sqlite3.connect('./bd/banco.db')
         cursor = banco.cursor()
         consulta = 'INSERT OR IGNORE INTO obra (end, bairro, num, cidade, lote, quadra, quarteirao, tipo, area, art, valorparc, quantparc, datacontrato, valorvisita, inscimob, avcb, avcbclock, idcli1, idcli2, idcli3, idcli4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
-        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obraquarteirao, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraavcb, obraclock, obraidcli1, obraidcli2, obraidcli3, obraidcli4))
+        cursor.execute(consulta, (obraend, obrabairro, obranumero, obracidade, obralote, obraquadra, obracep, obratipo, obraarea, obraart, obravalorparc, obraquantparc, obradatacont, obravalorvisit, obrainscmob, obraavcb, obraclock, obraidcli1, obraidcli2, obraidcli3, obraidcli4))
 
         self.txt_id.setText(None)
         self.txt_obraend.setText(None)
@@ -603,8 +604,8 @@ class Obra(QMainWindow):
         self.txt_obracidade.setText(None)
         self.txt_obralote.setText(None)
         self.txt_obraquadra.setText(None)
-        self.txt_obraquarteirao.setText(None)
-        self.txt_obratipo.setText(None)
+        self.txt_cep.setText(None)
+        self.txt_tipo.setText(None)
         self.txt_obraareaterreno.setText(None)
         self.txt_obraart.setText(None)
         self.txt_obravalorparcela.setText(None)
@@ -621,21 +622,30 @@ class Obra(QMainWindow):
         cursor.execute('SELECT * FROM obra')
         dados_lidos = cursor.fetchall()
         self.tabWid_obra.setRowCount(len(dados_lidos))
-        self.tabWid_obra.setColumnCount(19)
+        self.tabWid_obra.setColumnCount(22)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 20):
+            for j in range(0, 22):
                 self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
         banco.commit()
         banco.close()
 
     def search(self):
         name = self.txt_rua.text().lower()
-        for row in range(self.tabWid_obra.rowCount()):
-            item = self.tabWid_obra.item(row, 1)
-            # if the search is *not* in the item's text *do not hide* the row
-            self.tabWid_obra.setRowHidden(row, name not in item.text().lower())
 
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = ('SELECT * FROM obra WHERE (coalesce(id,"") || coalesce(end,"") || coalesce(bairro,"") || coalesce(num,"") || coalesce(cidade,"") || coalesce(lote,"") || coalesce(quadra,"") || coalesce(quarteirao,"") || coalesce(tipo,"") || coalesce(area,"") || coalesce(art,"")  || coalesce(valorparc,"") || coalesce(quantparc,"") || coalesce(datacontrato,"") || coalesce(valorvisita,"") || coalesce(inscimob,"") || coalesce(avcb,"") || coalesce(avcbclock,"") || coalesce(idcli1,"") || coalesce(idcli2,"") || coalesce(idcli3,"") || coalesce(idcli4,"") ) LIKE ? ')
+        cursor.execute(consulta, (f'%{name}%',))
+        dados_lidos = cursor.fetchall()
+        self.tabWid_obra.setRowCount(len(dados_lidos))
+        self.tabWid_obra.setColumnCount(22)
+
+        for i in range(0, len(dados_lidos)):
+            for j in range(0, 22):
+                self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
+        banco.commit()
+        banco.close()
 
 class Cliente(QMainWindow):
     def __init__(self, parent=None):
@@ -886,10 +896,21 @@ class Cliente(QMainWindow):
 
     def pesqui(self):
         name = self.txt_nome.text().lower()
-        for row in range(self.tabWid_cli.rowCount()):
-            item = self.tabWid_cli.item(row, 1)
-            # if the search is *not* in the item's text *do not hide* the row
-            self.tabWid_cli.setRowHidden(row, name not in item.text().lower())
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = (
+            'SELECT * FROM cliente WHERE (coalesce(id,"") || coalesce(nome,"") || coalesce(cpf,"") || coalesce(rg,"") || coalesce(end,"") || coalesce(bairro,"") || coalesce(num,"") || coalesce(cidade,"") || coalesce(estado,"") || coalesce(cep,"") || coalesce(nacionalidade,"")  || coalesce(profissao,"") || coalesce(estadocivil,"") || coalesce(celular,"") || coalesce(email,"") ) LIKE ? ')
+        cursor.execute(consulta, (f'%{name}%',))
+        dados_lidos = cursor.fetchall()
+        self.tabWid_cli.setRowCount(len(dados_lidos))
+        self.tabWid_cli.setColumnCount(15)
+
+        for i in range(0, len(dados_lidos)):
+            for j in range(0, 15):
+                self.tabWid_cli.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
+        banco.commit()
+        banco.close()
 
 class Doc(QMainWindow):
     def __init__(self, parent=None):
@@ -937,7 +958,7 @@ class Doc(QMainWindow):
         self.tabWid_cli.setColumnCount(15)
 
         for i in range(0, len(dados_lidos)):
-            for j in range(0, 14):
+            for j in range(0, 15):
                 self.tabWid_cli.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
         banco.commit()
@@ -1182,17 +1203,39 @@ class Doc(QMainWindow):
 
     def searchobra(self):
         name = self.txt_searchrua.text().lower()
-        for row in range(self.tabWid_obra.rowCount()):
-            item = self.tabWid_obra.item(row, 1)
-            # if the search is *not* in the item's text *do not hide* the row
-            self.tabWid_obra.setRowHidden(row, name not in item.text().lower())
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = (
+            'SELECT * FROM obra WHERE (coalesce(id,"") || coalesce(end,"") || coalesce(bairro,"") || coalesce(num,"") || coalesce(cidade,"") || coalesce(lote,"") || coalesce(quadra,"") || coalesce(quarteirao,"") || coalesce(tipo,"") || coalesce(area,"") || coalesce(art,"")  || coalesce(valorparc,"") || coalesce(quantparc,"") || coalesce(datacontrato,"") || coalesce(valorvisita,"") || coalesce(inscimob,"") || coalesce(avcb,"") || coalesce(avcbclock,"") || coalesce(idcli1,"") || coalesce(idcli2,"") || coalesce(idcli3,"") || coalesce(idcli4,"") ) LIKE ? ')
+        cursor.execute(consulta, (f'%{name}%',))
+        dados_lidos = cursor.fetchall()
+        self.tabWid_obra.setRowCount(len(dados_lidos))
+        self.tabWid_obra.setColumnCount(22)
+
+        for i in range(0, len(dados_lidos)):
+            for j in range(0, 22):
+                self.tabWid_obra.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
+        banco.commit()
+        banco.close()
 
     def searchcli(self):
         name = self.txt_searchnome.text().lower()
-        for row in range(self.tabWid_cli.rowCount()):
-            item = self.tabWid_cli.item(row, 1)
-            # if the search is *not* in the item's text *do not hide* the row
-            self.tabWid_cli.setRowHidden(row, name not in item.text().lower())
+
+        banco = sqlite3.connect('./bd/banco.db')
+        cursor = banco.cursor()
+        consulta = (
+            'SELECT * FROM cliente WHERE (coalesce(id,"") || coalesce(nome,"") || coalesce(cpf,"") || coalesce(rg,"") || coalesce(end,"") || coalesce(bairro,"") || coalesce(num,"") || coalesce(cidade,"") || coalesce(estado,"") || coalesce(cep,"") || coalesce(nacionalidade,"")  || coalesce(profissao,"") || coalesce(estadocivil,"") || coalesce(celular,"") || coalesce(email,"") ) LIKE ? ')
+        cursor.execute(consulta, (f'%{name}%',))
+        dados_lidos = cursor.fetchall()
+        self.tabWid_cli.setRowCount(len(dados_lidos))
+        self.tabWid_cli.setColumnCount(15)
+
+        for i in range(0, len(dados_lidos)):
+            for j in range(0, 15):
+                self.tabWid_cli.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
+        banco.commit()
+        banco.close()
 
 
     def checked1(self):
@@ -1254,7 +1297,7 @@ class Doc(QMainWindow):
             cidadeobra = dados_lidos[0][4]
             loteobra = dados_lidos[0][5]
             quadraobra = dados_lidos[0][6]
-            quarteiraoobra = dados_lidos[0][7]
+            cepobra = dados_lidos[0][7]
             tipoobra = dados_lidos[0][8]
             areaobra = dados_lidos[0][9]
             artobra = dados_lidos[0][10]
@@ -1576,7 +1619,8 @@ class Doc(QMainWindow):
 
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 # ---------------------Procuração---------------------------------------------------------------------------------------------
                         if self.cbox_procuracao.isChecked() == True:
@@ -1729,7 +1773,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 # ---------------------RRC com lei---------------------------------------------------------------------------------------------
                         if self.cbox_reqclei.isChecked() == True:
@@ -1890,7 +1935,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         # ---------------------RRC sem lei---------------------------------------------------------------------------------------------
                         if self.cbox_reqslei.isChecked() == True:
@@ -1980,7 +2026,7 @@ class Doc(QMainWindow):
                                      '\nLoteamento: '+bairroobra+''\
                                      '\nInscrição Imobiliária: '+inscimobobra+'' \
                                      '\nEndereço: '+endobra+' Nº: ' +numobra+''\
-                                     '\nCEP: '+cepcli1+''
+                                     '\nCEP: '+cepobra+''
                             tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
                             tabela_formatada.font.name = 'Arial'
                             tabela_formatada.font.size = Pt(10)
@@ -2011,7 +2057,7 @@ class Doc(QMainWindow):
                             tabela_formatada.bold = True
 
                             paragraph = document.add_paragraph(
-                                '\n(  ) Declaro que os documentos, declarações e demais elementos submetidos na instrução deste requerimento são verdadeiros e que tenho ciência de que a falsidade de qualquer informação prestada acarreta automaticamente em crime de falsidade ideológica na forma do art. 299 do Código Penal Brasileiro.')
+                                '\n(X) Declaro que os documentos, declarações e demais elementos submetidos na instrução deste requerimento são verdadeiros e que tenho ciência de que a falsidade de qualquer informação prestada acarreta automaticamente em crime de falsidade ideológica na forma do art. 299 do Código Penal Brasileiro.')
                             font = paragraph.style.font
                             font.size = Pt(10)
                             font.name = 'Arial'
@@ -2020,7 +2066,7 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '(  ) Declaro ter ciência de que, caso meu pedido não seja instruído nos termos que determina a legislação vigente, deverei regularizá-lo no prazo de 30 (trinta) dias corridos, sob pena de arquivamento e indeferimento deste processo.')
+                                '(X) Declaro ter ciência de que, caso meu pedido não seja instruído nos termos que determina a legislação vigente, deverei regularizá-lo no prazo de 30 (trinta) dias corridos, sob pena de arquivamento e indeferimento deste processo.')
                             font = paragraph.style.font
                             font.size = Pt(10)
                             font.name = 'Arial'
@@ -2029,7 +2075,7 @@ class Doc(QMainWindow):
                             paragraph.paragraph_format.space_after = Cm(0)
 
                             paragraph = document.add_paragraph(
-                                '(  ) Declaro ter ciência do prazo de 180 (cento e oitenta) dias corridos, contados da entrega da planta aprovada, para o registro dos desdobros e das edificações junto ao Cartório de Registro de Imóveis competente.')
+                                '(X) Declaro ter ciência do prazo de 180 (cento e oitenta) dias corridos, contados da entrega da planta aprovada, para o registro dos desdobros e das edificações junto ao Cartório de Registro de Imóveis competente.')
                             font = paragraph.style.font
                             font.size = Pt(10)
                             font.name = 'Arial'
@@ -2076,7 +2122,8 @@ class Doc(QMainWindow):
                                                                   "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
             # ---------------------Declaração---------------------------------------------------------------------------------------------
                         if self.cbox_declaracao.isChecked() == True:
@@ -2299,7 +2346,8 @@ class Doc(QMainWindow):
                                                                   "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -2621,7 +2669,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 # ---------------------MEMORIAL DESCRITIVO---------------------------------------------------------------------------------------------
                         if self.cbox_memorial.isChecked() == True:
@@ -2887,7 +2936,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -2955,7 +3005,8 @@ class Doc(QMainWindow):
                             arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None, 'Recibo '+nomecli1+'',"Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
@@ -3067,11 +3118,12 @@ class Doc(QMainWindow):
                             font.size = Pt(12)
 
                             arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
-                                                                            'Check List Regularização ' + nomecli1 + '',
+                                                                            'CheckList Reg ' + nomecli1 + '',
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
@@ -3271,13 +3323,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
-
-                        up.show()
-                        pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                        pop.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                      "border-radius:5px;")
-                        pop.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         self.txt_idobra.setText(None)
                         self.txt_idcli1.setText(None)
@@ -3662,7 +3709,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 
                         if self.cbox_memorial.isChecked() == True:
@@ -3959,7 +4007,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 
                             # -RRC sem lei-
@@ -4065,7 +4114,7 @@ class Doc(QMainWindow):
                                      '\nLoteamento: ' + bairroobra + '' \
                                      '\nInscrição Imobiliária: ' + inscimobobra + '' \
                                      '\nEndereço: ' + endobra + ' Nº: ' +numobra+''\
-                                     '\nCEP: ' + cepcli1 + ''
+                                     '\nCEP: ' + cepobra + ''
                             tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
                             tabela_formatada.font.name = 'Arial'
                             tabela_formatada.font.size = Pt(9)
@@ -4163,7 +4212,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -4338,7 +4388,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # -Procuração-
                         if self.cbox_procuracao.isChecked() == True:
@@ -4498,7 +4549,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -4722,7 +4774,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -4998,7 +5051,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -5070,7 +5124,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
@@ -5185,9 +5240,11 @@ class Doc(QMainWindow):
                             arquivo = QtWidgets.QFileDialog.getSaveFileName(None, None,
                                                                             'CheckList Reg ' + nomecli1 + ' e ' + nomecli2 + '',
                                                                             "Doc files (*.docx)")[0]
+                            print(arquivo)
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
     # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
@@ -5389,13 +5446,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
-
-                        up.show()
-                        pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                        pop.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                      "border-radius:5px;")
-                        pop.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         self.txt_idobra.setText(None)
                         self.txt_idcli1.setText(None)
@@ -5815,7 +5867,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -6109,7 +6162,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -6229,7 +6283,7 @@ class Doc(QMainWindow):
                                                                                                           '\nLoteamento: ' + bairroobra + '' \
                                                                                                                                           '\nInscrição Imobiliária: ' + inscimobobra + '' \
                                                                                                                                                                                        '\nEndereço: ' + endobra + ' Nº: ' +numobra+''\
-                                                                                                                                                                                                                  '\nCEP: ' + cepcli1 + ''
+                                                                                                                                                                                                                  '\nCEP: ' + cepobra + ''
                             tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
                             tabela_formatada.font.name = 'Arial'
                             tabela_formatada.font.size = Pt(9)
@@ -6328,7 +6382,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -6539,7 +6594,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -6696,7 +6752,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -6942,7 +6999,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -7236,7 +7294,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -7307,7 +7366,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
 # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
@@ -7425,7 +7485,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
@@ -7628,13 +7689,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
-
-                        up.show()
-                        pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                        pop.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                      "border-radius:5px;")
-                        pop.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         self.txt_idobra.setText(None)
                         self.txt_idcli1.setText(None)
@@ -8117,7 +8173,8 @@ class Doc(QMainWindow):
 
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         if self.cbox_memorial.isChecked() == True:
                             # Memorial Descritivo
@@ -8455,7 +8512,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # RRC sem lei
                         if self.cbox_reqslei.isChecked() == True:
@@ -8590,7 +8648,7 @@ class Doc(QMainWindow):
                                      '\nLoteamento: ' + bairroobra + '' \
                                      '\nInscrição Imobiliária: ' + inscimobobra + '' \
                                      '\nEndereço: ' + endobra + ' Nº: '+numobra+ ''\
-                                     '\nCEP: ' + cepcli1 + ''
+                                     '\nCEP: ' + cepobra + ''
                             tabela_formatada = row.cells[0].paragraphs[0].add_run(tabela)
                             tabela_formatada.font.name = 'Arial'
                             tabela_formatada.font.size = Pt(9)
@@ -8692,7 +8750,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # RRC com lei
                         if self.cbox_reqclei.isChecked() == True:
@@ -8908,7 +8967,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # Procuração
                         if self.cbox_procuracao.isChecked() == True:
@@ -9107,7 +9167,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # Declaração
                         if self.cbox_declaracao.isChecked() == True:
@@ -9356,7 +9417,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # ---------------------MEMORIAL DESCRITIVO PARA CONSTRUÇÃO---------------------------------------------------------------------------------------------
                         if self.cbox_memorialcontrucao.isChecked() == True:
@@ -9650,7 +9712,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                             # ---------------------Recibo---------------------------------------------------------------------------------------------
                         if self.cbox_recibo.isChecked() == True:
@@ -9722,7 +9785,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         # ---------------------CHECK LIST REG.---------------------------------------------------------------------------------------------
                         if self.cbox_reg.isChecked() == True:
@@ -9840,7 +9904,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         # ---------------------CHECK LIST SUB/REG.---------------------------------------------------------------------------------------------
                         if self.cbox_subreg.isChecked() == True:
@@ -10043,13 +10108,8 @@ class Doc(QMainWindow):
                                                                             "Doc files (*.docx)")[0]
                             if arquivo != '':
                                 document.save(arquivo)
-                                os.startfile(arquivo)
-
-                        up.show()
-                        pop.lbl_popup.setText("DOCUMENTOS CRIADOS")
-                        pop.frame_popup.setStyleSheet("background-color: rgb(57, 173, 84);\n"
-                                                       "border-radius:5px;")
-                        pop.lbl_popup.setStyleSheet("color: rgb(35, 35, 35)")
+                                a = arquivo.replace('/', '\\')
+                                os.startfile(a)
 
                         self.txt_idobra.setText(None)
                         self.txt_idcli1.setText(None)

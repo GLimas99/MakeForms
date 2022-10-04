@@ -523,7 +523,7 @@ QLineEdit:focus{
                          <number>32</number>
                         </property>
                         <property name="placeholderText">
-                         <string>NOME DO CLIENTE</string>
+                         <string>PESQUISAR CLIENTE</string>
                         </property>
                        </widget>
                       </item>

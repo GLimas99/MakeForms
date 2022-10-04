@@ -1,5 +1,7 @@
 import os
+import re
 
-path_dir = r'\\ROGER2\Users\ROCHA\Documents\PROCESSO DE CLIENTES'
-
-os.startfile(path_dir)
+path_dir = r'//roger2/Users/ROCHA/Documents/PROCESSO DE CLIENTES/HORTOLÂNDIA'
+a = path_dir.replace('/', '\\')
+print(a)
+os.startfile(a)
