@@ -10143,7 +10143,7 @@ if __name__ == '__main__':
     #widget.setFixedWidth(1039)
     up.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
     up.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
-    widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+    #widget.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
     widget.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
     widget.show()
     widget.setMinimumSize(QtCore.QSize(586, 716))

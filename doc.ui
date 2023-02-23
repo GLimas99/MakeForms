@@ -1506,7 +1506,7 @@ QCheckBox::indicator:checked{
 }</string>
                      </property>
                      <property name="text">
-                      <string>REQUERIMENTO S/ LEI</string>
+                      <string>REQUERIMENTO P/ ANISTIA</string>
                      </property>
                     </widget>
                    </item>
@@ -1565,7 +1565,7 @@ QCheckBox::indicator:checked{
 }</string>
                      </property>
                      <property name="text">
-                      <string>REQUERIMENTO C/ LEI</string>
+                      <string>REQUERIMENTO</string>
                      </property>
                     </widget>
                    </item>
